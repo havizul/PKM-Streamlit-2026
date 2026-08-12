@@ -14,7 +14,7 @@ from data.menu import (
 # ============================================================
 
 st.set_page_config(
-    page_title="Media Pembelajaran Matematika",
+    page_title="PROGRAM STUDI TADRIS MATEMATIKA - IAIN PONTIANAK",
     page_icon="📐",
     layout="wide",
     initial_sidebar_state="expanded"
