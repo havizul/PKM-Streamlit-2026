@@ -85,7 +85,7 @@ if "media" not in st.session_state:
 # ============================================================
 
 st.markdown(
-    '<div class="main-title">📐 Media Pembelajaran Matematika</div>',
+    '<div class="main-title">📐 PROGRAM STUDI TADRIS MATEMATIKA - IAIN PONTIANAK</div>',
     unsafe_allow_html=True
 )
 
