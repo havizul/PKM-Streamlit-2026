@@ -502,31 +502,27 @@ def bilangan_berpangkat():
     # ========================================================
 
     st.subheader("21. Latihan")
-
-    st.markdown("**Soal 1**")
-    st.markdown("Sederhanakan:")
     
     with st.container(border=True):
+        st.markdown("**Soal 1**")
+        st.markdown("Sederhanakan:")
         st.latex(r"2^5 \times 2^3")
-
-    st.markdown("**Soal 2**")
-    st.markdown("Sederhanakan:")
     
     with st.container(border=True):
+        st.markdown("**Soal 2**")
+        st.markdown("Sederhanakan:")
         st.latex(r"\frac{3^7}{3^4}")
-
-    st.markdown("**Soal 3**")
-    st.markdown("Tentukan nilai:")
-    
+     
     with st.container(border=True):
+        st.markdown("**Soal 3**")
+        st.markdown("Tentukan nilai:")
         st.latex(r"5^{-2}")
         
-    st.markdown("**Soal4**")
-    st.markdown("Tentukan nilai:")
-    
+        
     with st.container(border=True):
+        st.markdown("**Soal4**")
+        st.markdown("Tentukan nilai:")
         st.latex(r"81^{1/2}")
-
 
     with st.container(border=True):
         st.markdown("**Soal 5**")
@@ -537,14 +533,12 @@ def bilangan_berpangkat():
         st.markdown("**Soal 6**")
         st.markdown("Sederhanakan:")
         st.latex(r"3\sqrt{5}+4\sqrt{5}")
-    
-    
+        
     with st.container(border=True):
         st.markdown("**Soal 7**")
         st.markdown("Rasionalkan:")
         st.latex(r"\frac{1}{\sqrt{5}}")
-    
-    
+        
     with st.container(border=True):
         st.markdown("**Soal 8**")
         st.markdown("Tuliskan 7.200.000 dalam notasi ilmiah.")
