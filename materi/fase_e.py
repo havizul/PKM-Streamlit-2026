@@ -1229,51 +1229,51 @@ def persamaan_fungsi_eksponensial():
 
     st.subheader("24. Latihan")
 
-    st.markdown("""
-    **Soal 1**
+    with st.container(border=True):
+    st.markdown("**Soal 1**")
+    st.markdown(r"Tentukan nilai $f(3)$ jika $f(x)=2^x$.")
 
-    Tentukan nilai \(f(3)\) jika \(f(x)=2^x\).
-    """)
 
-    st.markdown("""
-    **Soal 2**
-
-    Tentukan penyelesaian \(2^{x+2}=2^6\).
-    """)
-
-    st.markdown("""
-    **Soal 3**
-
-    Tentukan penyelesaian \(3^{2x-1}=3^7\).
-    """)
-
-    st.markdown("""
-    **Soal 4**
-
-    Tentukan penyelesaian \(4^x=2^8\).
-    """)
-
-    st.markdown("""
-    **Soal 5**
-
-    Tentukan penyelesaian \(9^x=3^6\).
-    """)
-
-    st.markdown("""
-    **Soal 6**
-
-    Sebuah populasi mula-mula 2.000 orang dan bertambah
-    menjadi dua kali lipat setiap periode. Tentukan populasi
-    setelah 6 periode.
-    """)
-
-    st.markdown("""
-    **Soal 7**
-
-    Suatu zat mula-mula memiliki massa 1.000 gram.
-    Setiap periode massanya menjadi 80% dari sebelumnya.
-    Tentukan massa setelah 3 periode.
-    """)
+    with st.container(border=True):
+        st.markdown("**Soal 2**")
+        st.markdown(r"Tentukan penyelesaian $2^{x+2}=2^6$.")
+    
+    
+    with st.container(border=True):
+        st.markdown("**Soal 3**")
+        st.markdown(r"Tentukan penyelesaian $3^{2x-1}=3^7$.")
+    
+    
+    with st.container(border=True):
+        st.markdown("**Soal 4**")
+        st.markdown(r"Tentukan penyelesaian $4^x=2^8$.")
+    
+    
+    with st.container(border=True):
+        st.markdown("**Soal 5**")
+        st.markdown(r"Tentukan penyelesaian $9^x=3^6$.")
+    
+    
+    with st.container(border=True):
+        st.markdown("**Soal 6**")
+        st.markdown(
+            """
+            Sebuah populasi mula-mula 2.000 orang dan bertambah
+            menjadi dua kali lipat setiap periode. Tentukan populasi
+            setelah 6 periode.
+            """
+        )
+    
+    
+    with st.container(border=True):
+        st.markdown("**Soal 7**")
+        st.markdown(
+            """
+            Suatu zat mula-mula memiliki massa 1.000 gram.
+            Setiap periode massanya menjadi 80% dari sebelumnya.
+            Tentukan massa setelah 3 periode.
+            """
+        )
 
     # ========================================================
     # 25. KUIS
