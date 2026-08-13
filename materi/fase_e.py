@@ -7,7 +7,10 @@ def tampilkan(materi):
 
     elif materi == "Persamaan dan Fungsi Eksponensial":
         # materi berikutnya
-        pass
+        #pass
+        st.markdown("""
+            ### UNDER MAINTENANCE !!!
+            """)
 
     # dan seterusnya
 
