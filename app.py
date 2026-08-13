@@ -8,6 +8,7 @@ from data.menu import (
     MEDIA_PEMBELAJARAN
 )
 
+from materi import fase_e
 
 # ============================================================
 # KONFIGURASI HALAMAN
@@ -140,6 +141,7 @@ if menu_utama == "📚 Materi Matematika":
                 ):
                     st.session_state.materi = item
 
+       
         # ----------------------------------------------------
         # FASE F UMUM
         # ----------------------------------------------------
@@ -176,7 +178,16 @@ if menu_utama == "📚 Materi Matematika":
                     use_container_width=True
                 ):
                     st.session_state.materi = item
+# ============================================================
+# TAMPILKAN MATERI
+# ============================================================
 
+if menu_utama == "📚 Materi Matematika":
+    if st.session_state.materi:
+        fase_e.tampilkan(
+            st.session_state.materi
+        )
+        
 
 # ============================================================
 # SIDEBAR MEDIA PEMBELAJARAN
