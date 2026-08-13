@@ -305,18 +305,18 @@ if menu_utama == "🏠 Beranda":
 # HALAMAN MATERI
 # ============================================================
 
-elif menu_utama == "📚 Materi Matematika":
+#elif menu_utama == "📚 Materi Matematika":
+#
+#    materi = st.session_state.materi
 
-    materi = st.session_state.materi
+#    st.header(f"📖 {materi}")
 
-    st.header(f"📖 {materi}")
+#    st.divider()
 
-    st.divider()
-
-    st.info(
-        f"Materi **{materi}** akan ditampilkan dari "
-        "file materi pada tahap berikutnya."
-    )
+#    st.info(
+#        f"Materi **{materi}** akan ditampilkan dari "
+#        "file materi pada tahap berikutnya."
+#    )
 
 
 # ============================================================
