@@ -1316,8 +1316,7 @@ def persamaan_fungsi_eksponensial():
     with st.expander("📌 Rangkuman Materi", expanded=False):
 
         st.markdown(r"""
-        ### Konsep penting
-        
+                
         **1. Fungsi eksponensial**
         
         Variabel berada pada pangkat.
