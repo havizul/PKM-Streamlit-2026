@@ -790,7 +790,7 @@ def persamaan_fungsi_eksponensial():
     st.subheader("6. Karakteristik Grafik Fungsi Eksponensial")
 
     st.markdown("""
-    Fungsi \(f(x)=a^x\) mempunyai beberapa karakteristik penting:
+    Fungsi $\(f(x)=a^x\)$ mempunyai beberapa karakteristik penting:
 
     - Grafik selalu melalui titik \((0,1)\).
     - Nilai fungsi selalu positif.
