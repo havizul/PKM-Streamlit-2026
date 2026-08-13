@@ -1315,38 +1315,38 @@ def persamaan_fungsi_eksponensial():
 
     with st.expander("📌 Rangkuman Materi", expanded=False):
 
-        st.markdown("""
+        st.markdown(r"""
         ### Konsep penting
-
+        
         **1. Fungsi eksponensial**
-
+        
         Variabel berada pada pangkat.
-
+        
         **2. Bentuk umum**
-
+        
         $f(x)=a^x$
-
+        
         dengan $a>0$ dan $a\neq1$.
-
+        
         **3. Pertumbuhan**
-
-        Jika \(a>1\), fungsi meningkat.
-
+        
+        Jika $a>1$, fungsi meningkat.
+        
         **4. Peluruhan**
-
-        Jika \(0<a<1\), fungsi menurun.
-
+        
+        Jika $0<a<1$, fungsi menurun.
+        
         **5. Persamaan eksponensial**
-
+        
         Jika basis sama, eksponen dapat disamakan.
-
+        
         **6. Grafik**
-
-        Grafik melalui titik \((0,1)\), mempunyai range positif,
-        dan mempunyai asimtot horizontal \(y=0\).
-
+        
+        Grafik melalui titik $(0,1)$, mempunyai range positif,
+        dan mempunyai asimtot horizontal $y=0$.
+        
         **7. Penerapan**
-
+        
         Fungsi eksponensial dapat digunakan untuk memodelkan
         pertumbuhan penduduk, bakteri, investasi, dan peluruhan.
         """)
