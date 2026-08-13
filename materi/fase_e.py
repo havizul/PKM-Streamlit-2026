@@ -1230,8 +1230,8 @@ def persamaan_fungsi_eksponensial():
     st.subheader("24. Latihan")
 
     with st.container(border=True):
-    st.markdown("**Soal 1**")
-    st.markdown(r"Tentukan nilai $f(3)$ jika $f(x)=2^x$.")
+        st.markdown("**Soal 1**")
+        st.markdown(r"Tentukan nilai $f(3)$ jika $f(x)=2^x$.")
 
 
     with st.container(border=True):
