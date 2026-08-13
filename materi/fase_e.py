@@ -1056,15 +1056,15 @@ def persamaan_fungsi_eksponensial():
     periode waktu.
     """)
 
-    st.latex(r"N(t)=N_0a^t")
+    st.latex(r"N(t)=N_0 a^t")
 
     st.markdown("""
     Keterangan:
 
-    - \(N(t)\) = jumlah pada waktu t
-    - \(N_0\) = jumlah awal
-    - \(a\) = faktor pertumbuhan
-    - \(t\) = waktu
+    - $N(t)$ = jumlah pada waktu t
+    - $N_0$ = jumlah awal
+    - $a$ = faktor pertumbuhan
+    - $t$ = waktu
     """)
 
     # ========================================================
