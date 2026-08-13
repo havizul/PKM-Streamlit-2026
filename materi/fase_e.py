@@ -264,14 +264,19 @@ def bilangan_berpangkat():
     st.markdown("Contoh:")
 
     st.latex(r"16^{\frac{1}{2}}=\sqrt{16}")
-
-    st.latex(r"=4")
+    st.latex(r"x^2=16")
+    st.latex(r"4^2=16")    
+    st.latex(r"4\times4=16")    
+    st.latex(r"x=4")
 
     st.markdown("Contoh lain:")
 
     st.latex(r"27^{\frac{2}{3}}=\sqrt[3]{27^2}")
-
-    st.latex(r"=9")
+    st.latex(r"x^3=27^2")
+    st.latex(r"x^3=729")
+    st.latex(r"9^3=729")
+    st.latex(r"9\times9\times9=729")
+    st.latex(r"x=9")
 
     # ========================================================
     # 11. HUBUNGAN PANGKAT DAN AKAR
