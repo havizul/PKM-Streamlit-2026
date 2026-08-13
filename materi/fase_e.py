@@ -509,60 +509,47 @@ def bilangan_berpangkat():
     with st.container(border=True):
         st.latex(r"2^5 \times 2^3")
 
-    st.markdown("""
-    **Soal 2**
+    st.markdown("**Soal 2**")
+    st.markdown("Sederhanakan:")
+    
+    with st.container(border=True):
+        st.latex(r"\frac{3^7}{3^4}")
 
-    Sederhanakan:
+    st.markdown("**Soal 3**")
+    st.markdown("Tentukan nilai:")
+    
+    with st.container(border=True):
+        st.latex(r"5^{-2}")
+        
+    st.markdown("**Soal4**")
+    st.markdown("Tentukan nilai:")
+    
+    with st.container(border=True):
+        st.latex(r"81^{1/2}")
 
-    \(\frac{3^7}{3^4}\)
-    """)
 
-    st.markdown("""
-    **Soal 3**
+    with st.container(border=True):
+    st.markdown("**Soal 5**")
+    st.markdown("Sederhanakan:")
+    st.latex(r"\sqrt{180}")
 
-    Tentukan nilai:
+    with st.container(border=True):
+        st.markdown("**Soal 6**")
+        st.markdown("Sederhanakan:")
+        st.latex(r"3\sqrt{5}+4\sqrt{5}")
+    
+    
+    with st.container(border=True):
+        st.markdown("**Soal 7**")
+        st.markdown("Rasionalkan:")
+        st.latex(r"\frac{1}{\sqrt{5}}")
+    
+    
+    with st.container(border=True):
+        st.markdown("**Soal 8**")
+        st.markdown("Tuliskan 7.200.000 dalam notasi ilmiah.")
 
-    \(5^{-2}\)
-    """)
-
-    st.markdown("""
-    **Soal 4**
-
-    Tentukan nilai:
-
-    \(81^{1/2}\)
-    """)
-
-    st.markdown("""
-    **Soal 5**
-
-    Sederhanakan:
-
-    \(\sqrt{180}\)
-    """)
-
-    st.markdown("""
-    **Soal 6**
-
-    Sederhanakan:
-
-    \(3\sqrt{5}+4\sqrt{5}\)
-    """)
-
-    st.markdown("""
-    **Soal 7**
-
-    Rasionalkan:
-
-    \(\frac{1}{\sqrt{5}}\)
-    """)
-
-    st.markdown("""
-    **Soal 8**
-
-    Tuliskan 7.200.000 dalam notasi ilmiah.
-    """)
-
+    
     # ========================================================
     # 22. KUIS INTERAKTIF
     # ========================================================
