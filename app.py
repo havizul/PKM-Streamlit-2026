@@ -1,5 +1,6 @@
 import streamlit as st
 
+from materi import fase_e
 from data.menu import (
     MENU_UTAMA,
     FASE_E,
@@ -7,8 +8,6 @@ from data.menu import (
     FASE_F_LANJUT,
     MEDIA_PEMBELAJARAN
 )
-
-from materi import fase_e
 
 # ============================================================
 # KONFIGURASI HALAMAN
