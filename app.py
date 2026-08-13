@@ -149,39 +149,15 @@ if menu_utama == "📚 Materi Matematika":
             expanded=False
         ):
 
-            #for item in FASE_F_UMUM:
-
-            #    if st.button(
-            #        item,
-            #        key=f"fase_f_umum_{item}",
-            #        use_container_width=True
-            #    ):
-            #        st.session_state.materi = item
-
-
             for item in FASE_F_UMUM:
-    
-                st.sidebar.markdown(
-                    f"""
-                    <a href="?menu={item}" target="_self"
-                       style="
-                           display: block;
-                           width: 100%;
-                           padding: 10px 14px;
-                           margin: 4px 0;
-                           background-color: #E8F0FE;
-                           color: #1A73E8;
-                           text-decoration: none;
-                           border-radius: 6px;
-                           font-weight: 500;
-                           box-sizing: border-box;
-                       ">
-                       {item}
-                    </a>
-                    """,
-                    unsafe_allow_html=True
-                )
-            st.session_state.materi = item
+
+                if st.button(
+                    item,
+                    key=f"fase_f_umum_{item}",
+                    use_container_width=True
+                ):
+                    st.session_state.materi = item
+
         
         # ----------------------------------------------------
         # FASE F LANJUT
