@@ -1,5 +1,15 @@
 import streamlit as st
 
+def tampilkan(materi):
+
+    if materi == "Bilangan Berpangkat":
+        bilangan_berpangkat()
+
+    elif materi == "Persamaan dan Fungsi Eksponensial":
+        # materi berikutnya
+        pass
+
+    # dan seterusnya
 
 def bilangan_berpangkat():
 
