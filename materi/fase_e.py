@@ -403,8 +403,7 @@ def bilangan_berpangkat():
 
     st.latex(r"=\frac{\sqrt{2}}{2}")
 
-    st.markdown("Untuk penyebut berbentuk jumlah atau selisih akar,
-    digunakan bentuk sekawan.")
+    st.markdown("Untuk penyebut berbentuk jumlah atau selisih akar,digunakan bentuk sekawan.")
 
     st.markdown("Contoh:")
 
