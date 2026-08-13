@@ -132,7 +132,9 @@ def bilangan_berpangkat():
 
     st.latex(r"\frac{a^m}{a^n}=a^{m-n}")
 
-    st.markdown("dengan \(a\neq0\).")
+    #st.markdown("dengan a ≠ 0.")
+    #st.markdown("dengan \(a\neq0\).")
+    st.markdown(r"dengan \(a\neq0\).")
 
     st.markdown("Contoh:")
 
