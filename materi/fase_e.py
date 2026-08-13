@@ -436,13 +436,8 @@ def bilangan_berpangkat():
 
     st.latex(r"a\times10^n")
 
-    st.markdown("""
-    dengan:
-
-    \[
-    1\leq a<10
-    \]
-    """)
+    st.markdown("dengan:")
+    st.latex(r"1 \leq a < 10")
 
     st.markdown("Contoh bilangan besar:")
 
