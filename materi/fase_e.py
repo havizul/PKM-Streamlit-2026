@@ -503,13 +503,11 @@ def bilangan_berpangkat():
 
     st.subheader("21. Latihan")
 
-    st.markdown(r"""
-    **Soal 1**
+    st.markdown("**Soal 1**")
+    st.markdown("Sederhanakan:")
     
-    Sederhanakan:
-    
-    $ \t 2^5 \times 2^3$
-    """)
+    with st.container(border=True):
+        st.latex(r"2^5 \times 2^3")
 
     st.markdown("""
     **Soal 2**
