@@ -1324,9 +1324,9 @@ def persamaan_fungsi_eksponensial():
 
         **2. Bentuk umum**
 
-        \(f(x)=a^x\)
+        $f(x)=a^x$
 
-        dengan \(a>0\) dan \(a\neq1\).
+        dengan $a>0$ dan $a\neq1$.
 
         **3. Pertumbuhan**
 
