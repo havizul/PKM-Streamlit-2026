@@ -754,11 +754,11 @@ def persamaan_fungsi_eksponensial():
     # ========================================================
 
     st.subheader("5. Tabel Nilai Fungsi")
-
-    st.markdown(r"Perhatikan fungsi $f(x)=2^x$.")
+    st.markdown(r"Perhatikan fungsi: $f(x)=2^x$.")
 
     
-    st.table({
+    import pandas as pd
+    df = pd.DataFrame({
         "x": [-3, -2, -1, 0, 1, 2, 3],
         "f(x) = 2ˣ": [
             "1/8",
@@ -770,6 +770,22 @@ def persamaan_fungsi_eksponensial():
             "8"
         ]
     })
+    
+    st.dataframe(
+        df,
+        hide_index=True,
+        use_container_width=True,
+        column_config={
+            "x": st.column_config.NumberColumn(
+                "x",
+                width="medium"
+            ),
+            "f(x) = 2ˣ": st.column_config.TextColumn(
+                "f(x) = 2ˣ",
+                width="medium"
+            )
+        }
+    )
 
     st.markdown("""
     Dari tabel tersebut terlihat bahwa ketika x bertambah,
