@@ -756,8 +756,32 @@ def persamaan_fungsi_eksponensial():
     st.subheader("5. Tabel Nilai Fungsi")
     st.markdown(r"Perhatikan fungsi: $f(x)=2^x$.")
 
+
+
+    st.markdown(
+    """
+    <table style="width:100%; text-align:center; vertical-align:middle;">
+        <tr>
+            <th>x</th>
+            <th>f(x) = 2ˣ</th>
+        </tr>
+        <tr><td>-3</td><td>1/8</td></tr>
+        <tr><td>-2</td><td>1/4</td></tr>
+        <tr><td>-1</td><td>1/2</td></tr>
+        <tr><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>2</td></tr>
+        <tr><td>2</td><td>4</td></tr>
+        <tr><td>3</td><td>8</td></tr>
+    </table>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
     
     import pandas as pd
+    
     df = pd.DataFrame({
         "x": [-3, -2, -1, 0, 1, 2, 3],
         "f(x) = 2ˣ": [
@@ -774,15 +798,15 @@ def persamaan_fungsi_eksponensial():
     st.dataframe(
         df,
         hide_index=True,
-        use_container_width=True,
+        use_container_width=False,
         column_config={
             "x": st.column_config.NumberColumn(
                 "x",
-                width="medium"
+                width="auto"
             ),
             "f(x) = 2ˣ": st.column_config.TextColumn(
                 "f(x) = 2ˣ",
-                width="medium"
+                width="auto"
             )
         }
     )
