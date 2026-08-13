@@ -529,9 +529,9 @@ def bilangan_berpangkat():
 
 
     with st.container(border=True):
-    st.markdown("**Soal 5**")
-    st.markdown("Sederhanakan:")
-    st.latex(r"\sqrt{180}")
+        st.markdown("**Soal 5**")
+        st.markdown("Sederhanakan:")
+        st.latex(r"\sqrt{180}")
 
     with st.container(border=True):
         st.markdown("**Soal 6**")
