@@ -508,7 +508,7 @@ def bilangan_berpangkat():
     
     Sederhanakan:
     
-    $2^5 \times 2^3$
+    \t $2^5 \times 2^3$
     """)
 
     st.markdown("""
