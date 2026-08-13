@@ -134,7 +134,8 @@ def bilangan_berpangkat():
 
     #st.markdown("dengan a ≠ 0.")
     #st.markdown("dengan \(a\neq0\).")
-    st.markdown(r"dengan \(a\neq0\).")
+    #st.markdown(r"dengan \(a\neq0\).")
+    st.markdown(r"dengan $a \neq 0$.")
 
     st.markdown("Contoh:")
 
