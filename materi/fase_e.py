@@ -775,41 +775,8 @@ def persamaan_fungsi_eksponensial():
     </table>
     """,
     unsafe_allow_html=True
-)
-
-
-
-    
-    import pandas as pd
-    
-    df = pd.DataFrame({
-        "x": [-3, -2, -1, 0, 1, 2, 3],
-        "f(x) = 2ˣ": [
-            "1/8",
-            "1/4",
-            "1/2",
-            "1",
-            "2",
-            "4",
-            "8"
-        ]
-    })
-    
-    st.dataframe(
-        df,
-        hide_index=True,
-        use_container_width=False,
-        column_config={
-            "x": st.column_config.NumberColumn(
-                "x",
-                width="auto"
-            ),
-            "f(x) = 2ˣ": st.column_config.TextColumn(
-                "f(x) = 2ˣ",
-                width="auto"
-            )
-        }
     )
+
 
     st.markdown("""
     Dari tabel tersebut terlihat bahwa ketika x bertambah,
