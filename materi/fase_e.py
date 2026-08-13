@@ -138,7 +138,7 @@ def bilangan_berpangkat():
     #st.markdown("dengan a ≠ 0.")
     #st.markdown("dengan \(a\neq0\).")
     #st.markdown(r"dengan \(a\neq0\).")
-    st.markdown(r"dengan $a \neq 0$.")
+    st.markdown(r"\n dengan $a \neq 0$.")
 
     st.markdown("Contoh:")
 
@@ -207,7 +207,8 @@ def bilangan_berpangkat():
 
     st.subheader("8. Pangkat Nol")
 
-    st.markdown(r"Untuk setiap bilangan real \(a = 0), berlaku:")
+    st.markdown(r"Untuk setiap bilangan real \( $a \neq 0$ \), berlaku:")
+    #st.markdown(r"dengan $a \neq 0$.")
 
     st.latex(r"a^0=1")
 
