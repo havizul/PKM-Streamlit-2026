@@ -8,6 +8,11 @@ def tampilkan(materi):
     elif materi == "Persamaan dan Fungsi Eksponensial":
         # materi berikutnya
         #pass
+        persamaan_fungsi_eksponensial()
+
+    elif materi == "SPtLDV":
+        # materi berikutnya
+        #pass
         st.markdown("""
             ### UNDER MAINTENANCE !!!
             """)
@@ -587,7 +592,8 @@ def bilangan_berpangkat():
         10. Notasi ilmiah menggunakan bentuk \(a\times10^n\).
         """)
 
-
+#=======================================================================================================================================
+#=======================================================================================================================================
 
 def persamaan_fungsi_eksponensial():
 
