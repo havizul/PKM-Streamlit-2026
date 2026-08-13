@@ -972,7 +972,7 @@ def persamaan_fungsi_eksponensial():
     st.latex(r"4^x=2^6")
 
     st.markdown("""
-    Karena $\(4=2^2\)$, maka:
+    Karena $(4=2^2)$, maka:
     """)
 
     st.latex(r"(2^2)^x=2^6")
