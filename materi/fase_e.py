@@ -992,7 +992,7 @@ def persamaan_fungsi_eksponensial():
     st.latex(r"8^{x-1}=2^9")
 
     st.markdown("""
-    Karena \(8=2^3\), maka:
+    Karena $(8=2^3)$, maka:
     """)
 
     st.latex(r"(2^3)^{x-1}=2^9")
@@ -1019,7 +1019,7 @@ def persamaan_fungsi_eksponensial():
     st.latex(r"4^x-5(2^x)+4=0")
 
     st.markdown("""
-    Karena \(4^x=(2^x)^2\), misalkan:
+    Karena $(4^x=(2^x)^2)$, misalkan:
     """)
 
     st.latex(r"t=2^x")
@@ -1032,7 +1032,7 @@ def persamaan_fungsi_eksponensial():
 
     st.latex(r"t=1\quad\text{atau}\quad t=4")
 
-    st.markdown("Kembalikan ke \(2^x\):")
+    st.markdown("Kembalikan ke $(2^x)$:")
 
     st.latex(r"2^x=1")
 
