@@ -258,8 +258,7 @@ def bilangan_berpangkat():
     """)
 
     st.latex(r"a^{\frac{1}{n}}=\sqrt[n]{a}")
-
-    st.latex(r"a^{\frac{m}{n}}=\sqrt[n]{a^m}")
+    #st.latex(r"a^{\frac{m}{n}}=\sqrt[n]{a^m}")
 
     st.markdown("Contoh:")
 
