@@ -233,7 +233,7 @@ def bilangan_berpangkat():
 
     st.latex(r"a^{-n}=\frac{1}{a^n}")
 
-    st.markdown("dengan \($a \neq 0$\).")
+    st.markdown(r"dengan \($a \neq 0$\).")
 
     st.markdown("Contoh:")
 
