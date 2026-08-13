@@ -181,7 +181,8 @@ if menu_utama == "📚 Materi Matematika":
                     """,
                     unsafe_allow_html=True
                 )
-    
+            st.session_state.materi = item
+        
         # ----------------------------------------------------
         # FASE F LANJUT
         # ----------------------------------------------------
