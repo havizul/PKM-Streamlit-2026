@@ -204,8 +204,8 @@ def bilangan_berpangkat():
 
     st.subheader("8. Pangkat Nol")
 
-    st.markdown("""
-    Untuk setiap bilangan real \($a \neq 0$), berlaku:
+    st.markdown(r"""
+    Untuk setiap bilangan real \($a \eq 0$), berlaku:
     """)
 
     st.latex(r"a^0=1")
