@@ -161,26 +161,26 @@ if menu_utama == "📚 Materi Matematika":
 
             for item in FASE_F_UMUM:
     
-            st.sidebar.markdown(
-                f"""
-                <a href="?menu={item}" target="_self"
-                   style="
-                       display: block;
-                       width: 100%;
-                       padding: 10px 14px;
-                       margin: 4px 0;
-                       background-color: #E8F0FE;
-                       color: #1A73E8;
-                       text-decoration: none;
-                       border-radius: 6px;
-                       font-weight: 500;
-                       box-sizing: border-box;
-                   ">
-                   {item}
-                </a>
-                """,
-                unsafe_allow_html=True
-            )
+                st.sidebar.markdown(
+                    f"""
+                    <a href="?menu={item}" target="_self"
+                       style="
+                           display: block;
+                           width: 100%;
+                           padding: 10px 14px;
+                           margin: 4px 0;
+                           background-color: #E8F0FE;
+                           color: #1A73E8;
+                           text-decoration: none;
+                           border-radius: 6px;
+                           font-weight: 500;
+                           box-sizing: border-box;
+                       ">
+                       {item}
+                    </a>
+                    """,
+                    unsafe_allow_html=True
+                )
     
         # ----------------------------------------------------
         # FASE F LANJUT
