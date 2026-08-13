@@ -755,11 +755,8 @@ def persamaan_fungsi_eksponensial():
 
     st.subheader("5. Tabel Nilai Fungsi")
 
-    st.markdown("""
-    Perhatikan fungsi
-    """)
+    st.markdown(r"Perhatikan fungsi $f(x)=2^x$.")
 
-    st.latex(r"\(f(x)=2^x\)")
     
     st.table({
         "x": [-3, -2, -1, 0, 1, 2, 3],
