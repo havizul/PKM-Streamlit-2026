@@ -189,7 +189,8 @@ def bilangan_berpangkat():
 
     st.latex(r"\left(\frac{a}{b}\right)^n=\frac{a^n}{b^n}")
 
-    st.markdown("dengan \(b\neq0\).")
+    #st.markdown("dengan \(b\neq0\).")
+    st.markdown(r"dengan $b \neq 0$.")
 
     st.markdown("Contoh:")
 
@@ -204,7 +205,7 @@ def bilangan_berpangkat():
     st.subheader("8. Pangkat Nol")
 
     st.markdown("""
-    Untuk setiap bilangan real \(a\neq0\), berlaku:
+    Untuk setiap bilangan real \($a \neq 0$), berlaku:
     """)
 
     st.latex(r"a^0=1")
@@ -230,7 +231,7 @@ def bilangan_berpangkat():
 
     st.latex(r"a^{-n}=\frac{1}{a^n}")
 
-    st.markdown("dengan \(a\neq0\).")
+    st.markdown("dengan \($a \neq 0$\).")
 
     st.markdown("Contoh:")
 
