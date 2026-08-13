@@ -672,12 +672,9 @@ def persamaan_fungsi_eksponensial():
 
     st.latex(r"f(x)=a^x")
 
-    st.markdown("""
-    dengan syarat:
-
-    - \(a>0\)
-    - \(a\neq1\)
-    """)
+    st.markdown("dengan syarat:")
+    st.markdown(r"- $a > 0$")
+    st.markdown(r"- $a \neq 1$")
 
     st.markdown("""
     Keterangan:
