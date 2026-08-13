@@ -800,9 +800,7 @@ def persamaan_fungsi_eksponensial():
     """)
 
     st.latex(r"f(0)=a^0=1")
-
     st.latex(r"D_f=\mathbb{R}")
-
     st.latex(r"R_f=(0,\infty)")
 
     # ========================================================
@@ -812,7 +810,7 @@ def persamaan_fungsi_eksponensial():
     st.subheader("7. Pertumbuhan Eksponensial")
 
     st.markdown("""
-    Jika basis lebih besar dari 1, yaitu \(a>1\),
+    Jika basis lebih besar dari 1, yaitu \(a > 1\),
     maka fungsi eksponensial bersifat meningkat.
     """)
 
@@ -837,16 +835,14 @@ def persamaan_fungsi_eksponensial():
     st.subheader("8. Peluruhan Eksponensial")
 
     st.markdown("""
-    Jika \(0<a<1\), maka fungsi eksponensial bersifat menurun.
+    Jika \(0 < a < 1\), maka fungsi eksponensial bersifat menurun.
     Kondisi ini disebut peluruhan eksponensial.
     """)
 
     st.latex(r"f(x)=a^x,\quad0<a<1")
 
     st.markdown("Contoh:")
-
     st.latex(r"f(x)=\left(\frac{1}{2}\right)^x")
-
     st.latex(r"f(x)=\left(\frac{1}{3}\right)^x")
 
     st.success(
@@ -922,9 +918,9 @@ def persamaan_fungsi_eksponensial():
 
     st.latex(r"a^{f(x)}=a^{g(x)}")
 
-    st.markdown("""
+    st.markdown(r"""
     Jika kedua ruas memiliki basis yang sama dan basis tersebut
-    memenuhi \(a>0\) serta \(a\neq1\), maka eksponennya dapat
+    memenuhi $a>0$ serta $a\neq1$, maka eksponennya dapat
     disamakan.
     """)
 
