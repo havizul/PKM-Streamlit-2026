@@ -13,7 +13,7 @@ def tampilkan(materi):
     elif materi == "SPtLDV":
         # materi berikutnya
         #pass
-        def sptldv()
+        sptldv()
 
     # dan seterusnya
 
