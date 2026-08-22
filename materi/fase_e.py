@@ -600,9 +600,8 @@ def sptldv():
 
     Tentukan apakah bentuk berikut merupakan pertidaksamaan
     linear dua variabel:
-
-    st.latex(r"2x+3y\leq12\")
     """)
+    st.latex(r"2x+3y\leq12\")
 
     st.markdown("""
     **Soal 2**
