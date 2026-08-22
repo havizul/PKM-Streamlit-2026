@@ -13,11 +13,719 @@ def tampilkan(materi):
     elif materi == "SPtLDV":
         # materi berikutnya
         #pass
-        st.markdown("""
-            ### UNDER MAINTENANCE !!!
-            """)
+        def sptldv()
 
     # dan seterusnya
+
+def sptldv():
+
+    st.header("📊 Sistem Pertidaksamaan Linear Dua Variabel (SPtLDV)")
+
+    st.markdown("""
+    ### Matematika Kelas X — Fase E
+
+    Sistem Pertidaksamaan Linear Dua Variabel atau SPtLDV merupakan
+    sistem yang terdiri atas dua atau lebih pertidaksamaan linear
+    yang melibatkan dua variabel.
+
+    Konsep SPtLDV banyak digunakan untuk menentukan daerah yang
+    memenuhi beberapa batasan secara bersamaan, misalnya dalam
+    perencanaan produksi, alokasi sumber daya, dan masalah optimasi.
+    """)
+
+    # ========================================================
+    # TUJUAN PEMBELAJARAN
+    # ========================================================
+
+    with st.expander("🎯 Tujuan Pembelajaran", expanded=True):
+
+        st.markdown("""
+        Setelah mempelajari materi ini, peserta didik diharapkan mampu:
+
+        1. Menjelaskan pengertian pertidaksamaan linear dua variabel.
+        2. Menentukan bentuk umum pertidaksamaan linear dua variabel.
+        3. Menggambar grafik garis batas.
+        4. Menentukan daerah penyelesaian pertidaksamaan.
+        5. Menggunakan titik uji untuk menentukan daerah penyelesaian.
+        6. Menentukan daerah penyelesaian sistem pertidaksamaan.
+        7. Menyelesaikan masalah kontekstual menggunakan SPtLDV.
+        """)
+
+    # ========================================================
+    # 1. APERSEPSI
+    # ========================================================
+
+    st.subheader("1. Apersepsi")
+
+    st.markdown("""
+    Dalam kehidupan sehari-hari sering terdapat kondisi yang
+    menggunakan kata-kata seperti:
+
+    - paling sedikit;
+    - paling banyak;
+    - tidak lebih dari;
+    - tidak kurang dari;
+    - maksimum;
+    - minimum.
+
+    Kondisi tersebut dapat dinyatakan menggunakan pertidaksamaan.
+    """)
+
+    st.markdown("""
+    Misalnya, seorang siswa memiliki uang Rp50.000 dan ingin membeli
+    buku seharga x rupiah serta alat tulis seharga y rupiah.
+
+    Jumlah uang yang digunakan tidak boleh melebihi Rp50.000.
+    """)
+
+    st.latex(r"x+y\leq50000")
+
+    st.info(
+        "Pertidaksamaan digunakan untuk menyatakan kondisi yang "
+        "memiliki batas atau rentang nilai tertentu."
+    )
+
+    # ========================================================
+    # 2. PENGERTIAN
+    # ========================================================
+
+    st.subheader("2. Pengertian Pertidaksamaan Linear Dua Variabel")
+
+    st.markdown("""
+    Pertidaksamaan linear dua variabel adalah pertidaksamaan
+    yang memuat dua variabel dengan pangkat tertinggi masing-masing
+    variabel adalah satu.
+    """)
+
+    st.markdown("Bentuk umumnya adalah:")
+
+    st.latex(r"ax+by<c")
+
+    st.markdown("atau bentuk lainnya:")
+
+    st.latex(r"ax+by\leq c")
+
+    st.latex(r"ax+by>c")
+
+    st.latex(r"ax+by\geq c")
+
+    st.markdown("""
+    dengan a dan b tidak keduanya sama dengan nol.
+    """)
+
+    # ========================================================
+    # 3. CONTOH
+    # ========================================================
+
+    st.subheader("3. Contoh Pertidaksamaan Linear Dua Variabel")
+
+    st.markdown("Beberapa contoh:");
+
+    st.latex(r"2x+3y\leq12")
+
+    st.latex(r"x-y>4")
+
+    st.latex(r"3x+2y\geq6")
+
+    st.latex(r"4x+y<20")
+
+    st.markdown("""
+    Semua bentuk tersebut merupakan pertidaksamaan linear
+    dua variabel karena variabel x dan y berpangkat satu.
+    """)
+
+    # ========================================================
+    # 4. BUKAN PERTIDAKSAMAAN LINEAR
+    # ========================================================
+
+    st.subheader("4. Contoh yang Bukan Pertidaksamaan Linear")
+
+    st.markdown("""
+    Beberapa bentuk berikut bukan pertidaksamaan linear
+    dua variabel:
+    """)
+
+    st.latex(r"x^2+y\leq10")
+
+    st.latex(r"xy>5")
+
+    st.latex(r"x+y^2<8")
+
+    st.info(
+        "Jika terdapat perkalian antarvariabel atau pangkat variabel "
+        "lebih dari satu, maka bentuk tersebut bukan pertidaksamaan linear."
+    )
+
+    # ========================================================
+    # 5. HUBUNGAN DENGAN PERSAMAAN GARIS
+    # ========================================================
+
+    st.subheader("5. Garis Batas")
+
+    st.markdown("""
+    Untuk menggambar grafik pertidaksamaan linear,
+    tanda pertidaksamaan sementara diubah menjadi tanda sama dengan.
+
+    Misalnya:
+    """)
+
+    st.latex(r"2x+y\leq6")
+
+    st.markdown("Garis batasnya adalah:")
+
+    st.latex(r"2x+y=6")
+
+    st.markdown("""
+    Garis tersebut digunakan untuk membatasi daerah yang memenuhi
+    pertidaksamaan.
+    """)
+
+    # ========================================================
+    # 6. MENENTUKAN TITIK POTONG
+    # ========================================================
+
+    st.subheader("6. Menentukan Titik Potong Garis")
+
+    st.markdown("""
+    Untuk menggambar garis, salah satu cara yang mudah adalah
+    menentukan titik potong dengan sumbu-X dan sumbu-Y.
+    """)
+
+    st.markdown("Misalkan:")
+
+    st.latex(r"2x+y=6")
+
+    st.markdown("### Titik potong sumbu-X")
+
+    st.markdown("""
+    Untuk sumbu-X, nilai y = 0.
+    """)
+
+    st.latex(r"2x+0=6")
+
+    st.latex(r"x=3")
+
+    st.markdown("Titiknya adalah:")
+
+    st.latex(r"(3,0)")
+
+    st.markdown("### Titik potong sumbu-Y")
+
+    st.markdown("""
+    Untuk sumbu-Y, nilai x = 0.
+    """)
+
+    st.latex(r"2(0)+y=6")
+
+    st.latex(r"y=6")
+
+    st.markdown("Titiknya adalah:")
+
+    st.latex(r"(0,6)")
+
+    # ========================================================
+    # 7. GARIS SOLID DAN PUTUS-PUTUS
+    # ========================================================
+
+    st.subheader("7. Garis Batas pada Grafik")
+
+    st.markdown("""
+    Jenis garis batas ditentukan oleh tanda pertidaksamaan.
+    """)
+
+    st.table({
+        "Tanda": [
+            "<",
+            ">",
+            "≤",
+            "≥"
+        ],
+        "Garis Batas": [
+            "Putus-putus",
+            "Putus-putus",
+            "Penuh",
+            "Penuh"
+        ]
+    })
+
+    st.info(
+        "Tanda ≤ atau ≥ berarti garis batas termasuk daerah penyelesaian."
+    )
+
+    # ========================================================
+    # 8. MENENTUKAN DAERAH PENYELESAIAN
+    # ========================================================
+
+    st.subheader("8. Menentukan Daerah Penyelesaian")
+
+    st.markdown("""
+    Setelah menggambar garis batas, kita perlu menentukan
+    sisi bidang yang memenuhi pertidaksamaan.
+
+    Salah satu cara yang paling mudah adalah menggunakan
+    titik uji.
+    """)
+
+    # ========================================================
+    # 9. TITIK UJI
+    # ========================================================
+
+    st.subheader("9. Metode Titik Uji")
+
+    st.markdown("""
+    Misalkan diberikan:
+    """)
+
+    st.latex(r"2x+y\leq6")
+
+    st.markdown("""
+    Pilih titik yang tidak berada pada garis batas.
+    Salah satu pilihan yang mudah adalah titik O(0,0).
+    """)
+
+    st.latex(r"2(0)+0\leq6")
+
+    st.latex(r"0\leq6")
+
+    st.success(
+        "Pernyataan benar, sehingga titik (0,0) termasuk daerah penyelesaian."
+    )
+
+    # ========================================================
+    # 10. CONTOH TITIK UJI LAIN
+    # ========================================================
+
+    st.markdown("""
+    Misalkan:
+    """)
+
+    st.latex(r"x+y>4")
+
+    st.markdown("""
+    Gunakan titik (0,0) sebagai titik uji.
+    """)
+
+    st.latex(r"0+0>4")
+
+    st.markdown("""
+    Pernyataan tersebut salah.
+
+    Jadi titik (0,0) bukan bagian dari daerah penyelesaian.
+    """)
+
+    # ========================================================
+    # 11. SISTEM PERTIDAKSAMAAN
+    # ========================================================
+
+    st.subheader("11. Sistem Pertidaksamaan Linear Dua Variabel")
+
+    st.markdown("""
+    Sistem pertidaksamaan linear dua variabel terdiri atas
+    dua atau lebih pertidaksamaan yang harus dipenuhi secara
+    bersamaan.
+    """)
+
+    st.markdown("Contoh:")
+
+    st.latex(r"x+y\leq6")
+
+    st.latex(r"x\geq0")
+
+    st.latex(r"y\geq0")
+
+    st.markdown("""
+    Daerah penyelesaian adalah daerah yang memenuhi
+    seluruh pertidaksamaan tersebut.
+    """)
+
+    # ========================================================
+    # 12. LANGKAH PENYELESAIAN
+    # ========================================================
+
+    st.subheader("12. Langkah-Langkah Menyelesaikan SPtLDV")
+
+    st.markdown("""
+    **Langkah 1**
+
+    Ubah masing-masing pertidaksamaan menjadi persamaan
+    untuk mendapatkan garis batas.
+
+    **Langkah 2**
+
+    Tentukan minimal dua titik pada masing-masing garis.
+
+    **Langkah 3**
+
+    Gambar garis batas pada bidang koordinat.
+
+    **Langkah 4**
+
+    Tentukan daerah penyelesaian masing-masing pertidaksamaan
+    menggunakan titik uji.
+
+    **Langkah 5**
+
+    Tentukan irisan seluruh daerah penyelesaian.
+
+    **Langkah 6**
+
+    Arsirlah daerah yang memenuhi seluruh pertidaksamaan.
+    """)
+
+    # ========================================================
+    # 13. CONTOH SPtLDV
+    # ========================================================
+
+    st.subheader("13. Contoh SPtLDV")
+
+    st.markdown("""
+    Tentukan daerah penyelesaian dari:
+    """)
+
+    st.latex(r"x+y\leq6")
+
+    st.latex(r"x\geq0")
+
+    st.latex(r"y\geq0")
+
+    st.markdown("### Langkah 1 — Garis batas")
+
+    st.latex(r"x+y=6")
+
+    st.markdown("Titik potong dengan sumbu-X:")
+
+    st.latex(r"(6,0)")
+
+    st.markdown("Titik potong dengan sumbu-Y:")
+
+    st.latex(r"(0,6)")
+
+    st.markdown("""
+    Karena x ≥ 0 dan y ≥ 0, daerah penyelesaian berada
+    pada kuadran I.
+
+    Daerah penyelesaian merupakan daerah segitiga yang
+    dibatasi oleh sumbu-X, sumbu-Y, dan garis x + y = 6.
+    """)
+
+    # ========================================================
+    # 14. CONTOH DENGAN DUA BATAS
+    # ========================================================
+
+    st.subheader("14. Contoh dengan Dua Pertidaksamaan")
+
+    st.markdown("""
+    Tentukan daerah penyelesaian:
+    """)
+
+    st.latex(r"x+y\leq8")
+
+    st.latex(r"x+2y\leq10")
+
+    st.latex(r"x\geq0")
+
+    st.latex(r"y\geq0")
+
+    st.markdown("""
+    Penyelesaian diperoleh dengan menggambar seluruh garis batas
+    kemudian mencari daerah yang memenuhi semua pertidaksamaan.
+    """)
+
+    # ========================================================
+    # 15. DAERAH PENYELESAIAN DENGAN INTERAKTIF
+    # ========================================================
+
+    st.subheader("15. Eksplorasi Grafik SPtLDV")
+
+    st.markdown("""
+    Gunakan slider berikut untuk mengubah konstanta pada
+    pertidaksamaan:
+    """)
+
+    batas = st.slider(
+        "Nilai batas c pada x + y ≤ c",
+        min_value=2,
+        max_value=20,
+        value=6,
+        step=1
+    )
+
+    st.latex(r"x+y\leq c")
+
+    st.markdown(f"""
+    Pada eksplorasi ini digunakan nilai c = **{batas}**.
+
+    Garis batasnya adalah:
+    """)
+
+    st.latex(f"x+y={batas}")
+
+    st.info(
+        "Semakin besar nilai c, semakin luas daerah yang memenuhi "
+        "pertidaksamaan x + y ≤ c pada kuadran pertama."
+    )
+
+    # ========================================================
+    # 16. PENERAPAN
+    # ========================================================
+
+    st.subheader("16. Penerapan SPtLDV")
+
+    st.markdown("""
+    SPtLDV dapat digunakan untuk memodelkan berbagai masalah
+    dalam kehidupan sehari-hari, seperti:
+
+    - perencanaan produksi;
+    - pembelian barang;
+    - penggunaan bahan baku;
+    - alokasi waktu;
+    - penggunaan anggaran;
+    - kapasitas kendaraan;
+    - perencanaan makanan;
+    - masalah optimasi sederhana.
+    """)
+
+    # ========================================================
+    # 17. CONTOH KONTEKSTUAL
+    # ========================================================
+
+    st.subheader("17. Contoh Masalah Kontekstual")
+
+    st.markdown("""
+    Sebuah toko menjual buku dan alat tulis.
+
+    Misalkan:
+
+    - x = banyak buku;
+    - y = banyak alat tulis.
+
+    Kapasitas penyimpanan toko paling banyak 50 barang.
+    """)
+
+    st.latex(r"x+y\leq50")
+
+    st.markdown("""
+    Jika jumlah buku dan alat tulis tidak boleh negatif:
+    """)
+
+    st.latex(r"x\geq0")
+
+    st.latex(r"y\geq0")
+
+    st.markdown("""
+    Ketiga pertidaksamaan tersebut membentuk model SPtLDV
+    untuk masalah tersebut.
+    """)
+
+    # ========================================================
+    # 18. CONTOH PRODUKSI
+    # ========================================================
+
+    st.subheader("18. Contoh Perencanaan Produksi")
+
+    st.markdown("""
+    Sebuah usaha memproduksi meja dan kursi.
+
+    Misalkan:
+
+    - x = jumlah meja;
+    - y = jumlah kursi.
+
+    Setiap meja membutuhkan 4 unit bahan.
+    Setiap kursi membutuhkan 2 unit bahan.
+    Persediaan bahan hanya 40 unit.
+    """)
+
+    st.latex(r"4x+2y\leq40")
+
+    st.markdown("""
+    Jika kapasitas produksi paling banyak 15 barang:
+    """)
+
+    st.latex(r"x+y\leq15")
+
+    st.markdown("""
+    Karena jumlah produk tidak mungkin negatif:
+    """)
+
+    st.latex(r"x\geq0")
+
+    st.latex(r"y\geq0")
+
+    st.markdown("""
+    Sistem tersebut merupakan model SPtLDV.
+    """)
+
+    # ========================================================
+    # 19. HUBUNGAN DENGAN PROGRAM LINEAR
+    # ========================================================
+
+    st.subheader("19. SPtLDV dan Program Linear")
+
+    st.markdown("""
+    SPtLDV sering digunakan sebagai dasar dalam program linear.
+
+    Dalam program linear, kita biasanya memiliki:
+
+    **1. Variabel keputusan**
+
+    Variabel yang nilainya ingin ditentukan.
+
+    **2. Kendala**
+
+    Pertidaksamaan yang membatasi variabel.
+
+    **3. Fungsi tujuan**
+
+    Fungsi yang akan dimaksimumkan atau diminimumkan.
+    """)
+
+    st.markdown("Contoh fungsi tujuan:")
+
+    st.latex(r"Z=5000x+3000y")
+
+    st.markdown("""
+    Fungsi tersebut dapat digunakan untuk menentukan keuntungan
+    maksimum apabila x dan y menyatakan jumlah produk.
+    """)
+
+    # ========================================================
+    # 20. LATIHAN
+    # ========================================================
+
+    st.subheader("20. Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Tentukan apakah bentuk berikut merupakan pertidaksamaan
+    linear dua variabel:
+
+    \(2x+3y\leq12\)
+    """)
+
+    st.markdown("""
+    **Soal 2**
+
+    Tentukan titik potong sumbu-X dan sumbu-Y dari:
+
+    \(2x+y=8\)
+    """)
+
+    st.markdown("""
+    **Soal 3**
+
+    Tentukan apakah titik (2,1) memenuhi:
+
+    \(x+y\leq4\)
+    """)
+
+    st.markdown("""
+    **Soal 4**
+
+    Tentukan daerah penyelesaian:
+
+    \(x+y\leq6\), \(x\geq0\), dan \(y\geq0\).
+    """)
+
+    st.markdown("""
+    **Soal 5**
+
+    Tentukan apakah titik (3,2) memenuhi sistem:
+
+    \(x+y\leq5\)
+
+    \(x\geq0\)
+
+    \(y\geq0\)
+    """)
+
+    st.markdown("""
+    **Soal 6**
+
+    Sebuah toko memiliki kapasitas penyimpanan paling banyak
+    100 barang. Jika x menyatakan jumlah buku dan y menyatakan
+    jumlah alat tulis, tuliskan model pertidaksamaannya.
+    """)
+
+    # ========================================================
+    # 21. KUIS INTERAKTIF
+    # ========================================================
+
+    st.subheader("21. Kuis Interaktif")
+
+    jawaban = st.radio(
+        "Manakah yang merupakan pertidaksamaan linear dua variabel?",
+        [
+            "x² + y ≤ 10",
+            "2x + 3y ≤ 12",
+            "xy ≥ 5",
+            "x + y² > 4"
+        ],
+        key="kuis_sptldv_1"
+    )
+
+    if st.button(
+        "Periksa Jawaban",
+        key="cek_sptldv_1"
+    ):
+
+        if jawaban == "2x + 3y ≤ 12":
+
+            st.success(
+                "✅ Benar! Variabel x dan y berpangkat satu."
+            )
+
+        else:
+
+            st.error(
+                "❌ Belum tepat. Perhatikan pangkat variabel x dan y."
+            )
+
+    # ========================================================
+    # 22. RANGKUMAN
+    # ========================================================
+
+    with st.expander("📌 Rangkuman Materi", expanded=False):
+
+        st.markdown("""
+        ### Konsep penting SPtLDV
+
+        **1. Pertidaksamaan linear dua variabel**
+
+        Memuat dua variabel dengan pangkat tertinggi satu.
+
+        **2. Garis batas**
+
+        Diperoleh dengan mengganti tanda pertidaksamaan
+        menjadi tanda sama dengan.
+
+        **3. Titik uji**
+
+        Digunakan untuk menentukan sisi bidang yang memenuhi
+        pertidaksamaan.
+
+        **4. Garis penuh**
+
+        Digunakan untuk tanda ≤ atau ≥.
+
+        **5. Garis putus-putus**
+
+        Digunakan untuk tanda < atau >.
+
+        **6. Sistem pertidaksamaan**
+
+        Daerah penyelesaian merupakan irisan dari seluruh
+        daerah yang memenuhi masing-masing pertidaksamaan.
+
+        **7. Penerapan**
+
+        SPtLDV dapat digunakan untuk memodelkan kendala
+        dalam masalah kehidupan nyata dan menjadi dasar
+        dalam program linear.
+        """)
+
+
 
 def bilangan_berpangkat():
 
