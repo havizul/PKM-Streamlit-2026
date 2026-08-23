@@ -20,10 +20,12 @@ def tampilkan(materi):
     elif materi == "Persamaan dan Fungsi Kuadrat":
         persamaan_fungsi_kuadrat()
 
-    # dan seterusnya
-
     elif materi == "Trigonometri I":
         trigonometri_1()
+    
+    # dan seterusnya
+
+
 
 def trigonometri_1():
 
