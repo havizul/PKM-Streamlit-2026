@@ -740,7 +740,7 @@ def trigonometri_1():
 
     Tentukan nilai:
 
-    cos(60°)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$cos(60°)$
     """)
 
     st.markdown("""
@@ -748,7 +748,7 @@ def trigonometri_1():
 
     Tentukan nilai:
 
-    tan(45°)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$tan(45°)$
     """)
 
     st.markdown("""
@@ -832,23 +832,23 @@ def trigonometri_1():
 
         Hubungan sisi segitiga siku-siku:
 
-        \(a^2+b^2=c^2\)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$a^2+b^2=c^2$
 
         **3. Sinus**
 
-        sin(θ) = sisi depan / sisi miring
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sin(θ) = sisi depan / sisi miring
 
         **4. Cosinus**
 
-        cos(θ) = sisi samping / sisi miring
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$cos(θ) = sisi samping / sisi miring
 
         **5. Tangen**
 
-        tan(θ) = sisi depan / sisi samping
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$tan(θ) = sisi depan / sisi samping
 
         **6. Hubungan Sinus dan Cosinus**
 
-        tan(θ) = sin(θ) / cos(θ)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$tan(θ) = sin(θ) / cos(θ)
 
         **7. Identitas Pythagoras**
 
