@@ -207,6 +207,32 @@ def trigonometri_1():
     **S**ine = **O**pposite / **H**ypotenuse.
     """)
 
+
+    # Visualisasi segitiga
+    
+::contentReference[oaicite:0]{index=0}
+
+
+    # ========================================================
+    # 7. COSINUS
+    # ========================================================
+
+    st.subheader("7. Perbandingan Trigonometri: Cosinus")
+
+    st.markdown("""
+    Cosinus suatu sudut pada segitiga siku-siku merupakan
+    perbandingan antara sisi samping dan sisi miring.
+    """)
+
+    st.latex(r"\cos(\theta)=\frac{\text{sisi samping}}{\text{sisi miring}}")
+
+    st.markdown("""
+    Cara mudah mengingatnya adalah **CAH**:
+
+    **C**osine = **A**djacent / **H**ypotenuse.
+    """)
+
+
         
 def persamaan_fungsi_kuadrat():
 
