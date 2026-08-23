@@ -1007,7 +1007,9 @@ def persamaan_fungsi_kuadrat():
 
         ### Sumbu Simetri 
         """)
-        st.latex(r"\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad x=-\frac{b}{2a}")
+        st.markdown(r"""
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$x=-\frac{b}{2a}$
+        """)
         
         st.markdown("""
 
