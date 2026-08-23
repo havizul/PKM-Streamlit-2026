@@ -16,8 +16,1015 @@ def tampilkan(materi):
         # materi berikutnya
         #pass
         sptldv()
+        
+    elif materi == "Persamaan dan Fungsi Kuadrat":
+        persamaan_fungsi_kuadrat()
 
     # dan seterusnya
+
+def persamaan_fungsi_kuadrat():
+
+    st.header("📈 Persamaan dan Fungsi Kuadrat")
+
+    st.markdown("""
+    ### Matematika Kelas X — Fase E
+
+    Persamaan dan fungsi kuadrat merupakan konsep penting dalam
+    matematika yang berkaitan dengan polinomial berderajat dua.
+    Konsep ini dapat digunakan untuk menyelesaikan berbagai
+    masalah matematika dan masalah kontekstual.
+    """)
+
+    # ========================================================
+    # TUJUAN PEMBELAJARAN
+    # ========================================================
+
+    with st.expander("🎯 Tujuan Pembelajaran", expanded=True):
+
+        st.markdown("""
+        Setelah mempelajari materi ini, peserta didik diharapkan mampu:
+
+        1. Menjelaskan pengertian persamaan kuadrat.
+        2. Menentukan bentuk umum persamaan kuadrat.
+        3. Menentukan akar-akar persamaan kuadrat.
+        4. Menyelesaikan persamaan kuadrat dengan faktorisasi.
+        5. Menyelesaikan persamaan kuadrat dengan melengkapkan kuadrat sempurna.
+        6. Menggunakan rumus kuadrat atau rumus ABC.
+        7. Menentukan diskriminan dan jenis akar.
+        8. Menentukan hubungan antara akar dan koefisien.
+        9. Menjelaskan pengertian fungsi kuadrat.
+        10. Menggambar dan menganalisis grafik fungsi kuadrat.
+        11. Menentukan titik puncak dan sumbu simetri.
+        12. Menerapkan fungsi kuadrat dalam masalah kontekstual.
+        """)
+
+    # ========================================================
+    # 1. APERSEPSI
+    # ========================================================
+
+    st.subheader("1. Apersepsi")
+
+    st.markdown("""
+    Perhatikan persamaan berikut:
+    """)
+
+    st.latex(r"x^2-5x+6=0")
+
+    st.markdown("""
+    Persamaan tersebut merupakan persamaan kuadrat karena
+    pangkat tertinggi dari variabel x adalah 2.
+
+    Persamaan kuadrat banyak ditemukan dalam permasalahan
+    yang melibatkan luas, lintasan benda, keuntungan, dan
+    berbagai hubungan nonlinear.
+    """)
+
+    # ========================================================
+    # 2. PENGERTIAN PERSAMAAN KUADRAT
+    # ========================================================
+
+    st.subheader("2. Pengertian Persamaan Kuadrat")
+
+    st.markdown("""
+    Persamaan kuadrat adalah persamaan polinomial yang
+    memiliki derajat dua.
+    """)
+
+    st.markdown("Bentuk umumnya adalah:")
+
+    st.latex(r"ax^2+bx+c=0")
+
+    st.markdown("""
+    dengan:
+
+    - a, b, dan c merupakan bilangan real;
+    - a ≠ 0;
+    - x merupakan variabel.
+    """)
+
+    # ========================================================
+    # 3. CONTOH PERSAMAAN KUADRAT
+    # ========================================================
+
+    st.subheader("3. Contoh Persamaan Kuadrat")
+
+    st.markdown("Contoh:");
+
+    st.latex(r"x^2-5x+6=0")
+
+    st.latex(r"2x^2+3x-5=0")
+
+    st.latex(r"4x^2-16=0")
+
+    st.latex(r"-3x^2+7x+2=0")
+
+    st.markdown("""
+    Semua persamaan tersebut merupakan persamaan kuadrat
+    karena memiliki pangkat tertinggi dua.
+    """)
+
+    # ========================================================
+    # 4. BUKAN PERSAMAAN KUADRAT
+    # ========================================================
+
+    st.subheader("4. Contoh yang Bukan Persamaan Kuadrat")
+
+    st.latex(r"2x+5=0")
+
+    st.latex(r"x^3-2x+1=0")
+
+    st.latex(r"\frac{1}{x}+2=0")
+
+    st.info(
+        "Persamaan linear memiliki derajat satu, sedangkan "
+        "persamaan kubik memiliki derajat tiga."
+    )
+
+    # ========================================================
+    # 5. KOEFISIEN
+    # ========================================================
+
+    st.subheader("5. Koefisien Persamaan Kuadrat")
+
+    st.markdown("""
+    Pada persamaan:
+    """)
+
+    st.latex(r"3x^2-7x+4=0")
+
+    st.markdown("""
+    diperoleh:
+
+    - a = 3
+    - b = −7
+    - c = 4
+    """)
+
+    # ========================================================
+    # 6. MENYELESAIKAN PERSAMAAN KUADRAT
+    # ========================================================
+
+    st.subheader("6. Penyelesaian Persamaan Kuadrat")
+
+    st.markdown("""
+    Akar atau penyelesaian persamaan kuadrat adalah nilai x
+    yang membuat persamaan bernilai benar.
+
+    Beberapa metode yang dapat digunakan adalah:
+
+    1. Faktorisasi.
+    2. Melengkapkan kuadrat sempurna.
+    3. Rumus kuadrat atau rumus ABC.
+    """)
+
+    # ========================================================
+    # 7. FAKTORISASI
+    # ========================================================
+
+    st.subheader("7. Metode Faktorisasi")
+
+    st.markdown("""
+    Perhatikan persamaan:
+    """)
+
+    st.latex(r"x^2-5x+6=0")
+
+    st.markdown("""
+    Kita mencari dua bilangan yang hasil kalinya 6
+    dan jumlahnya −5.
+    """)
+
+    st.latex(r"-2\times-3=6")
+
+    st.latex(r"-2+(-3)=-5")
+
+    st.markdown("Maka:");
+
+    st.latex(r"(x-2)(x-3)=0")
+
+    st.markdown("""
+    Berdasarkan sifat perkalian nol:
+    """)
+
+    st.latex(r"x-2=0")
+
+    st.latex(r"x-3=0")
+
+    st.latex(r"x=2\quad\text{atau}\quad x=3")
+
+    st.success("Akar-akarnya adalah x = 2 dan x = 3.")
+
+    # ========================================================
+    # 8. FAKTORISASI DENGAN KOEFISIEN A TIDAK SAMA 1
+    # ========================================================
+
+    st.subheader("8. Faktorisasi dengan a ≠ 1")
+
+    st.markdown("""
+    Contoh:
+    """)
+
+    st.latex(r"2x^2+7x+3=0")
+
+    st.markdown("""
+    Faktorkan:
+    """)
+
+    st.latex(r"(2x+1)(x+3)=0")
+
+    st.markdown("Maka:");
+
+    st.latex(r"2x+1=0")
+
+    st.latex(r"x=-\frac{1}{2}")
+
+    st.latex(r"x+3=0")
+
+    st.latex(r"x=-3")
+
+    st.success("Akar-akarnya adalah x = −1/2 dan x = −3.")
+
+    # ========================================================
+    # 9. MELENGKAPKAN KUADRAT SEMPURNA
+    # ========================================================
+
+    st.subheader("9. Metode Melengkapkan Kuadrat Sempurna")
+
+    st.markdown("""
+    Metode ini mengubah persamaan kuadrat menjadi bentuk
+    kuadrat sempurna.
+    """)
+
+    st.markdown("Contoh:");
+
+    st.latex(r"x^2+6x+5=0")
+
+    st.markdown("Pindahkan konstanta:");
+
+    st.latex(r"x^2+6x=-5")
+
+    st.markdown("""
+    Tambahkan kuadrat dari setengah koefisien x.
+    """)
+
+    st.latex(r"\left(\frac{6}{2}\right)^2=9")
+
+    st.markdown("Maka:");
+
+    st.latex(r"x^2+6x+9=4")
+
+    st.latex(r"(x+3)^2=4")
+
+    st.latex(r"x+3=\pm2")
+
+    st.latex(r"x=-1\quad\text{atau}\quad x=-5")
+
+    # ========================================================
+    # 10. RUMUS ABC
+    # ========================================================
+
+    st.subheader("10. Rumus Kuadrat atau Rumus ABC")
+
+    st.markdown("""
+    Untuk persamaan:
+    """)
+
+    st.latex(r"ax^2+bx+c=0")
+
+    st.markdown("""
+    akar-akarnya dapat ditentukan menggunakan rumus:
+    """)
+
+    st.latex(r"x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}")
+
+    st.markdown("""
+    Rumus ini dapat digunakan untuk semua persamaan kuadrat
+    dengan a ≠ 0.
+    """)
+
+    # ========================================================
+    # 11. CONTOH RUMUS ABC
+    # ========================================================
+
+    st.subheader("11. Contoh Menggunakan Rumus ABC")
+
+    st.markdown("""
+    Tentukan akar-akar:
+    """)
+
+    st.latex(r"2x^2-5x-3=0")
+
+    st.markdown("""
+    Diperoleh:
+    """)
+
+    st.latex(r"a=2,\quad b=-5,\quad c=-3")
+
+    st.markdown("Substitusi:");
+
+    st.latex(r"x=\frac{-(-5)\pm\sqrt{(-5)^2-4(2)(-3)}}{2(2)}")
+
+    st.latex(r"x=\frac{5\pm\sqrt{49}}{4}")
+
+    st.latex(r"x=\frac{5\pm7}{4}")
+
+    st.markdown("Sehingga:");
+
+    st.latex(r"x=3")
+
+    st.latex(r"x=-\frac{1}{2}")
+
+    # ========================================================
+    # 12. DISKRIMINAN
+    # ========================================================
+
+    st.subheader("12. Diskriminan")
+
+    st.markdown("""
+    Diskriminan adalah bagian dari rumus ABC yang menentukan
+    jenis akar persamaan kuadrat.
+    """)
+
+    st.latex(r"D=b^2-4ac")
+
+    st.markdown("""
+    Nilai diskriminan menentukan banyak dan jenis akar.
+    """)
+
+    st.table({
+        "Nilai D": [
+            "D > 0",
+            "D = 0",
+            "D < 0"
+        ],
+        "Jenis Akar": [
+            "Dua akar real berbeda",
+            "Satu akar real kembar",
+            "Tidak memiliki akar real"
+        ]
+    })
+
+    # ========================================================
+    # 13. CONTOH DISKRIMINAN
+    # ========================================================
+
+    st.subheader("13. Contoh Menentukan Jenis Akar")
+
+    st.markdown("""
+    Tentukan jenis akar:
+    """)
+
+    st.latex(r"x^2-4x+4=0")
+
+    st.latex(r"D=(-4)^2-4(1)(4)")
+
+    st.latex(r"D=0")
+
+    st.success(
+        "Karena D = 0, persamaan memiliki satu akar real kembar."
+    )
+
+    # ========================================================
+    # 14. HUBUNGAN AKAR DAN KOEFISIEN
+    # ========================================================
+
+    st.subheader("14. Hubungan Akar dan Koefisien")
+
+    st.markdown("""
+    Misalkan akar-akar persamaan:
+    """)
+
+    st.latex(r"ax^2+bx+c=0")
+
+    st.markdown("""
+    adalah x₁ dan x₂.
+    """)
+
+    st.markdown("Jumlah akar:");
+
+    st.latex(r"x_1+x_2=-\frac{b}{a}")
+
+    st.markdown("Hasil kali akar:");
+
+    st.latex(r"x_1x_2=\frac{c}{a}")
+
+    # ========================================================
+    # 15. CONTOH HUBUNGAN AKAR
+    # ========================================================
+
+    st.subheader("15. Contoh Hubungan Akar dan Koefisien")
+
+    st.markdown("""
+    Diketahui:
+    """)
+
+    st.latex(r"2x^2-7x+3=0")
+
+    st.markdown("Jumlah akar:");
+
+    st.latex(r"x_1+x_2=\frac{7}{2}")
+
+    st.markdown("Hasil kali akar:");
+
+    st.latex(r"x_1x_2=\frac{3}{2}")
+
+    # ========================================================
+    # 16. FUNGSI KUADRAT
+    # ========================================================
+
+    st.subheader("16. Pengertian Fungsi Kuadrat")
+
+    st.markdown("""
+    Fungsi kuadrat adalah fungsi polinomial yang memiliki
+    pangkat tertinggi dua.
+    """)
+
+    st.latex(r"f(x)=ax^2+bx+c")
+
+    st.markdown("""
+    dengan a ≠ 0.
+    """)
+
+    st.markdown("Contoh:");
+
+    st.latex(r"f(x)=x^2-4x+3")
+
+    st.latex(r"f(x)=2x^2+3x-5")
+
+    # ========================================================
+    # 17. HUBUNGAN PERSAMAAN DAN FUNGSI KUADRAT
+    # ========================================================
+
+    st.subheader("17. Hubungan Persamaan dan Fungsi Kuadrat")
+
+    st.markdown("""
+    Persamaan kuadrat dapat diperoleh dengan membuat
+    nilai fungsi kuadrat sama dengan nol.
+    """)
+
+    st.latex(r"f(x)=ax^2+bx+c")
+
+    st.latex(r"f(x)=0")
+
+    st.latex(r"ax^2+bx+c=0")
+
+    st.info(
+        "Akar persamaan kuadrat merupakan nilai x ketika "
+        "grafik fungsi kuadrat memotong atau menyentuh sumbu-X."
+    )
+
+    # ========================================================
+    # 18. GRAFIK FUNGSI KUADRAT
+    # ========================================================
+
+    st.subheader("18. Grafik Fungsi Kuadrat")
+
+    st.markdown("""
+    Grafik fungsi kuadrat berbentuk parabola.
+
+    Bentuk dasar:
+    """)
+
+    st.latex(r"f(x)=x^2")
+
+    st.markdown("""
+    Jika a > 0, parabola terbuka ke atas.
+
+    Jika a < 0, parabola terbuka ke bawah.
+    """)
+
+    st.markdown("Contoh grafik fungsi kuadrat:")
+
+    st.latex(r"f(x)=x^2-4x+3")
+
+    # ========================================================
+    # GRAFIK INTERAKTIF
+    # ========================================================
+
+    st.subheader("19. Eksplorasi Grafik Parabola")
+
+    a = st.slider(
+        "Koefisien a",
+        min_value=-5.0,
+        max_value=5.0,
+        value=1.0,
+        step=0.5,
+        key="kuadrat_a"
+    )
+
+    b = st.slider(
+        "Koefisien b",
+        min_value=-10.0,
+        max_value=10.0,
+        value=0.0,
+        step=1.0,
+        key="kuadrat_b"
+    )
+
+    c = st.slider(
+        "Konstanta c",
+        min_value=-10.0,
+        max_value=10.0,
+        value=0.0,
+        step=1.0,
+        key="kuadrat_c"
+    )
+
+    if a != 0:
+
+        st.latex(
+            f"f(x)={a}x^2+{b}x+{c}"
+        )
+
+        st.markdown("""
+        Ubah nilai a, b, dan c untuk melihat perubahan
+        bentuk grafik fungsi kuadrat.
+        """)
+
+        import numpy as np
+        import pandas as pd
+
+        x = np.linspace(-10, 10, 200)
+        y = a * x**2 + b * x + c
+
+        data = pd.DataFrame({
+            "x": x,
+            "f(x)": y
+        })
+
+        st.line_chart(
+            data,
+            x="x",
+            y="f(x)"
+        )
+
+        if a > 0:
+
+            st.success(
+                "Karena a > 0, parabola terbuka ke atas."
+            )
+
+        else:
+
+            st.warning(
+                "Karena a < 0, parabola terbuka ke bawah."
+            )
+
+    else:
+
+        st.warning(
+            "Nilai a tidak boleh 0 karena akan menghasilkan fungsi linear."
+        )
+
+    # ========================================================
+    # 20. SUMBU SIMETRI
+    # ========================================================
+
+    st.subheader("20. Sumbu Simetri")
+
+    st.markdown("""
+    Sumbu simetri parabola merupakan garis vertikal yang
+    membagi parabola menjadi dua bagian yang simetris.
+    """)
+
+    st.latex(r"x=-\frac{b}{2a}")
+
+    st.markdown("Contoh:");
+
+    st.latex(r"f(x)=x^2-6x+5")
+
+    st.latex(r"x=-\frac{-6}{2(1)}")
+
+    st.latex(r"x=3")
+
+    st.success("Sumbu simetrinya adalah x = 3.")
+
+    # ========================================================
+    # 21. TITIK PUNCAK
+    # ========================================================
+
+    st.subheader("21. Titik Puncak")
+
+    st.markdown("""
+    Titik puncak merupakan titik maksimum atau minimum
+    pada grafik fungsi kuadrat.
+    """)
+
+    st.markdown("Koordinat x titik puncak:");
+
+    st.latex(r"x_p=-\frac{b}{2a}")
+
+    st.markdown("Koordinat y diperoleh dengan:");
+
+    st.latex(r"y_p=f(x_p)")
+
+    st.markdown("Sehingga titik puncaknya adalah:");
+
+    st.latex(r"(x_p,y_p)")
+
+    # ========================================================
+    # 22. CONTOH TITIK PUNCAK
+    # ========================================================
+
+    st.subheader("22. Contoh Menentukan Titik Puncak")
+
+    st.markdown("""
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=x^2-6x+5")
+
+    st.markdown("Sumbu simetri:");
+
+    st.latex(r"x_p=3")
+
+    st.markdown("Nilai y:");
+
+    st.latex(r"y_p=3^2-6(3)+5")
+
+    st.latex(r"y_p=-4")
+
+    st.success(
+        "Titik puncaknya adalah (3, −4)."
+    )
+
+    # ========================================================
+    # 23. NILAI MAKSIMUM DAN MINIMUM
+    # ========================================================
+
+    st.subheader("23. Nilai Maksimum dan Minimum")
+
+    st.markdown("""
+    Jika a > 0, parabola terbuka ke atas sehingga
+    titik puncak merupakan nilai minimum.
+
+    Jika a < 0, parabola terbuka ke bawah sehingga
+    titik puncak merupakan nilai maksimum.
+    """)
+
+    st.table({
+        "Kondisi": [
+            "a > 0",
+            "a < 0"
+        ],
+        "Parabola": [
+            "Terbuka ke atas",
+            "Terbuka ke bawah"
+        ],
+        "Titik Puncak": [
+            "Minimum",
+            "Maksimum"
+        ]
+    })
+
+    # ========================================================
+    # 24. TITIK POTONG SUMBU Y
+    # ========================================================
+
+    st.subheader("24. Titik Potong dengan Sumbu-Y")
+
+    st.markdown("""
+    Untuk menentukan titik potong dengan sumbu-Y,
+    gunakan x = 0.
+    """)
+
+    st.latex(r"f(0)=c")
+
+    st.markdown("""
+    Jadi titik potong dengan sumbu-Y adalah:
+    """)
+
+    st.latex(r"(0,c)")
+
+    st.markdown("Contoh:");
+
+    st.latex(r"f(x)=x^2-4x+3")
+
+    st.latex(r"f(0)=3")
+
+    st.success("Titik potong sumbu-Y adalah (0, 3).")
+
+    # ========================================================
+    # 25. TITIK POTONG SUMBU X
+    # ========================================================
+
+    st.subheader("25. Titik Potong dengan Sumbu-X")
+
+    st.markdown("""
+    Untuk menentukan titik potong dengan sumbu-X,
+    kita mencari nilai x ketika y = 0.
+    """)
+
+    st.latex(r"f(x)=0")
+
+    st.markdown("Contoh:");
+
+    st.latex(r"x^2-4x+3=0")
+
+    st.latex(r"(x-1)(x-3)=0")
+
+    st.latex(r"x=1\quad\text{atau}\quad x=3")
+
+    st.success(
+        "Grafik memotong sumbu-X di titik (1, 0) dan (3, 0)."
+    )
+
+    # ========================================================
+    # 26. BENTUK VERTEX
+    # ========================================================
+
+    st.subheader("26. Bentuk Puncak atau Vertex Form")
+
+    st.markdown("""
+    Fungsi kuadrat dapat ditulis dalam bentuk:
+    """)
+
+    st.latex(r"f(x)=a(x-h)^2+k")
+
+    st.markdown("""
+    Bentuk tersebut memudahkan kita menentukan titik puncak.
+    """)
+
+    st.latex(r"(h,k)")
+
+    st.markdown("Contoh:");
+
+    st.latex(r"f(x)=2(x-3)^2-4")
+
+    st.success(
+        "Titik puncaknya adalah (3, −4)."
+    )
+
+    # ========================================================
+    # 27. TRANSFORMASI GRAFIK
+    # ========================================================
+
+    st.subheader("27. Transformasi Grafik Fungsi Kuadrat")
+
+    st.markdown("""
+    Bentuk:
+    """)
+
+    st.latex(r"f(x)=a(x-h)^2+k")
+
+    st.markdown("""
+    memberikan informasi:
+
+    - h menggeser grafik secara horizontal;
+    - k menggeser grafik secara vertikal;
+    - a menentukan arah buka dan tingkat kelengkungan.
+    """)
+
+    # ========================================================
+    # 28. PENERAPAN
+    # ========================================================
+
+    st.subheader("28. Penerapan Fungsi Kuadrat")
+
+    st.markdown("""
+    Fungsi kuadrat dapat digunakan untuk memodelkan:
+
+    - lintasan benda;
+    - tinggi maksimum;
+    - luas maksimum;
+    - keuntungan maksimum;
+    - jarak dan waktu;
+    - desain arsitektur;
+    - bentuk parabola pada teknologi.
+    """)
+
+    # ========================================================
+    # 29. CONTOH LINTASAN
+    # ========================================================
+
+    st.subheader("29. Contoh Masalah Kontekstual")
+
+    st.markdown("""
+    Ketinggian sebuah bola yang dilempar ke udara dimodelkan oleh:
+    """)
+
+    st.latex(r"h(t)=-5t^2+20t+1")
+
+    st.markdown("""
+    dengan h dalam meter dan t dalam detik.
+
+    Tentukan waktu ketika bola mencapai ketinggian maksimum.
+    """)
+
+    st.markdown("Gunakan rumus sumbu simetri:");
+
+    st.latex(r"t=-\frac{b}{2a}")
+
+    st.latex(r"t=-\frac{20}{2(-5)}")
+
+    st.latex(r"t=2")
+
+    st.success(
+        "Bola mencapai ketinggian maksimum setelah 2 detik."
+    )
+
+    st.markdown("Tinggi maksimumnya:");
+
+    st.latex(r"h(2)=-5(2)^2+20(2)+1")
+
+    st.latex(r"h(2)=21")
+
+    st.success(
+        "Tinggi maksimum bola adalah 21 meter."
+    )
+
+    # ========================================================
+    # 30. CONTOH LUAS
+    # ========================================================
+
+    st.subheader("30. Contoh Masalah Luas Maksimum")
+
+    st.markdown("""
+    Sebuah persegi panjang memiliki panjang x dan lebar
+    yang bergantung pada x.
+
+    Misalkan luasnya dimodelkan oleh:
+    """)
+
+    st.latex(r"L(x)=-x^2+10x")
+
+    st.markdown("""
+    Karena koefisien x² negatif, grafik membuka ke bawah.
+    Dengan demikian, titik puncaknya merupakan nilai maksimum.
+    """)
+
+    st.latex(r"x=-\frac{10}{2(-1)}")
+
+    st.latex(r"x=5")
+
+    st.latex(r"L(5)=-5^2+10(5)")
+
+    st.latex(r"L(5)=25")
+
+    st.success(
+        "Nilai maksimum luas adalah 25 satuan luas."
+    )
+
+    # ========================================================
+    # 31. LATIHAN
+    # ========================================================
+
+    st.subheader("31. Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Tentukan akar-akar persamaan:
+
+    \(x^2-7x+12=0\)
+    """)
+
+    st.markdown("""
+    **Soal 2**
+
+    Tentukan akar-akar:
+
+    \(2x^2-5x-3=0\)
+    """)
+
+    st.markdown("""
+    **Soal 3**
+
+    Tentukan diskriminan:
+
+    \(x^2+4x+5=0\)
+    """)
+
+    st.markdown("""
+    **Soal 4**
+
+    Tentukan jumlah dan hasil kali akar:
+
+    \(3x^2-8x+2=0\)
+    """)
+
+    st.markdown("""
+    **Soal 5**
+
+    Tentukan sumbu simetri:
+
+    \(f(x)=x^2-8x+10\)
+    """)
+
+    st.markdown("""
+    **Soal 6**
+
+    Tentukan titik puncak:
+
+    \(f(x)=x^2-6x+5\)
+    """)
+
+    st.markdown("""
+    **Soal 7**
+
+    Tentukan titik potong dengan sumbu-Y:
+
+    \(f(x)=2x^2-3x+5\)
+    """)
+
+    st.markdown("""
+    **Soal 8**
+
+    Tentukan nilai maksimum fungsi:
+
+    \(f(x)=-x^2+6x+2\)
+    """)
+
+    # ========================================================
+    # 32. KUIS
+    # ========================================================
+
+    st.subheader("32. Kuis Interaktif")
+
+    jawaban = st.radio(
+        "Akar-akar dari x² − 5x + 6 = 0 adalah...",
+        [
+            "x = 1 dan x = 6",
+            "x = 2 dan x = 3",
+            "x = −2 dan x = −3",
+            "x = 3 dan x = 4"
+        ],
+        key="kuis_kuadrat_1"
+    )
+
+    if st.button(
+        "Periksa Jawaban",
+        key="cek_kuadrat_1"
+    ):
+
+        if jawaban == "x = 2 dan x = 3":
+
+            st.success(
+                "✅ Benar! x² − 5x + 6 = (x − 2)(x − 3)."
+            )
+
+        else:
+
+            st.error(
+                "❌ Belum tepat. Coba faktorkan x² − 5x + 6."
+            )
+
+    # ========================================================
+    # 33. RANGKUMAN
+    # ========================================================
+
+    with st.expander("📌 Rangkuman Materi", expanded=False):
+
+        st.markdown("""
+        ### Persamaan Kuadrat
+
+        Bentuk umum:
+
+        \(ax^2+bx+c=0\)
+
+        dengan a ≠ 0.
+
+        Persamaan kuadrat dapat diselesaikan dengan:
+
+        - faktorisasi;
+        - melengkapkan kuadrat sempurna;
+        - rumus ABC.
+
+        ### Diskriminan
+
+        \(D=b^2-4ac\)
+
+        - D > 0 → dua akar real berbeda.
+        - D = 0 → satu akar real kembar.
+        - D < 0 → tidak memiliki akar real.
+
+        ### Fungsi Kuadrat
+
+        Bentuk umum:
+
+        \(f(x)=ax^2+bx+c\)
+
+        Grafik fungsi kuadrat berbentuk parabola.
+
+        Jika a > 0 → parabola terbuka ke atas.
+
+        Jika a < 0 → parabola terbuka ke bawah.
+
+        ### Sumbu Simetri
+
+        \(x=-\frac{b}{2a}\)
+
+        ### Titik Puncak
+
+        Titik puncak dapat diperoleh dari:
+
+        \((x_p,f(x_p))\)
+
+        Fungsi kuadrat banyak digunakan dalam masalah
+        maksimum, minimum, lintasan, dan pemodelan.
+        """)
+
+
 
 def sptldv():
 
