@@ -1080,7 +1080,7 @@ def statistika():
 
         Mean:
 
-        \(\bar{x}=\frac{\sum x_i}{n}\)
+        $bar{x}=\frac{\sum x_i}{n}$
 
         Median adalah nilai tengah data yang telah diurutkan.
 
