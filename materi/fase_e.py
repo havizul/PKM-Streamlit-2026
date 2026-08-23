@@ -908,7 +908,7 @@ def statistika():
     nilai_slider = st.slider(
         "Tambahkan sebuah nilai ke dataset",
         min_value=0,
-        max_value=100,
+        max_value=1000,
         value=75,
         step=1,
         key="slider_statistika"
