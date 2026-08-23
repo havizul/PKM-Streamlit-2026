@@ -875,65 +875,58 @@ def persamaan_fungsi_kuadrat():
     **Soal 1**
 
     Tentukan akar-akar persamaan:
-
-    \(x^2-7x+12=0\)
     """)
+    st.latex(r"x^2-7x+12=0")
 
     st.markdown("""
     **Soal 2**
 
     Tentukan akar-akar:
-
-    \(2x^2-5x-3=0\)
     """)
+    st.latex(r"2x^2-5x-3=0")
 
     st.markdown("""
     **Soal 3**
 
     Tentukan diskriminan:
-
-    \(x^2+4x+5=0\)
     """)
+    st.latex(r"x^2+4x+5=0")
+
 
     st.markdown("""
     **Soal 4**
 
     Tentukan jumlah dan hasil kali akar:
-
-    \(3x^2-8x+2=0\)
     """)
+    st.latex(r"3x^2-8x+2=0")
 
     st.markdown("""
     **Soal 5**
 
     Tentukan sumbu simetri:
-
-    \(f(x)=x^2-8x+10\)
     """)
-
+    st.latex(r"f(x)=x^2-8x+10")
+    
     st.markdown("""
     **Soal 6**
 
     Tentukan titik puncak:
-
-    \(f(x)=x^2-6x+5\)
     """)
+    st.latex(r"f(x)=x^2-6x+5")
 
     st.markdown("""
     **Soal 7**
 
     Tentukan titik potong dengan sumbu-Y:
-
-    \(f(x)=2x^2-3x+5\)
     """)
+    st.latex(r"f(x)=2x^2-3x+5")
 
     st.markdown("""
     **Soal 8**
 
     Tentukan nilai maksimum fungsi:
-
-    \(f(x)=-x^2+6x+2\)
     """)
+    st.latex(r"f(x)=-x^2+6x+2")
 
     # ========================================================
     # 32. KUIS
