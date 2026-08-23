@@ -623,7 +623,7 @@ def sptldv():
 
     Tentukan daerah penyelesaian:
     """)
-    st.latex(r"x+y \leq 6,    x \geq 0,    dan    y \geq 0.")
+    st.latex(r"x+y \leq 6, \t x \geq 0, \t dan \t    y \geq 0")
 
     st.markdown("""
     **Soal 5**
