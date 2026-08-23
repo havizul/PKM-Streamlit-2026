@@ -22,10 +22,1089 @@ def tampilkan(materi):
 
     elif materi == "Trigonometri I":
         trigonometri_1()
-    
+        
+    elif materi == "Statistika":
+        statistika()
+        
     # dan seterusnya
 
+def statistika():
 
+    st.header("📊 Statistika")
+
+    st.markdown("""
+    ### Matematika Kelas X — Fase E
+
+    Statistika merupakan cabang matematika yang mempelajari
+    cara mengumpulkan, menyajikan, mengolah, menganalisis,
+    dan menginterpretasikan data.
+
+    Statistika digunakan dalam pendidikan, ekonomi, kesehatan,
+    penelitian, bisnis, pemerintahan, teknologi, dan berbagai
+    bidang kehidupan.
+    """)
+
+    # ========================================================
+    # TUJUAN PEMBELAJARAN
+    # ========================================================
+
+    with st.expander("🎯 Tujuan Pembelajaran", expanded=True):
+
+        st.markdown("""
+        Setelah mempelajari materi ini, peserta didik diharapkan mampu:
+
+        1. Menjelaskan pengertian statistika dan data.
+        2. Membedakan populasi dan sampel.
+        3. Mengidentifikasi jenis-jenis data.
+        4. Menyajikan data dalam tabel dan diagram.
+        5. Menentukan ukuran pemusatan data.
+        6. Menentukan mean, median, dan modus.
+        7. Menentukan kuartil dan jangkauan.
+        8. Menentukan varians dan simpangan baku.
+        9. Membaca dan menginterpretasikan histogram.
+        10. Membaca dan menginterpretasikan boxplot.
+        11. Membandingkan dua kelompok data.
+        12. Menyelesaikan masalah statistika dalam kehidupan nyata.
+        """)
+
+    # ========================================================
+    # 1. PENGERTIAN STATISTIKA
+    # ========================================================
+
+    st.subheader("1. Pengertian Statistika")
+
+    st.markdown("""
+    **Statistika** adalah ilmu yang mempelajari proses
+    pengumpulan, pengolahan, penyajian, analisis, dan
+    interpretasi data.
+
+    Sedangkan **statistik** dapat merujuk pada nilai atau
+    ukuran yang diperoleh dari pengolahan data.
+    """)
+
+    st.info(
+        "Contoh statistik: rata-rata nilai siswa, median pendapatan, "
+        "persentase kelulusan, dan simpangan baku."
+    )
+
+    # ========================================================
+    # 2. DATA
+    # ========================================================
+
+    st.subheader("2. Pengertian Data")
+
+    st.markdown("""
+    **Data** adalah sekumpulan informasi atau fakta yang
+    diperoleh melalui pengamatan, pengukuran, pencatatan,
+    atau sumber lainnya.
+    """)
+
+    st.markdown("""
+    Contoh data:
+
+    - nilai ujian siswa;
+    - tinggi badan;
+    - berat badan;
+    - jumlah anggota keluarga;
+    - usia;
+    - pendapatan;
+    - jumlah kendaraan;
+    - hasil survei.
+    """)
+
+    # ========================================================
+    # 3. POPULASI
+    # ========================================================
+
+    st.subheader("3. Populasi")
+
+    st.markdown("""
+    **Populasi** adalah seluruh objek atau individu yang menjadi
+    sasaran penelitian atau pengamatan.
+    """)
+
+    st.markdown("""
+    Contoh:
+
+    Jika penelitian ingin mengetahui rata-rata nilai matematika
+    seluruh siswa kelas X di sebuah sekolah, maka seluruh siswa
+    kelas X tersebut merupakan populasi.
+    """)
+
+    # ========================================================
+    # 4. SAMPEL
+    # ========================================================
+
+    st.subheader("4. Sampel")
+
+    st.markdown("""
+    **Sampel** adalah sebagian anggota populasi yang dipilih
+    untuk mewakili populasi.
+    """)
+
+    st.markdown("""
+    Contoh:
+
+    Dari 500 siswa kelas X, peneliti memilih 100 siswa untuk
+    dianalisis. Sebanyak 100 siswa tersebut merupakan sampel.
+    """)
+
+    st.warning(
+        "Sampel yang baik harus dapat memberikan gambaran yang representatif terhadap populasi."
+    )
+
+    # ========================================================
+    # 5. JENIS DATA
+    # ========================================================
+
+    st.subheader("5. Jenis Data")
+
+    st.markdown("""
+    Data dapat dibedakan berdasarkan sifat dan bentuknya.
+    """)
+
+    st.markdown("""
+    ### Data Kualitatif
+
+    Data yang berupa kategori atau sifat.
+
+    Contoh:
+
+    - jenis kelamin;
+    - warna;
+    - jenis pekerjaan;
+    - status kelulusan.
+
+    ### Data Kuantitatif
+
+    Data yang berupa angka dan dapat diukur.
+
+    Contoh:
+
+    - tinggi badan;
+    - berat badan;
+    - nilai ujian;
+    - jumlah siswa.
+    """)
+
+    # ========================================================
+    # 6. DATA DISKRIT DAN KONTINU
+    # ========================================================
+
+    st.subheader("6. Data Diskrit dan Kontinu")
+
+    st.markdown("""
+    Data kuantitatif dapat dibedakan menjadi data diskrit
+    dan data kontinu.
+    """)
+
+    st.markdown("""
+    **Data diskrit** adalah data yang biasanya berupa hasil
+    pencacahan dan memiliki nilai yang terpisah.
+
+    Contoh:
+
+    Jumlah siswa = 35 orang.
+
+    **Data kontinu** adalah data yang diperoleh melalui
+    pengukuran dan dapat memiliki nilai dalam suatu interval.
+
+    Contoh:
+
+    Tinggi badan = 165,5 cm.
+    """)
+
+    # ========================================================
+    # 7. PENYAJIAN DATA
+    # ========================================================
+
+    st.subheader("7. Penyajian Data")
+
+    st.markdown("""
+    Data dapat disajikan dalam berbagai bentuk agar lebih mudah
+    dibaca dan dianalisis.
+    """)
+
+    st.markdown("""
+    Bentuk penyajian data antara lain:
+
+    - tabel;
+    - diagram batang;
+    - diagram garis;
+    - diagram lingkaran;
+    - histogram;
+    - poligon frekuensi;
+    - boxplot.
+    """)
+
+    # ========================================================
+    # 8. TABEL DATA
+    # ========================================================
+
+    st.subheader("8. Penyajian Data dalam Tabel")
+
+    data_nilai = {
+        "Siswa": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H"
+        ],
+        "Nilai": [
+            70,
+            75,
+            80,
+            80,
+            85,
+            90,
+            90,
+            95
+        ]
+    }
+
+    st.dataframe(
+        data_nilai,
+        use_container_width=True
+    )
+
+    # ========================================================
+    # 9. FREKUENSI
+    # ========================================================
+
+    st.subheader("9. Frekuensi")
+
+    st.markdown("""
+    **Frekuensi** adalah banyaknya kemunculan suatu nilai
+    atau kelompok nilai dalam suatu data.
+    """)
+
+    data_frekuensi = {
+        "Nilai": [70, 75, 80, 85, 90, 95],
+        "Frekuensi": [1, 1, 2, 1, 2, 1]
+    }
+
+    st.table(data_frekuensi)
+
+    # ========================================================
+    # 10. DIAGRAM BATANG
+    # ========================================================
+
+    st.subheader("10. Diagram Batang")
+
+    import pandas as pd
+
+    df_batang = pd.DataFrame({
+        "Nilai": [70, 75, 80, 85, 90, 95],
+        "Frekuensi": [1, 1, 2, 1, 2, 1]
+    })
+
+    st.bar_chart(
+        df_batang,
+        x="Nilai",
+        y="Frekuensi"
+    )
+
+    # ========================================================
+    # 11. MEAN
+    # ========================================================
+
+    st.subheader("11. Mean atau Rata-Rata")
+
+    st.markdown("""
+    Mean atau rata-rata adalah jumlah seluruh nilai data
+    dibagi dengan banyaknya data.
+    """)
+
+    st.latex(r"\bar{x}=\frac{\sum x_i}{n}")
+
+    st.markdown("""
+    dengan:
+
+    - x̄ = rata-rata;
+    - Σxᵢ = jumlah seluruh data;
+    - n = banyak data.
+    """)
+
+    # ========================================================
+    # 12. CONTOH MEAN
+    # ========================================================
+
+    st.subheader("12. Contoh Menghitung Mean")
+
+    st.markdown("""
+    Diketahui data:
+    """)
+
+    st.latex(r"60,\ 70,\ 80,\ 90,\ 100")
+
+    st.markdown("Jumlah data:");
+
+    st.latex(r"\sum x_i=400")
+
+    st.markdown("Banyak data:");
+
+    st.latex(r"n=5")
+
+    st.markdown("Maka:");
+
+    st.latex(r"\bar{x}=\frac{400}{5}=80")
+
+    st.success("Rata-rata data adalah 80.")
+
+    # ========================================================
+    # 13. MEAN DENGAN FREKUENSI
+    # ========================================================
+
+    st.subheader("13. Mean Data Berfrekuensi")
+
+    st.markdown("""
+    Untuk data yang memiliki frekuensi, mean dapat dihitung dengan:
+    """)
+
+    st.latex(r"\bar{x}=\frac{\sum f_ix_i}{\sum f_i}")
+
+    st.markdown("""
+    dengan:
+
+    - fᵢ = frekuensi;
+    - xᵢ = nilai data.
+    """)
+
+    # ========================================================
+    # 14. MEDIAN
+    # ========================================================
+
+    st.subheader("14. Median")
+
+    st.markdown("""
+    Median adalah nilai tengah setelah data diurutkan dari
+    nilai terkecil hingga terbesar.
+    """)
+
+    st.markdown("""
+    Jika jumlah data ganjil:
+    """)
+
+    st.latex(r"Me=x_{\frac{n+1}{2}}")
+
+    st.markdown("""
+    Jika jumlah data genap:
+    """)
+
+    st.latex(r"Me=\frac{x_{\frac{n}{2}}+x_{\frac{n}{2}+1}}{2}")
+
+    # ========================================================
+    # 15. CONTOH MEDIAN GANJIL
+    # ========================================================
+
+    st.subheader("15. Contoh Median Data Ganjil")
+
+    st.markdown("""
+    Data:
+    """)
+
+    st.latex(r"60,\ 65,\ 70,\ 75,\ 80,\ 85,\ 90")
+
+    st.markdown("""
+    Banyak data adalah 7.
+    """)
+
+    st.latex(r"Me=x_{\frac{7+1}{2}}=x_4")
+
+    st.success("Median = 75.")
+
+    # ========================================================
+    # 16. CONTOH MEDIAN GENAP
+    # ========================================================
+
+    st.subheader("16. Contoh Median Data Genap")
+
+    st.markdown("""
+    Data:
+    """)
+
+    st.latex(r"60,\ 65,\ 70,\ 75,\ 80,\ 85")
+
+    st.markdown("""
+    Banyak data adalah 6.
+    """)
+
+    st.latex(r"Me=\frac{x_3+x_4}{2}")
+
+    st.latex(r"Me=\frac{70+75}{2}=72.5")
+
+    st.success("Median = 72,5.")
+
+    # ========================================================
+    # 17. MODUS
+    # ========================================================
+
+    st.subheader("17. Modus")
+
+    st.markdown("""
+    Modus adalah nilai yang paling sering muncul dalam suatu data.
+    """)
+
+    st.markdown("Contoh:");
+
+    st.latex(r"70,\ 75,\ 80,\ 80,\ 80,\ 85,\ 90")
+
+    st.success("Modus = 80.")
+
+    st.markdown("""
+    Suatu data dapat memiliki:
+
+    - satu modus;
+    - dua modus;
+    - lebih dari dua modus;
+    - atau tidak memiliki modus.
+    """)
+
+    # ========================================================
+    # 18. UKURAN PEMUSATAN
+    # ========================================================
+
+    st.subheader("18. Perbandingan Mean, Median, dan Modus")
+
+    st.table({
+        "Ukuran": [
+            "Mean",
+            "Median",
+            "Modus"
+        ],
+        "Pengertian": [
+            "Rata-rata seluruh data",
+            "Nilai tengah data",
+            "Nilai yang paling sering muncul"
+        ]
+    })
+
+    st.info(
+        "Mean, median, dan modus digunakan untuk menggambarkan pusat atau kecenderungan suatu kumpulan data."
+    )
+
+    # ========================================================
+    # 19. KUARTIL
+    # ========================================================
+
+    st.subheader("19. Kuartil")
+
+    st.markdown("""
+    Kuartil membagi data yang telah diurutkan menjadi
+    empat bagian yang memiliki jumlah data relatif sama.
+    """)
+
+    st.markdown("""
+    Terdapat tiga kuartil:
+
+    - Q₁ = kuartil bawah;
+    - Q₂ = median;
+    - Q₃ = kuartil atas.
+    """)
+
+    st.latex(r"Q_2=Me")
+
+    # ========================================================
+    # 20. INTERPRETASI KUARTIL
+    # ========================================================
+
+    st.subheader("20. Interpretasi Kuartil")
+
+    st.markdown("""
+    Q₁ menunjukkan nilai yang membatasi sekitar 25% data terbawah.
+
+    Q₂ merupakan median dan membatasi sekitar 50% data.
+
+    Q₃ menunjukkan nilai yang membatasi sekitar 75% data.
+    """)
+
+    # ========================================================
+    # 21. JANGKAUAN
+    # ========================================================
+
+    st.subheader("21. Jangkauan")
+
+    st.markdown("""
+    Jangkauan atau range merupakan selisih antara nilai
+    maksimum dan minimum.
+    """)
+
+    st.latex(r"R=x_{\max}-x_{\min}")
+
+    st.markdown("Contoh:");
+
+    st.latex(r"60,\ 65,\ 70,\ 75,\ 80,\ 90")
+
+    st.latex(r"R=90-60=30")
+
+    st.success("Jangkauan data adalah 30.")
+
+    # ========================================================
+    # 22. JANGKAUAN INTERKUARTIL
+    # ========================================================
+
+    st.subheader("22. Jangkauan Interkuartil")
+
+    st.markdown("""
+    Jangkauan interkuartil atau IQR merupakan selisih antara
+    kuartil ketiga dan kuartil pertama.
+    """)
+
+    st.latex(r"IQR=Q_3-Q_1")
+
+    st.info(
+        "IQR menggambarkan penyebaran 50% data yang berada di bagian tengah."
+    )
+
+    # ========================================================
+    # 23. VARIANS
+    # ========================================================
+
+    st.subheader("23. Varians")
+
+    st.markdown("""
+    Varians mengukur seberapa jauh data menyebar dari rata-ratanya.
+    """)
+
+    st.markdown("Untuk populasi:");
+
+    st.latex(r"\sigma^2=\frac{\sum(x_i-\mu)^2}{N}")
+
+    st.markdown("""
+    dengan:
+
+    - σ² = varians populasi;
+    - μ = mean populasi;
+    - N = jumlah anggota populasi.
+    """)
+
+    # ========================================================
+    # 24. SIMPANGAN BAKU
+    # ========================================================
+
+    st.subheader("24. Simpangan Baku")
+
+    st.markdown("""
+    Simpangan baku merupakan akar kuadrat dari varians.
+    """)
+
+    st.latex(r"\sigma=\sqrt{\sigma^2}")
+
+    st.markdown("""
+    Semakin besar simpangan baku, semakin besar penyebaran
+    data terhadap rata-ratanya.
+    """)
+
+    # ========================================================
+    # 25. CONTOH SIMPANGAN BAKU
+    # ========================================================
+
+    st.subheader("25. Interpretasi Simpangan Baku")
+
+    st.markdown("""
+    Misalkan dua kelompok memiliki rata-rata yang sama,
+    tetapi simpangan bakunya berbeda.
+    """)
+
+    st.table({
+        "Kelompok": ["A", "B"],
+        "Mean": [75, 75],
+        "Simpangan Baku": [3, 12]
+    })
+
+    st.markdown("""
+    Kelompok A memiliki data yang lebih terkonsentrasi
+    di sekitar rata-rata.
+
+    Kelompok B memiliki data yang lebih menyebar.
+    """)
+
+    # ========================================================
+    # 26. KALKULATOR STATISTIKA
+    # ========================================================
+
+    st.subheader("26. Kalkulator Statistika")
+
+    input_data = st.text_input(
+        "Masukkan data dipisahkan dengan koma",
+        value="60, 70, 70, 80, 80, 80, 90",
+        key="input_statistika"
+    )
+
+    try:
+
+        data = [
+            float(x.strip())
+            for x in input_data.split(",")
+            if x.strip()
+        ]
+
+        if len(data) > 0:
+
+            import statistics
+
+            mean_data = statistics.mean(data)
+            median_data = statistics.median(data)
+
+            modus_data = statistics.multimode(data)
+
+            minimum = min(data)
+            maksimum = max(data)
+
+            range_data = maksimum - minimum
+
+            st.markdown("### Hasil Analisis")
+
+            col1, col2, col3 = st.columns(3)
+
+            with col1:
+
+                st.metric(
+                    "Mean",
+                    f"{mean_data:.2f}"
+                )
+
+            with col2:
+
+                st.metric(
+                    "Median",
+                    f"{median_data:.2f}"
+                )
+
+            with col3:
+
+                st.metric(
+                    "Jangkauan",
+                    f"{range_data:.2f}"
+                )
+
+            st.write(
+                "Modus:",
+                ", ".join(
+                    f"{x:g}" for x in modus_data
+                )
+            )
+
+            # =================================================
+            # GRAFIK
+            # =================================================
+
+            df_data = pd.DataFrame({
+                "Data": data
+            })
+
+            st.markdown("### Distribusi Data")
+
+            st.bar_chart(
+                df_data
+            )
+
+    except ValueError:
+
+        st.error(
+            "Masukkan data numerik yang dipisahkan dengan koma."
+        )
+
+    # ========================================================
+    # 27. HISTOGRAM
+    # ========================================================
+
+    st.subheader("27. Histogram")
+
+    st.markdown("""
+    Histogram digunakan untuk menggambarkan distribusi
+    data kuantitatif berdasarkan interval kelas.
+    """)
+
+    data_histogram = [
+        55, 60, 62, 65, 66, 68, 70, 71, 72, 72,
+        73, 74, 75, 75, 76, 78, 80, 81, 82, 85,
+        86, 88, 90, 92, 95
+    ]
+
+    df_histogram = pd.DataFrame({
+        "Nilai": data_histogram
+    })
+
+    st.bar_chart(
+        df_histogram
+    )
+
+    st.markdown("""
+    Histogram membantu melihat bentuk distribusi data,
+    termasuk apakah data cenderung terkonsentrasi,
+    menyebar, menceng, atau memiliki lebih dari satu puncak.
+    """)
+
+    # ========================================================
+    # 28. BOXPLOT
+    # ========================================================
+
+    st.subheader("28. Boxplot")
+
+    st.markdown("""
+    Boxplot merupakan diagram yang digunakan untuk
+    menggambarkan distribusi data berdasarkan:
+
+    - minimum;
+    - Q₁;
+    - median;
+    - Q₃;
+    - maksimum.
+    """)
+
+    st.markdown("""
+    Lima nilai tersebut dikenal sebagai **five-number summary**.
+    """)
+
+    # ========================================================
+    # 29. FIVE NUMBER SUMMARY
+    # ========================================================
+
+    st.subheader("29. Five-Number Summary")
+
+    st.markdown("""
+    Lima ukuran penting dalam boxplot adalah:
+    """)
+
+    st.table({
+        "Ukuran": [
+            "Minimum",
+            "Q₁",
+            "Median",
+            "Q₃",
+            "Maksimum"
+        ],
+        "Keterangan": [
+            "Nilai terkecil",
+            "Kuartil pertama",
+            "Nilai tengah",
+            "Kuartil ketiga",
+            "Nilai terbesar"
+        ]
+    })
+
+    # ========================================================
+    # 30. OUTLIER
+    # ========================================================
+
+    st.subheader("30. Pencilan atau Outlier")
+
+    st.markdown("""
+    Outlier adalah data yang memiliki posisi sangat jauh
+    dibandingkan sebagian besar data lainnya.
+    """)
+
+    st.markdown("""
+    Salah satu aturan umum untuk mengidentifikasi outlier
+    menggunakan IQR adalah:
+    """)
+
+    st.latex(r"x<Q_1-1.5(IQR)")
+
+    st.latex(r"x>Q_3+1.5(IQR)")
+
+    st.info(
+        "Outlier perlu diperiksa karena dapat menunjukkan kesalahan pengukuran, kondisi khusus, atau karakteristik data yang memang berbeda."
+    )
+
+    # ========================================================
+    # 31. DISTRIBUSI DATA
+    # ========================================================
+
+    st.subheader("31. Distribusi Data")
+
+    st.markdown("""
+    Distribusi data menunjukkan bagaimana nilai-nilai data
+    tersebar dalam suatu kelompok.
+    """)
+
+    st.markdown("""
+    Beberapa pola distribusi yang dapat ditemukan:
+
+    - distribusi relatif simetris;
+    - menceng ke kanan;
+    - menceng ke kiri;
+    - memiliki pencilan;
+    - memiliki lebih dari satu puncak.
+    """)
+
+    # ========================================================
+    # 32. INTERPRETASI DATA
+    # ========================================================
+
+    st.subheader("32. Interpretasi Data")
+
+    st.markdown("""
+    Dalam statistika, kita tidak cukup hanya menghitung
+    nilai statistik. Hasil tersebut harus diinterpretasikan.
+    """)
+
+    st.markdown("""
+    Contoh:
+
+    Rata-rata nilai kelas adalah 78 dengan simpangan baku 4.
+
+    Artinya, nilai siswa secara umum berada di sekitar
+    rata-rata 78 dan penyebarannya relatif kecil.
+    """)
+
+    # ========================================================
+    # 33. PERBANDINGAN DUA KELOMPOK
+    # ========================================================
+
+    st.subheader("33. Membandingkan Dua Kelompok Data")
+
+    data_kelompok = pd.DataFrame({
+        "Kelompok": [
+            "A",
+            "A",
+            "A",
+            "A",
+            "A",
+            "B",
+            "B",
+            "B",
+            "B",
+            "B"
+        ],
+        "Nilai": [
+            70,
+            72,
+            75,
+            77,
+            76,
+            60,
+            70,
+            80,
+            90,
+            100
+        ]
+    })
+
+    st.dataframe(
+        data_kelompok,
+        use_container_width=True
+    )
+
+    st.markdown("""
+    Kedua kelompok dapat memiliki rata-rata yang sama,
+    tetapi tingkat penyebaran datanya berbeda.
+
+    Oleh karena itu, analisis data sebaiknya tidak hanya
+    memperhatikan ukuran pemusatan, tetapi juga ukuran penyebaran.
+    """)
+
+    # ========================================================
+    # 34. DATA INTERAKTIF
+    # ========================================================
+
+    st.subheader("34. Eksplorasi Data Interaktif")
+
+    nilai_slider = st.slider(
+        "Tambahkan sebuah nilai ke dataset",
+        min_value=0,
+        max_value=100,
+        value=75,
+        step=1,
+        key="slider_statistika"
+    )
+
+    data_awal = [
+        60,
+        65,
+        70,
+        70,
+        75,
+        80,
+        80,
+        85,
+        90
+    ]
+
+    data_baru = data_awal + [nilai_slider]
+
+    mean_baru = statistics.mean(data_baru)
+    median_baru = statistics.median(data_baru)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        st.metric(
+            "Mean",
+            f"{mean_baru:.2f}"
+        )
+
+    with col2:
+
+        st.metric(
+            "Median",
+            f"{median_baru:.2f}"
+        )
+
+    st.markdown("""
+    Perhatikan bagaimana penambahan satu nilai dapat
+    memengaruhi mean dan median.
+    """)
+
+    # ========================================================
+    # 35. LATIHAN
+    # ========================================================
+
+    st.subheader("35. Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Tentukan mean dari data:
+
+    60, 70, 80, 90, 100
+    """)
+
+    st.markdown("""
+    **Soal 2**
+
+    Tentukan median dari data:
+
+    55, 60, 70, 75, 80, 85, 90
+    """)
+
+    st.markdown("""
+    **Soal 3**
+
+    Tentukan modus dari data:
+
+    70, 75, 80, 80, 85, 90, 80
+    """)
+
+    st.markdown("""
+    **Soal 4**
+
+    Tentukan jangkauan data:
+
+    45, 50, 60, 70, 80, 95
+    """)
+
+    st.markdown("""
+    **Soal 5**
+
+    Jelaskan perbedaan antara populasi dan sampel.
+    """)
+
+    st.markdown("""
+    **Soal 6**
+
+    Jelaskan perbedaan data diskrit dan data kontinu
+    serta berikan masing-masing satu contoh.
+    """)
+
+    st.markdown("""
+    **Soal 7**
+
+    Apa yang dimaksud dengan outlier?
+    """)
+
+    st.markdown("""
+    **Soal 8**
+
+    Mengapa dalam analisis data kita perlu memperhatikan
+    ukuran pemusatan dan ukuran penyebaran?
+    """)
+
+    # ========================================================
+    # 36. KUIS
+    # ========================================================
+
+    st.subheader("36. Kuis Interaktif")
+
+    jawaban = st.radio(
+        "Mean dari data 60, 70, 80, 90, dan 100 adalah...",
+        [
+            "70",
+            "75",
+            "80",
+            "85"
+        ],
+        key="kuis_statistika_1"
+    )
+
+    if st.button(
+        "Periksa Jawaban",
+        key="cek_statistika_1"
+    ):
+
+        if jawaban == "80":
+
+            st.success(
+                "✅ Benar! Jumlah data = 400 dan banyak data = 5, sehingga mean = 80."
+            )
+
+        else:
+
+            st.error(
+                "❌ Belum tepat. Gunakan rumus mean = jumlah seluruh data / banyak data."
+            )
+
+    # ========================================================
+    # 37. RANGKUMAN
+    # ========================================================
+
+    with st.expander("📌 Rangkuman Materi", expanded=False):
+
+        st.markdown("""
+        ### Statistika
+
+        Statistika merupakan ilmu yang mempelajari
+        pengumpulan, penyajian, pengolahan, analisis,
+        dan interpretasi data.
+
+        ### Ukuran Pemusatan
+
+        Mean:
+
+        \(\bar{x}=\frac{\sum x_i}{n}\)
+
+        Median adalah nilai tengah data yang telah diurutkan.
+
+        Modus adalah nilai yang paling sering muncul.
+
+        ### Ukuran Penyebaran
+
+        Jangkauan:
+
+        \(R=x_{\max}-x_{\min}\)
+
+        Jangkauan interkuartil:
+
+        \(IQR=Q_3-Q_1\)
+
+        Varians mengukur rata-rata kuadrat penyimpangan
+        data terhadap mean.
+
+        Simpangan baku merupakan akar dari varians.
+
+        ### Penyajian Data
+
+        Data dapat disajikan menggunakan:
+
+        - tabel;
+        - diagram batang;
+        - diagram garis;
+        - diagram lingkaran;
+        - histogram;
+        - boxplot.
+
+        ### Hal Penting
+
+        Analisis statistika tidak hanya menghitung angka,
+        tetapi juga memahami makna angka tersebut dan
+        menggunakannya untuk mengambil kesimpulan.
+        """)
 
 def trigonometri_1():
 
