@@ -974,7 +974,7 @@ def persamaan_fungsi_kuadrat():
         Bentuk umum:
         """)
         #st.latex(r"ax^2+bx+c=0")
-        st.markdown(r"$&nbsp;&nbsp;&nbsp;&nbsp;ax^2+bx+c=0$")
+        st.markdown(r"&nbsp;&nbsp;&nbsp;&nbsp;$ax^2+bx+c=0$")
         
         st.markdown("""
         dengan a ≠ 0.
@@ -997,7 +997,7 @@ def persamaan_fungsi_kuadrat():
 
         Bentuk umum:
 
-        $&nbsp;&nbsp;&nbsp;&nbsp;f(x)=ax^2+bx+c$
+        &nbsp;&nbsp;&nbsp;&nbsp;$f(x)=ax^2+bx+c$
 
         Grafik fungsi kuadrat berbentuk parabola.
 
@@ -1007,13 +1007,13 @@ def persamaan_fungsi_kuadrat():
 
         ### Sumbu Simetri
 
-        $&nbsp;&nbsp;&nbsp;&nbsp;x=-\frac{b}{2a}$
+        &nbsp;&nbsp;&nbsp;&nbsp;$x=-\frac{b}{2a}$
 
         ### Titik Puncak
 
         Titik puncak dapat diperoleh dari:
 
-        $&nbsp;&nbsp;&nbsp;&nbsp;(x_p,f(x_p))$
+        &nbsp;&nbsp;&nbsp;&nbsp;$(x_p,f(x_p))$
 
         Fungsi kuadrat banyak digunakan dalam masalah
         maksimum, minimum, lintasan, dan pemodelan.
