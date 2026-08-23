@@ -732,7 +732,7 @@ def trigonometri_1():
 
     Tentukan nilai:
 
-    sin(30°)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$sin(30°)$
     """)
 
     st.markdown("""
