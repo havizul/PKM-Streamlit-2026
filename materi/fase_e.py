@@ -575,19 +575,19 @@ def trigonometri_1():
 
     st.metric(
         "sin(θ)",
-        f"{nilai_sin:.4f}"
+        f"{nilai_sin:.6f}"
     )
 
     st.metric(
         "cos(θ)",
-        f"{nilai_cos:.4f}"
+        f"{nilai_cos:.6f}"
     )
 
     if nilai_tan is not None:
 
         st.metric(
             "tan(θ)",
-            f"{nilai_tan:.4f}"
+            f"{nilai_tan:.6f}"
         )
 
     else:
