@@ -972,9 +972,10 @@ def persamaan_fungsi_kuadrat():
         ### Persamaan Kuadrat
 
         Bentuk umum:
-
-        \(ax^2+bx+c=0\)
-
+        """)
+        st.latex(r"ax^2+bx+c=0")
+        
+        st.markdown("""
         dengan a ≠ 0.
 
         Persamaan kuadrat dapat diselesaikan dengan:
