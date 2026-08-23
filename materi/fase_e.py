@@ -1071,52 +1071,72 @@ def statistika():
 
         st.markdown("""
         ### Statistika
-
-        Statistika merupakan ilmu yang mempelajari
-        pengumpulan, penyajian, pengolahan, analisis,
-        dan interpretasi data.
-
+        
+        Statistika merupakan ilmu yang mempelajari pengumpulan, penyajian,
+        pengolahan, analisis, dan interpretasi data.
+        
         ### Ukuran Pemusatan
-
-        Mean:
-
-        $bar{x}=\frac{\sum x_i}{n}$
-
-        Median adalah nilai tengah data yang telah diurutkan.
-
-        Modus adalah nilai yang paling sering muncul.
-
+        
+        **Mean**
+        
+        Mean atau rata-rata adalah jumlah seluruh data dibagi dengan banyaknya data.
+        
+        """)
+        
+        st.latex(r"\bar{x}=\frac{\sum x_i}{n}")
+        
+        st.markdown("""
+        **Median**
+        
+        Median adalah nilai tengah dari data yang telah diurutkan.
+        
+        **Modus**
+        
+        Modus adalah nilai yang paling sering muncul dalam suatu kumpulan data.
+        
         ### Ukuran Penyebaran
-
-        Jangkauan:
-
-        \(R=x_{\max}-x_{\min}\)
-
-        Jangkauan interkuartil:
-
-        \(IQR=Q_3-Q_1\)
-
-        Varians mengukur rata-rata kuadrat penyimpangan
-        data terhadap mean.
-
-        Simpangan baku merupakan akar dari varians.
-
+        
+        **Jangkauan**
+        
+        Jangkauan adalah selisih antara nilai maksimum dan nilai minimum.
+        
+        """)
+        
+        st.latex(r"R=x_{\max}-x_{\min}")
+        
+        st.markdown("""
+        **Jangkauan Interkuartil**
+        
+        Jangkauan interkuartil merupakan selisih antara kuartil ketiga dan kuartil pertama.
+        
+        """)
+        
+        st.latex(r"IQR=Q_3-Q_1")
+        
+        st.markdown("""
+        **Varians**
+        
+        Varians mengukur tingkat penyebaran data terhadap nilai rata-ratanya.
+        
+        **Simpangan Baku**
+        
+        Simpangan baku merupakan akar kuadrat dari varians.
+        
         ### Penyajian Data
-
+        
         Data dapat disajikan menggunakan:
-
-        - tabel;
-        - diagram batang;
-        - diagram garis;
-        - diagram lingkaran;
-        - histogram;
-        - boxplot.
-
+        
+        - Tabel
+        - Diagram batang
+        - Diagram garis
+        - Diagram lingkaran
+        - Histogram
+        - Boxplot
+        
         ### Hal Penting
-
-        Analisis statistika tidak hanya menghitung angka,
-        tetapi juga memahami makna angka tersebut dan
-        menggunakannya untuk mengambil kesimpulan.
+        
+        Analisis statistika tidak hanya menghitung angka, tetapi juga memahami
+        makna angka tersebut dan menggunakannya untuk mengambil kesimpulan.
         """)
 
 def trigonometri_1():
