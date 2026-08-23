@@ -974,7 +974,7 @@ def persamaan_fungsi_kuadrat():
         Bentuk umum:
         """)
         #st.latex(r"ax^2+bx+c=0")
-        st.markdown(r"$ax^2+bx+c=0$")
+        st.markdown(r"    $ax^2+bx+c=0$")
         
         st.markdown("""
         dengan a ≠ 0.
