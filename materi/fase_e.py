@@ -852,13 +852,13 @@ def trigonometri_1():
 
         **7. Identitas Pythagoras**
 
-        sin²(θ) + cos²(θ) = 1
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sin²(θ) + cos²(θ) = 1
 
         **8. Sudut Istimewa**
 
         Sudut yang penting untuk dikuasai:
 
-        0°, 30°, 45°, 60°, dan 90°.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0°, 30°, 45°, 60°, dan 90°.
 
         **9. Aplikasi**
 
