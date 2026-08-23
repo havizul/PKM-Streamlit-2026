@@ -554,10 +554,10 @@ def trigonometri_1():
 
     sudut = st.number_input(
         "Masukkan sudut dalam derajat",
-        min_value=0.0,
-        max_value=720.0,
-        value=30.0,
-        step=0.1,
+        min_value=0.00,
+        max_value=720.00,
+        value=30.00,
+        step=0.01,
         key="sudut_trigonometri"
     )
 
