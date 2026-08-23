@@ -976,7 +976,7 @@ def persamaan_fungsi_kuadrat():
         #st.latex(r"ax^2+bx+c=0")
         st.markdown(r"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ax^2+bx+c=0$")
         
-        st.markdown("""
+        st.markdown(r"""
         dengan a ≠ 0.
 
         Persamaan kuadrat dapat diselesaikan dengan:
@@ -987,7 +987,7 @@ def persamaan_fungsi_kuadrat():
 
         ### Diskriminan
 
-        $D=b^2-4ac$
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$D=b^2-4ac$
 
         - D > 0 → dua akar real berbeda.
         - D = 0 → satu akar real kembar.
