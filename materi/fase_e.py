@@ -1,4 +1,6 @@
 import streamlit as st
+import numpy as np
+import plotly.graph_objects as go
 
 def tampilkan(materi):
 
@@ -459,6 +461,72 @@ def sptldv():
     """)
 
     st.latex(f"x+y={batas}")
+
+    # ------------------------------------------------------------
+    # VISUALISASI GRAFIK SPtLDV
+    # ------------------------------------------------------------
+    
+    x = np.linspace(0, batas, 200)
+    y = batas - x
+    
+    fig = go.Figure()
+    
+    # Daerah penyelesaian
+    fig.add_trace(
+        go.Scatter(
+            x=np.concatenate([x, [0]]),
+            y=np.concatenate([y, [0]]),
+            fill="toself",
+            mode="none",
+            name="Daerah penyelesaian"
+        )
+    )
+    
+    # Garis batas x + y = c
+    fig.add_trace(
+        go.Scatter(
+            x=x,
+            y=y,
+            mode="lines",
+            name=f"x + y = {batas}"
+        )
+    )
+    
+    # Titik potong sumbu
+    fig.add_trace(
+        go.Scatter(
+            x=[0, batas],
+            y=[batas, 0],
+            mode="markers",
+            name="Titik potong",
+            text=[
+                f"(0, {batas})",
+                f"({batas}, 0)"
+            ],
+            textposition="top center"
+        )
+    )
+    
+    fig.update_layout(
+        xaxis_title="x",
+        yaxis_title="y",
+        xaxis=dict(
+            range=[0, batas + 1],
+            zeroline=True
+        ),
+        yaxis=dict(
+            range=[0, batas + 1],
+            zeroline=True
+        ),
+        height=500,
+        showlegend=True
+    )
+    
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
 
     st.info(
         "Semakin besar nilai c, semakin luas daerah yang memenuhi "
