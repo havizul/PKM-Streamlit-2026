@@ -22,6 +22,858 @@ def tampilkan(materi):
 
     # dan seterusnya
 
+    elif materi == "Trigonometri I":
+        trigonometri_1()
+
+def trigonometri_1():
+
+    st.header("📐 Trigonometri I")
+
+    st.markdown("""
+    ### Matematika Kelas X — Fase E
+
+    Trigonometri merupakan cabang matematika yang mempelajari
+    hubungan antara sudut dan panjang sisi pada segitiga.
+
+    Trigonometri banyak digunakan dalam pengukuran tinggi,
+    jarak, kemiringan, navigasi, astronomi, teknik, arsitektur,
+    dan berbagai permasalahan kehidupan nyata.
+    """)
+
+    # ========================================================
+    # TUJUAN PEMBELAJARAN
+    # ========================================================
+
+    with st.expander("🎯 Tujuan Pembelajaran", expanded=True):
+
+        st.markdown("""
+        Setelah mempelajari materi ini, peserta didik diharapkan mampu:
+
+        1. Menjelaskan pengertian sudut.
+        2. Mengubah ukuran sudut derajat dan radian.
+        3. Mengidentifikasi sisi-sisi pada segitiga siku-siku.
+        4. Menjelaskan perbandingan trigonometri.
+        5. Menentukan nilai sinus, cosinus, dan tangen.
+        6. Menentukan nilai trigonometri sudut istimewa.
+        7. Menggunakan teorema Pythagoras dalam permasalahan trigonometri.
+        8. Menentukan panjang sisi segitiga menggunakan perbandingan trigonometri.
+        9. Menentukan besar sudut menggunakan invers trigonometri.
+        10. Menggunakan identitas trigonometri dasar.
+        11. Menyelesaikan masalah kontekstual menggunakan trigonometri.
+        """)
+
+    # ========================================================
+    # 1. PENGERTIAN TRIGONOMETRI
+    # ========================================================
+
+    st.subheader("1. Pengertian Trigonometri")
+
+    st.markdown("""
+    Kata trigonometri berasal dari bahasa Yunani yang berkaitan
+    dengan pengukuran segitiga.
+
+    Secara sederhana, trigonometri mempelajari hubungan antara
+    besar sudut dan panjang sisi pada segitiga.
+    """)
+
+    st.info(
+        "Konsep dasar Trigonometri I pada materi ini menggunakan segitiga siku-siku."
+    )
+
+    # ========================================================
+    # 2. SUDUT
+    # ========================================================
+
+    st.subheader("2. Sudut")
+
+    st.markdown("""
+    Sudut terbentuk dari dua sinar garis yang memiliki titik pangkal
+    yang sama.
+
+    Satuan sudut yang umum digunakan adalah derajat dan radian.
+    """)
+
+    st.markdown("### Satuan Derajat")
+
+    st.markdown("""
+    Satu putaran penuh memiliki besar:
+    """)
+
+    st.latex(r"360^\circ")
+
+    st.markdown("""
+    Sudut siku-siku:
+    """)
+
+    st.latex(r"90^\circ")
+
+    st.markdown("""
+    Sudut lurus:
+    """)
+
+    st.latex(r"180^\circ")
+
+    # ========================================================
+    # 3. RADIAN
+    # ========================================================
+
+    st.subheader("3. Ukuran Sudut dalam Radian")
+
+    st.markdown("""
+    Selain derajat, sudut dapat dinyatakan dalam radian.
+
+    Hubungan antara derajat dan radian adalah:
+    """)
+
+    st.latex(r"180^\circ=\pi\text{ radian}")
+
+    st.markdown("Sehingga:");
+
+    st.latex(r"360^\circ=2\pi\text{ radian}")
+
+    st.latex(r"90^\circ=\frac{\pi}{2}\text{ radian}")
+
+    st.latex(r"60^\circ=\frac{\pi}{3}\text{ radian}")
+
+    st.latex(r"45^\circ=\frac{\pi}{4}\text{ radian}")
+
+    st.latex(r"30^\circ=\frac{\pi}{6}\text{ radian}")
+
+    # ========================================================
+    # 4. SEGITIGA SIKU-SIKU
+    # ========================================================
+
+    st.subheader("4. Segitiga Siku-Siku")
+
+    st.markdown("""
+    Segitiga siku-siku adalah segitiga yang memiliki satu sudut
+    sebesar 90°.
+
+    Pada segitiga siku-siku terdapat tiga sisi penting:
+
+    - sisi miring atau hipotenusa;
+    - sisi depan terhadap sudut yang diamati;
+    - sisi samping terhadap sudut yang diamati.
+    """)
+
+    st.markdown("""
+    Penamaan sisi depan dan sisi samping bergantung pada sudut
+    yang sedang diamati.
+    """)
+
+    # ========================================================
+    # 5. PYTHAGORAS
+    # ========================================================
+
+    st.subheader("5. Teorema Pythagoras")
+
+    st.markdown("""
+    Pada segitiga siku-siku, hubungan ketiga sisi dinyatakan
+    dengan teorema Pythagoras.
+    """)
+
+    st.latex(r"a^2+b^2=c^2")
+
+    st.markdown("""
+    dengan c merupakan sisi miring atau hipotenusa.
+    """)
+
+    st.markdown("Contoh segitiga dengan sisi 3, 4, dan 5:");
+
+    st.latex(r"3^2+4^2=5^2")
+
+    st.latex(r"9+16=25")
+
+    st.success("Segitiga dengan sisi 3, 4, dan 5 merupakan segitiga siku-siku.")
+
+    # ========================================================
+    # 6. SINUS
+    # ========================================================
+
+    st.subheader("6. Perbandingan Trigonometri: Sinus")
+
+    st.markdown("""
+    Sinus suatu sudut pada segitiga siku-siku merupakan perbandingan
+    antara sisi depan sudut dan sisi miring.
+    """)
+
+    st.latex(r"\sin(\theta)=\frac{\text{sisi depan}}{\text{sisi miring}}")
+
+    st.markdown("""
+    Cara mudah mengingatnya adalah **SOH**:
+
+    **S**ine = **O**pposite / **H**ypotenuse.
+    """)
+
+    # Visualisasi segitiga
+    
+::contentReference[oaicite:0]{index=0}
+
+
+    # ========================================================
+    # 7. COSINUS
+    # ========================================================
+
+    st.subheader("7. Perbandingan Trigonometri: Cosinus")
+
+    st.markdown("""
+    Cosinus suatu sudut pada segitiga siku-siku merupakan
+    perbandingan antara sisi samping dan sisi miring.
+    """)
+
+    st.latex(r"\cos(\theta)=\frac{\text{sisi samping}}{\text{sisi miring}}")
+
+    st.markdown("""
+    Cara mudah mengingatnya adalah **CAH**:
+
+    **C**osine = **A**djacent / **H**ypotenuse.
+    """)
+
+    # Visualisasi cosinus menggunakan rasio 4/5
+    
+::contentReference[oaicite:1]{index=1}
+
+
+    # ========================================================
+    # 8. TANGEN
+    # ========================================================
+
+    st.subheader("8. Perbandingan Trigonometri: Tangen")
+
+    st.markdown("""
+    Tangen suatu sudut pada segitiga siku-siku merupakan
+    perbandingan antara sisi depan dan sisi samping.
+    """)
+
+    st.latex(r"\tan(\theta)=\frac{\text{sisi depan}}{\text{sisi samping}}")
+
+    st.markdown("""
+    Cara mudah mengingatnya adalah **TOA**:
+
+    **T**angent = **O**pposite / **A**djacent.
+    """)
+
+    # ========================================================
+    # 9. SOH CAH TOA
+    # ========================================================
+
+    st.subheader("9. SOH — CAH — TOA")
+
+    st.markdown("""
+    Ketiga perbandingan trigonometri dasar dapat diringkas sebagai:
+    """)
+
+    st.markdown("""
+    **SOH**
+
+    Sinus = sisi depan / sisi miring
+
+    **CAH**
+
+    Cosinus = sisi samping / sisi miring
+
+    **TOA**
+
+    Tangen = sisi depan / sisi samping
+    """)
+
+    # ========================================================
+    # 10. CONTOH SEGITIGA 3-4-5
+    # ========================================================
+
+    st.subheader("10. Contoh Perbandingan Trigonometri")
+
+    st.markdown("""
+    Diketahui segitiga siku-siku memiliki sisi depan = 3,
+    sisi samping = 4, dan sisi miring = 5.
+    """)
+
+    st.markdown("Maka:");
+
+    st.latex(r"\sin(\theta)=\frac{3}{5}")
+
+    st.latex(r"\cos(\theta)=\frac{4}{5}")
+
+    st.latex(r"\tan(\theta)=\frac{3}{4}")
+
+    st.success(
+        "Perhatikan bahwa sisi depan dan sisi samping ditentukan berdasarkan sudut θ."
+    )
+
+    # ========================================================
+    # 11. HUBUNGAN SIN COS TAN
+    # ========================================================
+
+    st.subheader("11. Hubungan Sinus, Cosinus, dan Tangen")
+
+    st.markdown("""
+    Tangen dapat dinyatakan menggunakan sinus dan cosinus:
+    """)
+
+    st.latex(r"\tan(\theta)=\frac{\sin(\theta)}{\cos(\theta)}")
+
+    # Visualisasi hubungan tangen
+    
+::contentReference[oaicite:2]{index=2}
+
+
+    # ========================================================
+    # 12. IDENTITAS PYTHAGORAS
+    # ========================================================
+
+    st.subheader("12. Identitas Trigonometri Dasar")
+
+    st.markdown("""
+    Salah satu identitas trigonometri paling penting adalah:
+    """)
+
+    st.latex(r"\sin^2(\theta)+\cos^2(\theta)=1")
+
+    st.markdown("""
+    Identitas ini berasal dari teorema Pythagoras pada
+    lingkaran satuan.
+    """)
+
+    
+::contentReference[oaicite:3]{index=3}
+
+
+    # ========================================================
+    # 13. SUDUT ISTIMEWA
+    # ========================================================
+
+    st.subheader("13. Nilai Trigonometri Sudut Istimewa")
+
+    st.markdown("""
+    Beberapa sudut memiliki nilai sinus, cosinus, dan tangen
+    yang dapat ditentukan secara eksak.
+    """)
+
+    data_sudut = {
+        "Sudut": [
+            "0°",
+            "30°",
+            "45°",
+            "60°",
+            "90°"
+        ],
+        "Sinus": [
+            "0",
+            "1/2",
+            "√2/2",
+            "√3/2",
+            "1"
+        ],
+        "Cosinus": [
+            "1",
+            "√3/2",
+            "√2/2",
+            "1/2",
+            "0"
+        ],
+        "Tangen": [
+            "0",
+            "√3/3",
+            "1",
+            "√3",
+            "Tidak terdefinisi"
+        ]
+    }
+
+    st.table(data_sudut)
+
+    # ========================================================
+    # 14. POLA NILAI SUDUT ISTIMEWA
+    # ========================================================
+
+    st.subheader("14. Pola Nilai Sinus Sudut Istimewa")
+
+    st.markdown("""
+    Nilai sinus sudut 0°, 30°, 45°, 60°, dan 90° dapat
+    diingat menggunakan pola:
+    """)
+
+    st.latex(r"\sin(\theta)=\frac{\sqrt{n}}{2}")
+
+    st.markdown("""
+    dengan n berturut-turut 0, 1, 2, 3, dan 4.
+    """)
+
+    st.markdown("Sehingga:");
+
+    st.latex(r"\sin(0^\circ)=\frac{\sqrt{0}}{2}")
+
+    st.latex(r"\sin(30^\circ)=\frac{\sqrt{1}}{2}")
+
+    st.latex(r"\sin(45^\circ)=\frac{\sqrt{2}}{2}")
+
+    st.latex(r"\sin(60^\circ)=\frac{\sqrt{3}}{2}")
+
+    st.latex(r"\sin(90^\circ)=\frac{\sqrt{4}}{2}")
+
+    # ========================================================
+    # 15. KUADRAN
+    # ========================================================
+
+    st.subheader("15. Kuadran pada Bidang Koordinat")
+
+    st.markdown("""
+    Dalam pembahasan trigonometri yang lebih luas, bidang koordinat
+    dibagi menjadi empat kuadran.
+    """)
+
+    st.markdown("""
+    **Kuadran I**
+
+    Sinus, cosinus, dan tangen bernilai positif.
+
+    **Kuadran II**
+
+    Sinus positif, sedangkan cosinus dan tangen negatif.
+
+    **Kuadran III**
+
+    Tangen positif, sedangkan sinus dan cosinus negatif.
+
+    **Kuadran IV**
+
+    Cosinus positif, sedangkan sinus dan tangen negatif.
+    """)
+
+    # ========================================================
+    # 16. NILAI NEGATIF
+    # ========================================================
+
+    st.subheader("16. Nilai Trigonometri Positif dan Negatif")
+
+    st.markdown("""
+    Tanda positif atau negatif nilai trigonometri bergantung
+    pada posisi sudut pada kuadran.
+    """)
+
+    st.table({
+        "Kuadran": ["I", "II", "III", "IV"],
+        "sin": ["+", "+", "−", "−"],
+        "cos": ["+", "−", "−", "+"],
+        "tan": ["+", "−", "+", "−"]
+    })
+
+    # ========================================================
+    # 17. MENENTUKAN SISI
+    # ========================================================
+
+    st.subheader("17. Menentukan Panjang Sisi")
+
+    st.markdown("""
+    Misalkan diketahui:
+    """)
+
+    st.latex(r"\sin(30^\circ)=\frac{x}{10}")
+
+    st.markdown("""
+    Karena nilai sinus 30° adalah 1/2:
+    """)
+
+    st.latex(r"\frac{1}{2}=\frac{x}{10}")
+
+    st.latex(r"x=5")
+
+    st.success("Panjang sisi depan adalah 5 satuan.")
+
+    # ========================================================
+    # 18. CONTOH COSINUS
+    # ========================================================
+
+    st.subheader("18. Contoh Menggunakan Cosinus")
+
+    st.markdown("""
+    Diketahui sisi miring sebuah segitiga adalah 12 cm
+    dan sudutnya 60°.
+
+    Tentukan panjang sisi samping.
+    """)
+
+    st.latex(r"\cos(60^\circ)=\frac{x}{12}")
+
+    st.latex(r"\frac{1}{2}=\frac{x}{12}")
+
+    st.latex(r"x=6")
+
+    st.success("Panjang sisi samping adalah 6 cm.")
+
+    # ========================================================
+    # 19. CONTOH TANGEN
+    # ========================================================
+
+    st.subheader("19. Contoh Menggunakan Tangen")
+
+    st.markdown("""
+    Sebuah segitiga siku-siku memiliki sisi samping 8 cm
+    dan sudut 45°.
+
+    Tentukan panjang sisi depan.
+    """)
+
+    st.latex(r"\tan(45^\circ)=\frac{x}{8}")
+
+    st.latex(r"1=\frac{x}{8}")
+
+    st.latex(r"x=8")
+
+    st.success("Panjang sisi depan adalah 8 cm.")
+
+    # ========================================================
+    # 20. INVERS TRIGONOMETRI
+    # ========================================================
+
+    st.subheader("20. Menentukan Besar Sudut")
+
+    st.markdown("""
+    Jika nilai perbandingan trigonometri diketahui,
+    besar sudut dapat dicari menggunakan fungsi invers.
+    """)
+
+    st.markdown("Untuk sinus:");
+
+    st.latex(r"\theta=\sin^{-1}(x)")
+
+    st.markdown("Untuk cosinus:");
+
+    st.latex(r"\theta=\cos^{-1}(x)")
+
+    st.markdown("Untuk tangen:");
+
+    st.latex(r"\theta=\tan^{-1}(x)")
+
+    st.markdown("Contoh:");
+
+    st.latex(r"\sin(\theta)=\frac{1}{2}")
+
+    st.latex(r"\theta=\sin^{-1}\left(\frac{1}{2}\right)")
+
+    st.latex(r"\theta=30^\circ")
+
+    # ========================================================
+    # 21. KALKULATOR TRIGONOMETRI
+    # ========================================================
+
+    st.subheader("21. Kalkulator Trigonometri")
+
+    sudut = st.number_input(
+        "Masukkan sudut dalam derajat",
+        min_value=0.0,
+        max_value=360.0,
+        value=30.0,
+        step=1.0,
+        key="sudut_trigonometri"
+    )
+
+    import math
+
+    radian = math.radians(sudut)
+
+    nilai_sin = math.sin(radian)
+    nilai_cos = math.cos(radian)
+
+    if abs(math.cos(radian)) < 1e-10:
+        nilai_tan = None
+    else:
+        nilai_tan = math.tan(radian)
+
+    st.metric(
+        "sin(θ)",
+        f"{nilai_sin:.4f}"
+    )
+
+    st.metric(
+        "cos(θ)",
+        f"{nilai_cos:.4f}"
+    )
+
+    if nilai_tan is not None:
+
+        st.metric(
+            "tan(θ)",
+            f"{nilai_tan:.4f}"
+        )
+
+    else:
+
+        st.metric(
+            "tan(θ)",
+            "Tidak terdefinisi"
+        )
+
+    # ========================================================
+    # 22. MASALAH KONTEKSTUAL
+    # ========================================================
+
+    st.subheader("22. Penerapan Trigonometri")
+
+    st.markdown("""
+    Trigonometri dapat digunakan untuk menentukan tinggi
+    atau jarak yang sulit diukur secara langsung.
+    """)
+
+    st.markdown("""
+    Contohnya:
+
+    - menentukan tinggi gedung;
+    - menentukan tinggi pohon;
+    - menentukan jarak kapal;
+    - menentukan kemiringan jalan;
+    - menentukan panjang tangga;
+    - menentukan sudut elevasi;
+    - menentukan sudut depresi.
+    """)
+
+    # ========================================================
+    # 23. CONTOH TINGGI POHON
+    # ========================================================
+
+    st.subheader("23. Contoh Menentukan Tinggi Pohon")
+
+    st.markdown("""
+    Seseorang berdiri sejauh 20 meter dari sebuah pohon.
+    Sudut elevasi ke puncak pohon adalah 30°.
+
+    Abaikan tinggi mata pengamat.
+    """)
+
+    st.markdown("Gunakan tangen:");
+
+    st.latex(r"\tan(30^\circ)=\frac{h}{20}")
+
+    st.latex(r"\frac{\sqrt{3}}{3}=\frac{h}{20}")
+
+    st.latex(r"h=\frac{20\sqrt{3}}{3}")
+
+    st.success(
+        "Tinggi pohon dapat diperkirakan sekitar 11,55 meter."
+    )
+
+    # ========================================================
+    # 24. SUDUT ELEVASI
+    # ========================================================
+
+    st.subheader("24. Sudut Elevasi")
+
+    st.markdown("""
+    Sudut elevasi adalah sudut yang terbentuk antara garis
+    horizontal dengan garis pandang menuju objek yang berada
+    lebih tinggi.
+    """)
+
+    st.markdown("""
+    Misalnya seseorang melihat puncak gedung dari permukaan tanah.
+    Sudut antara garis horizontal dan garis pandang ke puncak
+    gedung disebut sudut elevasi.
+    """)
+
+    # ========================================================
+    # 25. SUDUT DEPRESI
+    # ========================================================
+
+    st.subheader("25. Sudut Depresi")
+
+    st.markdown("""
+    Sudut depresi adalah sudut yang terbentuk antara garis
+    horizontal dengan garis pandang menuju objek yang berada
+    lebih rendah.
+    """)
+
+    st.info(
+        "Sudut elevasi digunakan ketika objek berada di atas pengamat, "
+        "sedangkan sudut depresi digunakan ketika objek berada di bawah pengamat."
+    )
+
+    # ========================================================
+    # 26. EKSPLORASI SUDUT
+    # ========================================================
+
+    st.subheader("26. Eksplorasi Nilai Trigonometri")
+
+    sudut_eksplorasi = st.slider(
+        "Pilih sudut",
+        min_value=0,
+        max_value=90,
+        value=30,
+        step=1,
+        key="eksplorasi_sudut_trig"
+    )
+
+    rad = math.radians(sudut_eksplorasi)
+
+    sin_val = math.sin(rad)
+    cos_val = math.cos(rad)
+
+    if abs(math.cos(rad)) < 1e-10:
+        tan_text = "Tidak terdefinisi"
+    else:
+        tan_text = f"{math.tan(rad):.4f}"
+
+    st.markdown(
+        f"Untuk sudut **{sudut_eksplorasi}°**:"
+    )
+
+    st.latex(
+        f"\\sin({sudut_eksplorasi}^\\circ)={sin_val:.4f}"
+    )
+
+    st.latex(
+        f"\\cos({sudut_eksplorasi}^\\circ)={cos_val:.4f}"
+    )
+
+    st.latex(
+        f"\\tan({sudut_eksplorasi}^\\circ)={tan_text}"
+    )
+
+    # ========================================================
+    # 27. LATIHAN
+    # ========================================================
+
+    st.subheader("27. Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Tentukan nilai:
+
+    sin(30°)
+    """)
+
+    st.markdown("""
+    **Soal 2**
+
+    Tentukan nilai:
+
+    cos(60°)
+    """)
+
+    st.markdown("""
+    **Soal 3**
+
+    Tentukan nilai:
+
+    tan(45°)
+    """)
+
+    st.markdown("""
+    **Soal 4**
+
+    Sebuah segitiga siku-siku memiliki sisi depan 6 cm
+    dan sisi miring 10 cm. Tentukan nilai sinus sudutnya.
+    """)
+
+    st.markdown("""
+    **Soal 5**
+
+    Sebuah segitiga siku-siku memiliki sisi samping 8 cm
+    dan sisi miring 10 cm. Tentukan nilai cosinus sudutnya.
+    """)
+
+    st.markdown("""
+    **Soal 6**
+
+    Sebuah tangga panjangnya 10 m disandarkan pada dinding
+    dengan sudut 60° terhadap tanah. Tentukan tinggi yang
+    dicapai tangga pada dinding.
+    """)
+
+    st.markdown("""
+    **Soal 7**
+
+    Dari jarak 30 meter, seseorang melihat puncak sebuah
+    gedung dengan sudut elevasi 45°. Tentukan tinggi gedung
+    jika tinggi mata diabaikan.
+    """)
+
+    # ========================================================
+    # 28. KUIS
+    # ========================================================
+
+    st.subheader("28. Kuis Interaktif")
+
+    jawaban = st.radio(
+        "Jika sisi depan = 3 dan sisi miring = 5, maka sin(θ) adalah...",
+        [
+            "3/4",
+            "4/5",
+            "3/5",
+            "5/3"
+        ],
+        key="kuis_trigonometri_1"
+    )
+
+    if st.button(
+        "Periksa Jawaban",
+        key="cek_trigonometri_1"
+    ):
+
+        if jawaban == "3/5":
+
+            st.success(
+                "✅ Benar! Sinus = sisi depan / sisi miring = 3/5."
+            )
+
+        else:
+
+            st.error(
+                "❌ Belum tepat. Ingat SOH: Sinus = Opposite / Hypotenuse."
+            )
+
+    # ========================================================
+    # 29. RANGKUMAN
+    # ========================================================
+
+    with st.expander("📌 Rangkuman Materi", expanded=False):
+
+        st.markdown("""
+        ### Konsep Utama Trigonometri I
+
+        **1. Sudut**
+
+        Sudut dapat dinyatakan dalam derajat maupun radian.
+
+        **2. Teorema Pythagoras**
+
+        Hubungan sisi segitiga siku-siku:
+
+        \(a^2+b^2=c^2\)
+
+        **3. Sinus**
+
+        sin(θ) = sisi depan / sisi miring
+
+        **4. Cosinus**
+
+        cos(θ) = sisi samping / sisi miring
+
+        **5. Tangen**
+
+        tan(θ) = sisi depan / sisi samping
+
+        **6. Hubungan Sinus dan Cosinus**
+
+        tan(θ) = sin(θ) / cos(θ)
+
+        **7. Identitas Pythagoras**
+
+        sin²(θ) + cos²(θ) = 1
+
+        **8. Sudut Istimewa**
+
+        Sudut yang penting untuk dikuasai:
+
+        0°, 30°, 45°, 60°, dan 90°.
+
+        **9. Aplikasi**
+
+        Trigonometri dapat digunakan untuk menentukan
+        tinggi, jarak, panjang, dan sudut dalam berbagai
+        permasalahan kehidupan nyata.
+        """)
+        
 def persamaan_fungsi_kuadrat():
 
     st.header("📈 Persamaan dan Fungsi Kuadrat")
