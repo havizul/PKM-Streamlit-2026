@@ -913,7 +913,7 @@ def statistika():
         step=1,
         key="slider_statistika"
     )
-
+    
     data_awal = [
         60,
         65,
@@ -925,28 +925,41 @@ def statistika():
         85,
         90
     ]
-
+    
     data_baru = data_awal + [nilai_slider]
-
+    
     mean_baru = statistics.mean(data_baru)
     median_baru = statistics.median(data_baru)
-
+    
+    # Tabel data
+    df_data = pd.DataFrame({
+        "No": range(1, len(data_baru) + 1),
+        "Nilai": data_baru
+    })
+    
+    st.markdown("### Data")
+    
+    st.dataframe(
+        df_data,
+        use_container_width=True,
+        hide_index=True
+    )
+    
+    # Ukuran statistik
     col1, col2 = st.columns(2)
-
+    
     with col1:
-
         st.metric(
             "Mean",
             f"{mean_baru:.2f}"
         )
-
+    
     with col2:
-
         st.metric(
             "Median",
             f"{median_baru:.2f}"
         )
-
+    
     st.markdown("""
     Perhatikan bagaimana penambahan satu nilai dapat
     memengaruhi mean dan median.
