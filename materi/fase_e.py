@@ -832,7 +832,7 @@ def trigonometri_1():
 
         Hubungan sisi segitiga siku-siku:
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$a^2+b^2=c^2$
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$a^2+b^2=c^2$
 
         **3. Sinus**
 
@@ -840,15 +840,15 @@ def trigonometri_1():
 
         **4. Cosinus**
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$cos(θ) = sisi samping / sisi miring
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cos(θ) = sisi samping / sisi miring
 
         **5. Tangen**
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$tan(θ) = sisi depan / sisi samping
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tan(θ) = sisi depan / sisi samping
 
         **6. Hubungan Sinus dan Cosinus**
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$tan(θ) = sin(θ) / cos(θ)
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tan(θ) = sin(θ) / cos(θ)
 
         **7. Identitas Pythagoras**
 
