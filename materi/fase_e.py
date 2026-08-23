@@ -1005,14 +1005,11 @@ def persamaan_fungsi_kuadrat():
 
         Jika a < 0 → parabola terbuka ke bawah.
 
-        ### Sumbu Simetri
-
-        <div style="margin-left: 80px;">
-        $$
-        x=-\frac{b}{2a}
-        $$
+        ### Sumbu Simetri 
+        """)
+        st.latex(r"\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad x=-\frac{b}{2a}")
         
-        </div>
+        st.markdown("""
 
         ### Titik Puncak
 
@@ -1022,7 +1019,7 @@ def persamaan_fungsi_kuadrat():
 
         Fungsi kuadrat banyak digunakan dalam masalah
         maksimum, minimum, lintasan, dan pemodelan.
-        """, unsafe_allow_html=True)
+        """)
 
 
 
