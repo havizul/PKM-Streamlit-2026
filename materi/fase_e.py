@@ -608,25 +608,22 @@ def sptldv():
     **Soal 2**
 
     Tentukan titik potong sumbu-X dan sumbu-Y dari:
-
-    \(2x+y=8\)
     """)
+    st.latex(r"2x+y=8")
 
     st.markdown("""
     **Soal 3**
 
-    Tentukan apakah titik (2,1) memenuhi:
-
-    \(x+y\leq4\)
+    Tentukan apakah titik (2,1) memenuhi:   
     """)
+    st.latex(r"x+y \leq 4")
 
     st.markdown("""
     **Soal 4**
 
     Tentukan daerah penyelesaian:
-
-    \(x+y\leq6\), \(x\geq0\), dan \(y\geq0\).
     """)
+    st.latex(r"x+y \leq 6, x \geq 0, dan y \geq 0.")
 
     st.markdown("""
     **Soal 5**
