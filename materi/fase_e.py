@@ -623,19 +623,16 @@ def sptldv():
 
     Tentukan daerah penyelesaian:
     """)
-    st.latex(r"x+y \leq 6, x \geq 0, dan     y \geq 0")
+    st.latex(r"x+y \leq 6,\quad x \geq 0,\quad \text{dan}\quad y \geq 0")
 
     st.markdown("""
     **Soal 5**
 
     Tentukan apakah titik (3,2) memenuhi sistem:
-
-    \(x+y\leq5\)
-
-    \(x\geq0\)
-
-    \(y\geq0\)
     """)
+    st.latex("x+y \leq 5")
+    st.latex(r"x \geq 0")
+    st.latex(r"y \geq 0")
 
     st.markdown("""
     **Soal 6**
