@@ -207,11 +207,171 @@ def trigonometri_1():
     **S**ine = **O**pposite / **H**ypotenuse.
     """)
 
+    # Visualisasi segitiga
+    
+    # ========================================================
+    # 7. COSINUS
+    # ========================================================
+
+    st.subheader("7. Perbandingan Trigonometri: Cosinus")
+
+    st.markdown("""
+    Cosinus suatu sudut pada segitiga siku-siku merupakan
+    perbandingan antara sisi samping dan sisi miring.
+    """)
+
+    st.latex(r"\cos(\theta)=\frac{\text{sisi samping}}{\text{sisi miring}}")
+
+    st.markdown("""
+    Cara mudah mengingatnya adalah **CAH**:
+
+    **C**osine = **A**djacent / **H**ypotenuse.
+    """)
+
+    # Visualisasi cosinus menggunakan rasio 4/5
+    
+    # ========================================================
+    # 8. TANGEN
+    # ========================================================
+
+    st.subheader("8. Perbandingan Trigonometri: Tangen")
+
+    st.markdown("""
+    Tangen suatu sudut pada segitiga siku-siku merupakan
+    perbandingan antara sisi depan dan sisi samping.
+    """)
+
+    st.latex(r"\tan(\theta)=\frac{\text{sisi depan}}{\text{sisi samping}}")
+
+    st.markdown("""
+    Cara mudah mengingatnya adalah **TOA**:
+
+    **T**angent = **O**pposite / **A**djacent.
+    """)
+
+    # ========================================================
+    # 9. SOH CAH TOA
+    # ========================================================
+
+    st.subheader("9. SOH — CAH — TOA")
+
+    st.markdown("""
+    Ketiga perbandingan trigonometri dasar dapat diringkas sebagai:
+    """)
+
+    st.markdown("""
+    **SOH**
+
+    Sinus = sisi depan / sisi miring
+
+    **CAH**
+
+    Cosinus = sisi samping / sisi miring
+
+    **TOA**
+
+    Tangen = sisi depan / sisi samping
+    """)
+
+    # ========================================================
+    # 10. CONTOH SEGITIGA 3-4-5
+    # ========================================================
+
+    st.subheader("10. Contoh Perbandingan Trigonometri")
+
+    st.markdown("""
+    Diketahui segitiga siku-siku memiliki sisi depan = 3,
+    sisi samping = 4, dan sisi miring = 5.
+    """)
+
+    st.markdown("Maka:");
+
+    st.latex(r"\sin(\theta)=\frac{3}{5}")
+
+    st.latex(r"\cos(\theta)=\frac{4}{5}")
+
+    st.latex(r"\tan(\theta)=\frac{3}{4}")
+
+    st.success(
+        "Perhatikan bahwa sisi depan dan sisi samping ditentukan berdasarkan sudut θ."
+    )
+
+    # ========================================================
+    # 11. HUBUNGAN SIN COS TAN
+    # ========================================================
+
+    st.subheader("11. Hubungan Sinus, Cosinus, dan Tangen")
+
+    st.markdown("""
+    Tangen dapat dinyatakan menggunakan sinus dan cosinus:
+    """)
+
+    st.latex(r"\tan(\theta)=\frac{\sin(\theta)}{\cos(\theta)}")
+
+    # Visualisasi hubungan tangen
 
 
+    # ========================================================
+    # 12. IDENTITAS PYTHAGORAS
+    # ========================================================
+
+    st.subheader("12. Identitas Trigonometri Dasar")
+
+    st.markdown("""
+    Salah satu identitas trigonometri paling penting adalah:
+    """)
+
+    st.latex(r"\sin^2(\theta)+\cos^2(\theta)=1")
+
+    st.markdown("""
+    Identitas ini berasal dari teorema Pythagoras pada
+    lingkaran satuan.
+    """)
 
 
+    # ========================================================
+    # 13. SUDUT ISTIMEWA
+    # ========================================================
 
+    st.subheader("13. Nilai Trigonometri Sudut Istimewa")
+
+    st.markdown("""
+    Beberapa sudut memiliki nilai sinus, cosinus, dan tangen
+    yang dapat ditentukan secara eksak.
+    """)
+
+    data_sudut = {
+        "Sudut": [
+            "0°",
+            "30°",
+            "45°",
+            "60°",
+            "90°"
+        ],
+        "Sinus": [
+            "0",
+            "1/2",
+            "√2/2",
+            "√3/2",
+            "1"
+        ],
+        "Cosinus": [
+            "1",
+            "√3/2",
+            "√2/2",
+            "1/2",
+            "0"
+        ],
+        "Tangen": [
+            "0",
+            "√3/3",
+            "1",
+            "√3",
+            "Tidak terdefinisi"
+        ]
+    }
+
+    st.table(data_sudut)
 
 
     
