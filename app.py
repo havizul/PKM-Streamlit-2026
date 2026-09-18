@@ -98,7 +98,7 @@ st.markdown(
 
 
 # ============================================================
-# MENU UTAMA HORIZONTAL
+# MENU UTAMA
 # ============================================================
 
 menu_utama = st.radio(
@@ -109,114 +109,6 @@ menu_utama = st.radio(
 )
 
 st.session_state.halaman = menu_utama
-
-
-# ============================================================
-# SIDEBAR
-# ============================================================
-
-if menu_utama == "📚 Materi Matematika":
-
-    with st.sidebar:
-
-        st.markdown(
-            '<div class="sidebar-title">📚 Materi Matematika</div>',
-            unsafe_allow_html=True
-        )
-
-        # ----------------------------------------------------
-        # FASE E
-        # ----------------------------------------------------
-
-        with st.expander(
-            "📘 FASE E — Kelas X",
-            expanded=True
-        ):
-
-            for item in FASE_E:
-
-                if st.button(
-                    item,
-                    key=f"fase_e_{item}",
-                    use_container_width=True
-                ):
-                    st.session_state.materi = item
-
-       
-        # ----------------------------------------------------
-        # FASE F UMUM
-        # ----------------------------------------------------
-
-        with st.expander(
-            "📗 FASE F — Umum (Kelas XI & XII)",
-            expanded=False
-        ):
-
-            for item in FASE_F_UMUM:
-
-                if st.button(
-                    item,
-                    key=f"fase_f_umum_{item}",
-                    use_container_width=True
-                ):
-                    st.session_state.materi = item
-
-        
-        # ----------------------------------------------------
-        # FASE F LANJUT
-        # ----------------------------------------------------
-
-        with st.expander(
-            "📕 FASE F — Lanjut",
-            expanded=False
-        ):
-
-            for item in FASE_F_LANJUT:
-
-                if st.button(
-                    item,
-                    key=f"fase_f_lanjut_{item}",
-                    use_container_width=True
-                ):
-                    st.session_state.materi = item
-
-# ============================================================
-# TAMPILKAN MATERI
-# ============================================================
-
-if menu_utama == "📚 Materi Matematika":
-    if st.session_state.materi:
-        if st.session_state.materi in FASE_E:
-            fase_e.tampilkan(
-                st.session_state.materi
-            )
-
-        elif st.session_state.materi in FASE_F_UMUM:
-            fase_f_umum.tampilkan(
-                st.session_state.materi
-            )
-
-# ============================================================
-# SIDEBAR MEDIA PEMBELAJARAN
-# ============================================================
-
-elif menu_utama == "🎓 Media Pembelajaran":
-
-    with st.sidebar:
-
-        st.markdown(
-            '<div class="sidebar-title">🎓 Media Pembelajaran</div>',
-            unsafe_allow_html=True
-        )
-
-        for item in MEDIA_PEMBELAJARAN:
-
-            if st.button(
-                item,
-                key=f"media_{item}",
-                use_container_width=True
-            ):
-                st.session_state.media = item
 
 
 # ============================================================
@@ -254,7 +146,6 @@ if menu_utama == "🏠 Beranda":
     col1, col2, col3 = st.columns(3)
 
     with col1:
-
         st.info("""
         ### 📘 FASE E
 
@@ -271,7 +162,6 @@ if menu_utama == "🏠 Beranda":
         """)
 
     with col2:
-
         st.success("""
         ### 📗 FASE F — UMUM
 
@@ -290,7 +180,6 @@ if menu_utama == "🏠 Beranda":
         """)
 
     with col3:
-
         st.warning("""
         ### 📕 FASE F — LANJUT
 
@@ -310,28 +199,123 @@ if menu_utama == "🏠 Beranda":
 
 
 # ============================================================
-# HALAMAN MATERI
+# MATERI MATEMATIKA
 # ============================================================
 
-#elif menu_utama == "📚 Materi Matematika":
-#
-#    materi = st.session_state.materi
+elif menu_utama == "📚 Materi Matematika":
 
-#    st.header(f"📖 {materi}")
+    # --------------------------------------------------------
+    # SIDEBAR
+    # --------------------------------------------------------
 
-#    st.divider()
+    with st.sidebar:
 
-#    st.info(
-#        f"Materi **{materi}** akan ditampilkan dari "
-#        "file materi pada tahap berikutnya."
-#    )
+        st.markdown(
+            '<div class="sidebar-title">📚 Materi Matematika</div>',
+            unsafe_allow_html=True
+        )
+
+        # ====================================================
+        # FASE E
+        # ====================================================
+
+        with st.expander(
+            "📘 FASE E — Kelas X",
+            expanded=True
+        ):
+
+            for item in FASE_E:
+
+                if st.button(
+                    item,
+                    key=f"fase_e_{item}",
+                    use_container_width=True
+                ):
+                    st.session_state.materi = item
+                    st.rerun()
+
+        # ====================================================
+        # FASE F UMUM
+        # ====================================================
+
+        with st.expander(
+            "📗 FASE F — Umum (Kelas XI & XII)",
+            expanded=False
+        ):
+
+            for item in FASE_F_UMUM:
+
+                if st.button(
+                    item,
+                    key=f"fase_f_umum_{item}",
+                    use_container_width=True
+                ):
+                    st.session_state.materi = item
+                    st.rerun()
+
+        # ====================================================
+        # FASE F LANJUT
+        # ====================================================
+
+        with st.expander(
+            "📕 FASE F — Lanjut",
+            expanded=False
+        ):
+
+            for item in FASE_F_LANJUT:
+
+                if st.button(
+                    item,
+                    key=f"fase_f_lanjut_{item}",
+                    use_container_width=True
+                ):
+                    st.session_state.materi = item
+                    st.rerun()
+
+
+    # --------------------------------------------------------
+    # TAMPILKAN MATERI
+    # --------------------------------------------------------
+
+    materi = st.session_state.materi
+
+    if materi in FASE_E:
+
+        fase_e.tampilkan(materi)
+
+    elif materi in FASE_F_UMUM:
+
+        fase_f_umum.tampilkan(materi)
+
+    elif materi in FASE_F_LANJUT:
+
+        st.info(
+            f"Materi **{materi}** belum dikembangkan."
+        )
 
 
 # ============================================================
-# HALAMAN MEDIA PEMBELAJARAN
+# MEDIA PEMBELAJARAN
 # ============================================================
 
 elif menu_utama == "🎓 Media Pembelajaran":
+
+    with st.sidebar:
+
+        st.markdown(
+            '<div class="sidebar-title">🎓 Media Pembelajaran</div>',
+            unsafe_allow_html=True
+        )
+
+        for item in MEDIA_PEMBELAJARAN:
+
+            if st.button(
+                item,
+                key=f"media_{item}",
+                use_container_width=True
+            ):
+                st.session_state.media = item
+                st.rerun()
 
     media = st.session_state.media
 
