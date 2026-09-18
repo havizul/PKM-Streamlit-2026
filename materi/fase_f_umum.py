@@ -2106,6 +2106,1077 @@ def matematika_keuangan():
     """)
 
 
+def fungsi_invers_komposisi():
+
+    st.header("🔗 Fungsi, Invers dan Komposisi Fungsi")
+
+    st.markdown("""
+    ### Matematika Fase F — Kelas XI & XII
+
+    Fungsi merupakan salah satu konsep penting dalam matematika yang
+    digunakan untuk menyatakan hubungan antara dua himpunan atau
+    antara suatu input dengan output tertentu.
+
+    Pada materi ini kita akan mempelajari konsep fungsi, domain dan range,
+    operasi fungsi, fungsi invers, serta komposisi fungsi dan penerapannya
+    dalam berbagai permasalahan.
+    """)
+
+    st.divider()
+
+    # ========================================================
+    # TUJUAN PEMBELAJARAN
+    # ========================================================
+
+    with st.expander("🎯 Tujuan Pembelajaran", expanded=True):
+
+        st.markdown("""
+        Setelah mempelajari materi ini, peserta didik diharapkan mampu:
+
+        1. Menjelaskan pengertian fungsi.
+        2. Menentukan domain, kodomain, dan range suatu fungsi.
+        3. Menentukan nilai fungsi.
+        4. Menentukan bentuk fungsi dari suatu permasalahan.
+        5. Melakukan operasi pada fungsi.
+        6. Menentukan fungsi invers.
+        7. Menentukan syarat suatu fungsi memiliki invers.
+        8. Menentukan komposisi dua fungsi atau lebih.
+        9. Menentukan invers dari fungsi komposisi.
+        10. Menyelesaikan masalah kontekstual menggunakan fungsi,
+            invers, dan komposisi fungsi.
+        """)
+
+    # ========================================================
+    # 1. APERSEPSI
+    # ========================================================
+
+    st.subheader("1. Apersepsi")
+
+    st.markdown("""
+    Dalam kehidupan sehari-hari kita sering menemukan hubungan antara
+    suatu input dengan output.
+
+    Contohnya adalah harga barang dan jumlah barang yang dibeli.
+
+    Jika harga satu buku Rp10.000, maka harga 2 buku adalah Rp20.000,
+    harga 3 buku adalah Rp30.000, dan seterusnya.
+
+    Hubungan tersebut dapat dinyatakan menggunakan suatu aturan
+    matematika yang disebut **fungsi**.
+    """)
+
+    st.info("""
+    💡 **Pertanyaan pemantik**
+
+    Jika harga sebuah buku Rp12.000 dan seseorang membeli 5 buku,
+    bagaimana cara menentukan total harga secara matematis?
+    """)
+
+    # ========================================================
+    # 2. PENGERTIAN FUNGSI
+    # ========================================================
+
+    st.subheader("2. Pengertian Fungsi")
+
+    st.markdown("""
+    Fungsi adalah suatu aturan yang memasangkan setiap anggota
+    suatu himpunan asal dengan tepat satu anggota pada himpunan tujuan.
+
+    Himpunan asal disebut **domain**.
+
+    Himpunan tujuan disebut **kodomain**.
+
+    Anggota kodomain yang memiliki pasangan dari domain disebut **range**.
+    """)
+
+    st.latex(r"f:A\rightarrow B")
+
+    st.markdown("""
+    Artinya fungsi \(f\) memetakan himpunan \(A\) ke himpunan \(B\).
+    """)
+
+    st.latex(r"f(x)=y")
+
+    st.markdown("""
+    Dengan demikian, setiap nilai \(x\) pada domain mempunyai tepat
+    satu nilai keluaran \(y\).
+    """)
+
+    # ========================================================
+    # 3. DOMAIN, KODOMAIN DAN RANGE
+    # ========================================================
+
+    st.subheader("3. Domain, Kodomain, dan Range")
+
+    st.markdown("""
+    Misalkan terdapat fungsi:
+
+    \(f:A\rightarrow B\)
+
+    dengan:
+
+    - A = domain
+    - B = kodomain
+    - Range = himpunan hasil pemetaan dari A
+    """)
+
+    st.latex(r"A=\{1,2,3\}")
+
+    st.latex(r"B=\{2,4,6,8\}")
+
+    st.markdown("""
+    Misalkan fungsi diberikan oleh:
+    """)
+
+    st.latex(r"f(x)=2x")
+
+    st.markdown("""
+    Maka:
+    """)
+
+    st.latex(r"f(1)=2")
+
+    st.latex(r"f(2)=4")
+
+    st.latex(r"f(3)=6")
+
+    st.success("Range fungsi tersebut adalah {2, 4, 6}.")
+
+    # ========================================================
+    # 4. NOTASI FUNGSI
+    # ========================================================
+
+    st.subheader("4. Notasi Fungsi")
+
+    st.markdown("""
+    Fungsi biasanya dituliskan dalam bentuk:
+    """)
+
+    st.latex(r"f(x)=ax+b")
+
+    st.markdown("""
+    Misalnya:
+    """)
+
+    st.latex(r"f(x)=2x+3")
+
+    st.markdown("""
+    Untuk menentukan nilai fungsi pada \(x=4\), substitusikan
+    \(x=4\) ke dalam fungsi.
+    """)
+
+    st.latex(r"f(4)=2(4)+3")
+
+    st.latex(r"f(4)=11")
+
+    st.success("Jadi, nilai f(4) adalah 11.")
+
+    # ========================================================
+    # 5. MENENTUKAN NILAI FUNGSI
+    # ========================================================
+
+    st.subheader("5. Menentukan Nilai Fungsi")
+
+    st.markdown("""
+    Misalkan:
+    """)
+
+    st.latex(r"f(x)=3x-5")
+
+    st.markdown("Tentukan nilai \(f(7)\).")
+
+    st.latex(r"f(7)=3(7)-5")
+
+    st.latex(r"f(7)=21-5")
+
+    st.latex(r"f(7)=16")
+
+    st.success("Nilai f(7) adalah 16.")
+
+    # ========================================================
+    # 6. DOMAIN FUNGSI
+    # ========================================================
+
+    st.subheader("6. Menentukan Domain Fungsi")
+
+    st.markdown("""
+    Domain adalah nilai-nilai \(x\) yang diperbolehkan dalam suatu fungsi.
+
+    Untuk fungsi polinomial, domain biasanya seluruh bilangan real.
+
+    Namun, untuk fungsi pecahan terdapat pembatasan karena penyebut
+    tidak boleh sama dengan nol.
+    """)
+
+    st.latex(r"f(x)=\frac{1}{x-2}")
+
+    st.markdown("""
+    Penyebut tidak boleh nol, sehingga:
+    """)
+
+    st.latex(r"x-2\neq0")
+
+    st.latex(r"x\neq2")
+
+    st.success("Domain fungsi adalah semua bilangan real kecuali x = 2.")
+
+    # ========================================================
+    # 7. OPERASI FUNGSI
+    # ========================================================
+
+    st.subheader("7. Operasi pada Fungsi")
+
+    st.markdown("""
+    Jika diketahui dua fungsi \(f(x)\) dan \(g(x)\), kita dapat
+    melakukan operasi penjumlahan, pengurangan, perkalian,
+    dan pembagian fungsi.
+    """)
+
+    st.latex(r"(f+g)(x)=f(x)+g(x)")
+
+    st.latex(r"(f-g)(x)=f(x)-g(x)")
+
+    st.latex(r"(fg)(x)=f(x)g(x)")
+
+    st.latex(r"\left(\frac{f}{g}\right)(x)=\frac{f(x)}{g(x)}")
+
+    # ========================================================
+    # 8. CONTOH OPERASI FUNGSI
+    # ========================================================
+
+    st.subheader("8. Contoh Operasi Fungsi")
+
+    st.markdown("""
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=2x+3")
+
+    st.latex(r"g(x)=x-1")
+
+    st.markdown("Maka penjumlahan kedua fungsi adalah:")
+
+    st.latex(r"(f+g)(x)=(2x+3)+(x-1)")
+
+    st.latex(r"(f+g)(x)=3x+2")
+
+    st.markdown("Perkalian kedua fungsi:")
+
+    st.latex(r"(fg)(x)=(2x+3)(x-1)")
+
+    st.latex(r"(fg)(x)=2x^2+x-3")
+
+    # ========================================================
+    # 9. FUNGSI LINEAR
+    # ========================================================
+
+    st.subheader("9. Fungsi Linear")
+
+    st.markdown("""
+    Fungsi linear merupakan fungsi yang dapat dituliskan dalam bentuk:
+    """)
+
+    st.latex(r"f(x)=ax+b")
+
+    st.markdown("""
+    dengan \(a\) dan \(b\) merupakan konstanta.
+
+    Grafik fungsi linear berbentuk garis lurus.
+    """)
+
+    st.latex(r"f(x)=2x+1")
+
+    st.markdown("""
+    Pada fungsi tersebut:
+
+    - gradien = 2
+    - titik potong sumbu-y = 1
+    """)
+
+    # ========================================================
+    # 10. GRAFIK FUNGSI INTERAKTIF
+    # ========================================================
+
+    st.subheader("10. 📊 Eksplorasi Grafik Fungsi Linear")
+
+    a_grafik = st.slider(
+        "Nilai a",
+        min_value=-5.0,
+        max_value=5.0,
+        value=2.0,
+        step=0.5,
+        key="fungsi_linear_a"
+    )
+
+    b_grafik = st.slider(
+        "Nilai b",
+        min_value=-10.0,
+        max_value=10.0,
+        value=1.0,
+        step=1.0,
+        key="fungsi_linear_b"
+    )
+
+    x_grafik = list(range(-10, 11))
+
+    y_grafik = [
+        a_grafik * x + b_grafik
+        for x in x_grafik
+    ]
+
+    df_fungsi = pd.DataFrame({
+        "x": x_grafik,
+        "f(x)": y_grafik
+    })
+
+    st.latex(r"f(x)=ax+b")
+
+    st.line_chart(
+        df_fungsi,
+        x="x",
+        y="f(x)"
+    )
+
+    st.info(
+        f"Fungsi yang sedang dieksplorasi adalah "
+        f"f(x) = {a_grafik}x + {b_grafik}"
+    )
+
+    # ========================================================
+    # 11. FUNGSI SATU-SATU
+    # ========================================================
+
+    st.subheader("11. Fungsi Satu-Satu")
+
+    st.markdown("""
+    Fungsi satu-satu atau injektif adalah fungsi yang memetakan
+    anggota domain yang berbeda ke anggota kodomain yang berbeda.
+
+    Secara sederhana, tidak terdapat dua input berbeda yang menghasilkan
+    output yang sama.
+    """)
+
+    st.latex(r"x_1\neq x_2\Rightarrow f(x_1)\neq f(x_2)")
+
+    st.info("""
+    Fungsi satu-satu sangat penting dalam pembahasan fungsi invers
+    karena suatu fungsi harus dapat dibalik secara unik.
+    """)
+
+    # ========================================================
+    # 12. FUNGSI INVERS
+    # ========================================================
+
+    st.subheader("12. Fungsi Invers")
+
+    st.markdown("""
+    Fungsi invers adalah fungsi yang membalikkan proses pemetaan
+    suatu fungsi.
+
+    Jika fungsi \(f\) memetakan \(x\) menjadi \(y\), maka fungsi invers
+    memetakan \(y\) kembali menjadi \(x\).
+    """)
+
+    st.latex(r"f:x\rightarrow y")
+
+    st.latex(r"f^{-1}:y\rightarrow x")
+
+    st.markdown("""
+    Hubungan fungsi dengan inversnya dapat dituliskan:
+    """)
+
+    st.latex(r"f^{-1}(f(x))=x")
+
+    st.latex(r"f(f^{-1}(x))=x")
+
+    # ========================================================
+    # 13. MENENTUKAN FUNGSI INVERS
+    # ========================================================
+
+    st.subheader("13. Menentukan Fungsi Invers")
+
+    st.markdown("""
+    Misalkan:
+    """)
+
+    st.latex(r"f(x)=2x+3")
+
+    st.markdown("""
+    Langkah pertama adalah mengganti \(f(x)\) dengan \(y\).
+    """)
+
+    st.latex(r"y=2x+3")
+
+    st.markdown("""
+    Kemudian tukarkan \(x\) dan \(y\).
+    """)
+
+    st.latex(r"x=2y+3")
+
+    st.markdown("""
+    Selanjutnya selesaikan terhadap \(y\).
+    """)
+
+    st.latex(r"x-3=2y")
+
+    st.latex(r"y=\frac{x-3}{2}")
+
+    st.markdown("""
+    Jadi fungsi inversnya adalah:
+    """)
+
+    st.latex(r"f^{-1}(x)=\frac{x-3}{2}")
+
+    # ========================================================
+    # 14. VERIFIKASI INVERS
+    # ========================================================
+
+    st.subheader("14. Verifikasi Fungsi Invers")
+
+    st.markdown("""
+    Fungsi dan inversnya dapat diverifikasi dengan komposisi.
+    """)
+
+    st.latex(r"f(x)=2x+3")
+
+    st.latex(r"f^{-1}(x)=\frac{x-3}{2}")
+
+    st.markdown("Verifikasi pertama:")
+
+    st.latex(r"f(f^{-1}(x))=2\left(\frac{x-3}{2}\right)+3")
+
+    st.latex(r"f(f^{-1}(x))=x")
+
+    st.markdown("Verifikasi kedua:")
+
+    st.latex(r"f^{-1}(f(x))=\frac{(2x+3)-3}{2}")
+
+    st.latex(r"f^{-1}(f(x))=x")
+
+    st.success("Kedua komposisi menghasilkan x, sehingga kedua fungsi merupakan invers.")
+
+    # ========================================================
+    # 15. INVERS FUNGSI LINEAR INTERAKTIF
+    # ========================================================
+
+    st.subheader("15. 🧮 Kalkulator Fungsi Invers Linear")
+
+    a_inv = st.number_input(
+        "Nilai a",
+        value=2.0,
+        step=1.0,
+        key="a_invers"
+    )
+
+    b_inv = st.number_input(
+        "Nilai b",
+        value=3.0,
+        step=1.0,
+        key="b_invers"
+    )
+
+    if a_inv != 0:
+
+        st.latex(r"f(x)=ax+b")
+
+        st.success(
+            f"Fungsi: f(x) = {a_inv}x + {b_inv}"
+        )
+
+        st.latex(
+            f"f^{{-1}}(x)=\\frac{{x-({b_inv})}}{{{a_inv}}}"
+        )
+
+    else:
+
+        st.error(
+            "Nilai a tidak boleh 0 karena fungsi tersebut tidak memiliki bentuk invers linear."
+        )
+
+    # ========================================================
+    # 16. KOMPOSISI FUNGSI
+    # ========================================================
+
+    st.subheader("16. Komposisi Fungsi")
+
+    st.markdown("""
+    Komposisi fungsi adalah penggabungan dua fungsi atau lebih
+    sehingga keluaran suatu fungsi menjadi masukan bagi fungsi berikutnya.
+
+    Komposisi fungsi \(f\) dan \(g\) ditulis:
+    """)
+
+    st.latex(r"(f\circ g)(x)=f(g(x))")
+
+    st.markdown("""
+    Artinya fungsi \(g\) dikerjakan terlebih dahulu, kemudian hasilnya
+    dimasukkan ke fungsi \(f\).
+    """)
+
+    # ========================================================
+    # 17. CONTOH KOMPOSISI
+    # ========================================================
+
+    st.subheader("17. Contoh Komposisi Fungsi")
+
+    st.markdown("""
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=2x+1")
+
+    st.latex(r"g(x)=x^2")
+
+    st.markdown("Tentukan \(f\circ g\).")
+
+    st.latex(r"(f\circ g)(x)=f(g(x))")
+
+    st.latex(r"(f\circ g)(x)=f(x^2)")
+
+    st.latex(r"(f\circ g)(x)=2x^2+1")
+
+    st.markdown("Sekarang tentukan \(g\circ f\).")
+
+    st.latex(r"(g\circ f)(x)=g(f(x))")
+
+    st.latex(r"(g\circ f)(x)=(2x+1)^2")
+
+    st.latex(r"(g\circ f)(x)=4x^2+4x+1")
+
+    st.info("""
+    Perhatikan bahwa pada umumnya:
+
+    \(f\circ g\neq g\circ f\)
+
+    Jadi, komposisi fungsi tidak bersifat komutatif.
+    """)
+
+    # ========================================================
+    # 18. KOMPOSISI TIGA FUNGSI
+    # ========================================================
+
+    st.subheader("18. Komposisi Tiga Fungsi")
+
+    st.markdown("""
+    Komposisi dapat dilakukan pada tiga fungsi atau lebih.
+
+    Misalnya terdapat fungsi \(f\), \(g\), dan \(h\).
+    """)
+
+    st.latex(r"(f\circ g\circ h)(x)=f(g(h(x)))")
+
+    st.markdown("""
+    Fungsi \(h\) dikerjakan terlebih dahulu, kemudian \(g\),
+    dan terakhir \(f\).
+    """)
+
+    # ========================================================
+    # 19. KOMPOSISI INTERAKTIF
+    # ========================================================
+
+    st.subheader("19. 🧮 Kalkulator Komposisi Fungsi Linear")
+
+    st.markdown("""
+    Misalkan digunakan dua fungsi linear:
+    """)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        a_f = st.number_input(
+            "Koefisien a pada f",
+            value=2.0,
+            step=1.0,
+            key="a_f_komposisi"
+        )
+
+        b_f = st.number_input(
+            "Konstanta b pada f",
+            value=1.0,
+            step=1.0,
+            key="b_f_komposisi"
+        )
+
+    with col2:
+
+        a_g = st.number_input(
+            "Koefisien a pada g",
+            value=3.0,
+            step=1.0,
+            key="a_g_komposisi"
+        )
+
+        b_g = st.number_input(
+            "Konstanta b pada g",
+            value=2.0,
+            step=1.0,
+            key="b_g_komposisi"
+        )
+
+    st.latex(r"f(x)=ax+b")
+
+    st.latex(r"g(x)=cx+d")
+
+    hasil_a_fg = a_f * a_g
+    hasil_b_fg = a_f * b_g + b_f
+
+    hasil_a_gf = a_g * a_f
+    hasil_b_gf = a_g * b_f + b_g
+
+    st.markdown("### Hasil Komposisi")
+
+    st.latex(
+        f"(f\\circ g)(x)={hasil_a_fg:.2f}x+{hasil_b_fg:.2f}"
+    )
+
+    st.latex(
+        f"(g\\circ f)(x)={hasil_a_gf:.2f}x+{hasil_b_gf:.2f}"
+    )
+
+    # ========================================================
+    # 20. INVERS KOMPOSISI
+    # ========================================================
+
+    st.subheader("20. Invers dari Komposisi Fungsi")
+
+    st.markdown("""
+    Salah satu sifat penting fungsi invers adalah:
+    """)
+
+    st.latex(r"(f\circ g)^{-1}=g^{-1}\circ f^{-1}")
+
+    st.markdown("""
+    Perhatikan bahwa urutan fungsi pada invers komposisi menjadi
+    terbalik.
+    """)
+
+    st.info("""
+    📌 Jika suatu proses dilakukan dengan urutan:
+
+    f → g
+
+    maka proses kebalikannya dilakukan dengan urutan:
+
+    g⁻¹ → f⁻¹
+    """)
+
+    # ========================================================
+    # 21. PENERAPAN FUNGSI
+    # ========================================================
+
+    st.subheader("21. Penerapan Fungsi dalam Kehidupan")
+
+    st.markdown("""
+    Fungsi dapat digunakan untuk memodelkan berbagai hubungan,
+    seperti:
+
+    - harga barang dan jumlah pembelian;
+    - jarak dan waktu;
+    - suhu Celsius dan Fahrenheit;
+    - biaya produksi dan jumlah produksi;
+    - pendapatan dan jumlah barang;
+    - konversi satuan;
+    - pertumbuhan populasi.
+    """)
+
+    st.markdown("""
+    Contoh hubungan suhu Celsius dan Fahrenheit:
+    """)
+
+    st.latex(r"F(C)=\frac{9}{5}C+32")
+
+    st.markdown("""
+    Fungsi tersebut mengubah suhu dalam Celsius menjadi Fahrenheit.
+    """)
+
+    # ========================================================
+    # 22. INVERS DALAM PENERAPAN
+    # ========================================================
+
+    st.subheader("22. Penerapan Fungsi Invers")
+
+    st.markdown("""
+    Jika diketahui hubungan Celsius ke Fahrenheit:
+    """)
+
+    st.latex(r"F(C)=\frac{9}{5}C+32")
+
+    st.markdown("""
+    Fungsi invers dapat digunakan untuk mengubah Fahrenheit kembali
+    menjadi Celsius.
+    """)
+
+    st.latex(r"C(F)=\frac{5}{9}(F-32)")
+
+    st.markdown("""
+    Misalnya suhu 86°F.
+    """)
+
+    st.latex(r"C(86)=\frac{5}{9}(86-32)")
+
+    st.latex(r"C(86)=30")
+
+    st.success("Jadi 86°F setara dengan 30°C.")
+
+    # ========================================================
+    # 23. PENERAPAN KOMPOSISI
+    # ========================================================
+
+    st.subheader("23. Penerapan Komposisi Fungsi")
+
+    st.markdown("""
+    Komposisi fungsi dapat digunakan ketika suatu proses terdiri
+    dari beberapa tahapan.
+
+    Misalnya harga barang mengalami diskon kemudian dikenakan pajak.
+
+    Tahap pertama dapat dimodelkan dengan fungsi diskon:
+
+    """)
+
+    st.latex(r"g(x)=0,9x")
+
+    st.markdown("""
+    Kemudian dikenakan pajak 11%:
+    """)
+
+    st.latex(r"f(x)=1,11x")
+
+    st.markdown("""
+    Maka harga akhir dapat dinyatakan dengan:
+    """)
+
+    st.latex(r"(f\circ g)(x)=f(g(x))")
+
+    st.latex(r"(f\circ g)(x)=1,11(0,9x)")
+
+    st.latex(r"(f\circ g)(x)=0,999x")
+
+    st.info("""
+    Artinya, proses diskon kemudian pajak dapat dimodelkan
+    menggunakan komposisi fungsi.
+    """)
+
+    # ========================================================
+    # 24. EKSPLORASI DOMAIN DAN RANGE
+    # ========================================================
+
+    st.subheader("24. 🔎 Eksplorasi Domain dan Range")
+
+    batas_bawah = st.number_input(
+        "Batas bawah x",
+        value=-5,
+        step=1,
+        key="domain_bawah"
+    )
+
+    batas_atas = st.number_input(
+        "Batas atas x",
+        value=5,
+        step=1,
+        key="domain_atas"
+    )
+
+    if batas_bawah <= batas_atas:
+
+        x_domain = list(
+            range(
+                int(batas_bawah),
+                int(batas_atas) + 1
+            )
+        )
+
+        y_range = [
+            2 * x + 1
+            for x in x_domain
+        ]
+
+        df_domain = pd.DataFrame({
+            "x": x_domain,
+            "f(x)": y_range
+        })
+
+        st.dataframe(
+            df_domain,
+            use_container_width=True,
+            hide_index=True
+        )
+
+    else:
+
+        st.error("Batas bawah harus lebih kecil atau sama dengan batas atas.")
+
+    # ========================================================
+    # 25. STUDI KASUS
+    # ========================================================
+
+    st.subheader("25. 🧩 Studi Kasus")
+
+    st.markdown("""
+    Sebuah toko memberikan diskon 20% terhadap harga barang.
+    Setelah diskon, pelanggan dikenakan pajak sebesar 11%.
+
+    Misalkan harga awal barang adalah \(x\).
+    """)
+
+    st.latex(r"g(x)=0,8x")
+
+    st.markdown("Setelah dikenakan pajak:")
+
+    st.latex(r"f(x)=1,11x")
+
+    st.markdown("Harga akhir dapat ditentukan dengan komposisi:")
+
+    st.latex(r"(f\circ g)(x)=1,11(0,8x)")
+
+    st.latex(r"(f\circ g)(x)=0,888x")
+
+    st.markdown("""
+    Jika harga awal Rp1.000.000:
+    """)
+
+    st.latex(r"(f\circ g)(1.000.000)=888.000")
+
+    st.success("Harga akhir setelah diskon dan pajak adalah Rp888.000.")
+
+    # ========================================================
+    # 26. LATIHAN
+    # ========================================================
+
+    st.subheader("26. ✏️ Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=3x+2")
+
+    st.markdown("""
+    Tentukan nilai \(f(5)\).
+
+    **Soal 2**
+
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=2x-3")
+
+    st.markdown("""
+    Tentukan fungsi invers \(f^{-1}(x)\).
+
+    **Soal 3**
+
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=2x+1")
+
+    st.latex(r"g(x)=x^2")
+
+    st.markdown("""
+    Tentukan \(f\circ g\) dan \(g\circ f\).
+
+    **Soal 4**
+
+    Jelaskan perbedaan domain, kodomain, dan range.
+
+    **Soal 5**
+
+    Jelaskan mengapa komposisi fungsi pada umumnya tidak komutatif.
+
+    **Soal 6**
+
+    Jelaskan hubungan antara fungsi invers dan komposisi fungsi.
+
+    **Soal 7**
+
+    Sebuah toko memberikan diskon 15%, kemudian mengenakan pajak 11%.
+    Buatlah model fungsi yang menyatakan harga akhirnya.
+
+    **Soal 8**
+
+    Diketahui fungsi konversi suhu Celsius ke Fahrenheit.
+    Tentukan fungsi inversnya.
+    """)
+
+    # ========================================================
+    # 27. KUIS
+    # ========================================================
+
+    st.subheader("27. 📝 Kuis")
+
+    q1 = st.radio(
+        "1. Jika f(x) = 2x + 3, maka f(4) adalah ...",
+        [
+            "7",
+            "8",
+            "11",
+            "12"
+        ],
+        key="kuis_fungsi_1"
+    )
+
+    if q1:
+
+        if q1 == "11":
+            st.success("✅ Benar!")
+        else:
+            st.error("❌ Jawaban belum tepat.")
+
+    q2 = st.radio(
+        "2. Bentuk umum fungsi linear adalah ...",
+        [
+            "f(x) = ax² + bx + c",
+            "f(x) = ax + b",
+            "f(x) = a/x",
+            "f(x) = aˣ"
+        ],
+        key="kuis_fungsi_2"
+    )
+
+    if q2:
+
+        if q2 == "f(x) = ax + b":
+            st.success("✅ Benar!")
+        else:
+            st.error("❌ Jawaban belum tepat.")
+
+    q3 = st.radio(
+        "3. Komposisi fungsi dituliskan sebagai ...",
+        [
+            "f + g",
+            "f − g",
+            "f ∘ g",
+            "fg"
+        ],
+        key="kuis_fungsi_3"
+    )
+
+    if q3:
+
+        if q3 == "f ∘ g":
+            st.success("✅ Benar!")
+        else:
+            st.error("❌ Jawaban belum tepat.")
+
+    q4 = st.radio(
+        "4. Pada (f ∘ g)(x), fungsi yang dikerjakan terlebih dahulu adalah ...",
+        [
+            "f",
+            "g",
+            "f dan g bersamaan",
+            "Tidak ada"
+        ],
+        key="kuis_fungsi_4"
+    )
+
+    if q4:
+
+        if q4 == "g":
+            st.success("✅ Benar!")
+        else:
+            st.error("❌ Jawaban belum tepat.")
+
+    q5 = st.radio(
+        "5. Sifat invers komposisi yang benar adalah ...",
+        [
+            "(f ∘ g)⁻¹ = f⁻¹ ∘ g⁻¹",
+            "(f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹",
+            "(f ∘ g)⁻¹ = f ∘ g",
+            "(f ∘ g)⁻¹ = f + g"
+        ],
+        key="kuis_fungsi_5"
+    )
+
+    if q5:
+
+        if q5 == "(f ∘ g)⁻¹ = g⁻¹ ∘ f⁻¹":
+            st.success("✅ Benar!")
+        else:
+            st.error("❌ Jawaban belum tepat.")
+
+    # ========================================================
+    # 28. REFLEKSI
+    # ========================================================
+
+    st.subheader("28. 💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari fungsi, invers, dan komposisi fungsi,
+    coba pikirkan:
+
+    - Apa yang dimaksud dengan fungsi?
+    - Apa perbedaan domain, kodomain, dan range?
+    - Mengapa fungsi tertentu memiliki invers?
+    - Mengapa urutan pada komposisi fungsi penting?
+    - Bagaimana fungsi invers digunakan dalam kehidupan sehari-hari?
+    - Bagaimana komposisi fungsi dapat digunakan untuk memodelkan
+      proses yang terdiri dari beberapa tahap?
+    """)
+
+    # ========================================================
+    # 29. RANGKUMAN
+    # ========================================================
+
+    st.subheader("29. 📚 Rangkuman")
+
+    st.markdown("""
+    ### Fungsi
+
+    Fungsi merupakan aturan yang memasangkan setiap anggota domain
+    dengan tepat satu anggota kodomain.
+    """)
+
+    st.latex(r"f:A\rightarrow B")
+
+    st.markdown("""
+    ### Nilai Fungsi
+
+    Nilai fungsi diperoleh dengan mensubstitusikan nilai input
+    ke dalam fungsi.
+    """)
+
+    st.latex(r"y=f(x)")
+
+    st.markdown("""
+    ### Fungsi Invers
+
+    Fungsi invers membalikkan proses pemetaan fungsi.
+    """)
+
+    st.latex(r"f^{-1}(f(x))=x")
+
+    st.latex(r"f(f^{-1}(x))=x")
+
+    st.markdown("""
+    ### Komposisi Fungsi
+
+    Komposisi fungsi menggabungkan dua fungsi atau lebih.
+    """)
+
+    st.latex(r"(f\circ g)(x)=f(g(x))")
+
+    st.markdown("""
+    ### Invers Komposisi
+
+    Urutan fungsi pada invers komposisi dibalik.
+    """)
+
+    st.latex(r"(f\circ g)^{-1}=g^{-1}\circ f^{-1}")
+
+    st.success("""
+    🎯 **Inti pembelajaran**
+
+    Fungsi digunakan untuk memodelkan hubungan antara input dan output.
+    Fungsi invers digunakan untuk membalikkan suatu proses, sedangkan
+    komposisi fungsi digunakan untuk memodelkan proses yang terdiri
+    dari beberapa tahapan.
+    """)
+    
+
 def tampilkan(materi):
     if materi == "Barisan dan Deret":
         #pass
@@ -2115,8 +3186,8 @@ def tampilkan(materi):
         matematika_keuangan()
 
     elif materi == "Fungsi, Invers dan Komposisi Fungsi":
-        #fungsi_invers_komposisi()
-        pass
+        fungsi_invers_komposisi()
+        #pass
 
     elif materi == "Transformasi Fungsi":
         #transformasi_fungsi()
