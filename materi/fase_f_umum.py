@@ -1,4 +1,17 @@
 
+def tampilkan(materi):
+
+    if materi == "Barisan dan Deret":
+        barisan_deret()
+
+    elif materi == "Matematika Keuangan":
+        # matematika_keuangan()
+        pass
+
+    elif materi == "Fungsi, Invers dan Komposisi Fungsi":
+        # fungsi_invers_komposisi()
+        pass
+        
 def barisan_deret():
 
     st.header("🔢 Barisan dan Deret")
