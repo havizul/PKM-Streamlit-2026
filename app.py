@@ -14,7 +14,7 @@ from data.menu import (
 # ============================================================
 
 st.set_page_config(
-    page_title="TM - IAIN PONTIANAK",
+    page_title="TM - IIIIAIN PONTIANAK",
     page_icon="📐",
     layout="wide",
     initial_sidebar_state="expanded"
