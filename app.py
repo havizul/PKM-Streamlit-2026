@@ -1,6 +1,7 @@
 import streamlit as st
 
 from materi import fase_e
+from materi import fase_f_umum
 from data.menu import (
     MENU_UTAMA,
     FASE_E,
