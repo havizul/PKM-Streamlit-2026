@@ -3,16 +3,34 @@ import pandas as pd
 import math
 
 def tampilkan(materi):
-
     if materi == "Barisan dan Deret":
         barisan_deret()
 
     elif materi == "Matematika Keuangan":
         matematika_keuangan()
-        #pass
 
     elif materi == "Fungsi, Invers dan Komposisi Fungsi":
-        # fungsi_invers_komposisi()
+        #fungsi_invers_komposisi()
+        pass
+
+    elif materi == "Transformasi Fungsi":
+        #transformasi_fungsi()
+        pass
+
+    elif materi == "Lingkaran":
+        #lingkaran()
+        pass
+
+    elif materi == "Statistika Bivariat":
+        #statistika_bivariat()
+        pass
+
+    elif materi == "Kaidah Pencacahan":
+        #kaidah_pencacahan()
+        pass
+
+    elif materi == "Peluang":
+        #peluang()
         pass
         
 def barisan_deret():
