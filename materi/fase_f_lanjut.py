@@ -266,7 +266,7 @@ def matriks():
 
     st.header("🔟 Determinan Matriks")
 
-    st.markdown("""
+    st.markdown(r"""
     Untuk matriks persegi berordo $2\times2$:
     """)
 
