@@ -6,16 +6,7 @@ import matplotlib.pyplot as plt
 
 from textwrap import dedent
 
-
-import streamlit as st
-import pandas as pd
-import numpy as np
-import math
-import matplotlib.pyplot as plt
-
-
 def turunan():
-
     st.markdown(
         '<div class="content-title">📕 Turunan dan Penerapannya</div>',
         unsafe_allow_html=True
@@ -6186,7 +6177,7 @@ def tampilkan(materi):
         limit_fungsi()
         #pass
 
-    elif materi == "Turunan & Penerapannya (Tambahan)":
+    elif materi == "Turunan & Penerapannya":
         turunan()
         #pass
 
