@@ -333,7 +333,7 @@ elif menu_utama == "🎓 Media Pembelajaran":
 
     st.divider()
 
-    if media == "📐 GeoGebra":
+    if media == "GeoGebra":
         media_geogebra()
         #pass
 
