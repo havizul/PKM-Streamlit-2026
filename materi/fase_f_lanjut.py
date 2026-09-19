@@ -7,6 +7,690 @@ import matplotlib.pyplot as plt
 from textwrap import dedent
 
 
+def pemodelan_fungsi():
+
+    st.markdown(
+        '<div class="content-title">📕 Pemodelan Fungsi</div>',
+        unsafe_allow_html=True
+    )
+
+    # =========================================================
+    # TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.header("🎯 Tujuan Pembelajaran")
+
+    st.markdown(r"""
+    Setelah mempelajari materi ini, siswa diharapkan mampu:
+
+    - Menjelaskan konsep pemodelan matematika menggunakan fungsi.
+    - Mengidentifikasi variabel dalam suatu permasalahan.
+    - Menentukan hubungan antara variabel bebas dan variabel terikat.
+    - Membentuk fungsi dari permasalahan kontekstual.
+    - Menentukan domain dan range model.
+    - Menginterpretasikan parameter dalam suatu model fungsi.
+    - Membuat dan membaca grafik model fungsi.
+    - Menggunakan model fungsi untuk melakukan prediksi.
+    - Mengevaluasi keterbatasan suatu model matematika.
+    """)
+
+    # =========================================================
+    # APERSEPSI
+    # =========================================================
+
+    st.header("💡 Apersepsi")
+
+    st.markdown(r"""
+    Dalam kehidupan sehari-hari, banyak besaran yang saling berhubungan.
+
+    Misalnya:
+
+    - biaya bergantung pada jumlah barang,
+    - jarak bergantung pada waktu,
+    - pendapatan bergantung pada jumlah penjualan,
+    - tinggi benda bergantung pada waktu,
+    - luas bergantung pada ukuran suatu objek.
+
+    Hubungan tersebut dapat dinyatakan menggunakan **fungsi**.
+    """)
+
+    st.latex(r"y=f(x)")
+
+    # =========================================================
+    # 1. KONSEP PEMODELAN
+    # =========================================================
+
+    st.header("1. Konsep Pemodelan Matematika")
+
+    st.markdown(r"""
+    **Pemodelan matematika** adalah proses menerjemahkan suatu masalah
+    nyata ke dalam bentuk matematika sehingga dapat dianalisis.
+
+    Secara sederhana, prosesnya dapat digambarkan sebagai:
+
+    **Masalah nyata → Identifikasi variabel → Model matematika →
+    Analisis → Interpretasi**
+    """)
+
+    st.info(r"""
+    Model matematika bukanlah kenyataan itu sendiri. Model merupakan
+    penyederhanaan dari suatu situasi nyata.
+    """)
+
+    # =========================================================
+    # 2. VARIABEL
+    # =========================================================
+
+    st.header("2. Variabel dalam Model")
+
+    st.markdown(r"""
+    Dalam pemodelan fungsi biasanya terdapat:
+
+    - **Variabel bebas ($x$)** → nilai yang dapat dipilih atau menjadi input.
+    - **Variabel terikat ($y$)** → nilai yang bergantung pada variabel bebas.
+    """)
+
+    st.latex(r"y=f(x)")
+
+    st.markdown(r"""
+    Contoh:
+
+    Jika biaya pembelian bergantung pada jumlah barang, maka:
+
+    - $x$ = jumlah barang
+    - $y$ = total biaya
+    """)
+
+    # =========================================================
+    # 3. CONTOH MODEL LINEAR
+    # =========================================================
+
+    st.header("3. Model Fungsi Linear")
+
+    st.markdown(r"""
+    Sebuah toko menjual produk dengan harga Rp15.000 per unit dan biaya
+    tetap Rp50.000.
+
+    Jika $x$ adalah jumlah produk, maka total biaya dapat dimodelkan:
+    """)
+
+    st.latex(r"C(x)=15000x+50000")
+
+    st.markdown(r"""
+    Dalam model tersebut:
+
+    - $15.000$ adalah biaya per unit.
+    - $50.000$ adalah biaya tetap.
+    - $x$ adalah jumlah unit.
+    - $C(x)$ adalah total biaya.
+    """)
+
+    # =========================================================
+    # 4. EKSPLORASI MODEL LINEAR
+    # =========================================================
+
+    st.header("4. Eksplorasi Model Biaya")
+
+    harga_unit = st.number_input(
+        "Harga per unit (Rp)",
+        min_value=0.0,
+        value=15000.0,
+        step=1000.0,
+        key="model_harga_unit"
+    )
+
+    biaya_tetap = st.number_input(
+        "Biaya tetap (Rp)",
+        min_value=0.0,
+        value=50000.0,
+        step=5000.0,
+        key="model_biaya_tetap"
+    )
+
+    jumlah_unit = st.number_input(
+        "Jumlah unit",
+        min_value=0,
+        value=10,
+        step=1,
+        key="model_jumlah_unit"
+    )
+
+    total_biaya = harga_unit * jumlah_unit + biaya_tetap
+
+    st.info(f"Total biaya = Rp{total_biaya:,.0f}")
+
+    # =========================================================
+    # 5. GRAFIK MODEL LINEAR
+    # =========================================================
+
+    st.header("5. Grafik Model Linear")
+
+    x_linear = np.arange(0, 101)
+    y_linear = harga_unit * x_linear + biaya_tetap
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_linear, y_linear, "b-")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("Jumlah unit (x)")
+    ax.set_ylabel("Total biaya C(x)")
+    ax.set_title(rf"$C(x) = {harga_unit:.0f}x + {biaya_tetap:.0f}$")
+    st.pyplot(fig)
+
+    # =========================================================
+    # 6. DOMAIN DAN RANGE
+    # =========================================================
+
+    st.header("6. Domain dan Range Model")
+
+    st.markdown(r"""
+    Dalam pemodelan nyata, domain tidak selalu berupa semua bilangan real.
+
+    Misalnya jumlah barang tidak mungkin bernilai negatif atau pecahan.
+    """)
+
+    st.latex(r"x\in\{0,1,2,3,\ldots\}")
+
+    st.markdown(r"""
+    Oleh karena itu, domain harus disesuaikan dengan konteks permasalahan.
+    """)
+
+    # =========================================================
+    # 7. MODEL KUADRAT
+    # =========================================================
+
+    st.header("7. Model Fungsi Kuadrat")
+
+    st.markdown(r"""
+    Fungsi kuadrat dapat digunakan untuk memodelkan berbagai fenomena,
+    misalnya lintasan benda atau hubungan luas dengan ukuran tertentu.
+    """)
+
+    st.latex(r"f(x)=ax^2+bx+c")
+
+    st.markdown("Contoh model tinggi benda:")
+
+    st.latex(r"h(t)=-5t^2+20t+2")
+
+    st.markdown(r"""
+    Karena koefisien $t^2$ bernilai negatif, grafik membuka ke bawah.
+    """)
+
+    # =========================================================
+    # 8. EKSPLORASI MODEL KUADRAT
+    # =========================================================
+
+    st.header("8. Eksplorasi Model Kuadrat")
+
+    qa = st.number_input("Koefisien a", value=-5.0, key="model_qa")
+    qb = st.number_input("Koefisien b", value=20.0, key="model_qb")
+    qc = st.number_input("Konstanta c", value=2.0, key="model_qc")
+
+    x_quad = np.linspace(-5, 10, 400)
+    y_quad = qa * x_quad**2 + qb * x_quad + qc
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_quad, y_quad, "g-")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x")
+    ax.set_ylabel("f(x)")
+    ax.set_title(rf"$f(x) = {qa:.2f}x^2 + {qb:.2f}x + {qc:.2f}$")
+    st.pyplot(fig)
+
+    if qa != 0:
+        x_vertex = -qb / (2 * qa)
+        y_vertex = qa * x_vertex**2 + qb * x_vertex + qc
+        st.info(f"Titik puncak: ({x_vertex:.4f}, {y_vertex:.4f})")
+
+    # =========================================================
+    # 9. MODEL EKSPONENSIAL
+    # =========================================================
+
+    st.header("9. Model Fungsi Eksponensial")
+
+    st.markdown(r"""
+    Fungsi eksponensial dapat digunakan untuk memodelkan pertumbuhan
+    atau peluruhan.
+    """)
+
+    st.latex(r"f(x)=ab^x")
+
+    st.markdown(r"""
+    Jika $b>1$, model menunjukkan pertumbuhan.
+
+    Jika $0<b<1$, model menunjukkan peluruhan.
+    """)
+
+    # =========================================================
+    # 10. EKSPLORASI EKSPONENSIAL
+    # =========================================================
+
+    st.header("10. Eksplorasi Pertumbuhan Eksponensial")
+
+    nilai_awal = st.number_input(
+        "Nilai awal a",
+        min_value=0.01,
+        value=100.0,
+        key="model_exp_a"
+    )
+
+    faktor = st.number_input(
+        "Faktor pertumbuhan b",
+        min_value=0.01,
+        value=1.10,
+        step=0.01,
+        key="model_exp_b"
+    )
+
+    x_exp = np.arange(0, 21)
+    y_exp = nilai_awal * faktor**x_exp
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_exp, y_exp, "r-o")
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("Periode (x)")
+    ax.set_ylabel("Nilai f(x)")
+    ax.set_title(rf"$f(x) = {nilai_awal:.2f} \cdot {faktor:.2f}^x$")
+    st.pyplot(fig)
+
+    st.info(f"Nilai pada periode ke-20 = {y_exp[-1]:.2f}")
+
+    # =========================================================
+    # 11. MODEL LOGARITMA
+    # =========================================================
+
+    st.header("11. Model Fungsi Logaritma")
+
+    st.markdown(r"""
+    Fungsi logaritma merupakan kebalikan dari fungsi eksponensial.
+    """)
+
+    st.latex(r"y=\log_b x")
+
+    st.markdown(r"""
+    Model logaritma dapat digunakan ketika perubahan suatu variabel
+    berlangsung cepat pada awalnya kemudian semakin melambat.
+    """)
+
+    # =========================================================
+    # 12. MODEL PERIODIK
+    # =========================================================
+
+    st.header("12. Model Periodik")
+
+    st.markdown(r"""
+    Fenomena yang berulang secara periodik dapat dimodelkan menggunakan
+    fungsi sinus atau cosinus.
+    """)
+
+    st.latex(r"y=A\sin(Bx+C)+D")
+
+    st.markdown(r"""
+    Contoh fenomena periodik:
+
+    - gelombang,
+    - pasang surut,
+    - getaran,
+    - perubahan suhu,
+    - gerak periodik.
+    """)
+
+    # =========================================================
+    # 13. EKSPLORASI MODEL PERIODIK
+    # =========================================================
+
+    st.header("13. Eksplorasi Model Periodik")
+
+    amp_model = st.slider(
+        "Amplitudo A", 0.1, 10.0, 2.0, step=0.1, key="model_periodik_amp"
+    )
+
+    freq_model = st.slider(
+        "Frekuensi B", 0.1, 5.0, 1.0, step=0.1, key="model_periodik_freq"
+    )
+
+    offset_model = st.slider(
+        "Pergeseran vertikal D", -5.0, 5.0, 0.0,
+        step=0.5, key="model_periodik_offset"
+    )
+
+    x_periodik = np.linspace(0, 2 * np.pi, 400)
+    y_periodik = amp_model * np.sin(freq_model * x_periodik) + offset_model
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_periodik, y_periodik, "m-")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x (radian)")
+    ax.set_ylabel("f(x)")
+    ax.set_title(
+        rf"$f(x) = {amp_model:.1f}\sin({freq_model:.1f}x) + {offset_model:.1f}$"
+    )
+    st.pyplot(fig)
+
+    # =========================================================
+    # 14. PEMODELAN DARI DATA
+    # =========================================================
+
+    st.header("14. Pemodelan Berdasarkan Data")
+
+    st.markdown(r"""
+    Model fungsi juga dapat dibangun berdasarkan data hasil pengamatan.
+
+    Langkah sederhana:
+
+    1. Mengumpulkan data.
+    2. Menentukan variabel.
+    3. Membuat grafik data.
+    4. Mengidentifikasi pola.
+    5. Memilih bentuk fungsi.
+    6. Menentukan parameter model.
+    7. Mengevaluasi kesesuaian model.
+    """)
+
+    # =========================================================
+    # 15. DATA INTERAKTIF
+    # =========================================================
+
+    st.header("15. Eksplorasi Data")
+
+    data_model = pd.DataFrame({
+        "x": [1, 2, 3, 4, 5],
+        "y": [3, 5, 7, 9, 11]
+    })
+
+    data_edit = st.data_editor(
+        data_model,
+        num_rows="dynamic",
+        use_container_width=True,
+        key="editor_model_fungsi"
+    )
+
+    if len(data_edit) >= 2:
+
+        x_data = pd.to_numeric(data_edit["x"], errors="coerce")
+        y_data = pd.to_numeric(data_edit["y"], errors="coerce")
+
+        mask = x_data.notna() & y_data.notna()
+        x_clean = x_data[mask]
+        y_clean = y_data[mask]
+
+        if len(x_clean) >= 2:
+
+            koef_linear = np.polyfit(x_clean, y_clean, 1)
+            y_pred = koef_linear[0] * x_clean + koef_linear[1]
+
+            fig, ax = plt.subplots(figsize=(8, 4))
+            ax.scatter(x_clean, y_clean, color="blue", label="Data")
+            ax.plot(x_clean, y_pred, "r-", label="Model linear")
+            ax.grid(True, linestyle=":", alpha=0.6)
+            ax.set_xlabel("x")
+            ax.set_ylabel("y")
+            ax.set_title("Data vs Model Linear")
+            ax.legend()
+            st.pyplot(fig)
+
+            st.info(
+                f"Model linear: "
+                f"y = {koef_linear[0]:.4f}x + {koef_linear[1]:.4f}"
+            )
+
+    # =========================================================
+    # 16. RESIDUAL
+    # =========================================================
+
+    st.header("16. Evaluasi Model")
+
+    st.markdown(r"""
+    Salah satu cara mengevaluasi model adalah melihat selisih antara
+    nilai aktual dan nilai prediksi.
+
+    Selisih tersebut disebut **residual**.
+    """)
+
+    st.latex(r"e=y-\hat{y}")
+
+    st.markdown(r"""
+    Semakin kecil residual secara umum, semakin dekat prediksi model
+    terhadap data pengamatan.
+    """)
+
+    # =========================================================
+    # 17. PREDIKSI
+    # =========================================================
+
+    st.header("17. Prediksi Menggunakan Model")
+
+    slope_pred = st.number_input(
+        "Koefisien x", value=2.0, key="pred_slope"
+    )
+
+    intercept_pred = st.number_input(
+        "Konstanta", value=1.0, key="pred_intercept"
+    )
+
+    x_pred = st.number_input(
+        "Nilai x untuk prediksi", value=10.0, key="pred_x"
+    )
+
+    hasil_prediksi = slope_pred * x_pred + intercept_pred
+
+    st.info(f"Prediksi y = {hasil_prediksi:.4f}")
+
+    # =========================================================
+    # 18. VALIDASI MODEL
+    # =========================================================
+
+    st.header("18. Validasi Model")
+
+    st.markdown(r"""
+    Model matematika perlu dievaluasi sebelum digunakan untuk membuat
+    kesimpulan.
+
+    Beberapa pertanyaan penting:
+
+    - Apakah model sesuai dengan data?
+    - Apakah asumsi model masuk akal?
+    - Apakah domain model sesuai dengan kondisi nyata?
+    - Apakah model masih akurat ketika digunakan untuk prediksi?
+    - Apakah terdapat faktor lain yang tidak dimasukkan?
+    """)
+
+    st.warning(r"""
+    Model yang baik pada suatu kondisi belum tentu akurat jika digunakan
+    di luar kondisi tempat model tersebut dibangun.
+    """)
+
+    # =========================================================
+    # 19. OPTIMASI SEDERHANA
+    # =========================================================
+
+    st.header("19. Optimasi Sederhana")
+
+    st.markdown(r"""
+    Model fungsi juga dapat digunakan untuk mencari nilai maksimum atau
+    minimum suatu besaran.
+
+    Misalnya keuntungan dimodelkan:
+    """)
+
+    st.latex(r"K(x)=-x^2+20x-50")
+
+    st.markdown(r"""
+    Karena grafik berbentuk parabola yang membuka ke bawah, nilai maksimum
+    berada pada titik puncak.
+    """)
+
+    a_opt, b_opt, c_opt = -1, 20, -50
+    x_opt = -b_opt / (2 * a_opt)
+    k_opt = a_opt * x_opt**2 + b_opt * x_opt + c_opt
+
+    st.info(
+        f"Nilai maksimum terjadi saat x = {x_opt:.0f}, "
+        f"dengan K(x) = {k_opt:.0f}."
+    )
+
+    # =========================================================
+    # 20. STUDI KASUS PENDAPATAN
+    # =========================================================
+
+    st.header("20. Studi Kasus: Pendapatan")
+
+    st.markdown(r"""
+    Sebuah usaha menjual produk dengan harga Rp20.000 per unit.
+
+    Jika $x$ adalah jumlah produk yang terjual, maka pendapatan dapat
+    dimodelkan sebagai:
+    """)
+
+    st.latex(r"R(x)=20000x")
+
+    jumlah_penjualan = st.slider(
+        "Jumlah produk terjual", 0, 1000, 100, key="model_penjualan"
+    )
+
+    pendapatan = 20000 * jumlah_penjualan
+
+    st.metric("Pendapatan", f"Rp{pendapatan:,.0f}")
+
+    # =========================================================
+    # 21. KASUS TEKNOLOGI
+    # =========================================================
+
+    st.header("21. Studi Kasus: Teknologi")
+
+    st.markdown(r"""
+    Misalkan jumlah pengguna suatu aplikasi bertambah mengikuti model
+    eksponensial:
+    """)
+
+    st.latex(r"N(t)=N_0(1+r)^t")
+
+    st.markdown(r"""
+    dengan:
+
+    - $N_0$ = jumlah pengguna awal.
+    - $r$ = laju pertumbuhan.
+    - $t$ = waktu.
+    - $N(t)$ = jumlah pengguna pada waktu $t$.
+    """)
+
+    # =========================================================
+    # 22. LATIHAN
+    # =========================================================
+
+    st.header("📝 Latihan")
+
+    st.markdown(r"""
+    **Soal 1**
+
+    Sebuah produk memiliki harga Rp25.000 per unit dan biaya tetap
+    Rp100.000. Bentuklah fungsi biaya $C(x)$.
+    """)
+
+    st.markdown(r"""
+    **Soal 2**
+
+    Diberikan fungsi $f(x)=2x^2-3x+5$. Tentukan $f(4)$.
+    """)
+
+    st.markdown(r"""
+    **Soal 3**
+
+    Sebuah populasi dimodelkan dengan $P(t)=1000(1,05)^t$.
+    Tentukan populasi setelah 5 periode.
+    """)
+
+    st.markdown(r"""
+    **Soal 4**
+
+    Jelaskan mengapa domain model matematika harus disesuaikan dengan
+    kondisi nyata.
+    """)
+
+    st.markdown(r"""
+    **Soal 5**
+
+    Jelaskan mengapa model matematika tidak selalu memberikan gambaran
+    sempurna mengenai kondisi nyata.
+    """)
+
+    # =========================================================
+    # 23. KUIS
+    # =========================================================
+
+    st.header("🎯 Kuis")
+
+    jawaban_model = st.radio(
+        "Jika biaya tetap Rp50.000 dan biaya setiap produk Rp10.000, "
+        "fungsi total biaya yang benar adalah:",
+        [
+            "C(x)=50.000x+10.000",
+            "C(x)=10.000x+50.000",
+            "C(x)=60.000x",
+            "C(x)=50.000x"
+        ],
+        key="quiz_pemodelan_fungsi"
+    )
+
+    if st.button("Periksa Jawaban", key="cek_quiz_pemodelan"):
+        if jawaban_model == "C(x)=10.000x+50.000":
+            st.success(
+                "✅ Benar. Biaya variabel = 10.000x dan biaya tetap = 50.000."
+            )
+        else:
+            st.error(
+                "❌ Belum tepat. Perhatikan perbedaan biaya tetap "
+                "dan biaya per unit."
+            )
+
+    # =========================================================
+    # 24. REFLEKSI
+    # =========================================================
+
+    st.header("💭 Refleksi")
+
+    st.markdown(r"""
+    Setelah mempelajari pemodelan fungsi, coba jelaskan:
+
+    1. Apa yang dimaksud dengan model matematika?
+    2. Bagaimana menentukan variabel bebas dan variabel terikat?
+    3. Mengapa domain harus disesuaikan dengan konteks?
+    4. Apa perbedaan model linear, kuadrat, dan eksponensial?
+    5. Bagaimana model fungsi dapat digunakan untuk prediksi?
+    6. Mengapa model matematika perlu divalidasi?
+    """)
+
+    # =========================================================
+    # 25. RANGKUMAN
+    # =========================================================
+
+    st.header("📌 Rangkuman")
+
+    st.markdown(r"""
+    **Pemodelan fungsi** merupakan proses menerjemahkan permasalahan nyata
+    ke dalam bentuk fungsi matematika.
+
+    Konsep utama:
+
+    - Variabel bebas merupakan input model.
+    - Variabel terikat merupakan output model.
+    - Model linear digunakan untuk hubungan linear.
+    - Model kuadrat dapat digunakan untuk hubungan berbentuk parabola.
+    - Model eksponensial dapat digunakan untuk pertumbuhan atau peluruhan.
+    - Fungsi sinus dan cosinus dapat digunakan untuk fenomena periodik.
+    - Domain dan range harus sesuai dengan konteks nyata.
+    - Model dapat digunakan untuk prediksi dan optimasi.
+    - Model perlu divalidasi terhadap data dan kondisi nyata.
+    """)
+
+    st.success("🎉 Materi Pemodelan Fungsi selesai dipelajari.")
+
+
 
 def trigonometri():
 
@@ -2612,8 +3296,8 @@ def tampilkan(materi):
         #pass
 
     elif materi == "Pemodelan fungsi":
-        #pemodelan_fungsi()
-        pass
+        pemodelan_fungsi()
+        #pass
 
     elif materi == "Vektor":
         #vektor()
