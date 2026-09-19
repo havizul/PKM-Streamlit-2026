@@ -7,6 +7,752 @@ import matplotlib.pyplot as plt
 from textwrap import dedent
 
 
+def distribusi_peluang():
+
+    st.markdown(
+        '<div class="content-title">📕 Distribusi Peluang (Binomial dan Normal)</div>',
+        unsafe_allow_html=True
+    )
+
+    # =========================================================
+    # TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.header("🎯 Tujuan Pembelajaran")
+
+    st.markdown(r"""
+    Setelah mempelajari materi ini, siswa diharapkan mampu:
+
+    - Menjelaskan konsep variabel acak dan distribusi peluang.
+    - Membedakan variabel acak diskrit dan kontinu.
+    - Menentukan fungsi peluang suatu variabel acak diskrit.
+    - Menentukan nilai harapan dan varians.
+    - Menjelaskan karakteristik distribusi binomial.
+    - Menghitung peluang menggunakan distribusi binomial.
+    - Menjelaskan karakteristik distribusi normal.
+    - Menggunakan distribusi normal standar.
+    - Menghitung skor-Z.
+    - Menentukan peluang berdasarkan distribusi normal.
+    - Menggunakan distribusi binomial dan normal dalam masalah kontekstual.
+    """)
+
+    # =========================================================
+    # APERSEPSI
+    # =========================================================
+
+    st.header("💡 Apersepsi")
+
+    st.markdown(r"""
+    Dalam kehidupan sehari-hari kita sering berhadapan dengan hasil yang
+    tidak dapat dipastikan sebelumnya.
+
+    Contohnya:
+
+    - jumlah siswa yang lulus,
+    - jumlah produk yang rusak,
+    - hasil pelemparan koin,
+    - tinggi badan seseorang,
+    - waktu tunggu,
+    - nilai ujian.
+
+    Hasil-hasil tersebut dapat dimodelkan menggunakan **variabel acak**
+    dan **distribusi peluang**.
+    """)
+
+    # =========================================================
+    # 1. VARIABEL ACAK
+    # =========================================================
+
+    st.header("1. Variabel Acak")
+
+    st.markdown(r"""
+    Variabel acak adalah variabel yang nilainya ditentukan oleh hasil
+    suatu percobaan acak.
+
+    Variabel acak dapat dibedakan menjadi:
+
+    - **Diskrit** → memiliki nilai yang dapat dihitung satu per satu.
+    - **Kontinu** → dapat memiliki nilai pada suatu interval.
+    """)
+
+    st.markdown(r"""
+    Contoh variabel acak diskrit:
+
+    - jumlah anak,
+    - jumlah produk rusak,
+    - jumlah sisi angka pada koin.
+
+    Contoh variabel acak kontinu:
+
+    - tinggi badan,
+    - berat badan,
+    - waktu,
+    - suhu.
+    """)
+
+    # =========================================================
+    # 2. DISTRIBUSI PELUANG DISKRIT
+    # =========================================================
+
+    st.header("2. Distribusi Peluang Diskrit")
+
+    st.markdown(r"""
+    Distribusi peluang menunjukkan probabilitas dari setiap kemungkinan
+    nilai suatu variabel acak.
+    """)
+
+    st.latex(r"P(X=x)=p(x)")
+
+    st.markdown("Jumlah seluruh peluang harus sama dengan 1.")
+
+    st.latex(r"\sum P(X=x)=1")
+
+    # =========================================================
+    # 3. CONTOH DISTRIBUSI
+    # =========================================================
+
+    st.header("3. Contoh Distribusi Peluang")
+
+    df_peluang = pd.DataFrame({
+        "X": [0, 1, 2, 3],
+        "P(X)": [0.1, 0.2, 0.4, 0.3]
+    })
+
+    st.dataframe(
+        df_peluang,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    st.info(f"Jumlah peluang = {df_peluang['P(X)'].sum():.1f}")
+
+    # =========================================================
+    # 4. NILAI HARAPAN
+    # =========================================================
+
+    st.header("4. Nilai Harapan")
+
+    st.markdown(r"""
+    Nilai harapan atau expected value merupakan rata-rata teoretis dari
+    suatu variabel acak.
+    """)
+
+    st.latex(r"E(X)=\sum x\,p(x)")
+
+    st.markdown("Untuk distribusi di atas:")
+
+    expected_value = (df_peluang["X"] * df_peluang["P(X)"]).sum()
+
+    st.latex(rf"E(X)={expected_value:.2f}")
+
+    # =========================================================
+    # 5. VARIANS
+    # =========================================================
+
+    st.header("5. Varians dan Simpangan Baku")
+
+    st.latex(r"\text{Var}(X)=E(X^2)-[E(X)]^2")
+
+    variance = (
+        (df_peluang["X"]**2 * df_peluang["P(X)"]).sum()
+        - expected_value**2
+    )
+
+    std_dev = math.sqrt(variance)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.metric("Varians", f"{variance:.4f}")
+
+    with col2:
+        st.metric("Simpangan baku", f"{std_dev:.4f}")
+
+    # =========================================================
+    # 6. DISTRIBUSI BINOMIAL
+    # =========================================================
+
+    st.header("6. Distribusi Binomial")
+
+    st.markdown(r"""
+    Distribusi binomial digunakan untuk menghitung banyaknya keberhasilan
+    dalam sejumlah percobaan yang memenuhi kondisi tertentu.
+
+    Percobaan binomial memiliki karakteristik:
+
+    - jumlah percobaan tetap,
+    - setiap percobaan memiliki dua kemungkinan hasil,
+    - peluang keberhasilan tetap,
+    - setiap percobaan saling independen.
+    """)
+
+    # =========================================================
+    # 7. RUMUS BINOMIAL
+    # =========================================================
+
+    st.header("7. Rumus Distribusi Binomial")
+
+    st.latex(r"P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}")
+
+    st.markdown(r"""
+    dengan:
+
+    - $n$ = jumlah percobaan.
+    - $k$ = jumlah keberhasilan.
+    - $p$ = peluang keberhasilan.
+    - $1-p$ = peluang kegagalan.
+    """)
+
+    # =========================================================
+    # 8. CONTOH BINOMIAL
+    # =========================================================
+
+    st.header("8. Contoh Distribusi Binomial")
+
+    st.markdown(r"""
+    Sebuah koin dilempar 5 kali.
+
+    Misalkan peluang muncul sisi angka adalah $p=0{,}5$.
+
+    Peluang tepat 3 kali muncul angka:
+    """)
+
+    st.latex(r"P(X=3)=\binom{5}{3}(0{,}5)^3(0{,}5)^2")
+
+    hasil_binomial = math.comb(5, 3) * (0.5**3) * (0.5**2)
+
+    st.info(f"P(X=3) = {hasil_binomial:.4f}")
+
+    # =========================================================
+    # 9. KALKULATOR BINOMIAL
+    # =========================================================
+
+    st.header("9. Kalkulator Binomial")
+
+    n_binom = st.number_input(
+        "Jumlah percobaan n",
+        min_value=1, max_value=100, value=10, step=1,
+        key="binom_n"
+    )
+
+    p_binom = st.number_input(
+        "Peluang keberhasilan p",
+        min_value=0.0, max_value=1.0, value=0.5, step=0.05,
+        key="binom_p"
+    )
+
+    k_binom = st.number_input(
+        "Jumlah keberhasilan k",
+        min_value=0, max_value=100, value=5, step=1,
+        key="binom_k"
+    )
+
+    if k_binom <= n_binom:
+
+        peluang_binom = (
+            math.comb(int(n_binom), int(k_binom))
+            * p_binom**k_binom
+            * (1 - p_binom)**(n_binom - k_binom)
+        )
+
+        st.info(f"P(X={int(k_binom)}) = {peluang_binom:.6f}")
+
+    else:
+        st.warning("Nilai k tidak boleh lebih besar daripada n.")
+
+    # =========================================================
+    # 10. DISTRIBUSI BINOMIAL INTERAKTIF
+    # =========================================================
+
+    st.header("10. Visualisasi Distribusi Binomial")
+
+    x_binom = np.arange(0, int(n_binom) + 1)
+
+    y_binom = np.array([
+        math.comb(int(n_binom), int(k))
+        * p_binom**k
+        * (1 - p_binom)**(int(n_binom) - int(k))
+        for k in x_binom
+    ])
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.bar(x_binom, y_binom, color="steelblue", edgecolor="black")
+    ax.grid(True, linestyle=":", alpha=0.6, axis="y")
+    ax.set_xlabel("Jumlah keberhasilan (k)")
+    ax.set_ylabel("P(X = k)")
+    ax.set_title(rf"Distribusi Binomial: $n={int(n_binom)}$, $p={p_binom:.2f}$")
+    fig.tight_layout()
+    st.pyplot(fig, use_container_width=True)
+
+    # =========================================================
+    # 11. NILAI HARAPAN BINOMIAL
+    # =========================================================
+
+    st.header("11. Nilai Harapan Distribusi Binomial")
+
+    st.latex(r"E(X)=np")
+
+    mean_binom = n_binom * p_binom
+
+    st.info(f"E(X) = {mean_binom:.4f}")
+
+    # =========================================================
+    # 12. VARIANS BINOMIAL
+    # =========================================================
+
+    st.header("12. Varians Distribusi Binomial")
+
+    st.latex(r"\text{Var}(X)=np(1-p)")
+
+    variance_binom = n_binom * p_binom * (1 - p_binom)
+
+    st.info(f"Var(X) = {variance_binom:.4f}")
+
+    # =========================================================
+    # 13. CONTOH KONTEKSTUAL
+    # =========================================================
+
+    st.header("🌍 Studi Kasus Binomial")
+
+    st.markdown(r"""
+    Sebuah mesin menghasilkan produk dengan peluang produk cacat sebesar
+    5%.
+
+    Jika dipilih 20 produk secara independen, jumlah produk cacat dapat
+    dimodelkan menggunakan distribusi binomial dengan:
+
+    - $n=20$
+    - $p=0{,}05$
+    """)
+
+    st.latex(r"X\sim \text{Binomial}(20,\;0{,}05)")
+
+    peluang_nol = math.comb(20, 0) * (0.05**0) * (0.95**20)
+
+    st.info(f"Peluang tidak ada produk cacat = {peluang_nol:.6f}")
+
+    # =========================================================
+    # 14. DISTRIBUSI NORMAL
+    # =========================================================
+
+    st.header("13. Distribusi Normal")
+
+    st.markdown(r"""
+    Distribusi normal adalah distribusi kontinu yang memiliki bentuk
+    seperti lonceng dan simetris terhadap nilai rata-ratanya.
+    """)
+
+    st.latex(r"X\sim N(\mu,\sigma^2)")
+
+    st.markdown(r"""
+    dengan:
+
+    - $\mu$ = rata-rata.
+    - $\sigma$ = simpangan baku.
+    """)
+
+    # =========================================================
+    # 15. KARAKTERISTIK NORMAL
+    # =========================================================
+
+    st.header("14. Karakteristik Distribusi Normal")
+
+    st.markdown(r"""
+    Karakteristik distribusi normal:
+
+    - Bentuknya simetris.
+    - Rata-rata, median, dan modus sama.
+    - Luas seluruh daerah di bawah kurva adalah 1.
+    - Kurva mendekati sumbu horizontal tetapi tidak memotongnya.
+    - Bentuk kurva ditentukan oleh $\mu$ dan $\sigma$.
+    """)
+
+    # =========================================================
+    # 16. FUNGSI DENSITAS
+    # =========================================================
+
+    st.header("15. Fungsi Kepadatan Normal")
+
+    st.latex(
+        r"f(x)=\frac{1}{\sigma\sqrt{2\pi}}\,e^{-\frac{(x-\mu)^2}{2\sigma^2}}"
+    )
+
+    st.markdown(r"""
+    Fungsi tersebut menggambarkan kepadatan peluang dari distribusi normal.
+    """)
+
+    # =========================================================
+    # 17. DISTRIBUSI NORMAL STANDAR
+    # =========================================================
+
+    st.header("16. Distribusi Normal Standar")
+
+    st.markdown(r"""
+    Distribusi normal standar memiliki:
+
+    - rata-rata 0,
+    - simpangan baku 1.
+    """)
+
+    st.latex(r"Z\sim N(0,1)")
+
+    # =========================================================
+    # 18. SKOR Z
+    # =========================================================
+
+    st.header("17. Skor-Z")
+
+    st.markdown(r"""
+    Nilai suatu data dapat distandardisasi menggunakan skor-Z:
+    """)
+
+    st.latex(r"Z=\frac{X-\mu}{\sigma}")
+
+    st.markdown(r"""
+    Skor-Z menunjukkan berapa banyak simpangan baku suatu nilai berada
+    dari rata-rata.
+    """)
+
+    # =========================================================
+    # 19. KALKULATOR Z-SCORE
+    # =========================================================
+
+    st.header("18. Kalkulator Skor-Z")
+
+    nilai_x = st.number_input("Nilai X", value=75.0, key="normal_x")
+    mean_normal = st.number_input("Rata-rata μ", value=70.0, key="normal_mean")
+    sd_normal = st.number_input(
+        "Simpangan baku σ", min_value=0.01, value=10.0, key="normal_sd"
+    )
+
+    z_score = (nilai_x - mean_normal) / sd_normal
+
+    st.info(f"Z = {z_score:.4f}")
+
+    # =========================================================
+    # 20. VISUALISASI DISTRIBUSI NORMAL
+    # =========================================================
+
+    st.header("19. Visualisasi Distribusi Normal")
+
+    x_normal = np.linspace(
+        mean_normal - 4 * sd_normal,
+        mean_normal + 4 * sd_normal,
+        500
+    )
+
+    y_normal = (
+        1 / (sd_normal * math.sqrt(2 * math.pi))
+        * np.exp(-((x_normal - mean_normal)**2) / (2 * sd_normal**2))
+    )
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_normal, y_normal, "b-")
+    ax.axvline(mean_normal, color="red", linestyle="--", linewidth=1,
+               label=f"μ = {mean_normal:g}")
+    ax.axvline(nilai_x, color="green", linestyle=":", linewidth=1,
+               label=f"X = {nilai_x:g}")
+    ax.fill_between(x_normal, y_normal, where=(x_normal <= nilai_x),
+                    color="green", alpha=0.2)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("X")
+    ax.set_ylabel("Kepadatan")
+    ax.set_title(
+        rf"$N(\mu={mean_normal:g},\;\sigma={sd_normal:g})$"
+    )
+    ax.legend(loc="upper right")
+    fig.tight_layout()
+    st.pyplot(fig, use_container_width=True)
+
+    # =========================================================
+    # 21. PROBABILITAS NORMAL
+    # =========================================================
+
+    st.header("20. Menghitung Peluang Distribusi Normal")
+
+    st.markdown(r"""
+    Peluang pada distribusi normal dapat dihitung menggunakan fungsi
+    distribusi kumulatif atau CDF.
+    """)
+
+    def normal_cdf(x, mu, sigma):
+        return 0.5 * (
+            1 + math.erf((x - mu) / (sigma * math.sqrt(2)))
+        )
+
+    batas_normal = st.number_input(
+        "Batas X", value=75.0, key="normal_batas"
+    )
+
+    peluang_kurang = normal_cdf(batas_normal, mean_normal, sd_normal)
+
+    st.info(f"P(X ≤ {batas_normal:g}) = {peluang_kurang:.6f}")
+
+    # =========================================================
+    # 22. PELUANG INTERVAL NORMAL
+    # =========================================================
+
+    st.header("21. Peluang pada Interval")
+
+    batas_bawah = st.number_input(
+        "Batas bawah", value=60.0, key="normal_lower"
+    )
+
+    batas_atas = st.number_input(
+        "Batas atas", value=80.0, key="normal_upper"
+    )
+
+    if batas_bawah < batas_atas:
+
+        peluang_interval = (
+            normal_cdf(batas_atas, mean_normal, sd_normal)
+            - normal_cdf(batas_bawah, mean_normal, sd_normal)
+        )
+
+        st.info(
+            f"P({batas_bawah:g} < X < {batas_atas:g}) = "
+            f"{peluang_interval:.6f}"
+        )
+
+    else:
+        st.warning("Batas bawah harus lebih kecil daripada batas atas.")
+
+    # =========================================================
+    # 23. ATURAN EMPIRIS
+    # =========================================================
+
+    st.header("22. Aturan Empiris")
+
+    st.markdown(r"""
+    Untuk distribusi normal, secara pendekatan:
+
+    - Sekitar 68% data berada dalam interval $\mu\pm\sigma$.
+    - Sekitar 95% data berada dalam interval $\mu\pm2\sigma$.
+    - Sekitar 99,7% data berada dalam interval $\mu\pm3\sigma$.
+    """)
+
+    st.latex(r"\mu\pm\sigma\approx 68\%")
+    st.latex(r"\mu\pm 2\sigma\approx 95\%")
+    st.latex(r"\mu\pm 3\sigma\approx 99{,}7\%")
+
+    # =========================================================
+    # 24. HUBUNGAN BINOMIAL DAN NORMAL
+    # =========================================================
+
+    st.header("23. Pendekatan Binomial dengan Normal")
+
+    st.markdown(r"""
+    Untuk nilai $n$ yang cukup besar, distribusi binomial dapat didekati
+    menggunakan distribusi normal dengan:
+    """)
+
+    st.latex(r"\mu=np")
+    st.latex(r"\sigma=\sqrt{np(1-p)}")
+
+    st.markdown(r"""
+    Dalam pendekatan ini perlu diperhatikan **koreksi kontinuitas**.
+    """)
+
+    # =========================================================
+    # 25. SIMULASI BINOMIAL
+    # =========================================================
+
+    st.header("24. Simulasi Percobaan Binomial")
+
+    jumlah_simulasi = st.slider(
+        "Jumlah simulasi",
+        100, 10000, 1000, step=100,
+        key="sim_binom_n"
+    )
+
+    rng = np.random.default_rng(seed=42)
+    hasil_simulasi = rng.binomial(
+        int(n_binom), p_binom, jumlah_simulasi
+    )
+
+    # Histogram frekuensi
+    unique, counts = np.unique(hasil_simulasi, return_counts=True)
+    freq = counts / counts.sum()
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.bar(unique, freq, color="coral", edgecolor="black")
+    ax.grid(True, linestyle=":", alpha=0.6, axis="y")
+    ax.set_xlabel("Jumlah keberhasilan (k)")
+    ax.set_ylabel("Frekuensi relatif")
+    ax.set_title(
+        rf"Simulasi Binomial: $n={int(n_binom)}$, $p={p_binom:.2f}$, "
+        rf"$N={jumlah_simulasi}$"
+    )
+    fig.tight_layout()
+    st.pyplot(fig, use_container_width=True)
+
+    st.info(
+        "Semakin banyak simulasi, pola distribusi hasil akan semakin "
+        "mendekati distribusi teoritis."
+    )
+
+    # =========================================================
+    # 26. APLIKASI NORMAL
+    # =========================================================
+
+    st.header("🌍 Studi Kasus Distribusi Normal")
+
+    st.markdown(r"""
+    Nilai ujian suatu kelompok siswa diasumsikan berdistribusi normal
+    dengan rata-rata 70 dan simpangan baku 10.
+
+    Modelnya:
+    """)
+
+    st.latex(r"X\sim N(70,\;10^2)")
+
+    z_80 = (80 - 70) / 10
+
+    st.markdown("Untuk nilai 80:")
+
+    st.latex(r"Z=\frac{80-70}{10}=1")
+
+    st.info(
+        f"Nilai 80 berada {z_80:.0f} simpangan baku di atas rata-rata."
+    )
+
+    # =========================================================
+    # 27. PERBANDINGAN BINOMIAL DAN NORMAL
+    # =========================================================
+
+    st.header("25. Binomial vs Normal")
+
+    df_perbandingan = pd.DataFrame({
+        "Aspek": [
+            "Jenis variabel",
+            "Bentuk distribusi",
+            "Parameter",
+            "Contoh"
+        ],
+        "Binomial": [
+            "Diskrit",
+            "Peluang tiap nilai",
+            "n dan p",
+            "Jumlah produk cacat"
+        ],
+        "Normal": [
+            "Kontinu",
+            "Kurva kepadatan",
+            "μ dan σ",
+            "Tinggi badan"
+        ]
+    })
+
+    st.dataframe(
+        df_perbandingan,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 28. LATIHAN
+    # =========================================================
+
+    st.header("📝 Latihan")
+
+    st.markdown(r"""
+    **Soal 1**
+
+    Sebuah koin dilempar 10 kali. Tentukan peluang tepat 6 kali muncul
+    sisi angka jika peluang muncul angka adalah 0,5.
+    """)
+
+    st.markdown(r"""
+    **Soal 2**
+
+    Sebuah mesin memiliki peluang menghasilkan produk cacat sebesar 0,02.
+    Jika diperiksa 50 produk, tentukan nilai harapan jumlah produk cacat.
+    """)
+
+    st.markdown(r"""
+    **Soal 3**
+
+    Suatu variabel acak berdistribusi normal dengan $\mu=70$ dan
+    $\sigma=10$. Tentukan skor-Z untuk nilai 85.
+    """)
+
+    st.markdown(r"""
+    **Soal 4**
+
+    Jelaskan perbedaan variabel acak diskrit dan kontinu.
+    """)
+
+    st.markdown(r"""
+    **Soal 5**
+
+    Jelaskan kapan distribusi binomial dapat digunakan.
+    """)
+
+    # =========================================================
+    # 29. KUIS
+    # =========================================================
+
+    st.header("🎯 Kuis")
+
+    jawaban_distribusi = st.radio(
+        "Jika X ~ Binomial(n=10, p=0,5), nilai harapan E(X) adalah:",
+        ["2", "5", "10", "20"],
+        key="quiz_distribusi_peluang"
+    )
+
+    if st.button("Periksa Jawaban", key="cek_quiz_distribusi"):
+        if jawaban_distribusi == "5":
+            st.success("✅ Benar. E(X) = np = (10)(0,5) = 5.")
+        else:
+            st.error("❌ Belum tepat. Gunakan rumus E(X) = np.")
+
+    # =========================================================
+    # 30. REFLEKSI
+    # =========================================================
+
+    st.header("💭 Refleksi")
+
+    st.markdown(r"""
+    Setelah mempelajari distribusi peluang, coba jelaskan:
+
+    1. Apa yang dimaksud dengan variabel acak?
+    2. Apa perbedaan variabel acak diskrit dan kontinu?
+    3. Apa karakteristik distribusi binomial?
+    4. Bagaimana menentukan nilai harapan distribusi binomial?
+    5. Apa karakteristik distribusi normal?
+    6. Apa makna skor-Z?
+    7. Kapan distribusi binomial dapat didekati dengan distribusi normal?
+    """)
+
+    # =========================================================
+    # 31. RANGKUMAN
+    # =========================================================
+
+    st.header("📌 Rangkuman")
+
+    st.markdown(r"""
+    **Distribusi peluang** digunakan untuk menggambarkan kemungkinan nilai
+    suatu variabel acak.
+
+    Konsep penting:
+
+    - Variabel acak dapat berupa diskrit atau kontinu.
+    - Distribusi peluang menunjukkan probabilitas setiap kemungkinan hasil.
+    - Nilai harapan menunjukkan rata-rata teoretis.
+    - Varians dan simpangan baku menunjukkan penyebaran data.
+    - Distribusi binomial digunakan untuk sejumlah percobaan dengan dua
+      kemungkinan hasil.
+    - Distribusi binomial mempunyai parameter $n$ dan $p$.
+    - Distribusi normal merupakan distribusi kontinu berbentuk lonceng.
+    - Distribusi normal mempunyai parameter $\mu$ dan $\sigma$.
+    - Skor-Z digunakan untuk melakukan standardisasi.
+    - Distribusi binomial dengan $n$ cukup besar dapat didekati dengan
+      distribusi normal.
+    """)
+
+    st.success("🎉 Materi Distribusi Peluang selesai dipelajari.")
+    
+
 def irisan_kerucut():
     st.markdown(
         '<div class="content-title">📕 Irisan Kerucut: Lingkaran dan Elips</div>',
@@ -4001,9 +4747,9 @@ def tampilkan(materi):
         irisan_kerucut()
         #pass
 
-    elif materi == "Distribusi peluang (binom & normal)":
-        #distribusi_peluang()
-        pass
+    elif materi == "Distribusi Peluang":
+        distribusi_peluang()
+        #pass
 
     elif materi == "Limit Fungsi (Tambahan)":
         #limit_fungsi()
