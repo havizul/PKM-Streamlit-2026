@@ -6,6 +6,682 @@ import matplotlib.pyplot as plt
 
 from textwrap import dedent
 
+import streamlit as st
+import pandas as pd
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+
+def limit_fungsi():
+    st.markdown(
+        '<div class="content-title">📕 Limit Fungsi</div>',
+        unsafe_allow_html=True
+    )
+
+    # =========================================================
+    # TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.header("🎯 Tujuan Pembelajaran")
+    st.markdown(r"""
+    Setelah mempelajari materi ini, siswa diharapkan mampu:
+
+    - Menjelaskan konsep limit fungsi.
+    - Menentukan limit fungsi dengan substitusi langsung.
+    - Menggunakan sifat-sifat limit.
+    - Menyelesaikan limit bentuk tak tentu.
+    - Menggunakan pemfaktoran untuk menentukan limit.
+    - Menggunakan metode rasionalisasi.
+    - Menentukan limit kiri dan limit kanan.
+    - Menentukan limit fungsi di tak hingga.
+    - Menggunakan limit fungsi trigonometri sederhana.
+    - Menjelaskan hubungan limit dengan kekontinuan fungsi.
+    - Menerapkan konsep limit dalam masalah kontekstual.
+    """)
+
+    # =========================================================
+    # APERSEPSI
+    # =========================================================
+
+    st.header("💡 Apersepsi")
+    st.markdown(r"""
+    Bayangkan sebuah benda bergerak semakin mendekati suatu posisi tertentu.
+
+    Kita dapat bertanya:
+
+    **"Nilai apa yang didekati oleh fungsi ketika $x$ semakin mendekati
+    suatu nilai tertentu?"**
+
+    Konsep matematika yang digunakan untuk menjawab pertanyaan tersebut
+    adalah **limit fungsi**.
+    """)
+
+    # =========================================================
+    # 1. PENGERTIAN LIMIT
+    # =========================================================
+
+    st.header("1. Pengertian Limit")
+    st.markdown(r"""
+    Limit menggambarkan nilai yang didekati oleh suatu fungsi ketika
+    variabel bebas mendekati suatu nilai tertentu.
+    """)
+
+    st.latex(r"\lim_{x\to a}f(x)=L")
+
+    st.markdown(r"""
+    Artinya, ketika $x$ semakin mendekati $a$, nilai $f(x)$ semakin
+    mendekati $L$.
+    """)
+
+    # =========================================================
+    # 2. INTERPRETASI GRAFIK
+    # =========================================================
+
+    st.header("2. Interpretasi Grafik")
+    st.markdown(r"""
+    Secara geometris, limit dapat dipahami dengan melihat perilaku grafik
+    fungsi ketika $x$ bergerak mendekati suatu titik.
+
+    Nilai fungsi pada titik tersebut bahkan dapat berbeda atau tidak
+    terdefinisi, tetapi limit masih dapat ada.
+    """)
+
+    st.info(r"""
+    **Ide utama:**
+
+    Limit memperhatikan nilai yang **didekati**, bukan hanya nilai fungsi
+    tepat pada titik tersebut.
+    """)
+
+    # =========================================================
+    # 3. LIMIT DENGAN SUBSTITUSI LANGSUNG
+    # =========================================================
+
+    st.header("3. Limit dengan Substitusi Langsung")
+    st.markdown(r"""
+    Untuk fungsi yang kontinu pada $x=a$, limit dapat ditentukan dengan
+    substitusi langsung.
+    """)
+
+    st.latex(r"\lim_{x\to a}f(x)=f(a)")
+
+    st.markdown(r"""
+    **Contoh:**
+
+    Tentukan:
+    """)
+
+    st.latex(r"\lim_{x\to2}(x^2+3x+1)")
+
+    st.markdown(r"""
+    Dengan substitusi $x=2$:
+    """)
+
+    st.latex(r"2^2+3(2)+1=11")
+
+    st.info("Jadi, nilai limit adalah 11.")
+
+    # =========================================================
+    # 4. SIFAT-SIFAT LIMIT
+    # =========================================================
+
+    st.header("4. Sifat-Sifat Limit")
+    st.markdown(r"""
+    Jika $\lim_{x\to a}f(x)=L$ dan $\lim_{x\to a}g(x)=M$, maka:
+    """)
+
+    st.latex(r"\lim_{x\to a}[f(x)+g(x)]=L+M")
+    st.latex(r"\lim_{x\to a}[f(x)-g(x)]=L-M")
+    st.latex(r"\lim_{x\to a}[f(x)g(x)]=LM")
+    st.latex(r"\lim_{x\to a}\frac{f(x)}{g(x)}=\frac{L}{M},\quad M\neq0")
+
+    # =========================================================
+    # 5. LIMIT FUNGSI POLINOMIAL
+    # =========================================================
+
+    st.header("5. Limit Fungsi Polinomial")
+    st.markdown(r"""
+    Fungsi polinomial kontinu untuk semua bilangan real. Oleh karena itu,
+    limit dapat ditentukan dengan substitusi langsung.
+    """)
+
+    st.latex(r"\lim_{x\to3}(2x^3-x^2+4x-5)")
+
+    hasil_polinomial = 2 * 3**3 - 3**2 + 4 * 3 - 5
+    st.info(f"Hasil = {hasil_polinomial}")
+
+    # =========================================================
+    # 6. BENTUK TAK TENTU
+    # =========================================================
+
+    st.header("6. Bentuk Tak Tentu")
+    st.markdown(r"""
+    Dalam beberapa kasus, substitusi langsung menghasilkan bentuk seperti:
+
+    - $\frac{0}{0}$
+    - $\frac{\infty}{\infty}$
+
+    Bentuk tersebut disebut **bentuk tak tentu** dan belum merupakan
+    jawaban akhir.
+    """)
+
+    st.latex(r"\frac{0}{0}")
+
+    st.warning(
+        "Bentuk 0/0 tidak berarti limitnya nol. "
+        "Fungsi perlu dianalisis lebih lanjut."
+    )
+
+    # =========================================================
+    # 7. LIMIT DENGAN PEMFAKTORAN
+    # =========================================================
+
+    st.header("7. Limit dengan Pemfaktoran")
+    st.markdown(r"""
+    Salah satu cara mengatasi bentuk $\frac{0}{0}$ adalah melakukan
+    pemfaktoran.
+    """)
+
+    st.markdown("Contoh:")
+    st.latex(r"\lim_{x\to2}\frac{x^2-4}{x-2}")
+
+    st.markdown("Faktorkan pembilang:")
+
+    st.latex(r"x^2-4=(x-2)(x+2)")
+
+    st.markdown("Sehingga:")
+
+    st.latex(r"\frac{x^2-4}{x-2}=x+2,\quad x\neq2")
+    st.latex(r"\lim_{x\to2}(x+2)=4")
+
+    st.info("Jadi, nilai limit adalah 4.")
+
+    # =========================================================
+    # 8. KALKULATOR LIMIT DENGAN PEMFAKTORAN
+    # =========================================================
+
+    st.header("8. Kalkulator Limit dengan Pemfaktoran")
+
+    nilai_a = st.number_input(
+        "Nilai a", value=2.0, key="limit_factor_a"
+    )
+
+    st.markdown("Untuk bentuk:")
+
+    st.latex(r"\frac{x^2-a^2}{x-a}")
+
+    hasil_factor = 2 * nilai_a
+
+    st.info(f"Jika $x \\to {nilai_a:g}$, maka limit = {hasil_factor:g}")
+
+    # =========================================================
+    # 9. LIMIT DENGAN RASIONALISASI
+    # =========================================================
+
+    st.header("9. Limit dengan Rasionalisasi")
+    st.markdown(r"""
+    Rasionalisasi digunakan terutama pada limit yang mengandung bentuk
+    akar dan menghasilkan $\frac{0}{0}$.
+    """)
+
+    st.markdown("Contoh:")
+    st.latex(r"\lim_{x\to0}\frac{\sqrt{x+1}-1}{x}")
+
+    st.markdown("Kalikan dengan bentuk sekawannya:")
+
+    st.latex(
+        r"\frac{\sqrt{x+1}-1}{x}\cdot\frac{\sqrt{x+1}+1}{\sqrt{x+1}+1}"
+    )
+
+    st.markdown("Maka:")
+
+    st.latex(r"\frac{1}{\sqrt{x+1}+1}")
+    st.latex(r"\lim_{x\to0}\frac{1}{\sqrt{x+1}+1}=\frac{1}{2}")
+
+    st.info("Jadi, nilai limit adalah 1/2.")
+
+    # =========================================================
+    # 10. LIMIT KIRI DAN LIMIT KANAN
+    # =========================================================
+
+    st.header("10. Limit Kiri dan Limit Kanan")
+    st.markdown(r"""
+    Limit kiri adalah nilai yang didekati fungsi ketika $x$ mendekati $a$
+    dari sebelah kiri.
+
+    Limit kanan adalah nilai yang didekati fungsi ketika $x$ mendekati $a$
+    dari sebelah kanan.
+    """)
+
+    st.latex(r"\lim_{x\to a^-}f(x)")
+    st.latex(r"\lim_{x\to a^+}f(x)")
+
+    st.markdown("Limit dua sisi ada jika limit kiri dan limit kanan sama.")
+
+    st.latex(
+        r"\lim_{x\to a}f(x)=L\iff"
+        r"\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=L"
+    )
+
+    # =========================================================
+    # 11. CONTOH LIMIT SATU SISI
+    # =========================================================
+
+    st.header("11. Contoh Limit Satu Sisi")
+    st.markdown("Perhatikan fungsi:")
+
+    st.latex(
+        r"f(x)=\begin{cases}x+1,&x<2\\x+3,&x\geq2\end{cases}"
+    )
+
+    st.markdown("Limit kiri:")
+    st.latex(r"\lim_{x\to2^-}f(x)=3")
+
+    st.markdown("Limit kanan:")
+    st.latex(r"\lim_{x\to2^+}f(x)=5")
+
+    st.error(
+        "Karena limit kiri ≠ limit kanan, maka limit dua sisi tidak ada."
+    )
+
+    # =========================================================
+    # 12. LIMIT DI TAK HINGGA
+    # =========================================================
+
+    st.header("12. Limit di Tak Hingga")
+    st.markdown(r"""
+    Limit di tak hingga digunakan untuk mempelajari perilaku fungsi
+    ketika $x$ semakin besar atau semakin kecil tanpa batas.
+    """)
+
+    st.latex(r"\lim_{x\to\infty}f(x)")
+    st.latex(r"\lim_{x\to-\infty}f(x)")
+
+    # =========================================================
+    # 13. LIMIT FUNGSI RASIONAL DI TAK HINGGA
+    # =========================================================
+
+    st.header("13. Limit Fungsi Rasional di Tak Hingga")
+    st.markdown(r"""
+    Untuk fungsi rasional, perilaku limit di tak hingga dapat dianalisis
+    berdasarkan pangkat tertinggi pada pembilang dan penyebut.
+    """)
+
+    st.markdown("Contoh:")
+    st.latex(r"\lim_{x\to\infty}\frac{2x^2+3x+1}{x^2-4}")
+
+    st.markdown(r"""
+    Karena pangkat tertinggi pembilang dan penyebut sama, limit ditentukan
+    oleh perbandingan koefisien pangkat tertinggi.
+    """)
+
+    st.latex(r"\lim_{x\to\infty}\frac{2x^2+3x+1}{x^2-4}=2")
+
+    # =========================================================
+    # 14. KASUS PANGKAT TERTINGGI
+    # =========================================================
+
+    st.header("14. Kasus Pangkat Tertinggi")
+    st.markdown(r"""
+    Untuk $\dfrac{P(x)}{Q(x)}$ berlaku secara umum:
+
+    - Derajat pembilang < derajat penyebut → limit 0.
+    - Derajat pembilang = derajat penyebut → perbandingan koefisien utama.
+    - Derajat pembilang > derajat penyebut → dapat menuju tak hingga atau
+      tidak hingga tergantung tanda dan bentuk fungsi.
+    """)
+
+    # =========================================================
+    # 15. LIMIT FUNGSI TRIGONOMETRI
+    # =========================================================
+
+    st.header("15. Limit Fungsi Trigonometri")
+    st.markdown("Salah satu limit dasar yang sangat penting adalah:")
+
+    st.latex(r"\lim_{x\to0}\frac{\sin x}{x}=1")
+
+    st.markdown("Limit dasar lainnya:")
+
+    st.latex(r"\lim_{x\to0}\frac{1-\cos x}{x}=0")
+    st.latex(r"\lim_{x\to0}\frac{\tan x}{x}=1")
+
+    # =========================================================
+    # 16. CONTOH LIMIT TRIGONOMETRI
+    # =========================================================
+
+    st.header("16. Contoh Limit Trigonometri")
+    st.markdown("Tentukan:")
+    st.latex(r"\lim_{x\to0}\frac{\sin(3x)}{x}")
+
+    st.markdown("Kita dapat menuliskan:")
+
+    st.latex(r"\frac{\sin(3x)}{x}=3\cdot\frac{\sin(3x)}{3x}")
+    st.latex(r"\lim_{x\to0}\frac{\sin(3x)}{x}=3")
+
+    st.info("Jadi, nilai limit adalah 3.")
+
+    # =========================================================
+    # 17. KALKULATOR LIMIT TRIGONOMETRI
+    # =========================================================
+
+    st.header("17. Kalkulator Limit Trigonometri")
+
+    koefisien_trig = st.number_input(
+        "Koefisien k pada sin(kx)/x", value=3.0, key="limit_trig_k"
+    )
+
+    st.latex(r"\lim_{x\to0}\frac{\sin(kx)}{x}=k")
+
+    st.info(
+        f"Hasil untuk k = {koefisien_trig:g} adalah {koefisien_trig:g}"
+    )
+
+    # =========================================================
+    # 18. KEKONTINUAN FUNGSI
+    # =========================================================
+
+    st.header("18. Kekontinuan Fungsi")
+    st.markdown(r"""
+    Sebuah fungsi $f(x)$ dikatakan kontinu di $x=a$ jika memenuhi tiga
+    syarat:
+
+    1. $f(a)$ terdefinisi.
+    2. $\lim_{x\to a}f(x)$ ada.
+    3. $\lim_{x\to a}f(x)=f(a)$.
+    """)
+
+    st.latex(r"\lim_{x\to a}f(x)=f(a)")
+
+    st.info(r"""
+    **Intuisi:** grafik fungsi kontinu dapat digambarkan tanpa mengangkat
+    pensil dari kertas pada interval yang diperhatikan.
+    """)
+
+    # =========================================================
+    # 19. EKSPLORASI KEKONTINUAN
+    # =========================================================
+
+    st.header("19. Eksplorasi Kekontinuan")
+
+    nilai_kontinu = st.number_input(
+        "Nilai a untuk fungsi f(x)=x²+2x+1",
+        value=2.0,
+        key="continuity_a"
+    )
+
+    nilai_f = nilai_kontinu**2 + 2 * nilai_kontinu + 1
+
+    st.latex(r"f(x)=x^2+2x+1")
+
+    st.info(
+        f"f({nilai_kontinu:g}) = {nilai_f:g}. "
+        "Karena fungsi polinomial kontinu, limit pada titik tersebut "
+        "sama dengan nilai f(a)."
+    )
+
+    # =========================================================
+    # 20. VISUALISASI FUNGSI
+    # =========================================================
+
+    st.header("20. Visualisasi Fungsi")
+
+    x_visual = np.linspace(-5, 5, 400)
+    y_visual = x_visual**2 - 4
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_visual, y_visual, "b-")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x")
+    ax.set_ylabel("f(x)")
+    ax.set_title(r"$f(x) = x^2 - 4$")
+    fig.tight_layout()
+    st.pyplot(fig, use_container_width=True)
+
+    st.markdown(r"""
+    Grafik tersebut dapat digunakan untuk mengamati perilaku fungsi ketika
+    $x$ mendekati suatu nilai tertentu.
+    """)
+
+    # =========================================================
+    # 21. EKSPLORASI LIMIT SECARA NUMERIK
+    # =========================================================
+
+    st.header("21. Eksplorasi Limit Secara Numerik")
+
+    titik_limit = st.number_input(
+        "Titik yang didekati a", value=2.0, key="numeric_limit_a"
+    )
+
+    jarak = st.number_input(
+        "Jarak ε",
+        min_value=0.0001,
+        value=0.1,
+        format="%.4f",
+        key="numeric_limit_eps"
+    )
+
+    x_kiri = titik_limit - jarak
+    x_kanan = titik_limit + jarak
+
+    f_kiri = x_kiri**2 + 3 * x_kiri + 1
+    f_kanan = x_kanan**2 + 3 * x_kanan + 1
+
+    df_limit = pd.DataFrame({
+        "Posisi": ["Dari kiri", "Titik", "Dari kanan"],
+        "x": [x_kiri, titik_limit, x_kanan],
+        "f(x)": [
+            f_kiri,
+            titik_limit**2 + 3 * titik_limit + 1,
+            f_kanan
+        ]
+    })
+
+    st.dataframe(
+        df_limit,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    st.info(
+        "Semakin kecil jarak ε, nilai dari kiri dan kanan semakin mendekati "
+        "nilai limit."
+    )
+
+    # =========================================================
+    # 22. PENERAPAN LIMIT
+    # =========================================================
+
+    st.header("22. Penerapan Limit")
+    st.markdown(r"""
+    Konsep limit menjadi dasar bagi berbagai konsep matematika dan ilmu
+    terapan, antara lain:
+
+    - turunan,
+    - integral,
+    - kecepatan sesaat,
+    - percepatan,
+    - optimasi,
+    - pemodelan matematika,
+    - analisis perubahan.
+    """)
+
+    # =========================================================
+    # 23. STUDI KASUS: KECEPATAN SESAAT
+    # =========================================================
+
+    st.header("🌍 Studi Kasus: Kecepatan Sesaat")
+    st.markdown(r"""
+    Misalkan posisi suatu benda dinyatakan oleh:
+    """)
+
+    st.latex(r"s(t)=t^2")
+
+    st.markdown(r"""
+    Kecepatan rata-rata pada interval dari $t$ ke $t+h$ adalah:
+    """)
+
+    st.latex(r"\frac{s(t+h)-s(t)}{h}")
+
+    st.markdown(r"""
+    Kecepatan sesaat diperoleh ketika $h$ mendekati nol.
+    """)
+
+    st.latex(r"v(t)=\lim_{h\to0}\frac{s(t+h)-s(t)}{h}")
+
+    st.markdown(r"Untuk $s(t)=t^2$:")
+
+    st.latex(r"v(t)=2t")
+
+    st.info(r"""
+    Limit menjadi dasar untuk memahami konsep turunan dan kecepatan
+    sesaat.
+    """)
+
+    # =========================================================
+    # 24. RINGKASAN METODE MENENTUKAN LIMIT
+    # =========================================================
+
+    st.header("23. Ringkasan Metode Menentukan Limit")
+
+    df_metode_limit = pd.DataFrame({
+        "Kondisi": [
+            "Substitusi menghasilkan bilangan",
+            "Bentuk 0/0 polinomial",
+            "Bentuk 0/0 mengandung akar",
+            "Fungsi potongan",
+            "x menuju tak hingga",
+            "Limit trigonometri"
+        ],
+        "Metode": [
+            "Substitusi langsung",
+            "Pemfaktoran",
+            "Rasionalisasi",
+            "Limit kiri dan kanan",
+            "Bandingkan pangkat tertinggi",
+            "Gunakan limit dasar trigonometri"
+        ]
+    })
+
+    st.dataframe(
+        df_metode_limit,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 25. LATIHAN
+    # =========================================================
+
+    st.header("📝 Latihan")
+
+    st.markdown(r"""
+    **Soal 1** — Tentukan:
+    """)
+    st.latex(r"\lim_{x\to3}(x^2+2x+1)")
+
+    st.markdown(r"""
+    **Soal 2** — Tentukan:
+    """)
+    st.latex(r"\lim_{x\to2}\frac{x^2-4}{x-2}")
+
+    st.markdown(r"""
+    **Soal 3** — Tentukan:
+    """)
+    st.latex(r"\lim_{x\to0}\frac{\sqrt{x+1}-1}{x}")
+
+    st.markdown(r"""
+    **Soal 4** — Tentukan:
+    """)
+    st.latex(r"\lim_{x\to0}\frac{\sin(5x)}{x}")
+
+    st.markdown(r"""
+    **Soal 5** — Jelaskan perbedaan antara limit kiri dan limit kanan.
+    """)
+
+    st.markdown(r"""
+    **Soal 6** — Jelaskan tiga syarat suatu fungsi kontinu di $x=a$.
+    """)
+
+    st.markdown(r"""
+    **Soal 7** — Tentukan:
+    """)
+    st.latex(r"\lim_{x\to\infty}\frac{3x^2+2x-1}{x^2+5}")
+
+    # =========================================================
+    # 26. KUIS
+    # =========================================================
+
+    st.header("🎯 Kuis")
+
+    jawaban_limit = st.radio(
+        "Nilai dari lim(x→2) (x² − 4)/(x − 2) adalah:",
+        ["0", "2", "4", "Tidak ada"],
+        key="quiz_limit_fungsi"
+    )
+
+    if st.button("Periksa Jawaban", key="cek_quiz_limit"):
+        if jawaban_limit == "4":
+            st.success(
+                "✅ Benar. Dengan pemfaktoran, (x²−4)/(x−2)=x+2 "
+                "sehingga limitnya 4."
+            )
+        else:
+            st.error(
+                "❌ Belum tepat. Faktorkan x²−4 menjadi (x−2)(x+2)."
+            )
+
+    # =========================================================
+    # 27. REFLEKSI
+    # =========================================================
+
+    st.header("💭 Refleksi")
+
+    st.markdown(r"""
+    Setelah mempelajari limit, coba jelaskan:
+
+    1. Apa yang dimaksud dengan limit fungsi?
+    2. Apa perbedaan nilai fungsi dan nilai limit?
+    3. Kapan substitusi langsung dapat digunakan?
+    4. Mengapa bentuk $0/0$ disebut bentuk tak tentu?
+    5. Kapan metode pemfaktoran digunakan?
+    6. Mengapa rasionalisasi dapat digunakan pada bentuk yang mengandung akar?
+    7. Apa syarat agar limit dua sisi ada?
+    8. Apa hubungan limit dengan kekontinuan?
+    9. Mengapa limit menjadi dasar bagi konsep turunan?
+    """)
+
+    # =========================================================
+    # 28. RANGKUMAN
+    # =========================================================
+
+    st.header("📌 Rangkuman")
+
+    st.markdown(r"""
+    **Limit** menggambarkan nilai yang didekati oleh suatu fungsi ketika
+    variabel mendekati suatu nilai tertentu.
+
+    Konsep penting:
+
+    - Limit ditulis dengan notasi $\lim_{x\to a}f(x)$.
+    - Substitusi langsung dapat digunakan jika fungsi kontinu pada titik
+      tersebut.
+    - Bentuk $0/0$ merupakan bentuk tak tentu.
+    - Pemfaktoran dapat digunakan untuk menyelesaikan bentuk $0/0$.
+    - Rasionalisasi dapat digunakan pada bentuk yang mengandung akar.
+    - Limit dua sisi ada jika limit kiri dan kanan sama.
+    - Limit di tak hingga digunakan untuk mempelajari perilaku fungsi
+      ketika $x$ semakin besar atau kecil tanpa batas.
+    - Terdapat beberapa limit dasar trigonometri.
+    - Fungsi kontinu memenuhi $\lim_{x\to a}f(x)=f(a)$.
+    - Konsep limit menjadi dasar untuk mempelajari turunan dan integral.
+    """)
+
+    st.success("🎉 Materi Limit Fungsi selesai dipelajari.")
+
+
 
 def distribusi_peluang():
     st.markdown(
@@ -4750,9 +5426,9 @@ def tampilkan(materi):
         distribusi_peluang()
         #pass
 
-    elif materi == "Limit Fungsi (Tambahan)":
-        #limit_fungsi()
-        pass
+    elif materi == "Limit Fungsi":
+        limit_fungsi()
+        #pass
 
     elif materi == "Turunan & Penerapannya (Tambahan)":
         #turunan()
