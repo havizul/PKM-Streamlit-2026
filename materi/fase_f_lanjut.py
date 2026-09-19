@@ -176,6 +176,8 @@ def pemodelan_fungsi():
     ax.set_xlabel("Jumlah unit (x)")
     ax.set_ylabel("Total biaya C(x)")
     ax.set_title(rf"$C(x) = {harga_unit:.0f}x + {biaya_tetap:.0f}$")
+
+    fig.tight_layout()
     st.pyplot(fig)
 
     # =========================================================
