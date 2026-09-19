@@ -326,9 +326,9 @@ def statistika_bivariat():
     st.markdown("""
     Keterangan:
 
-    - \(\\hat{y}\) = nilai prediksi \(Y\);
-    - \(a\) = intercept;
-    - \(b\) = slope/kemiringan garis regresi.
+    - $r \\hat{y}$ = nilai prediksi \(Y\);
+    - $r a $ = intercept;
+    - $r b $ = slope / kemiringan garis regresi.
     """)
 
     # =========================================================
