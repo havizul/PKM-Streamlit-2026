@@ -409,6 +409,7 @@ def irisan_kerucut():
             rf"$\frac{{x^2}}{{{elips_a:g}^2}}+\frac{{y^2}}{{{elips_b:g}^2}}=1$"
         )
         ax.legend(loc="upper right", fontsize=8)
+        
         fig.tight_layout()
         st.pyplot(fig, use_container_width=True)
 
