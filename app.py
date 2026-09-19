@@ -280,15 +280,15 @@ elif menu_utama == "📚 Materi Matematika":
     materi = st.session_state.materi
 
     if materi in FASE_E:
-
         fase_e.tampilkan(materi)
 
     elif materi in FASE_F_UMUM:
-
         fase_f_umum.tampilkan(materi)
 
     elif materi in FASE_F_LANJUT:
+        fase_f_lanjut.tampilkan(materi)
 
+    else:
         st.info(
             f"Materi **{materi}** belum dikembangkan."
         )
