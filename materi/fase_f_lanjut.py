@@ -130,19 +130,19 @@ def transformasi_geometri():
     sama terhadap garis cermin.
     """)
 
-    st.subheader("Refleksi terhadap sumbu-X")
+    st.markdown("Refleksi terhadap sumbu-X")
     st.latex(r"(x,y)\to(x,-y)")
 
-    st.subheader("Refleksi terhadap sumbu-Y")
+    st.markdown("Refleksi terhadap sumbu-Y")
     st.latex(r"(x,y)\to(-x,y)")
 
-    st.subheader("Refleksi terhadap titik asal O")
+    st.markdown("Refleksi terhadap titik asal O")
     st.latex(r"(x,y)\to(-x,-y)")
 
-    st.subheader("Refleksi terhadap garis y = x")
+    st.markdown("Refleksi terhadap garis y = x")
     st.latex(r"(x,y)\to(y,x)")
 
-    st.subheader("Refleksi terhadap garis y = -x")
+    st.markdown("Refleksi terhadap garis y = -x")
     st.latex(r"(x,y)\to(-y,-x)")
 
     # =========================================================
