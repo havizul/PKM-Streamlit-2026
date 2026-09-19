@@ -337,33 +337,33 @@ elif menu_utama == "🎓 Media Pembelajaran":
         media_geogebra()
         #pass
 
-    elif media == "🧮 Desmos":
-        #media_desmos()
-        pass
+    elif media == "Desmos":
+        media_desmos()
+        #pass
 
-    elif media == "📊 Wayground":
-        #media_wayground()
-        pass
+    elif media == "Wayground":
+        media_wayground()
+        #pass
 
-    elif media == "🎮 Wordwall":
-        #media_wordwall()
-        pass
+    elif media == "Wordwall":
+        media_wordwall()
+        #pass
 
-    elif media == "🎯 Gimkit":
-        #media_gimkit()
-        pass
+    elif media == "Gimkit":
+        media_gimkit()
+        #pass
 
-    elif media == "💻 MATLAB":
-        #media_matlab()
-        pass
+    elif media == "MATLAB":
+        media_matlab()
+        #pass
 
-    elif media == "🐍 Python":
-        #media_python()
-        pass
+    elif media == "Python":
+        media_python()
+        #pass
 
-    elif media == "📈 Spreadsheet":
-        #media_spreadsheet()
-        pass
+    elif media == "Spreadsheet":
+        media_spreadsheet()
+        #pass
 
 
 
