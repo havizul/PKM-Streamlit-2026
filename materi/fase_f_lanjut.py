@@ -6,12 +6,6 @@ import matplotlib.pyplot as plt
 
 from textwrap import dedent
 
-import streamlit as st
-import pandas as pd
-import numpy as np
-import math
-import matplotlib.pyplot as plt
-
 
 def irisan_kerucut():
     st.markdown(
@@ -3998,7 +3992,7 @@ def tampilkan(materi):
         #vektor()
         pass
 
-    elif materi == "Irisan Kerucut:: # (lingkaran & elips)":
+    elif materi == "Irisan Kerucut: # (lingkaran & elips)":
         irisan_kerucut()
         #pass
 
