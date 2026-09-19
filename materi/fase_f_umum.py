@@ -554,8 +554,11 @@ def kaidah_pencacahan():
 
         st.markdown("Banyak seluruh kemungkinan:")
 
+        #st.latex(
+        #    rf"{' \times '.join(str(int(v)) for v in nilai_tahap)}={hasil}"
+        #)
         st.latex(
-            rf"{' \times '.join(str(int(v)) for v in nilai_tahap)}={hasil}"
+            rf"{r' \times '.join(str(int(v)) for v in nilai_tahap)} = {hasil}"
         )
 
     elif jenis_pencacahan == "Permutasi":
