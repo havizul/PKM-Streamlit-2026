@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 
 from textwrap import dedent
 
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -13,6 +14,761 @@ import math
 import matplotlib.pyplot as plt
 
 
+def turunan():
+
+    st.markdown(
+        '<div class="content-title">📕 Turunan dan Penerapannya</div>',
+        unsafe_allow_html=True
+    )
+
+    # =========================================================
+    # TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.header("🎯 Tujuan Pembelajaran")
+    st.markdown(r"""
+    Setelah mempelajari materi ini, siswa diharapkan mampu:
+
+    - Menjelaskan konsep turunan sebagai laju perubahan sesaat.
+    - Menentukan turunan menggunakan definisi turunan.
+    - Menggunakan aturan dasar turunan.
+    - Menentukan turunan fungsi aljabar.
+    - Menentukan turunan fungsi trigonometri sederhana.
+    - Menggunakan aturan rantai.
+    - Menentukan persamaan garis singgung.
+    - Menentukan titik stasioner.
+    - Menentukan interval fungsi naik dan turun.
+    - Menentukan nilai maksimum dan minimum.
+    - Menggunakan turunan untuk menyelesaikan masalah kontekstual.
+    """)
+
+    # =========================================================
+    # APERSEPSI
+    # =========================================================
+
+    st.header("💡 Apersepsi")
+    st.markdown(r"""
+    Dalam kehidupan sehari-hari kita sering mempelajari perubahan suatu
+    besaran terhadap besaran lainnya.
+
+    Contohnya:
+
+    - perubahan posisi terhadap waktu,
+    - perubahan jarak terhadap waktu,
+    - pertumbuhan populasi,
+    - perubahan biaya terhadap jumlah produksi,
+    - perubahan keuntungan terhadap jumlah barang.
+
+    Turunan digunakan untuk mempelajari **laju perubahan suatu fungsi**.
+    """)
+
+    # =========================================================
+    # 1. PENGERTIAN TURUNAN
+    # =========================================================
+
+    st.header("1. Pengertian Turunan")
+    st.markdown(r"""
+    Turunan fungsi menggambarkan laju perubahan sesaat suatu fungsi
+    terhadap variabelnya.
+    """)
+
+    st.latex(r"f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}")
+
+    st.markdown(r"""
+    Notasi turunan dapat ditulis sebagai:
+
+    - $f'(x)$
+    - $y'$
+    - $\frac{dy}{dx}$
+    """)
+
+    # =========================================================
+    # 2. INTERPRETASI GEOMETRIS
+    # =========================================================
+
+    st.header("2. Interpretasi Geometris")
+    st.markdown(r"""
+    Secara geometris, turunan pada suatu titik menyatakan **gradien garis
+    singgung** terhadap grafik fungsi pada titik tersebut.
+    """)
+
+    st.latex(r"m=f'(a)")
+
+    st.info(r"""
+    Semakin besar nilai turunan positif, grafik semakin meningkat secara
+    tajam. Jika turunan bernilai negatif, grafik sedang menurun.
+    """)
+
+    # =========================================================
+    # 3. TURUNAN MENGGUNAKAN DEFINISI
+    # =========================================================
+
+    st.header("3. Turunan Menggunakan Definisi")
+    st.markdown("Misalkan:")
+
+    st.latex(r"f(x)=x^2")
+
+    st.markdown("Berdasarkan definisi turunan:")
+
+    st.latex(r"f'(x)=\lim_{h\to0}\frac{(x+h)^2-x^2}{h}")
+    st.latex(r"f'(x)=\lim_{h\to0}(2x+h)")
+    st.latex(r"f'(x)=2x")
+
+    st.info("Jadi, turunan dari $f(x)=x^2$ adalah $f'(x)=2x$.")
+
+    # =========================================================
+    # 4. ATURAN KONSTANTA
+    # =========================================================
+
+    st.header("4. Aturan Konstanta")
+    st.markdown("Turunan dari suatu konstanta adalah nol.")
+
+    st.latex(r"\frac{d}{dx}(c)=0")
+
+    st.markdown("Contoh:")
+    st.latex(r"\frac{d}{dx}(7)=0")
+
+    # =========================================================
+    # 5. ATURAN PANGKAT
+    # =========================================================
+
+    st.header("5. Aturan Pangkat")
+    st.markdown(r"Untuk fungsi berbentuk $x^n$, berlaku aturan:")
+
+    st.latex(r"\frac{d}{dx}(x^n)=nx^{n-1}")
+
+    st.markdown("Contoh:")
+    st.latex(r"\frac{d}{dx}(x^5)=5x^4")
+
+    # =========================================================
+    # 6. TURUNAN PENJUMLAHAN DAN PENGURANGAN
+    # =========================================================
+
+    st.header("6. Turunan Penjumlahan dan Pengurangan")
+
+    st.latex(r"(f(x)+g(x))'=f'(x)+g'(x)")
+    st.latex(r"(f(x)-g(x))'=f'(x)-g'(x)")
+
+    st.markdown("Contoh:")
+    st.latex(r"f(x)=3x^4+2x^2-5x+7")
+    st.latex(r"f'(x)=12x^3+4x-5")
+
+    # =========================================================
+    # 7. ATURAN PERKALIAN KONSTANTA
+    # =========================================================
+
+    st.header("7. Aturan Perkalian Konstanta")
+
+    st.latex(r"(cf(x))'=cf'(x)")
+
+    st.markdown("Contoh:")
+    st.latex(r"\frac{d}{dx}(5x^3)=15x^2")
+
+    # =========================================================
+    # 8. TURUNAN HASIL KALI
+    # =========================================================
+
+    st.header("8. Turunan Hasil Kali")
+    st.markdown("Jika dua fungsi dikalikan, gunakan aturan hasil kali.")
+
+    st.latex(r"(fg)'=f'g+fg'")
+
+    st.markdown("Contoh:")
+    st.latex(r"y=x^2(x+1)")
+    st.latex(r"y'=2x(x+1)+x^2")
+    st.latex(r"y'=3x^2+2x")
+
+    # =========================================================
+    # 9. TURUNAN HASIL BAGI
+    # =========================================================
+
+    st.header("9. Turunan Hasil Bagi")
+    st.markdown("Jika suatu fungsi berbentuk hasil bagi dua fungsi:")
+
+    st.latex(r"\left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^2}")
+
+    st.markdown("Contoh:")
+    st.latex(r"y=\frac{x^2+1}{x}")
+    st.latex(r"y'=\frac{2x(x)-(x^2+1)}{x^2}")
+    st.latex(r"y'=\frac{x^2-1}{x^2}")
+
+    # =========================================================
+    # 10. ATURAN RANTAI
+    # =========================================================
+
+    st.header("10. Aturan Rantai")
+    st.markdown("Aturan rantai digunakan untuk fungsi komposisi.")
+
+    st.latex(r"\frac{d}{dx}f(g(x))=f'(g(x))\,g'(x)")
+
+    st.markdown("Contoh:")
+    st.latex(r"y=(2x+1)^5")
+    st.latex(r"y'=5(2x+1)^4(2)")
+    st.latex(r"y'=10(2x+1)^4")
+
+    # =========================================================
+    # 11. TURUNAN FUNGSI TRIGONOMETRI
+    # =========================================================
+
+    st.header("11. Turunan Fungsi Trigonometri")
+
+    st.latex(r"\frac{d}{dx}(\sin x)=\cos x")
+    st.latex(r"\frac{d}{dx}(\cos x)=-\sin x")
+    st.latex(r"\frac{d}{dx}(\tan x)=\sec^2 x")
+
+    st.markdown("Contoh:")
+    st.latex(r"f(x)=3\sin x+2\cos x")
+    st.latex(r"f'(x)=3\cos x-2\sin x")
+
+    # =========================================================
+    # 12. KALKULATOR TURUNAN POLINOMIAL
+    # =========================================================
+
+    st.header("12. Kalkulator Turunan Polinomial")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        koef_x3 = st.number_input(
+            "Koefisien x³", value=2.0, key="deriv_x3"
+        )
+        koef_x2 = st.number_input(
+            "Koefisien x²", value=3.0, key="deriv_x2"
+        )
+
+    with col2:
+        koef_x = st.number_input(
+            "Koefisien x", value=4.0, key="deriv_x"
+        )
+        konstanta = st.number_input(
+            "Konstanta", value=5.0, key="deriv_const"
+        )
+
+    def format_polinomial(c3, c2, c1, c0):
+        """Format polinomial dengan tanda yang rapi."""
+        parts = []
+        if c3 != 0:
+            parts.append(f"{c3:g}x^3")
+        if c2 != 0:
+            sign = "+" if c2 > 0 and parts else ""
+            parts.append(f"{sign}{c2:g}x^2")
+        if c1 != 0:
+            sign = "+" if c1 > 0 and parts else ""
+            parts.append(f"{sign}{c1:g}x")
+        if c0 != 0:
+            sign = "+" if c0 > 0 and parts else ""
+            parts.append(f"{sign}{c0:g}")
+        return "".join(parts) if parts else "0"
+
+    st.markdown("Fungsi yang dimasukkan:")
+    st.latex(rf"f(x)={format_polinomial(koef_x3, koef_x2, koef_x, konstanta)}")
+
+    st.markdown("Turunannya:")
+    st.latex(rf"f'(x)={format_polinomial(0, 3*koef_x3, 2*koef_x2, koef_x)}")
+
+    # =========================================================
+    # 13. VISUALISASI FUNGSI DAN TURUNAN (pakai input user)
+    # =========================================================
+
+    st.header("13. Visualisasi Fungsi dan Turunan")
+
+    x_deriv = np.linspace(-5, 5, 400)
+
+    f_deriv = (
+        koef_x3 * x_deriv**3
+        + koef_x2 * x_deriv**2
+        + koef_x * x_deriv
+        + konstanta
+    )
+
+    fp_deriv = (
+        3 * koef_x3 * x_deriv**2
+        + 2 * koef_x2 * x_deriv
+        + koef_x
+    )
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_deriv, f_deriv, "b-", label="f(x)")
+    ax.plot(x_deriv, fp_deriv, "r--", label="f'(x)")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    ax.set_title("Grafik f(x) dan turunannya")
+    ax.legend()
+    fig.tight_layout()
+    st.pyplot(fig, use_container_width=True)
+
+    st.markdown(r"""
+    Grafik $f'(x)$ dapat membantu melihat bagaimana fungsi $f(x)$
+    mengalami perubahan.
+    """)
+
+    # =========================================================
+    # 14. TURUNAN KEDUA
+    # =========================================================
+
+    st.header("14. Turunan Kedua")
+    st.markdown("Turunan dapat diturunkan kembali untuk memperoleh turunan kedua.")
+
+    st.latex(r"f''(x)=\frac{d}{dx}f'(x)")
+
+    st.markdown("Contoh:")
+    st.latex(r"f(x)=x^3")
+    st.latex(r"f'(x)=3x^2")
+    st.latex(r"f''(x)=6x")
+
+    # =========================================================
+    # 15. GARIS SINGGUNG
+    # =========================================================
+
+    st.header("15. Garis Singgung")
+    st.markdown(r"""
+    Persamaan garis singgung grafik fungsi $f(x)$ pada titik $x=a$ dapat
+    ditentukan menggunakan gradien $f'(a)$.
+    """)
+
+    st.latex(r"y-f(a)=f'(a)(x-a)")
+
+    st.markdown(r"Contoh untuk $f(x)=x^2$ pada $x=2$:")
+
+    st.latex(r"f(2)=4")
+    st.latex(r"f'(2)=4")
+    st.latex(r"y-4=4(x-2)")
+    st.latex(r"y=4x-4")
+
+    # =========================================================
+    # 16. KALKULATOR GARIS SINGGUNG
+    # =========================================================
+
+    st.header("16. Kalkulator Garis Singgung")
+
+    titik_a = st.number_input("Titik x = a", value=2.0, key="tangent_a")
+
+    nilai_fa = titik_a**2
+    nilai_fpa = 2 * titik_a
+
+    st.latex(r"f(x)=x^2 \quad\Rightarrow\quad f'(x)=2x")
+
+    st.info(
+        f"Pada x = {titik_a:g}, diperoleh f(a) = {nilai_fa:g} "
+        f"dan f'(a) = {nilai_fpa:g}."
+    )
+
+    st.latex(rf"y-{nilai_fa:g}={nilai_fpa:g}(x-{titik_a:g})")
+
+    # =========================================================
+    # 17. TITIK STASIONER
+    # =========================================================
+
+    st.header("17. Titik Stasioner")
+    st.markdown(r"""
+    Titik stasioner adalah titik pada grafik fungsi ketika turunan pertama
+    sama dengan nol.
+    """)
+
+    st.latex(r"f'(x)=0")
+
+    st.markdown(r"""
+    Titik stasioner dapat berupa:
+
+    - maksimum lokal,
+    - minimum lokal,
+    - atau titik stasioner lainnya.
+    """)
+
+    # =========================================================
+    # 18. MENENTUKAN TITIK STASIONER
+    # =========================================================
+
+    st.header("18. Menentukan Titik Stasioner")
+    st.markdown("Misalkan:")
+
+    st.latex(r"f(x)=x^2-4x+3")
+    st.latex(r"f'(x)=2x-4")
+
+    st.markdown("Syarat titik stasioner:")
+    st.latex(r"2x-4=0")
+    st.latex(r"x=2")
+
+    st.markdown("Nilai fungsi:")
+    st.latex(r"f(2)=-1")
+
+    st.info("Titik stasioner adalah $(2,-1)$.")
+
+    # =========================================================
+    # 19. FUNGSI NAIK DAN TURUN
+    # =========================================================
+
+    st.header("19. Fungsi Naik dan Turun")
+    st.markdown(r"""
+    Turunan dapat digunakan untuk menentukan interval fungsi naik dan
+    turun.
+
+    Secara umum:
+
+    - Jika $f'(x)>0$, fungsi meningkat.
+    - Jika $f'(x)<0$, fungsi menurun.
+    - Jika $f'(x)=0$, terdapat titik kritis atau titik stasioner.
+    """)
+
+    # =========================================================
+    # 20. EKSPLORASI FUNGSI NAIK DAN TURUN
+    # =========================================================
+
+    st.header("20. Eksplorasi Fungsi Naik dan Turun")
+
+    x_explore = st.number_input(
+        "Nilai x untuk fungsi f(x)=x²−4x+3",
+        value=2.0,
+        key="monotonic_x"
+    )
+
+    turunan_explore = 2 * x_explore - 4
+
+    if turunan_explore > 0:
+        st.success("f'(x) > 0 → fungsi sedang meningkat.")
+    elif turunan_explore < 0:
+        st.warning("f'(x) < 0 → fungsi sedang menurun.")
+    else:
+        st.info("f'(x) = 0 → titik stasioner.")
+
+    # =========================================================
+    # 21. MAKSIMUM DAN MINIMUM
+    # =========================================================
+
+    st.header("21. Maksimum dan Minimum")
+    st.markdown(r"""
+    Turunan dapat digunakan untuk menentukan nilai maksimum dan minimum
+    suatu fungsi.
+
+    Langkah umum:
+
+    1. Tentukan $f'(x)$.
+    2. Tentukan titik kritis dengan $f'(x)=0$.
+    3. Analisis perubahan tanda turunan.
+    4. Tentukan apakah titik tersebut maksimum atau minimum.
+    """)
+
+    st.markdown("Contoh:")
+
+    st.latex(r"f(x)=x^2-4x+3")
+    st.latex(r"f'(x)=2x-4")
+    st.latex(r"2x-4=0 \Rightarrow x=2")
+    st.latex(r"f(2)=-1")
+
+    st.info(r"""
+    Karena grafik berbentuk parabola terbuka ke atas, titik $(2,-1)$
+    merupakan titik minimum.
+    """)
+
+    # =========================================================
+    # 22. OPTIMASI FUNGSI KUADRAT
+    # =========================================================
+
+    st.header("22. Optimasi Fungsi Kuadrat")
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        a_opt = st.number_input("Koefisien a", value=1.0, key="opt_a")
+
+    with col2:
+        b_opt = st.number_input("Koefisien b", value=-4.0, key="opt_b")
+
+    with col3:
+        c_opt = st.number_input("Koefisien c", value=3.0, key="opt_c")
+
+    if a_opt != 0:
+        x_opt = -b_opt / (2 * a_opt)
+        y_opt = a_opt * x_opt**2 + b_opt * x_opt + c_opt
+
+        st.latex(rf"f(x)={a_opt:g}x^2+{b_opt:g}x+{c_opt:g}")
+
+        st.info(
+            f"Titik ekstrem berada pada x = {x_opt:.4f}, "
+            f"dengan nilai f(x) = {y_opt:.4f}."
+        )
+
+        if a_opt > 0:
+            st.info("Karena a > 0, titik ekstrem merupakan minimum.")
+        else:
+            st.info("Karena a < 0, titik ekstrem merupakan maksimum.")
+
+        # Visualisasi (pakai input user!)
+        x_opt_vis = np.linspace(x_opt - 10, x_opt + 10, 300)
+        y_opt_vis = a_opt * x_opt_vis**2 + b_opt * x_opt_vis + c_opt
+
+        fig, ax = plt.subplots(figsize=(8, 4))
+        ax.plot(x_opt_vis, y_opt_vis, "g-")
+        ax.plot(x_opt, y_opt, "ro", markersize=8,
+                label=f"Ekstrem ({x_opt:.2f}, {y_opt:.2f})")
+        ax.axhline(0, color="gray", linewidth=0.6)
+        ax.axvline(0, color="gray", linewidth=0.6)
+        ax.grid(True, linestyle=":", alpha=0.6)
+        ax.set_xlabel("x")
+        ax.set_ylabel("f(x)")
+        ax.set_title(rf"$f(x) = {a_opt:g}x^2 + {b_opt:g}x + {c_opt:g}$")
+        ax.legend()
+        fig.tight_layout()
+        st.pyplot(fig, use_container_width=True)
+
+    else:
+        st.warning("Koefisien a tidak boleh 0 untuk fungsi kuadrat.")
+
+    # =========================================================
+    # 23. PENERAPAN: KECEPATAN
+    # =========================================================
+
+    st.header("23. Penerapan Turunan: Kecepatan")
+    st.markdown(r"""
+    Jika posisi benda dinyatakan sebagai fungsi waktu $s(t)$, maka
+    kecepatan sesaat merupakan turunan posisi terhadap waktu.
+    """)
+
+    st.latex(r"v(t)=s'(t)")
+
+    st.markdown("Sedangkan percepatan merupakan turunan kecepatan terhadap waktu.")
+
+    st.latex(r"a(t)=v'(t)=s''(t)")
+
+    # =========================================================
+    # 24. STUDI KASUS GERAK BENDA
+    # =========================================================
+
+    st.header("🌍 Studi Kasus: Gerak Benda")
+
+    st.markdown("Posisi sebuah benda dinyatakan:")
+
+    st.latex(r"s(t)=t^3-6t^2+9t")
+
+    st.markdown("Kecepatan benda:")
+    st.latex(r"v(t)=3t^2-12t+9")
+
+    st.markdown("Percepatan benda:")
+    st.latex(r"a(t)=6t-12")
+
+    waktu = st.number_input(
+        "Waktu t", min_value=0.0, value=2.0, key="motion_time"
+    )
+
+    posisi = waktu**3 - 6 * waktu**2 + 9 * waktu
+    kecepatan = 3 * waktu**2 - 12 * waktu + 9
+    percepatan = 6 * waktu - 12
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.metric("Posisi", f"{posisi:.4f}")
+
+    with col2:
+        st.metric("Kecepatan", f"{kecepatan:.4f}")
+
+    with col3:
+        st.metric("Percepatan", f"{percepatan:.4f}")
+
+    # =========================================================
+    # 25. PENERAPAN: OPTIMASI
+    # =========================================================
+
+    st.header("25. Penerapan Turunan: Optimasi")
+    st.markdown(r"""
+    Turunan banyak digunakan dalam masalah optimasi, misalnya:
+
+    - menentukan luas maksimum,
+    - menentukan volume maksimum,
+    - memaksimalkan keuntungan,
+    - meminimalkan biaya,
+    - menentukan ukuran optimal suatu objek.
+    """)
+
+    st.markdown(r"""
+    **Contoh:** Sebuah persegi panjang memiliki keliling 20 cm.
+
+    Jika panjangnya $x$, maka lebarnya $10-x$.
+
+    Luasnya:
+    """)
+
+    st.latex(r"A(x)=x(10-x)=10x-x^2")
+
+    st.markdown("Turunan luas:")
+    st.latex(r"A'(x)=10-2x")
+
+    st.markdown("Untuk luas maksimum:")
+    st.latex(r"10-2x=0 \Rightarrow x=5")
+
+    st.info("Ukuran optimal adalah 5 cm × 5 cm.")
+
+    # Visualisasi luas
+    x_opt_vis = np.linspace(0, 10, 300)
+    area_opt_vis = x_opt_vis * (10 - x_opt_vis)
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_opt_vis, area_opt_vis, "b-")
+    ax.plot(5, 25, "ro", markersize=8, label="Maksimum (5, 25)")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("Panjang x (cm)")
+    ax.set_ylabel("Luas A(x) (cm²)")
+    ax.set_title(r"$A(x) = x(10-x)$")
+    ax.legend()
+    fig.tight_layout()
+    st.pyplot(fig, use_container_width=True)
+
+    # =========================================================
+    # 26. TURUNAN FUNGSI EKSPONENSIAL
+    # =========================================================
+
+    st.header("26. Turunan Fungsi Eksponensial")
+
+    st.latex(r"\frac{d}{dx}(e^x)=e^x")
+
+    st.markdown(r"Untuk fungsi $e^{u(x)}$, digunakan aturan rantai.")
+
+    st.latex(r"\frac{d}{dx}e^{u(x)}=e^{u(x)}\,u'(x)")
+
+    st.markdown("Contoh:")
+    st.latex(r"f(x)=e^{2x}")
+    st.latex(r"f'(x)=2e^{2x}")
+
+    # =========================================================
+    # 27. TURUNAN FUNGSI LOGARITMA
+    # =========================================================
+
+    st.header("27. Turunan Fungsi Logaritma")
+
+    st.latex(r"\frac{d}{dx}\ln x=\frac{1}{x}")
+
+    st.markdown("Contoh:")
+    st.latex(r"f(x)=\ln(x^2+1)")
+    st.latex(r"f'(x)=\frac{2x}{x^2+1}")
+
+    # =========================================================
+    # 28. HUBUNGAN TURUNAN DAN GRAFIK
+    # =========================================================
+
+    st.header("28. Hubungan Turunan dan Grafik")
+    st.markdown(r"""
+    Turunan memberikan informasi penting mengenai bentuk grafik:
+
+    - $f'(x)>0$ → grafik naik.
+    - $f'(x)<0$ → grafik turun.
+    - $f'(x)=0$ → kandidat titik stasioner.
+    - $f''(x)>0$ → grafik cekung ke atas.
+    - $f''(x)<0$ → grafik cekung ke bawah.
+    """)
+
+    # =========================================================
+    # 29. LATIHAN
+    # =========================================================
+
+    st.header("📝 Latihan")
+
+    st.markdown(r"""
+    **Soal 1** — Tentukan turunan:
+    """)
+    st.latex(r"f(x)=3x^4-2x^3+5x-7")
+
+    st.markdown(r"""
+    **Soal 2** — Tentukan turunan:
+    """)
+    st.latex(r"f(x)=(2x+1)^4")
+
+    st.markdown(r"""
+    **Soal 3** — Tentukan turunan:
+    """)
+    st.latex(r"f(x)=x^2\sin x")
+
+    st.markdown(r"""
+    **Soal 4** — Tentukan persamaan garis singgung fungsi $f(x)=x^2$
+    pada $x=3$.
+    """)
+
+    st.markdown(r"""
+    **Soal 5** — Tentukan titik stasioner fungsi:
+    """)
+    st.latex(r"f(x)=x^2-6x+5")
+
+    st.markdown(r"""
+    **Soal 6** — Tentukan interval fungsi naik dan turun untuk:
+    """)
+    st.latex(r"f(x)=x^2-4x+3")
+
+    st.markdown(r"""
+    **Soal 7** — Sebuah benda memiliki posisi:
+    """)
+    st.latex(r"s(t)=t^3-3t^2+2t")
+    st.markdown("Tentukan kecepatan dan percepatannya.")
+
+    # =========================================================
+    # 30. KUIS
+    # =========================================================
+
+    st.header("🎯 Kuis")
+
+    jawaban_turunan = st.radio(
+        "Turunan dari f(x)=x³ adalah:",
+        ["x²", "2x²", "3x²", "3x"],
+        key="quiz_turunan"
+    )
+
+    if st.button("Periksa Jawaban", key="cek_quiz_turunan"):
+        if jawaban_turunan == "3x²":
+            st.success("✅ Benar. Berdasarkan aturan pangkat, d(x³)/dx = 3x².")
+        else:
+            st.error("❌ Belum tepat. Gunakan aturan d(xⁿ)/dx = n·xⁿ⁻¹.")
+
+   # =========================================================
+    # 31. REFLEKSI
+    # =========================================================
+
+    st.header("💭 Refleksi")
+
+    st.markdown(r"""
+    Setelah mempelajari turunan, coba jelaskan:
+
+    1. Apa makna turunan secara matematis?
+    2. Apa makna turunan secara geometris?
+    3. Apa hubungan turunan dengan gradien garis singgung?
+    4. Kapan aturan rantai digunakan?
+    5. Bagaimana turunan digunakan untuk menentukan fungsi naik dan turun?
+    6. Bagaimana menentukan titik maksimum dan minimum?
+    7. Apa hubungan turunan pertama dan turunan kedua?
+    8. Bagaimana turunan digunakan untuk menentukan kecepatan dan percepatan?
+    9. Mengapa turunan penting dalam masalah optimasi?
+    """)
+
+    # =========================================================
+    # 32. RANGKUMAN
+    # =========================================================
+
+    st.header("📌 Rangkuman")
+
+    st.markdown(r"""
+    **Turunan** merupakan konsep matematika yang digunakan untuk
+    menggambarkan laju perubahan suatu fungsi.
+
+    Konsep penting:
+
+    - Turunan dapat didefinisikan menggunakan limit.
+    - Turunan secara geometris menyatakan gradien garis singgung.
+    - Aturan pangkat digunakan untuk fungsi berbentuk $x^n$.
+    - Aturan hasil kali digunakan untuk perkalian dua fungsi.
+    - Aturan hasil bagi digunakan untuk pembagian dua fungsi.
+    - Aturan rantai digunakan untuk fungsi komposisi.
+    - Turunan kedua digunakan untuk menganalisis kecekungan grafik.
+    - $f'(x)>0$ menunjukkan fungsi meningkat.
+    - $f'(x)<0$ menunjukkan fungsi menurun.
+    - $f'(x)=0$ digunakan untuk mencari titik kritis.
+    - Turunan dapat digunakan untuk menentukan maksimum dan minimum.
+    - Turunan digunakan dalam kecepatan dan percepatan.
+    - Turunan merupakan alat penting dalam optimasi dan pemodelan.
+    """)
+
+    st.success("🎉 Materi Turunan dan Penerapannya selesai dipelajari.")
+    
 def limit_fungsi():
     st.markdown(
         '<div class="content-title">📕 Limit Fungsi</div>',
@@ -5431,8 +6187,8 @@ def tampilkan(materi):
         #pass
 
     elif materi == "Turunan & Penerapannya (Tambahan)":
-        #turunan()
-        pass
+        turunan()
+        #pass
 
     elif materi == "Integral (Tambahan)":
         #integral()
