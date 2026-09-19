@@ -199,18 +199,18 @@ def transformasi_geometri():
 
     st.markdown(r"Rotasi berpusat di titik asal $O(0,0)$:")
 
-    st.subheader("Rotasi 90° berlawanan arah jarum jam (CCW)")
+    st.markdown("Rotasi 90° berlawanan arah jarum jam (CCW)")
     st.latex(r"(x,y)\to(-y,\;x)")
 
-    st.subheader("Rotasi 90° searah jarum jam (CW)")
+    st.markdown("Rotasi 90° searah jarum jam (CW)")
     st.latex(r"(x,y)\to(y,\;-x)")
 
-    st.subheader("Rotasi 180°")
+    st.markdown("Rotasi 180°")
     st.latex(r"(x,y)\to(-x,\;-y)")
 
-    st.subheader("Rotasi 270° berlawanan arah jarum jam (CCW)")
+    st.markdown("Rotasi 270° berlawanan arah jarum jam (CCW)")
     st.latex(r"(x,y)\to(y,\;-x)")
-    st.caption("Perhatikan: rotasi 270° CCW sama dengan rotasi 90° CW.")  # FIX: klarifikasi
+    st.markdown("Perhatikan: rotasi 270° CCW sama dengan rotasi 90° CW.")  # FIX: klarifikasi
 
     # =========================================================
     # 8. MATRIKS ROTASI
