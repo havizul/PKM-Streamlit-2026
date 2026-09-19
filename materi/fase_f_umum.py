@@ -2,6 +2,952 @@ import streamlit as st
 import pandas as pd
 import math
 
+def lingkaran():
+
+    st.markdown("## ⭕ Lingkaran")
+
+    st.markdown("""
+    Lingkaran merupakan salah satu bentuk geometri yang banyak ditemukan
+    dalam kehidupan sehari-hari, seperti roda, jam, piring, cakram, lintasan,
+    dan berbagai objek berbentuk melingkar.
+
+    Pada materi ini kita akan mempelajari persamaan lingkaran, unsur-unsur
+    lingkaran, kedudukan titik dan garis terhadap lingkaran, garis singgung,
+    serta penerapannya dalam masalah kontekstual.
+    """)
+
+    # =========================================================
+    # 1. TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.markdown("### 🎯 Tujuan Pembelajaran")
+
+    st.info("""
+    Setelah mempelajari materi ini, peserta didik diharapkan mampu:
+
+    1. Menjelaskan konsep dan unsur-unsur lingkaran.
+    2. Menentukan persamaan lingkaran.
+    3. Menentukan pusat dan jari-jari lingkaran.
+    4. Menentukan kedudukan suatu titik terhadap lingkaran.
+    5. Menentukan kedudukan suatu garis terhadap lingkaran.
+    6. Menentukan persamaan garis singgung lingkaran.
+    7. Menyelesaikan masalah kontekstual yang berkaitan dengan lingkaran.
+    8. Memvisualisasikan lingkaran pada bidang koordinat.
+    """)
+
+    # =========================================================
+    # 2. APERSEPSI
+    # =========================================================
+
+    st.markdown("### 💡 Apersepsi")
+
+    st.markdown("""
+    Perhatikan sebuah roda sepeda.
+
+    Semua titik pada tepi roda memiliki jarak yang sama terhadap pusat roda.
+    Sifat inilah yang menjadi dasar dari konsep lingkaran.
+    """)
+
+    st.markdown("Secara matematis, lingkaran dapat didefinisikan sebagai:")
+
+    st.info("""
+    Himpunan semua titik pada bidang yang memiliki jarak sama terhadap
+    satu titik tertentu yang disebut pusat lingkaran.
+    """)
+
+    st.markdown("Jika pusat lingkaran adalah \(O\) dan jari-jarinya \(r\), maka:")
+
+    st.latex(r"OP=r")
+
+    # =========================================================
+    # 3. UNSUR-UNSUR LINGKARAN
+    # =========================================================
+
+    st.markdown("### 📐 1. Unsur-Unsur Lingkaran")
+
+    df_unsur = pd.DataFrame({
+        "Unsur": [
+            "Pusat",
+            "Jari-jari",
+            "Diameter",
+            "Tali busur",
+            "Busur",
+            "Juring",
+            "Tembereng",
+            "Garis singgung"
+        ],
+        "Pengertian": [
+            "Titik yang menjadi pusat lingkaran",
+            "Jarak dari pusat ke titik pada lingkaran",
+            "Ruas garis melalui pusat yang menghubungkan dua titik pada lingkaran",
+            "Ruas garis yang menghubungkan dua titik pada lingkaran",
+            "Bagian lengkung pada keliling lingkaran",
+            "Daerah yang dibatasi dua jari-jari dan sebuah busur",
+            "Daerah yang dibatasi tali busur dan busur",
+            "Garis yang menyentuh lingkaran tepat di satu titik"
+        ]
+    })
+
+    st.dataframe(
+        df_unsur,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    st.markdown("Hubungan diameter dan jari-jari:")
+
+    st.latex(r"d=2r")
+
+    st.latex(r"r=\frac{d}{2}")
+
+    # =========================================================
+    # 4. KELILING DAN LUAS
+    # =========================================================
+
+    st.markdown("### 📏 2. Keliling dan Luas Lingkaran")
+
+    st.markdown("#### Keliling")
+
+    st.latex(r"K=2\pi r")
+
+    st.markdown("atau:")
+
+    st.latex(r"K=\pi d")
+
+    st.markdown("#### Luas")
+
+    st.latex(r"L=\pi r^2")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Sebuah lingkaran memiliki jari-jari 7 cm.
+    Tentukan keliling dan luasnya.
+    """)
+
+    st.latex(r"K=2\pi(7)=14\pi")
+
+    st.latex(r"K=44\text{ cm}")
+
+    st.latex(r"L=\pi(7)^2=49\pi")
+
+    st.latex(r"L=154\text{ cm}^2")
+
+    # =========================================================
+    # 5. PERSAMAAN LINGKARAN PUSAT O
+    # =========================================================
+
+    st.markdown("### 🧮 3. Persamaan Lingkaran Berpusat di O(0,0)")
+
+    st.markdown("""
+    Misalkan pusat lingkaran berada di titik:
+    """)
+
+    st.latex(r"O(0,0)")
+
+    st.markdown("""
+    dan sebuah titik \(P(x,y)\) berada pada lingkaran dengan jari-jari \(r\).
+
+    Berdasarkan Teorema Pythagoras:
+    """)
+
+    st.latex(r"x^2+y^2=r^2")
+
+    st.markdown("Jadi, persamaan lingkaran berpusat di O(0,0) adalah:")
+
+    st.latex(r"x^2+y^2=r^2")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("Lingkaran berpusat di O(0,0) dengan jari-jari 5 memiliki persamaan:")
+
+    st.latex(r"x^2+y^2=25")
+
+    # =========================================================
+    # 6. PERSAMAAN LINGKARAN PUSAT (a,b)
+    # =========================================================
+
+    st.markdown("### 📍 4. Persamaan Lingkaran Berpusat di (a,b)")
+
+    st.markdown("""
+    Jika pusat lingkaran berada di:
+    """)
+
+    st.latex(r"C(a,b)")
+
+    st.markdown("""
+    dan jari-jari lingkaran adalah \(r\), maka persamaannya:
+    """)
+
+    st.latex(r"(x-a)^2+(y-b)^2=r^2")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Tentukan persamaan lingkaran yang memiliki pusat \((3,-2)\) dan
+    jari-jari 4.
+    """)
+
+    st.latex(r"(x-3)^2+(y+2)^2=16")
+
+    # =========================================================
+    # 7. MENENTUKAN PUSAT DAN JARI-JARI
+    # =========================================================
+
+    st.markdown("### 🔎 5. Menentukan Pusat dan Jari-Jari")
+
+    st.markdown("""
+    Jika diketahui:
+    """)
+
+    st.latex(r"(x-2)^2+(y+3)^2=25")
+
+    st.markdown("Maka:")
+
+    st.latex(r"C(2,-3)")
+
+    st.latex(r"r=5")
+
+    st.markdown("""
+    Ingat bahwa tanda di dalam kurung berlawanan dengan koordinat pusat.
+    """)
+
+    # =========================================================
+    # 8. BENTUK UMUM
+    # =========================================================
+
+    st.markdown("### 📝 6. Bentuk Umum Persamaan Lingkaran")
+
+    st.markdown("""
+    Persamaan lingkaran dapat dituliskan dalam bentuk umum:
+    """)
+
+    st.latex(r"x^2+y^2+Dx+Ey+F=0")
+
+    st.markdown("""
+    Untuk menentukan pusat dan jari-jari, persamaan dapat diubah ke bentuk
+    standar menggunakan metode melengkapkan kuadrat.
+    """)
+
+    st.markdown("#### Contoh")
+
+    st.latex(r"x^2+y^2-4x+6y-12=0")
+
+    st.markdown("Kelompokkan suku-sukunya:")
+
+    st.latex(r"(x^2-4x)+(y^2+6y)=12")
+
+    st.markdown("Lengkapi kuadrat:")
+
+    st.latex(r"(x-2)^2+(y+3)^2=25")
+
+    st.markdown("Jadi:")
+
+    st.latex(r"C(2,-3)")
+
+    st.latex(r"r=5")
+
+    # =========================================================
+    # 9. KEDUDUKAN TITIK
+    # =========================================================
+
+    st.markdown("### 📍 7. Kedudukan Titik terhadap Lingkaran")
+
+    st.markdown("""
+    Misalkan lingkaran memiliki pusat \(C(a,b)\) dan jari-jari \(r\).
+    Untuk titik \(P(x_1,y_1)\), hitung jaraknya terhadap pusat.
+    """)
+
+    st.latex(r"d=\sqrt{(x_1-a)^2+(y_1-b)^2}")
+
+    st.markdown("""
+    Kemudian bandingkan \(d\) dengan \(r\):
+
+    - \(d<r\) → titik berada di dalam lingkaran.
+    - \(d=r\) → titik berada pada lingkaran.
+    - \(d>r\) → titik berada di luar lingkaran.
+    """)
+
+    # =========================================================
+    # 10. EKSPLORASI TITIK
+    # =========================================================
+
+    st.markdown("### 🧪 8. Eksplorasi Kedudukan Titik")
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        pusat_x = st.number_input(
+            "Koordinat pusat x",
+            value=0.0,
+            step=1.0,
+            key="lingkaran_pusat_x"
+        )
+
+    with col2:
+        pusat_y = st.number_input(
+            "Koordinat pusat y",
+            value=0.0,
+            step=1.0,
+            key="lingkaran_pusat_y"
+        )
+
+    with col3:
+        radius = st.number_input(
+            "Jari-jari",
+            min_value=0.1,
+            value=5.0,
+            step=1.0,
+            key="lingkaran_radius"
+        )
+
+    titik_x = st.number_input(
+        "Koordinat titik x",
+        value=3.0,
+        step=1.0,
+        key="lingkaran_titik_x"
+    )
+
+    titik_y = st.number_input(
+        "Koordinat titik y",
+        value=4.0,
+        step=1.0,
+        key="lingkaran_titik_y"
+    )
+
+    jarak = math.sqrt(
+        (titik_x - pusat_x) ** 2 +
+        (titik_y - pusat_y) ** 2
+    )
+
+    st.markdown("Jarak titik terhadap pusat:")
+
+    st.latex(
+        rf"d={jarak:.3f}"
+    )
+
+    if abs(jarak - radius) < 1e-9:
+        st.success("📍 Titik berada tepat pada lingkaran.")
+    elif jarak < radius:
+        st.info("📍 Titik berada di dalam lingkaran.")
+    else:
+        st.warning("📍 Titik berada di luar lingkaran.")
+
+    # =========================================================
+    # 11. KEDUDUKAN GARIS
+    # =========================================================
+
+    st.markdown("### 📏 9. Kedudukan Garis terhadap Lingkaran")
+
+    st.markdown("""
+    Sebuah garis dapat memiliki tiga kemungkinan kedudukan terhadap lingkaran:
+
+    1. Tidak berpotongan dengan lingkaran.
+    2. Berpotongan di dua titik.
+    3. Bersinggungan di satu titik.
+    """)
+
+    st.markdown("""
+    Untuk garis:
+    """)
+
+    st.latex(r"Ax+By+C=0")
+
+    st.markdown("""
+    dan lingkaran berpusat di \(C(a,b)\) dengan jari-jari \(r\), jarak pusat
+    lingkaran terhadap garis adalah:
+    """)
+
+    st.latex(r"d=\frac{|Aa+Bb+C|}{\sqrt{A^2+B^2}}")
+
+    st.markdown("""
+    Kemudian:
+
+    - \(d>r\) → garis di luar lingkaran.
+    - \(d=r\) → garis menyinggung lingkaran.
+    - \(d<r\) → garis memotong lingkaran di dua titik.
+    """)
+
+    # =========================================================
+    # 12. GARIS SINGGUNG
+    # =========================================================
+
+    st.markdown("### 📐 10. Garis Singgung Lingkaran")
+
+    st.markdown("""
+    Garis singgung adalah garis yang menyentuh lingkaran tepat pada satu titik.
+    """)
+
+    st.markdown("""
+    Jika lingkaran:
+    """)
+
+    st.latex(r"x^2+y^2=r^2")
+
+    st.markdown("""
+    dan titik singgung adalah \(P(x_1,y_1)\), maka persamaan garis singgung:
+    """)
+
+    st.latex(r"xx_1+yy_1=r^2")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Tentukan persamaan garis singgung lingkaran:
+    """)
+
+    st.latex(r"x^2+y^2=25")
+
+    st.markdown("""
+    pada titik \(P(3,4)\).
+    """)
+
+    st.latex(r"3x+4y=25")
+
+    # =========================================================
+    # 13. GRADIEN JARI-JARI DAN GARIS SINGGUNG
+    # =========================================================
+
+    st.markdown("### 📐 11. Hubungan Jari-Jari dan Garis Singgung")
+
+    st.markdown("""
+    Salah satu sifat penting lingkaran adalah:
+
+    **Jari-jari yang ditarik ke titik singgung tegak lurus terhadap garis
+    singgung.**
+    """)
+
+    st.latex(r"OP\perp\text{garis singgung}")
+
+    st.markdown("""
+    Jika gradien jari-jari adalah \(m_1\), maka gradien garis singgung
+    \(m_2\) memenuhi:
+    """)
+
+    st.latex(r"m_1m_2=-1")
+
+    # =========================================================
+    # 14. GARIS SINGGUNG DENGAN GRADIEN
+    # =========================================================
+
+    st.markdown("### 📈 12. Garis Singgung dengan Gradien Tertentu")
+
+    st.markdown("""
+    Untuk lingkaran berpusat di O(0,0):
+    """)
+
+    st.latex(r"x^2+y^2=r^2")
+
+    st.markdown("""
+    garis dengan gradien \(m\) dapat ditulis:
+    """)
+
+    st.latex(r"y=mx+c")
+
+    st.markdown("""
+    Agar garis tersebut menyinggung lingkaran, jarak pusat terhadap garis
+    harus sama dengan jari-jari.
+    """)
+
+    st.latex(r"\frac{|c|}{\sqrt{m^2+1}}=r")
+
+    # =========================================================
+    # 15. PANJANG GARIS SINGGUNG
+    # =========================================================
+
+    st.markdown("### 📏 13. Panjang Garis Singgung dari Titik Luar")
+
+    st.markdown("""
+    Jika sebuah titik \(P\) berada di luar lingkaran dan jaraknya terhadap
+    pusat adalah \(d\), maka panjang garis singgung dari \(P\) ke lingkaran
+    adalah:
+    """)
+
+    st.latex(r"PT=\sqrt{d^2-r^2}")
+
+    st.markdown("Rumus ini diperoleh dari Teorema Pythagoras.")
+
+    # =========================================================
+    # 16. TALI BUSUR
+    # =========================================================
+
+    st.markdown("### 📏 14. Tali Busur")
+
+    st.markdown("""
+    Tali busur adalah ruas garis yang menghubungkan dua titik pada lingkaran.
+
+    Jika jarak pusat ke tali busur adalah \(d\), maka panjang setengah tali
+    busur dapat diperoleh menggunakan Teorema Pythagoras.
+    """)
+
+    st.latex(r"\frac{c}{2}=\sqrt{r^2-d^2}")
+
+    st.markdown("Sehingga panjang tali busur:")
+
+    st.latex(r"c=2\sqrt{r^2-d^2}")
+
+    # =========================================================
+    # 17. PANJANG BUSUR
+    # =========================================================
+
+    st.markdown("### 🌀 15. Panjang Busur")
+
+    st.markdown("""
+    Jika sudut pusat adalah \(\theta\) derajat, maka panjang busur:
+    """)
+
+    st.latex(r"s=\frac{\theta}{360^\circ}\,2\pi r")
+
+    st.markdown("""
+    Jika sudut dinyatakan dalam radian:
+    """)
+
+    st.latex(r"s=r\theta")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Sebuah lingkaran berjari-jari 14 cm memiliki sudut pusat 90°.
+    """)
+
+    st.latex(r"s=\frac{90^\circ}{360^\circ}(2\pi)(14)")
+
+    st.latex(r"s=7\pi")
+
+    st.latex(r"s=22\text{ cm}")
+
+    # =========================================================
+    # 18. LUAS JURING
+    # =========================================================
+
+    st.markdown("### 🥧 16. Luas Juring")
+
+    st.markdown("""
+    Luas juring dengan sudut pusat \(\theta\) adalah:
+    """)
+
+    st.latex(r"L_j=\frac{\theta}{360^\circ}\pi r^2")
+
+    st.markdown("Jika sudut dalam radian:")
+
+    st.latex(r"L_j=\frac{1}{2}r^2\theta")
+
+    # =========================================================
+    # 19. INTERAKTIF JURING
+    # =========================================================
+
+    st.markdown("### 🧮 17. Kalkulator Lingkaran")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        r_kalk = st.number_input(
+            "Jari-jari r (cm)",
+            min_value=0.1,
+            value=7.0,
+            step=0.5,
+            key="r_kalk_lingkaran"
+        )
+
+    with col2:
+        theta_kalk = st.number_input(
+            "Sudut pusat θ (°)",
+            min_value=0.0,
+            max_value=360.0,
+            value=90.0,
+            step=5.0,
+            key="theta_kalk_lingkaran"
+        )
+
+    keliling_kalk = 2 * math.pi * r_kalk
+    luas_kalk = math.pi * r_kalk ** 2
+    busur_kalk = theta_kalk / 360 * keliling_kalk
+    juring_kalk = theta_kalk / 360 * luas_kalk
+
+    hasil_kalk = pd.DataFrame({
+        "Besaran": [
+            "Keliling",
+            "Luas",
+            "Panjang busur",
+            "Luas juring"
+        ],
+        "Nilai": [
+            f"{keliling_kalk:.3f} cm",
+            f"{luas_kalk:.3f} cm²",
+            f"{busur_kalk:.3f} cm",
+            f"{juring_kalk:.3f} cm²"
+        ]
+    })
+
+    st.dataframe(
+        hasil_kalk,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 20. VISUALISASI DATA LINGKARAN
+    # =========================================================
+
+    st.markdown("### 📊 18. Eksplorasi Koordinat Lingkaran")
+
+    st.markdown("""
+    Persamaan lingkaran:
+    """)
+
+    st.latex(r"(x-a)^2+(y-b)^2=r^2")
+
+    st.markdown("""
+    dapat divisualisasikan menggunakan hubungan:
+    """)
+
+    st.latex(r"y=b\pm\sqrt{r^2-(x-a)^2}")
+
+    data_lingkaran = []
+
+    jumlah_titik = 100
+
+    for i in range(jumlah_titik + 1):
+
+        x = pusat_x - radius + (
+            2 * radius * i / jumlah_titik
+        )
+
+        nilai = radius ** 2 - (x - pusat_x) ** 2
+
+        if nilai >= 0:
+
+            akar = math.sqrt(nilai)
+
+            data_lingkaran.append({
+                "x": x,
+                "y_atas": pusat_y + akar,
+                "y_bawah": pusat_y - akar
+            })
+
+    if data_lingkaran:
+
+        df_lingkaran = pd.DataFrame(data_lingkaran)
+
+        st.line_chart(
+            df_lingkaran,
+            x="x",
+            y=["y_atas", "y_bawah"],
+            use_container_width=True
+        )
+
+    # =========================================================
+    # 21. APLIKASI KEHIDUPAN SEHARI-HARI
+    # =========================================================
+
+    st.markdown("### 🌍 19. Penerapan Lingkaran")
+
+    st.markdown("""
+    Konsep lingkaran digunakan dalam berbagai bidang, antara lain:
+
+    **Teknik**
+    - roda dan pulley;
+    - bearing;
+    - roda gigi;
+    - komponen mesin.
+
+    **Arsitektur**
+    - kubah;
+    - jendela melingkar;
+    - ornamen geometris.
+
+    **Teknologi**
+    - sensor rotasi;
+    - cakram;
+    - antena parabola;
+    - sistem navigasi.
+
+    **Kehidupan sehari-hari**
+    - roda kendaraan;
+    - jam;
+    - piring;
+    - meja bundar.
+    """)
+
+    # =========================================================
+    # 22. CONTOH KONTEKSTUAL
+    # =========================================================
+
+    st.markdown("### 🏗️ 20. Contoh Masalah Kontekstual")
+
+    st.markdown("""
+    Sebuah taman berbentuk lingkaran memiliki diameter 20 meter.
+    Tentukan luas taman tersebut.
+    """)
+
+    st.latex(r"d=20")
+
+    st.latex(r"r=\frac{20}{2}=10")
+
+    st.latex(r"L=\pi(10)^2")
+
+    st.latex(r"L=100\pi")
+
+    st.latex(r"L\approx314.16\text{ m}^2")
+
+    # =========================================================
+    # 23. KASUS GARIS SINGGUNG
+    # =========================================================
+
+    st.markdown("### 🚗 21. Studi Kasus Garis Singgung")
+
+    st.markdown("""
+    Sebuah roda berjari-jari 30 cm bersentuhan dengan lantai.
+    Jika pusat roda berada 30 cm di atas lantai, maka lantai dapat dipandang
+    sebagai garis singgung lingkaran pada titik kontak.
+    """)
+
+    st.latex(r"d=r")
+
+    st.markdown("""
+    Karena jarak pusat ke garis sama dengan jari-jari, garis tersebut
+    merupakan garis singgung.
+    """)
+
+    # =========================================================
+    # 24. LATIHAN
+    # =========================================================
+
+    st.markdown("### ✏️ 22. Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Tentukan persamaan lingkaran dengan pusat \((2,-3)\) dan jari-jari 5.
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"(x-2)^2+(y+3)^2=25")
+
+    st.markdown("""
+    **Soal 2**
+
+    Tentukan pusat dan jari-jari lingkaran:
+    """)
+
+    st.latex(r"(x+4)^2+(y-2)^2=36")
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"C(-4,2)")
+
+        st.latex(r"r=6")
+
+    st.markdown("""
+    **Soal 3**
+
+    Tentukan persamaan garis singgung lingkaran:
+    """)
+
+    st.latex(r"x^2+y^2=25")
+
+    st.markdown("""
+    pada titik \((3,4)\).
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"3x+4y=25")
+
+    st.markdown("""
+    **Soal 4**
+
+    Tentukan kedudukan titik \((3,4)\) terhadap lingkaran:
+    """)
+
+    st.latex(r"x^2+y^2=16")
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.markdown("""
+        Jarak titik terhadap pusat:
+        """)
+
+        st.latex(r"d=\sqrt{3^2+4^2}=5")
+
+        st.markdown("""
+        Karena \(5>4\), titik berada di luar lingkaran.
+        """)
+
+    # =========================================================
+    # 25. KUIS INTERAKTIF
+    # =========================================================
+
+    st.markdown("### 🎯 23. Kuis Interaktif")
+
+    skor = 0
+
+    q1 = st.radio(
+        "1. Persamaan lingkaran berpusat di (0,0) dengan jari-jari 5 adalah:",
+        [
+            "x²+y²=5",
+            "x²+y²=10",
+            "x²+y²=25",
+            "x²+y²=50"
+        ],
+        key="lingkaran_q1"
+    )
+
+    if q1 == "x²+y²=25":
+        skor += 1
+
+    q2 = st.radio(
+        "2. Pusat lingkaran (x-3)²+(y+2)²=16 adalah:",
+        [
+            "(3,2)",
+            "(3,-2)",
+            "(-3,2)",
+            "(-3,-2)"
+        ],
+        key="lingkaran_q2"
+    )
+
+    if q2 == "(3,-2)":
+        skor += 1
+
+    q3 = st.radio(
+        "3. Jari-jari lingkaran (x+4)²+(y-1)²=49 adalah:",
+        [
+            "4",
+            "7",
+            "14",
+            "49"
+        ],
+        key="lingkaran_q3"
+    )
+
+    if q3 == "7":
+        skor += 1
+
+    q4 = st.radio(
+        "4. Garis yang memiliki satu titik persekutuan dengan lingkaran disebut:",
+        [
+            "Garis potong",
+            "Garis singgung",
+            "Tali busur",
+            "Diameter"
+        ],
+        key="lingkaran_q4"
+    )
+
+    if q4 == "Garis singgung":
+        skor += 1
+
+    q5 = st.radio(
+        "5. Jika jarak pusat lingkaran ke suatu garis sama dengan jari-jari, maka garis tersebut:",
+        [
+            "Berada di luar lingkaran",
+            "Memotong lingkaran di dua titik",
+            "Menjadi garis singgung",
+            "Tidak berhubungan dengan lingkaran"
+        ],
+        key="lingkaran_q5"
+    )
+
+    if q5 == "Menjadi garis singgung":
+        skor += 1
+
+    if st.button(
+        "📊 Periksa Nilai",
+        key="cek_kuis_lingkaran"
+    ):
+
+        st.success(f"Skor Anda: {skor}/5")
+
+        if skor == 5:
+
+            st.balloons()
+
+            st.success(
+                "🎉 Sangat baik! Anda menguasai konsep dasar lingkaran."
+            )
+
+        elif skor >= 3:
+
+            st.info(
+                "👍 Cukup baik. Pelajari kembali bagian yang masih belum dikuasai."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali konsep persamaan lingkaran dan garis singgung."
+            )
+
+    # =========================================================
+    # 26. REFLEKSI
+    # =========================================================
+
+    st.markdown("### 📝 24. Refleksi Pembelajaran")
+
+    st.markdown("""
+    Setelah mempelajari materi lingkaran, coba jawab pertanyaan berikut:
+
+    1. Apa hubungan antara diameter dan jari-jari?
+    2. Bagaimana menentukan pusat dari persamaan lingkaran?
+    3. Bagaimana menentukan jari-jari lingkaran?
+    4. Bagaimana menentukan kedudukan titik terhadap lingkaran?
+    5. Bagaimana menentukan kedudukan garis terhadap lingkaran?
+    6. Mengapa jari-jari tegak lurus terhadap garis singgung?
+    7. Bagaimana konsep lingkaran digunakan dalam kehidupan sehari-hari?
+    """)
+
+    # =========================================================
+    # 27. RANGKUMAN
+    # =========================================================
+
+    st.markdown("### 📚 25. Rangkuman")
+
+    st.success("""
+    **Konsep utama lingkaran:**
+
+    • Diameter:
+      d = 2r
+
+    • Keliling:
+      K = 2πr
+
+    • Luas:
+      L = πr²
+
+    • Persamaan lingkaran dengan pusat (0,0):
+      x² + y² = r²
+
+    • Persamaan lingkaran dengan pusat (a,b):
+      (x-a)² + (y-b)² = r²
+
+    • Bentuk umum:
+      x² + y² + Dx + Ey + F = 0
+
+    • Jarak titik ke pusat:
+      d = √((x₁-a)²+(y₁-b)²)
+
+    • Panjang busur:
+      s = (θ/360°) × 2πr
+
+    • Luas juring:
+      L = (θ/360°) × πr²
+
+    • Panjang garis singgung dari titik luar:
+      PT = √(d²-r²)
+    """)
+
+    st.markdown("---")
+
+    st.info("""
+    💡 **Inti konsep**
+
+    Lingkaran tidak hanya dipelajari sebagai bentuk geometri, tetapi juga
+    sebagai model matematis untuk berbagai objek dan fenomena dalam
+    kehidupan nyata.
+    """)
+    
 def transformasi_fungsi():
 
     st.markdown("## 📐 Transformasi Fungsi")
@@ -4063,8 +5009,8 @@ def tampilkan(materi):
         #pass
 
     elif materi == "Lingkaran":
-        #lingkaran()
-        pass
+        lingkaran()
+        #pass
 
     elif materi == "Statistika Bivariat":
         #statistika_bivariat()
