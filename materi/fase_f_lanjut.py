@@ -77,11 +77,11 @@ def matriks():
 
     st.header("2️⃣ Ordo Matriks")
 
-    st.markdown("""
+    st.markdown(r"""
     Ordo matriks menunjukkan banyaknya baris dan kolom.
 
     Jika matriks memiliki $m$ baris dan $n$ kolom, maka ordonya adalah
-    $m\times n$.
+    $m \times n$.
     """)
 
     st.latex(r"A=\begin{pmatrix}2&4&6\\1&3&5\end{pmatrix}")
