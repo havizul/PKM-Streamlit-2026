@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 def media_geogebra():
 
     st.markdown("#### 📐 GeoGebra")
