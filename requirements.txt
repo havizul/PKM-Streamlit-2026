@@ -4,3 +4,4 @@ pandas
 plotly
 statistics
 #textwrap
+matplotlib
