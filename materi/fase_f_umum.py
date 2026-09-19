@@ -55,7 +55,8 @@ def lingkaran():
     satu titik tertentu yang disebut pusat lingkaran.
     """)
 
-    st.markdown("Jika pusat lingkaran adalah \(O\) dan jari-jarinya \(r\), maka:")
+    #st.markdown("Jika pusat lingkaran adalah \(O\) dan jari-jarinya \(r\), maka:")
+    st.markdown("Jika pusat lingkaran adalah $O$ dan $P$ adalah titik sembarang pada keliling lingkaran, maka:")
 
     st.latex(r"OP=r")
 
