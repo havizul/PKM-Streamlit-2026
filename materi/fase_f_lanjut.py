@@ -197,7 +197,7 @@ def transformasi_geometri():
     Arah rotasi **berlawanan arah jarum jam (CCW)** kecuali disebutkan lain.
     """)  # FIX: klarifikasi arah
 
-    st.markdown(r"Rotasi berpusat di titik asal $O(0,0)$:")
+    st.markdown(r"#### Rotasi berpusat di titik asal $O(0,0)$:")
 
     st.markdown("##### Rotasi 90° berlawanan arah jarum jam (CCW)")
     st.latex(r"(x,y)\to(-y,\;x)")
@@ -220,13 +220,13 @@ def transformasi_geometri():
 
     st.markdown("Rotasi dapat direpresentasikan menggunakan matriks.")
 
-    st.markdown("### Rotasi 90° CCW")
+    st.markdown("##### Rotasi 90° CCW")
     st.latex(r"R_{90}=\begin{pmatrix}0&-1\\1&0\end{pmatrix}")
 
-    st.markdown("### Rotasi 180°")
+    st.markdown("##### Rotasi 180°")
     st.latex(r"R_{180}=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}")
 
-    st.markdown("### Rotasi 270° CCW")
+    st.markdown("##### Rotasi 270° CCW")
     st.latex(r"R_{270}=\begin{pmatrix}0&1\\-1&0\end{pmatrix}")
 
     # =========================================================
