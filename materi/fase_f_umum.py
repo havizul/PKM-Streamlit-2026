@@ -378,7 +378,7 @@ def statistika_bivariat():
     st.markdown("Sehingga persamaan regresinya:")
 
     st.latex(
-        rf"\hat{{y}}={a:.3f}+{b:.3f}x"
+        rf"\\hat{{y}}={a:.3f}+{b:.3f}x"
     )
 
     # =========================================================
