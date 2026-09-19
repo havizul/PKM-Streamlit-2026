@@ -548,8 +548,7 @@ def matriks():
 
     Tentukan hasil:
 
-    $$\begin{pmatrix}1&2\\3&4\end{pmatrix}+
-    \begin{pmatrix}5&6\\7&8\end{pmatrix}$$
+    $$\begin{pmatrix}1&2\\3&4\end{pmatrix}+\begin{pmatrix}5&6\\7&8\end{pmatrix}$$
     """)
 
     st.markdown(r"""
