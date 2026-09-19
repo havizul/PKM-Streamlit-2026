@@ -300,9 +300,7 @@ elif menu_utama == "📚 Materi Matematika":
 # ============================================================
 
 elif menu_utama == "🎓 Media Pembelajaran":
-
     with st.sidebar:
-
         st.markdown(
             '<div class="sidebar-title">🎓 Media Pembelajaran</div>',
             unsafe_allow_html=True
@@ -324,10 +322,38 @@ elif menu_utama == "🎓 Media Pembelajaran":
 
     st.divider()
 
-    st.info(
-        f"Media pembelajaran **{media}** akan dikembangkan "
-        "pada tahap berikutnya."
-    )
+    if media == "📐 GeoGebra":
+        #media_geogebra()
+        pass
+
+    elif media == "🧮 Desmos":
+        #media_desmos()
+        pass
+
+    elif media == "📊 Wayground":
+        #media_wayground()
+        pass
+
+    elif media == "🎮 Wordwall":
+        #media_wordwall()
+        pass
+
+    elif media == "🎯 Gimkit":
+        #media_gimkit()
+        pass
+
+    elif media == "💻 MATLAB":
+        #media_matlab()
+        pass
+
+    elif media == "🐍 Python":
+        #media_python()
+        pass
+
+    elif media == "📈 Spreadsheet":
+        #media_spreadsheet()
+        pass
+
 
 
 # ============================================================
