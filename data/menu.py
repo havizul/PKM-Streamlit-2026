@@ -62,11 +62,24 @@ FASE_F_LANJUT = [
 # MEDIA PEMBELAJARAN
 # ============================================================
 
+#MEDIA_PEMBELAJARAN = [
+#    "Bilangan Berpangkat",
+#    "Persamaan dan Fungsi Eksponensial",
+#    "SPtLDV",
+#    "Persamaan dan Fungsi Kuadrat",
+#    "Trigonometri I",
+#    "Statistika"
+#]
+
 MEDIA_PEMBELAJARAN = [
-    "Bilangan Berpangkat",
-    "Persamaan dan Fungsi Eksponensial",
-    "SPtLDV",
-    "Persamaan dan Fungsi Kuadrat",
-    "Trigonometri I",
-    "Statistika"
+    "GeoGebra",
+    "Desmos",
+    "Wayground",
+    "Wordwall",
+    "Gimkit",
+    "MATLAB",
+    "Python",
+    "Spreadsheet"
 ]
+
+
