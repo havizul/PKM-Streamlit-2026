@@ -6,6 +6,697 @@ import matplotlib.pyplot as plt
 
 from textwrap import dedent
 
+import streamlit as st
+import pandas as pd
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+
+def irisan_kerucut():
+    st.markdown(
+        '<div class="content-title">📕 Irisan Kerucut: Lingkaran dan Elips</div>',
+        unsafe_allow_html=True
+    )
+
+    # =========================================================
+    # TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.header("🎯 Tujuan Pembelajaran")
+
+    st.markdown(r"""
+    Setelah mempelajari materi ini, siswa diharapkan mampu:
+
+    - Menjelaskan konsep dasar irisan kerucut.
+    - Menjelaskan pengertian lingkaran dan elips sebagai irisan kerucut.
+    - Menentukan pusat dan jari-jari lingkaran.
+    - Menentukan bentuk persamaan lingkaran.
+    - Menentukan pusat, puncak, dan fokus elips.
+    - Menentukan sumbu mayor dan sumbu minor elips.
+    - Menentukan eksentrisitas elips.
+    - Mengubah persamaan kuadrat ke bentuk standar.
+    - Membuat dan membaca grafik lingkaran dan elips.
+    - Menerapkan konsep irisan kerucut dalam permasalahan kontekstual.
+    """)
+
+    # =========================================================
+    # APERSEPSI
+    # =========================================================
+
+    st.header("💡 Apersepsi")
+
+    st.markdown(r"""
+    Pernahkah kamu melihat bentuk lingkaran pada roda, jam, atau piring?
+
+    Bagaimana dengan bentuk elips pada lintasan orbit planet atau desain
+    sebuah stadion?
+
+    Bentuk-bentuk tersebut dapat dipelajari menggunakan konsep **irisan
+    kerucut**.
+    """)
+
+    # =========================================================
+    # 1. KONSEP IRISAN KERUCUT
+    # =========================================================
+
+    st.header("1. Konsep Irisan Kerucut")
+
+    st.markdown(r"""
+    Irisan kerucut adalah kurva yang diperoleh dari perpotongan sebuah
+    bidang dengan permukaan kerucut.
+
+    Beberapa bentuk irisan kerucut adalah:
+
+    - Lingkaran.
+    - Elips.
+    - Parabola.
+    - Hiperbola.
+
+    Pada materi ini kita fokus pada **lingkaran dan elips**.
+    """)
+
+    # =========================================================
+    # 2. LINGKARAN
+    # =========================================================
+
+    st.header("2. Lingkaran")
+
+    st.markdown(r"""
+    Lingkaran adalah himpunan semua titik pada bidang yang mempunyai jarak
+    sama terhadap suatu titik tetap yang disebut pusat.
+    """)
+
+    st.latex(r"(x-h)^2+(y-k)^2=r^2")
+
+    st.markdown(r"""
+    dengan:
+
+    - $(h,k)$ = pusat lingkaran.
+    - $r$ = jari-jari.
+    """)
+
+    st.markdown(r"Jika pusat berada di titik asal $O(0,0)$:")
+
+    st.latex(r"x^2+y^2=r^2")
+
+    # =========================================================
+    # 3. CONTOH LINGKARAN
+    # =========================================================
+
+    st.header("3. Contoh Persamaan Lingkaran")
+
+    st.markdown("Diberikan:")
+
+    st.latex(r"(x-2)^2+(y+3)^2=25")
+
+    st.markdown(r"""
+    Maka:
+
+    - Pusat = $(2,-3)$
+    - Jari-jari = $5$
+    """)
+
+    # =========================================================
+    # 4. BENTUK UMUM LINGKARAN
+    # =========================================================
+
+    st.header("4. Bentuk Umum Persamaan Lingkaran")
+
+    st.latex(r"x^2+y^2+Dx+Ey+F=0")
+
+    st.markdown(r"""
+    Untuk menentukan pusat dan jari-jari, persamaan dapat diubah ke bentuk
+    standar menggunakan **melengkapkan kuadrat**.
+    """)
+
+    st.markdown("Contoh:")
+
+    st.latex(r"x^2+y^2-4x+6y-12=0")
+
+    st.markdown(r"Kelompokkan suku $x$ dan $y$:")
+
+    st.latex(r"(x^2-4x)+(y^2+6y)=12")
+
+    st.markdown("Lengkapi kuadrat:")
+
+    st.latex(r"(x-2)^2+(y+3)^2=25")
+
+    st.markdown(r"""
+    Jadi pusatnya adalah $(2,-3)$ dan jari-jarinya $5$.
+    """)
+
+    # =========================================================
+    # 5. KALKULATOR LINGKARAN
+    # =========================================================
+
+    st.header("5. Kalkulator Lingkaran")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        pusat_x = st.number_input(
+            "Koordinat pusat h",
+            value=2.0,
+            key="kerucut_pusat_x"
+        )
+
+        pusat_y = st.number_input(
+            "Koordinat pusat k",
+            value=-3.0,
+            key="kerucut_pusat_y"
+        )
+
+    with col2:
+        radius = st.number_input(
+            "Jari-jari r",
+            min_value=0.01,
+            value=5.0,
+            key="kerucut_radius"
+        )
+
+    luas_lingkaran = math.pi * radius**2
+    keliling_lingkaran = 2 * math.pi * radius
+
+    st.latex(
+        rf"(x-({pusat_x:g}))^2+(y-({pusat_y:g}))^2=({radius:g})^2"
+    )
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.metric("Luas", f"{luas_lingkaran:.4f}")
+
+    with col2:
+        st.metric("Keliling", f"{keliling_lingkaran:.4f}")
+
+    # =========================================================
+    # 6. VISUALISASI LINGKARAN
+    # =========================================================
+
+    st.header("6. Visualisasi Lingkaran")
+
+    theta = np.linspace(0, 2 * math.pi, 400)
+    x_circle = pusat_x + radius * np.cos(theta)
+    y_circle = pusat_y + radius * np.sin(theta)
+
+    fig, ax = plt.subplots(figsize=(5, 5))
+    ax.plot(x_circle, y_circle, "b-")
+    ax.plot(pusat_x, pusat_y, "ro", label=f"Pusat ({pusat_x:g}, {pusat_y:g})")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_aspect("equal", adjustable="box")
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    ax.set_title(
+        rf"$(x-{pusat_x:g})^2+(y-{pusat_y:g})^2={radius:g}^2$"
+    )
+    ax.legend(loc="upper right")
+    fig.tight_layout()
+    st.pyplot(fig, use_container_width=True)
+
+    # =========================================================
+    # 7. ELIPS
+    # =========================================================
+
+    st.header("7. Elips")
+
+    st.markdown(r"""
+    Elips adalah himpunan titik pada bidang yang jumlah jaraknya terhadap
+    dua titik tetap bernilai konstan.
+
+    Dua titik tetap tersebut disebut **fokus**.
+    """)
+
+    st.latex(r"PF_1+PF_2=2a")
+
+    # =========================================================
+    # 8. PERSAMAAN STANDAR ELIPS
+    # =========================================================
+
+    st.header("8. Persamaan Standar Elips")
+
+    st.markdown(r"Jika pusat elips berada di $(h,k)$ dan sumbu mayor horizontal:")
+
+    st.latex(r"\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1")
+
+    st.markdown(r"""
+    dengan $a>b>0$.
+
+    Jika sumbu mayor vertikal:
+    """)
+
+    st.latex(r"\frac{(x-h)^2}{b^2}+\frac{(y-k)^2}{a^2}=1")
+
+    # =========================================================
+    # 9. UNSUR ELIPS
+    # =========================================================
+
+    st.header("9. Unsur-Unsur Elips")
+
+    st.markdown(r"""
+    Untuk elips dengan:
+
+    - $a$ = semi-sumbu mayor.
+    - $b$ = semi-sumbu minor.
+    - $c$ = jarak pusat ke fokus.
+
+    berlaku:
+    """)
+
+    st.latex(r"c^2=a^2-b^2")
+
+    st.markdown(r"""
+    Unsur penting elips:
+
+    - Pusat = $(h,k)$.
+    - Panjang sumbu mayor = $2a$.
+    - Panjang sumbu minor = $2b$.
+    - Jarak antarfokus = $2c$.
+    """)
+
+    # =========================================================
+    # 10. FOKUS ELIPS
+    # =========================================================
+
+    st.header("10. Fokus Elips")
+
+    st.markdown(r"""
+    Untuk elips dengan sumbu mayor horizontal, fokus berada pada:
+    """)
+
+    st.latex(r"(h-c,k)\text{ dan }(h+c,k)")
+
+    st.markdown(r"""
+    Untuk elips dengan sumbu mayor vertikal:
+    """)
+
+    st.latex(r"(h,k-c)\text{ dan }(h,k+c)")
+
+    # =========================================================
+    # 11. EKSENTRISITAS
+    # =========================================================
+
+    st.header("11. Eksentrisitas Elips")
+
+    st.markdown(r"""
+    Eksentrisitas menunjukkan tingkat ke-elips-an suatu elips.
+    """)
+
+    st.latex(r"e=\frac{c}{a}")
+
+    st.markdown(r"""
+    Untuk elips berlaku:
+
+    $0<e<1$
+
+    Semakin dekat $e$ dengan 0, bentuk elips semakin mendekati lingkaran.
+    """)
+
+    # =========================================================
+    # 12. CONTOH ELIPS
+    # =========================================================
+
+    st.header("12. Contoh Menentukan Unsur Elips")
+
+    st.markdown("Diberikan:")
+
+    st.latex(r"\frac{x^2}{25}+\frac{y^2}{9}=1")
+
+    st.markdown(r"""
+    Dari persamaan tersebut:
+
+    - $a^2=25$, sehingga $a=5$.
+    - $b^2=9$, sehingga $b=3$.
+    """)
+
+    st.latex(r"c^2=25-9=16")
+    st.latex(r"c=4")
+
+    st.markdown(r"""
+    Jadi:
+
+    - Pusat = $(0,0)$.
+    - Fokus = $(-4,0)$ dan $(4,0)$.
+    - Panjang sumbu mayor = $10$.
+    - Panjang sumbu minor = $6$.
+    """)
+
+    st.latex(r"e=\frac{4}{5}")
+
+    # =========================================================
+    # 13. EKSPLORASI ELIPS
+    # =========================================================
+
+    st.header("13. Eksplorasi Elips")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        elips_a = st.number_input(
+            "Semi-sumbu mayor a",
+            min_value=0.1,
+            value=5.0,
+            key="elips_a"
+        )
+
+    with col2:
+        elips_b = st.number_input(
+            "Semi-sumbu minor b",
+            min_value=0.1,
+            value=3.0,
+            key="elips_b"
+        )
+
+    if elips_b > elips_a:
+        st.warning(
+            "Untuk eksplorasi ini, nilai b sebaiknya tidak lebih besar dari a."
+        )
+    else:
+        elips_c = math.sqrt(max(elips_a**2 - elips_b**2, 0))
+        elips_e = elips_c / elips_a if elips_a != 0 else 0
+
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            st.metric("c", f"{elips_c:.4f}")
+
+        with col2:
+            st.metric("Eksentrisitas", f"{elips_e:.4f}")
+
+        with col3:
+            st.metric(
+                "Luas Elips",
+                f"{math.pi * elips_a * elips_b:.4f}"
+            )
+
+        theta_elips = np.linspace(0, 2 * math.pi, 400)
+        x_elips = elips_a * np.cos(theta_elips)
+        y_elips = elips_b * np.sin(theta_elips)
+
+        fig, ax = plt.subplots(figsize=(5, 5))
+        ax.plot(x_elips, y_elips, "g-")
+
+        # Tandai fokus
+        ax.plot(-elips_c, 0, "r*", markersize=12,
+                label=f"Fokus (-{elips_c:.2f}, 0)")
+        ax.plot(elips_c, 0, "r*", markersize=12,
+                label=f"Fokus ({elips_c:.2f}, 0)")
+        ax.plot(0, 0, "ko", markersize=5, label="Pusat")
+
+        ax.axhline(0, color="gray", linewidth=0.6)
+        ax.axvline(0, color="gray", linewidth=0.6)
+        ax.grid(True, linestyle=":", alpha=0.6)
+        ax.set_aspect("equal", adjustable="box")
+        ax.set_xlabel("x")
+        ax.set_ylabel("y")
+        ax.set_title(
+            rf"$\frac{{x^2}}{{{elips_a:g}^2}}+\frac{{y^2}}{{{elips_b:g}^2}}=1$"
+        )
+        ax.legend(loc="upper right", fontsize=8)
+        fig.tight_layout()
+        st.pyplot(fig, use_container_width=True)
+
+    # =========================================================
+    # 14. LUAS ELIPS
+    # =========================================================
+
+    st.header("14. Luas Elips")
+
+    st.markdown(r"""
+    Luas elips dengan semi-sumbu mayor $a$ dan semi-sumbu minor $b$ adalah:
+    """)
+
+    st.latex(r"L=\pi ab")
+
+    st.markdown("Contoh:")
+
+    st.latex(r"a=5,\quad b=3")
+    st.latex(r"L=15\pi")
+
+    # =========================================================
+    # 15. PERSAMAAN ELIPS DENGAN PUSAT BERGESER
+    # =========================================================
+
+    st.header("15. Elips dengan Pusat (h, k)")
+
+    st.markdown("Misalnya:")
+
+    st.latex(r"\frac{(x-2)^2}{25}+\frac{(y+1)^2}{9}=1")
+
+    st.markdown(r"""
+    Maka:
+
+    - Pusat = $(2,-1)$.
+    - $a=5$.
+    - $b=3$.
+    """)
+
+    st.latex(r"c=\sqrt{25-9}=4")
+
+    st.markdown(r"""
+    Karena penyebut terbesar berada pada suku $x$, sumbu mayor
+    berorientasi horizontal.
+    """)
+
+    # =========================================================
+    # 16. PERBANDINGAN LINGKARAN DAN ELIPS
+    # =========================================================
+
+    st.header("16. Lingkaran vs Elips")
+
+    perbandingan = pd.DataFrame({
+        "Aspek": [
+            "Bentuk",
+            "Parameter utama",
+            "Fokus",
+            "Eksentrisitas",
+            "Persamaan standar"
+        ],
+        "Lingkaran": [
+            "Semua arah simetris",
+            "Jari-jari r",
+            "Satu pusat",
+            "0",
+            "(x-h)²+(y-k)²=r²"
+        ],
+        "Elips": [
+            "Memanjang pada satu arah",
+            "a dan b",
+            "Dua fokus",
+            "0 < e < 1",
+            "(x-h)²/a²+(y-k)²/b²=1"
+        ]
+    })
+
+    st.dataframe(
+        perbandingan,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 17. IRISAN KERUCUT DAN GEOMETRI ANALITIK
+    # =========================================================
+
+    st.header("17. Hubungan dengan Geometri Analitik")
+
+    st.markdown(r"""
+    Persamaan lingkaran dan elips merupakan contoh bagaimana objek
+    geometris dapat direpresentasikan menggunakan persamaan aljabar.
+
+    Dengan demikian, geometri dan aljabar dapat digunakan secara bersamaan
+    untuk menganalisis suatu objek.
+    """)
+
+    # =========================================================
+    # 18. APLIKASI
+    # =========================================================
+
+    st.header("🌍 Penerapan Irisan Kerucut")
+
+    st.markdown(r"""
+    Konsep lingkaran dan elips digunakan dalam:
+
+    - Arsitektur.
+    - Desain.
+    - Astronomi.
+    - Optik.
+    - Teknik.
+    - Robotika.
+    - Pemodelan CAD.
+    - Grafika komputer.
+    - Sistem navigasi.
+    """)
+
+    # =========================================================
+    # 19. STUDI KASUS ORBIT
+    # =========================================================
+
+    st.header("🪐 Studi Kasus: Orbit Planet")
+
+    st.markdown(r"""
+    Dalam model sederhana, lintasan suatu objek langit dapat didekati
+    menggunakan bentuk elips.
+
+    Misalnya lintasan dimodelkan:
+    """)
+
+    st.latex(r"\frac{x^2}{100}+\frac{y^2}{64}=1")
+
+    st.markdown(r"""
+    Maka:
+
+    - $a=10$
+    - $b=8$
+    """)
+
+    st.latex(r"c=\sqrt{100-64}=6")
+    st.latex(r"e=\frac{6}{10}=0.6")
+
+    st.markdown(r"""
+    Fokus berada pada $(-6,0)$ dan $(6,0)$.
+    """)
+
+    # =========================================================
+    # 20. STUDI KASUS ARSITEKTUR
+    # =========================================================
+
+    st.header("🏛️ Studi Kasus: Bentuk Elips")
+
+    st.markdown(r"""
+    Sebuah desain lengkungan bangunan dimodelkan menggunakan bagian dari
+    elips:
+    """)
+
+    st.latex(r"\frac{x^2}{16}+\frac{y^2}{9}=1")
+
+    st.markdown(r"""
+    Dengan model tersebut, posisi lengkungan dapat dianalisis secara
+    matematis sehingga ukuran desain dapat disesuaikan.
+    """)
+
+    # =========================================================
+    # 21. LATIHAN
+    # =========================================================
+
+    st.header("📝 Latihan")
+
+    st.markdown(r"""
+    **Soal 1**
+
+    Tentukan pusat dan jari-jari lingkaran:
+
+    $$ (x-3)^2+(y+2)^2=16 $$
+    """)
+
+    st.markdown(r"""
+    **Soal 2**
+
+    Tentukan bentuk standar dari:
+
+    $$x^2+y^2-6x+4y-12=0$$
+    """)
+
+    st.markdown(r"""
+    **Soal 3**
+
+    Tentukan pusat, $a$, dan $b$ dari:
+
+    $$\frac{(x-2)^2}{25}+\frac{(y+1)^2}{9}=1$$
+    """)
+
+    st.markdown(r"""
+    **Soal 4**
+
+    Tentukan fokus elips:
+
+    $$\frac{x^2}{25}+\frac{y^2}{9}=1$$
+    """)
+
+    st.markdown(r"""
+    **Soal 5**
+
+    Tentukan eksentrisitas elips:
+
+    $$\frac{x^2}{100}+\frac{y^2}{64}=1$$
+    """)
+
+    # =========================================================
+    # 22. KUIS
+    # =========================================================
+
+    st.header("🎯 Kuis")
+
+    jawaban_kerucut = st.radio(
+        "Persamaan (x−2)² + (y+3)² = 25 mempunyai pusat:",
+        [
+            "(2, 3)",
+            "(−2, −3)",
+            "(2, −3)",
+            "(−2, 3)"
+        ],
+        key="quiz_irisan_kerucut"
+    )
+
+    if st.button("Periksa Jawaban", key="cek_quiz_irisan_kerucut"):
+        if jawaban_kerucut == "(2, −3)":
+            st.success(
+                "✅ Benar. Bentuk standar lingkaran adalah "
+                "(x−h)²+(y−k)²=r²."
+            )
+        else:
+            st.error(
+                "❌ Belum tepat. Perhatikan tanda pada bentuk "
+                "(x−h)²+(y−k)²=r²."
+            )
+
+    # =========================================================
+    # 23. REFLEKSI
+    # =========================================================
+
+    st.header("💭 Refleksi")
+
+    st.markdown(r"""
+    Setelah mempelajari irisan kerucut, coba jelaskan:
+
+    1. Apa yang dimaksud dengan irisan kerucut?
+    2. Bagaimana menentukan pusat dan jari-jari lingkaran?
+    3. Apa perbedaan lingkaran dan elips?
+    4. Apa hubungan $a$, $b$, dan $c$ pada elips?
+    5. Apa yang dimaksud dengan eksentrisitas?
+    6. Bagaimana persamaan aljabar dapat merepresentasikan bentuk geometris?
+    7. Di mana konsep elips digunakan dalam kehidupan nyata?
+    """)
+
+    # =========================================================
+    # 24. RANGKUMAN
+    # =========================================================
+
+    st.header("📌 Rangkuman")
+
+    st.markdown(r"""
+    **Irisan kerucut** merupakan kurva yang diperoleh dari perpotongan
+    bidang dengan permukaan kerucut.
+
+    Konsep penting:
+
+    - Lingkaran mempunyai pusat dan jari-jari.
+    - Persamaan lingkaran berbentuk $(x-h)^2+(y-k)^2=r^2$.
+    - Elips mempunyai dua fokus.
+    - Persamaan elips menggunakan parameter $a$ dan $b$.
+    - Hubungan antara $a$, $b$, dan $c$ adalah $c^2=a^2-b^2$.
+    - Eksentrisitas elips adalah $e=c/a$.
+    - Lingkaran dapat dipandang sebagai kasus khusus elips ketika $a=b$.
+    - Lingkaran dan elips dapat divisualisasikan serta dianalisis melalui
+      koordinat dan persamaan aljabar.
+    - Konsep irisan kerucut digunakan dalam astronomi, arsitektur, teknik,
+      desain, robotika, dan grafika komputer.
+    """)
+
+    st.success("🎉 Materi Irisan Kerucut selesai dipelajari.")
+
 
 def pemodelan_fungsi():
 
@@ -3307,9 +3998,9 @@ def tampilkan(materi):
         #vektor()
         pass
 
-    elif materi == "Irisan kerucut (lingkaran & elips)":
-        #irisan_kerucut()
-        pass
+    elif materi == "Irisan Kerucut:: # (lingkaran & elips)":
+        irisan_kerucut()
+        #pass
 
     elif materi == "Distribusi peluang (binom & normal)":
         #distribusi_peluang()
