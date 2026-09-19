@@ -3,16 +3,7 @@ import streamlit as st
 from materi import fase_e
 from materi import fase_f_umum
 from materi import fase_f_lanjut
-from media.media_menu import (
-    media_geogebra,
-    media_desmos,
-    media_wayground,
-    media_wordwall,
-    media_gimkit,
-    media_matlab,
-    media_python,
-    media_spreadsheet
-)
+from media import media_menu
 
 from data.menu import (
     MENU_UTAMA,
