@@ -208,7 +208,7 @@ def transformasi_geometri():
     st.markdown("\t Rotasi 180°")
     st.latex(r"(x,y)\to(-x,\;-y)")
 
-    st.markdown("\t Rotasi 270° berlawanan arah jarum jam (CCW)")
+    st.markdown("### Rotasi 270° berlawanan arah jarum jam (CCW)")
     st.latex(r"(x,y)\to(y,\;-x)")
     st.markdown("Perhatikan: rotasi 270° CCW sama dengan rotasi 90° CW.")  # FIX: klarifikasi
 
