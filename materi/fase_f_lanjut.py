@@ -149,11 +149,11 @@ def transformasi_geometri():
     # 5. REFLEKSI TERHADAP GARIS VERTIKAL / HORIZONTAL
     # =========================================================
 
-    st.subheader("Refleksi terhadap garis x = a")
+    st.markdown("Refleksi terhadap garis x = a")
     st.latex(r"(x,y)\to(2a-x,\;y)")
-    st.caption("Di sini $a$ adalah konstanta yang menyatakan posisi garis cermin, bukan variabel titik.")  # FIX: klarifikasi
+    st.markdown("Di sini $a$ adalah konstanta yang menyatakan posisi garis cermin, bukan variabel titik.")  # FIX: klarifikasi
 
-    st.subheader("Refleksi terhadap garis y = b")
+    st.markdown("Refleksi terhadap garis y = b")
     st.latex(r"(x,y)\to(x,\;2b-y)")
 
     # =========================================================
