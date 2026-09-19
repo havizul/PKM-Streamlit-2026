@@ -2,6 +2,873 @@ import streamlit as st
 import pandas as pd
 import math
 
+def transformasi_fungsi():
+
+    st.markdown("## 📐 Transformasi Fungsi")
+
+    st.markdown("""
+    Transformasi fungsi merupakan perubahan bentuk, posisi, atau ukuran grafik
+    suatu fungsi tanpa harus menggambar ulang grafik dari awal.
+
+    Transformasi fungsi sangat penting untuk memahami hubungan antara grafik
+    fungsi dasar dengan grafik fungsi hasil transformasi.
+    """)
+
+    # =========================================================
+    # 1. TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.markdown("### 🎯 Tujuan Pembelajaran")
+
+    st.info("""
+    Setelah mempelajari materi ini, mahasiswa/peserta didik diharapkan mampu:
+
+    1. Menjelaskan konsep transformasi fungsi.
+    2. Mengidentifikasi translasi grafik fungsi.
+    3. Menentukan refleksi grafik fungsi.
+    4. Menjelaskan peregangan dan penyusutan grafik fungsi.
+    5. Menentukan persamaan fungsi hasil transformasi.
+    6. Menghubungkan bentuk aljabar dengan perubahan grafik.
+    7. Menganalisis kombinasi beberapa transformasi fungsi.
+    """)
+
+    # =========================================================
+    # 2. APERSEPSI
+    # =========================================================
+
+    st.markdown("### 💡 Apersepsi")
+
+    st.markdown("""
+    Perhatikan fungsi:
+
+    """)
+    st.latex(r"f(x)=x^2")
+
+    st.markdown("""
+    Grafik fungsi tersebut berbentuk parabola dengan titik puncak di:
+
+    """)
+    st.latex(r"(0,0)")
+
+    st.markdown("""
+    Bagaimana jika grafik tersebut digeser ke kanan 3 satuan?
+    Bagaimana jika digeser ke atas 2 satuan?
+
+    Kita tidak perlu menggambar ulang fungsi dari awal. Cukup melakukan
+    transformasi terhadap persamaan fungsi.
+    """)
+
+    # =========================================================
+    # 3. KONSEP DASAR
+    # =========================================================
+
+    st.markdown("### 📖 1. Konsep Dasar Transformasi Fungsi")
+
+    st.markdown("""
+    Transformasi fungsi adalah perubahan terhadap grafik fungsi yang dapat
+    berupa:
+
+    - **Translasi** → menggeser grafik.
+    - **Refleksi** → mencerminkan grafik.
+    - **Dilatasi vertikal** → meregangkan atau menyusutkan grafik secara vertikal.
+    - **Dilatasi horizontal** → meregangkan atau menyusutkan grafik secara horizontal.
+    - **Kombinasi transformasi** → menerapkan beberapa transformasi sekaligus.
+    """)
+
+    st.markdown("#### Bentuk umum")
+
+    st.latex(r"y=a\,f(b(x-h))+k")
+
+    st.markdown("""
+    Pada bentuk tersebut:
+
+    - \(h\) menentukan pergeseran horizontal.
+    - \(k\) menentukan pergeseran vertikal.
+    - \(a\) menentukan perubahan vertikal.
+    - \(b\) menentukan perubahan horizontal.
+    """)
+
+    # =========================================================
+    # 4. TRANSLASI VERTIKAL
+    # =========================================================
+
+    st.markdown("### 📍 2. Translasi Vertikal")
+
+    st.markdown("""
+    Jika grafik fungsi:
+
+    """)
+
+    st.latex(r"y=f(x)")
+
+    st.markdown("""
+    ditranslasikan ke atas sebesar \(k\) satuan, maka:
+    """)
+
+    st.latex(r"y=f(x)+k")
+
+    st.markdown("""
+    Sedangkan jika ditranslasikan ke bawah sebesar \(k\) satuan:
+    """)
+
+    st.latex(r"y=f(x)-k")
+
+    st.markdown("#### Contoh")
+
+    st.latex(r"f(x)=x^2")
+
+    st.markdown("Jika grafik digeser 4 satuan ke atas:")
+
+    st.latex(r"g(x)=x^2+4")
+
+    st.markdown("""
+    Titik puncak berubah dari \((0,0)\) menjadi \((0,4)\).
+    """)
+
+    # =========================================================
+    # 5. TRANSLASI HORIZONTAL
+    # =========================================================
+
+    st.markdown("### 📍 3. Translasi Horizontal")
+
+    st.markdown("""
+    Jika grafik digeser ke kanan sebesar \(h\) satuan:
+    """)
+
+    st.latex(r"y=f(x-h)")
+
+    st.markdown("""
+    Jika grafik digeser ke kiri sebesar \(h\) satuan:
+    """)
+
+    st.latex(r"y=f(x+h)")
+
+    st.warning("""
+    ⚠️ Perhatikan tanda pada bagian dalam fungsi.
+
+    Pergeseran ke kanan menggunakan \(x-h\), sedangkan pergeseran ke kiri
+    menggunakan \(x+h\).
+    """)
+
+    st.markdown("#### Contoh")
+
+    st.latex(r"f(x)=x^2")
+
+    st.markdown("Geser 3 satuan ke kanan:")
+
+    st.latex(r"g(x)=(x-3)^2")
+
+    st.markdown("""
+    Titik puncaknya berubah dari \((0,0)\) menjadi \((3,0)\).
+    """)
+
+    # =========================================================
+    # 6. KOMBINASI TRANSLASI
+    # =========================================================
+
+    st.markdown("### 📍 4. Kombinasi Translasi")
+
+    st.markdown("""
+    Translasi horizontal dan vertikal dapat dilakukan secara bersamaan.
+    """)
+
+    st.latex(r"g(x)=f(x-h)+k")
+
+    st.markdown("""
+    Artinya grafik \(f(x)\):
+
+    - bergeser \(h\) satuan ke kanan;
+    - bergeser \(k\) satuan ke atas.
+    """)
+
+    st.markdown("#### Contoh")
+
+    st.latex(r"f(x)=x^2")
+
+    st.latex(r"g(x)=(x-2)^2+3")
+
+    st.markdown("""
+    Grafik bergeser 2 satuan ke kanan dan 3 satuan ke atas.
+
+    Titik puncak:
+
+    """)
+
+    st.latex(r"(0,0)\rightarrow(2,3)")
+
+    # =========================================================
+    # 7. REFLEKSI TERHADAP SUMBU X
+    # =========================================================
+
+    st.markdown("### 🔄 5. Refleksi terhadap Sumbu-X")
+
+    st.markdown("""
+    Refleksi terhadap sumbu-X dilakukan dengan mengubah tanda nilai fungsi:
+    """)
+
+    st.latex(r"g(x)=-f(x)")
+
+    st.markdown("#### Contoh")
+
+    st.latex(r"f(x)=x^2")
+
+    st.latex(r"g(x)=-x^2")
+
+    st.markdown("""
+    Parabola yang semula terbuka ke atas menjadi terbuka ke bawah.
+    """)
+
+    # =========================================================
+    # 8. REFLEKSI TERHADAP SUMBU Y
+    # =========================================================
+
+    st.markdown("### 🔄 6. Refleksi terhadap Sumbu-Y")
+
+    st.markdown("""
+    Refleksi terhadap sumbu-Y dilakukan dengan mengganti \(x\) menjadi \(-x\):
+    """)
+
+    st.latex(r"g(x)=f(-x)")
+
+    st.markdown("#### Contoh")
+
+    st.latex(r"f(x)=x^3")
+
+    st.latex(r"g(x)=(-x)^3=-x^3")
+
+    st.markdown("""
+    Grafik dicerminkan terhadap sumbu-Y.
+    """)
+
+    # =========================================================
+    # 9. DILATASI VERTIKAL
+    # =========================================================
+
+    st.markdown("### 📏 7. Dilatasi Vertikal")
+
+    st.markdown("""
+    Dilatasi vertikal dilakukan dengan mengalikan fungsi dengan konstanta \(a\):
+    """)
+
+    st.latex(r"g(x)=a\,f(x)")
+
+    st.markdown("""
+    Jika:
+
+    - \(a>1\) → grafik meregang secara vertikal.
+    - \(0<a<1\) → grafik menyusut secara vertikal.
+    - \(a<0\) → selain dilatasi, terjadi refleksi terhadap sumbu-X.
+    """)
+
+    st.markdown("#### Contoh")
+
+    st.latex(r"f(x)=x^2")
+
+    st.latex(r"g(x)=2x^2")
+
+    st.markdown("""
+    Grafik menjadi lebih sempit karena nilai \(y\) menjadi dua kali lebih besar.
+    """)
+
+    # =========================================================
+    # 10. DILATASI HORIZONTAL
+    # =========================================================
+
+    st.markdown("### 📏 8. Dilatasi Horizontal")
+
+    st.markdown("""
+    Dilatasi horizontal dilakukan melalui perubahan pada input fungsi:
+    """)
+
+    st.latex(r"g(x)=f(bx)")
+
+    st.markdown("""
+    Untuk memahami efeknya:
+
+    - \(b>1\) → grafik menyusut secara horizontal.
+    - \(0<b<1\) → grafik meregang secara horizontal.
+    """)
+
+    st.markdown("#### Contoh")
+
+    st.latex(r"f(x)=x^2")
+
+    st.latex(r"g(x)=f(2x)=4x^2")
+
+    st.markdown("""
+    Grafik menjadi lebih sempit secara horizontal.
+    """)
+
+    # =========================================================
+    # 11. RANGKUMAN TRANSFORMASI
+    # =========================================================
+
+    st.markdown("### 📋 9. Ringkasan Transformasi Fungsi")
+
+    df_transformasi = pd.DataFrame({
+        "Transformasi": [
+            "Naik k satuan",
+            "Turun k satuan",
+            "Kanan h satuan",
+            "Kiri h satuan",
+            "Refleksi sumbu-X",
+            "Refleksi sumbu-Y",
+            "Dilatasi vertikal",
+            "Dilatasi horizontal"
+        ],
+        "Bentuk": [
+            "f(x) + k",
+            "f(x) - k",
+            "f(x - h)",
+            "f(x + h)",
+            "-f(x)",
+            "f(-x)",
+            "a f(x)",
+            "f(bx)"
+        ]
+    })
+
+    st.dataframe(
+        df_transformasi,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 12. EKSPERIMEN INTERAKTIF
+    # =========================================================
+
+    st.markdown("### 🧪 10. Eksplorasi Transformasi Fungsi")
+
+    st.markdown("""
+    Gunakan kontrol berikut untuk melihat bagaimana perubahan parameter
+    memengaruhi grafik fungsi kuadrat.
+    """)
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        a = st.slider(
+            "a — skala vertikal",
+            -3.0,
+            3.0,
+            1.0,
+            0.5
+        )
+
+    with col2:
+        h = st.slider(
+            "h — geser horizontal",
+            -5.0,
+            5.0,
+            0.0,
+            0.5
+        )
+
+    with col3:
+        k = st.slider(
+            "k — geser vertikal",
+            -5.0,
+            5.0,
+            0.0,
+            0.5
+        )
+
+    with col4:
+        b = st.slider(
+            "b — skala horizontal",
+            -3.0,
+            3.0,
+            1.0,
+            0.5
+        )
+
+    if b == 0:
+        st.error("Nilai b tidak boleh 0.")
+    else:
+
+        x_values = [
+            -5 + i * 0.1
+            for i in range(101)
+        ]
+
+        y_values = []
+
+        for x in x_values:
+            y = a * ((b * (x - h)) ** 2) + k
+            y_values.append(y)
+
+        df_grafik = pd.DataFrame({
+            "x": x_values,
+            "y": y_values
+        })
+
+        st.line_chart(
+            df_grafik,
+            x="x",
+            y="y",
+            use_container_width=True
+        )
+
+        st.markdown("#### Persamaan fungsi hasil transformasi")
+
+        st.latex(
+            rf"g(x)={a}\left({b}(x-{h})\right)^2+{k}"
+        )
+
+    # =========================================================
+    # 13. CONTOH ANALISIS
+    # =========================================================
+
+    st.markdown("### 🧠 11. Contoh Analisis Transformasi")
+
+    st.markdown("""
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=x^2")
+
+    st.markdown("""
+    Tentukan hasil transformasi jika grafik:
+
+    1. digeser 3 satuan ke kanan;
+    2. kemudian digeser 2 satuan ke atas;
+    3. kemudian direfleksikan terhadap sumbu-X.
+    """)
+
+    st.markdown("**Langkah 1 — Geser 3 satuan ke kanan:**")
+
+    st.latex(r"g(x)=(x-3)^2")
+
+    st.markdown("**Langkah 2 — Geser 2 satuan ke atas:**")
+
+    st.latex(r"h(x)=(x-3)^2+2")
+
+    st.markdown("**Langkah 3 — Refleksi terhadap sumbu-X:**")
+
+    st.latex(r"p(x)=-\left((x-3)^2+2\right)")
+
+    st.markdown("""
+    Jadi, fungsi akhirnya adalah:
+    """)
+
+    st.latex(r"p(x)=-(x-3)^2-2")
+
+    # =========================================================
+    # 14. URUTAN TRANSFORMASI
+    # =========================================================
+
+    st.markdown("### 🔀 12. Urutan Transformasi")
+
+    st.warning("""
+    ⚠️ Urutan transformasi dapat memengaruhi hasil akhir.
+
+    Oleh karena itu, ketika terdapat beberapa transformasi sekaligus,
+    lakukan transformasi secara bertahap sesuai urutan yang diberikan.
+    """)
+
+    st.markdown("Contoh:")
+
+    st.latex(r"f(x)=x^2")
+
+    st.markdown("""
+    Geser ke kanan 2 satuan, kemudian refleksi terhadap sumbu-X.
+    """)
+
+    st.latex(r"g(x)=(x-2)^2")
+
+    st.latex(r"h(x)=-(x-2)^2")
+
+    st.markdown("""
+    Hasil akhirnya:
+    """)
+
+    st.latex(r"h(x)=-(x-2)^2")
+
+    # =========================================================
+    # 15. TRANSFORMASI FUNGSI LINEAR
+    # =========================================================
+
+    st.markdown("### 📈 13. Transformasi Fungsi Linear")
+
+    st.markdown("""
+    Misalkan fungsi awal:
+    """)
+
+    st.latex(r"f(x)=2x+1")
+
+    st.markdown("""
+    Jika fungsi digeser 3 satuan ke kanan:
+    """)
+
+    st.latex(r"g(x)=f(x-3)")
+
+    st.latex(r"g(x)=2(x-3)+1")
+
+    st.latex(r"g(x)=2x-5")
+
+    st.markdown("""
+    Perhatikan bahwa kemiringan garis tetap sama, tetapi posisi garis berubah.
+    """)
+
+    # =========================================================
+    # 16. TRANSFORMASI FUNGSI NILAI MUTLAK
+    # =========================================================
+
+    st.markdown("### 📐 14. Transformasi Fungsi Nilai Mutlak")
+
+    st.markdown("""
+    Fungsi dasar:
+    """)
+
+    st.latex(r"f(x)=|x|")
+
+    st.markdown("""
+    Jika digeser 2 satuan ke kanan dan 3 satuan ke bawah:
+    """)
+
+    st.latex(r"g(x)=|x-2|-3")
+
+    st.markdown("""
+    Titik puncak berubah dari:
+    """)
+
+    st.latex(r"(0,0)")
+
+    st.markdown("menjadi:")
+
+    st.latex(r"(2,-3)")
+
+    # =========================================================
+    # 17. TRANSFORMASI FUNGSI EKSPONENSIAL
+    # =========================================================
+
+    st.markdown("### 📊 15. Transformasi Fungsi Eksponensial")
+
+    st.markdown("""
+    Misalkan:
+    """)
+
+    st.latex(r"f(x)=2^x")
+
+    st.markdown("""
+    Jika digeser 2 satuan ke kanan dan 1 satuan ke atas:
+    """)
+
+    st.latex(r"g(x)=2^{x-2}+1")
+
+    st.markdown("""
+    Asimtot horizontal yang semula:
+    """)
+
+    st.latex(r"y=0")
+
+    st.markdown("berubah menjadi:")
+
+    st.latex(r"y=1")
+
+    # =========================================================
+    # 18. TRANSFORMASI FUNGSI KUADRAT
+    # =========================================================
+
+    st.markdown("### 🔺 16. Bentuk Puncak Fungsi Kuadrat")
+
+    st.markdown("""
+    Bentuk umum fungsi kuadrat:
+    """)
+
+    st.latex(r"f(x)=a(x-h)^2+k")
+
+    st.markdown("""
+    Bentuk ini sangat berguna untuk membaca transformasi grafik secara langsung.
+
+    Titik puncaknya adalah:
+    """)
+
+    st.latex(r"(h,k)")
+
+    st.markdown("""
+    Parameter \(a\) menentukan arah dan tingkat keterbukaan parabola.
+    """)
+
+    # =========================================================
+    # 19. MENENTUKAN TRANSFORMASI DARI DUA FUNGSI
+    # =========================================================
+
+    st.markdown("### 🔎 17. Menentukan Transformasi dari Dua Fungsi")
+
+    st.markdown("""
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=x^2")
+
+    st.latex(r"g(x)=(x-4)^2+3")
+
+    st.markdown("""
+    Bandingkan kedua fungsi tersebut.
+    """)
+
+    st.markdown("""
+    Dari bentuk \(g(x)\), terlihat bahwa:
+
+    - \(x-4\) menunjukkan pergeseran 4 satuan ke kanan.
+    - \(+3\) menunjukkan pergeseran 3 satuan ke atas.
+    """)
+
+    st.latex(r"(0,0)\rightarrow(4,3)")
+
+    # =========================================================
+    # 20. KALKULATOR TRANSFORMASI
+    # =========================================================
+
+    st.markdown("### 🧮 18. Kalkulator Transformasi Fungsi")
+
+    st.markdown("""
+    Masukkan koefisien dan translasi untuk fungsi kuadrat:
+    """)
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        a_calc = st.number_input(
+            "Koefisien a",
+            value=1.0,
+            step=0.5
+        )
+
+    with col2:
+        h_calc = st.number_input(
+            "Pergeseran horizontal h",
+            value=0.0,
+            step=1.0
+        )
+
+    with col3:
+        k_calc = st.number_input(
+            "Pergeseran vertikal k",
+            value=0.0,
+            step=1.0
+        )
+
+    st.markdown("#### Fungsi hasil transformasi")
+
+    st.latex(
+        rf"g(x)={a_calc}(x-{h_calc})^2+{k_calc}"
+    )
+
+    st.markdown("#### Titik puncak")
+
+    st.latex(
+        rf"({h_calc},{k_calc})"
+    )
+
+    # =========================================================
+    # 21. LATIHAN
+    # =========================================================
+
+    st.markdown("### ✏️ 19. Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=x^2")
+
+    st.markdown("""
+    Tentukan persamaan fungsi jika grafik digeser 5 satuan ke kanan dan
+    2 satuan ke atas.
+    """)
+
+    with st.expander("💡 Lihat pembahasan"):
+
+        st.latex(r"g(x)=(x-5)^2+2")
+
+        st.markdown("""
+        Karena bergeser ke kanan 5 satuan digunakan \(x-5\), sedangkan
+        bergeser ke atas 2 satuan ditambahkan \(+2\).
+        """)
+
+    st.markdown("""
+    **Soal 2**
+
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=|x|")
+
+    st.markdown("""
+    Tentukan fungsi hasil refleksi terhadap sumbu-X.
+    """)
+
+    with st.expander("💡 Lihat pembahasan"):
+
+        st.latex(r"g(x)=-|x|")
+
+    st.markdown("""
+    **Soal 3**
+
+    Diketahui:
+    """)
+
+    st.latex(r"f(x)=x^2")
+
+    st.markdown("""
+    Tentukan fungsi yang diperoleh jika grafik direfleksikan terhadap
+    sumbu-X kemudian digeser 3 satuan ke kanan.
+    """)
+
+    with st.expander("💡 Lihat pembahasan"):
+
+        st.latex(r"g(x)=-(x-3)^2")
+
+    # =========================================================
+    # 22. KUIS INTERAKTIF
+    # =========================================================
+
+    st.markdown("### 🎯 20. Kuis Interaktif")
+
+    skor = 0
+
+    q1 = st.radio(
+        "1. Grafik \(f(x)\) digeser 4 satuan ke kanan. Bentuk barunya adalah:",
+        [
+            "f(x+4)",
+            "f(x-4)",
+            "f(x)+4",
+            "f(x)-4"
+        ],
+        key="transformasi_q1"
+    )
+
+    if q1 == "f(x-4)":
+        skor += 1
+
+    q2 = st.radio(
+        "2. Refleksi terhadap sumbu-X menghasilkan:",
+        [
+            "f(-x)",
+            "-f(x)",
+            "f(x)+1",
+            "f(x-1)"
+        ],
+        key="transformasi_q2"
+    )
+
+    if q2 == "-f(x)":
+        skor += 1
+
+    q3 = st.radio(
+        "3. Grafik f(x) digeser 2 satuan ke kiri dan 3 satuan ke bawah:",
+        [
+            "f(x-2)+3",
+            "f(x+2)-3",
+            "f(x-2)-3",
+            "f(x+2)+3"
+        ],
+        key="transformasi_q3"
+    )
+
+    if q3 == "f(x+2)-3":
+        skor += 1
+
+    q4 = st.radio(
+        "4. Titik puncak dari y=(x-3)^2+5 adalah:",
+        [
+            "(3,5)",
+            "(-3,5)",
+            "(3,-5)",
+            "(-3,-5)"
+        ],
+        key="transformasi_q4"
+    )
+
+    if q4 == "(3,5)":
+        skor += 1
+
+    if st.button("📊 Periksa Nilai", key="cek_transformasi"):
+
+        st.success(
+            f"Skor Anda: {skor}/4"
+        )
+
+        if skor == 4:
+            st.balloons()
+            st.success(
+                "🎉 Sangat baik! Anda telah memahami konsep dasar transformasi fungsi."
+            )
+        elif skor >= 2:
+            st.info(
+                "👍 Cukup baik. Pelajari kembali bagian yang masih kurang tepat."
+            )
+        else:
+            st.warning(
+                "📚 Silakan pelajari kembali konsep translasi, refleksi, dan dilatasi."
+            )
+
+    # =========================================================
+    # 23. REFLEKSI PEMBELAJARAN
+    # =========================================================
+
+    st.markdown("### 📝 21. Refleksi Pembelajaran")
+
+    st.markdown("""
+    Setelah mempelajari transformasi fungsi, renungkan pertanyaan berikut:
+
+    1. Apa perbedaan \(f(x-h)\) dan \(f(x)+h\)?
+    2. Mengapa pergeseran ke kanan menggunakan \(x-h\)?
+    3. Apa pengaruh tanda negatif di depan fungsi?
+    4. Bagaimana cara mengetahui titik puncak dari bentuk
+       \(a(x-h)^2+k\)?
+    5. Bagaimana pengaruh nilai \(a\) terhadap grafik?
+    6. Bagaimana beberapa transformasi dapat digabungkan?
+    """)
+
+    # =========================================================
+    # 24. RANGKUMAN
+    # =========================================================
+
+    st.markdown("### 📚 22. Rangkuman")
+
+    st.success("""
+    **Konsep penting transformasi fungsi:**
+
+    • Translasi vertikal:
+      grafik naik atau turun.
+
+    • Translasi horizontal:
+      grafik bergeser ke kiri atau kanan.
+
+    • Refleksi:
+      grafik dicerminkan terhadap sumbu-X atau sumbu-Y.
+
+    • Dilatasi:
+      grafik diregangkan atau diperkecil.
+
+    • Bentuk umum:
+      a f(b(x-h)) + k
+
+    • Untuk fungsi kuadrat:
+      a(x-h)²+k
+
+      memiliki titik puncak (h,k).
+
+    Kunci utama dalam mempelajari transformasi fungsi adalah memahami
+    hubungan antara perubahan bentuk aljabar dan perubahan grafik.
+    """)
+
+    st.markdown("---")
+
+    st.info("""
+    💡 **Inti konsep**
+
+    Jangan hanya menghafalkan rumus transformasi. Amati bagaimana perubahan
+    pada persamaan fungsi menyebabkan perubahan posisi, bentuk, dan ukuran
+    grafik.
+    """)
+
 
 def fungsi_invers_komposisi():
 
