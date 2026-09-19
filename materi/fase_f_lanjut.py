@@ -3295,7 +3295,7 @@ def tampilkan(materi):
         trigonometri()
         #pass
 
-    elif materi == "Pemodelan fungsi":
+    elif materi == "Pemodelan Fungsi":
         pemodelan_fungsi()
         #pass
 
