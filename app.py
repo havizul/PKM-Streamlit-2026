@@ -334,8 +334,8 @@ elif menu_utama == "🎓 Media Pembelajaran":
     st.divider()
 
     if media == "📐 GeoGebra":
-        #media_geogebra()
-        pass
+        media_geogebra()
+        #pass
 
     elif media == "🧮 Desmos":
         #media_desmos()
