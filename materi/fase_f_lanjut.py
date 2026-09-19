@@ -390,15 +390,19 @@ def irisan_kerucut():
         y_elips = elips_b * np.sin(theta_elips)
 
         fig, ax = plt.subplots(figsize=(5, 5))
-        ax.plot(x_elips, y_elips, "g-")
-
-        # Tandai fokus
-        ax.plot(-elips_c, 0, "r*", markersize=12,
-                label=f"Fokus (-{elips_c:.2f}, 0)")
-        ax.plot(elips_c, 0, "r*", markersize=12,
-                label=f"Fokus ({elips_c:.2f}, 0)")
+        ax.plot(x_elips, y_elips, "g-", label="Elips")
+        
+        # Tandai fokus (hanya kalau c > 0)
+        if elips_c > 1e-9:
+            ax.plot(-elips_c, 0, "r*", markersize=12,
+                    label=rf"Fokus $(-{elips_c:.2f},\ 0)$")
+            ax.plot(elips_c, 0, "r*", markersize=12,
+                    label=rf"Fokus $({elips_c:.2f},\ 0)$")
+        else:
+            st.caption("Karena a = b, elips berbentuk lingkaran (kedua fokus berimpit di pusat).")
+        
         ax.plot(0, 0, "ko", markersize=5, label="Pusat")
-
+        
         ax.axhline(0, color="gray", linewidth=0.6)
         ax.axvline(0, color="gray", linewidth=0.6)
         ax.grid(True, linestyle=":", alpha=0.6)
@@ -406,9 +410,9 @@ def irisan_kerucut():
         ax.set_xlabel("x")
         ax.set_ylabel("y")
         ax.set_title(
-            rf"$\frac{{x^2}}{{{elips_a:g}^2}}+\frac{{y^2}}{{{elips_b:g}^2}}=1$"
+            rf"$\dfrac{{x^2}}{{{elips_a:.2f}^2}}+\dfrac{{y^2}}{{{elips_b:.2f}^2}}=1$"
         )
-        ax.legend(loc="upper right", fontsize=8)
+        ax.legend(loc="upper right", fontsize=8, framealpha=0.9)
         
         fig.tight_layout()
         st.pyplot(fig, use_container_width=True)
