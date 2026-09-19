@@ -313,7 +313,7 @@ def matriks():
 
     st.header("1️⃣1️⃣ Invers Matriks")
 
-    st.markdown("""
+    st.markdown(r"""
     Jika:
 
     $$A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$
