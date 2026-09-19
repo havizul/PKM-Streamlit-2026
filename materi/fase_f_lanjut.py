@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import math
 
+from textwrap import dedent
+
 def polinomial():
 
     st.markdown('<div class="content-title">📕 Polinomial</div>', unsafe_allow_html=True)
@@ -60,14 +62,14 @@ def polinomial():
 
     st.latex(r"P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_2x^2+a_1x+a_0")
 
-    st.markdown(r"""
+    st.markdown(dedent(r"""
     dengan:
-    
+
     - $a_n, a_{n-1}, \ldots, a_1, a_0$ merupakan koefisien.
     - $a_n \neq 0$.
     - $n$ merupakan derajat polinomial.
     - $a_0$ merupakan konstanta.
-    """)
+    """))
 
     # =========================================================
     # 2. CONTOH MENENTUKAN KOMPONEN
