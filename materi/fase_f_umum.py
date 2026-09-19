@@ -323,13 +323,14 @@ def statistika_bivariat():
 
     st.latex(r"\hat{y}=a+bx")
 
-    st.markdown("""
+    st.markdown(r"""
     Keterangan:
 
-    - $ \\hat{y}$ = nilai prediksi \(Y\);
-    - $ a $ = intercept;
-    - $ b $ = slope / kemiringan garis regresi.
+    - $\hat{y}$ = nilai prediksi $Y$
+    - $a$ = intercept
+    - $b$ = slope / kemiringan garis regresi
     """)
+    
 
     # =========================================================
     # 12. MENENTUKAN KOEFISIEN REGRESI
