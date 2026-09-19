@@ -2,6 +2,870 @@ import streamlit as st
 import pandas as pd
 import math
 
+def kaidah_pencacahan():
+
+    st.markdown("## 🔢 Kaidah Pencacahan")
+
+    st.markdown("""
+    Kaidah pencacahan digunakan untuk menentukan **banyaknya kemungkinan**
+    suatu kejadian tanpa harus menuliskan semua kemungkinan satu per satu.
+
+    Dalam materi ini kita akan mempelajari aturan penjumlahan, aturan perkalian,
+    faktorial, permutasi, dan kombinasi.
+    """)
+
+    # =========================================================
+    # 1. TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.markdown("### 🎯 Tujuan Pembelajaran")
+
+    st.info("""
+    Setelah mempelajari materi ini, peserta didik diharapkan mampu:
+
+    1. Menjelaskan konsep dasar kaidah pencacahan.
+    2. Menggunakan aturan penjumlahan.
+    3. Menggunakan aturan perkalian.
+    4. Menentukan nilai faktorial.
+    5. Menentukan banyaknya susunan menggunakan permutasi.
+    6. Menentukan banyaknya pilihan menggunakan kombinasi.
+    7. Menyelesaikan masalah pencacahan dalam kehidupan sehari-hari.
+    """)
+
+    # =========================================================
+    # 2. APERSEPSI
+    # =========================================================
+
+    st.markdown("### 💡 Apersepsi")
+
+    st.markdown("""
+    Bayangkan kamu memiliki:
+
+    - 3 pilihan warna baju;
+    - 2 pilihan celana.
+
+    Berapa banyak pasangan baju dan celana yang dapat dibuat?
+
+    Kita tidak perlu menuliskan semua pasangan satu per satu.
+    Cukup menggunakan **aturan perkalian**.
+    """)
+
+    st.latex(r"3\times2=6")
+
+    st.markdown("Jadi, terdapat **6 kemungkinan pasangan**.")
+
+    # =========================================================
+    # 3. ATURAN PENJUMLAHAN
+    # =========================================================
+
+    st.markdown("### ➕ 1. Aturan Penjumlahan")
+
+    st.markdown("""
+    Jika suatu pilihan dapat dilakukan dengan beberapa cara yang **saling
+    terpisah**, maka banyak seluruh pilihan diperoleh dengan menjumlahkan
+    banyak cara tersebut.
+    """)
+
+    st.latex(r"n=n_1+n_2+\cdots+n_k")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Sebuah toko menyediakan 4 jenis buku matematika dan 3 jenis buku fisika.
+    Jika seseorang hanya memilih **satu buku**, banyak pilihan adalah:
+    """)
+
+    st.latex(r"4+3=7")
+
+    st.markdown("Jadi terdapat **7 pilihan buku**.")
+
+    st.info("""
+    💡 Kata kunci aturan penjumlahan biasanya adalah **atau**.
+    """)
+
+    # =========================================================
+    # 4. ATURAN PERKALIAN
+    # =========================================================
+
+    st.markdown("### ✖️ 2. Aturan Perkalian")
+
+    st.markdown("""
+    Jika suatu kegiatan terdiri atas beberapa tahap dan setiap tahap dapat
+    dilakukan dengan beberapa cara, maka banyak seluruh kemungkinan diperoleh
+    dengan mengalikan banyak cara pada setiap tahap.
+    """)
+
+    st.latex(r"n=n_1\times n_2\times\cdots\times n_k")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Tersedia 3 pilihan baju dan 4 pilihan celana.
+    Banyak pasangan baju dan celana adalah:
+    """)
+
+    st.latex(r"3\times4=12")
+
+    st.markdown("Jadi terdapat **12 kemungkinan pasangan**.")
+
+    st.info("""
+    💡 Kata kunci aturan perkalian biasanya adalah **dan** atau beberapa tahap.
+    """)
+
+    # =========================================================
+    # 5. FAKTORIAL
+    # =========================================================
+
+    st.markdown("### ❗ 3. Faktorial")
+
+    st.markdown("""
+    Faktorial dari bilangan bulat positif \(n\) ditulis sebagai \(n!\).
+    """)
+
+    st.latex(r"n!=n(n-1)(n-2)\cdots3\times2\times1")
+
+    st.markdown("Contoh:")
+
+    st.latex(r"5!=5\times4\times3\times2\times1=120")
+
+    st.markdown("Secara khusus:")
+
+    st.latex(r"0!=1")
+
+    # =========================================================
+    # 6. KALKULATOR FAKTORIAL
+    # =========================================================
+
+    st.markdown("### 🧮 4. Kalkulator Faktorial")
+
+    n_faktorial = st.number_input(
+        "Masukkan bilangan n",
+        min_value=0,
+        max_value=20,
+        value=5,
+        step=1,
+        key="kaidah_n_faktorial"
+    )
+
+    hasil_faktorial = math.factorial(n_faktorial)
+
+    st.latex(
+        rf"{n_faktorial}!={hasil_faktorial}"
+    )
+
+    # =========================================================
+    # 7. PERMUTASI
+    # =========================================================
+
+    st.markdown("### 🔄 5. Permutasi")
+
+    st.markdown("""
+    Permutasi digunakan ketika **urutan diperhatikan**.
+
+    Misalnya, susunan juara 1, 2, dan 3 berbeda jika posisi peserta berubah.
+    """)
+
+    st.latex(r"P(n,r)=\frac{n!}{(n-r)!}")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Dari 5 siswa akan dipilih 3 siswa untuk menempati posisi ketua,
+    wakil, dan sekretaris.
+
+    Karena posisi berbeda, maka urutan diperhatikan.
+    """)
+
+    st.latex(r"P(5,3)=\frac{5!}{(5-3)!}")
+
+    st.latex(r"P(5,3)=\frac{5!}{2!}=60")
+
+    st.markdown("Jadi terdapat **60 susunan**.")
+
+    # =========================================================
+    # 8. PERMUTASI DENGAN SELURUH OBJEK
+    # =========================================================
+
+    st.markdown("### 🔄 6. Permutasi Semua Objek")
+
+    st.markdown("""
+    Jika seluruh \(n\) objek disusun, banyak susunannya adalah:
+    """)
+
+    st.latex(r"P(n,n)=n!")
+
+    st.markdown("Contoh:")
+
+    st.markdown("""
+    Empat buku berbeda disusun berjajar pada sebuah rak.
+    """)
+
+    st.latex(r"4!=24")
+
+    st.markdown("Jadi terdapat **24 susunan**.")
+
+    # =========================================================
+    # 9. PERMUTASI DENGAN UNSUR SAMA
+    # =========================================================
+
+    st.markdown("### 🔄 7. Permutasi dengan Unsur yang Sama")
+
+    st.markdown("""
+    Jika terdapat objek yang sama, jumlah susunan yang berbeda dapat dihitung
+    dengan:
+    """)
+
+    st.latex(r"P=\frac{n!}{n_1!n_2!\cdots n_k!}")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Banyak susunan huruf pada kata **MAMA** adalah:
+    """)
+
+    st.latex(r"P=\frac{4!}{2!2!}")
+
+    st.latex(r"P=6")
+
+    st.markdown("Jadi terdapat **6 susunan berbeda**.")
+
+    # =========================================================
+    # 10. PERMUTASI SIKLIS
+    # =========================================================
+
+    st.markdown("### 🔄 8. Permutasi Siklis")
+
+    st.markdown("""
+    Permutasi siklis digunakan ketika objek disusun membentuk lingkaran,
+    misalnya orang duduk mengelilingi meja bundar.
+    """)
+
+    st.latex(r"P_s=(n-1)!")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Enam orang duduk mengelilingi meja bundar.
+    """)
+
+    st.latex(r"P_s=(6-1)!=5!=120")
+
+    st.markdown("Jadi terdapat **120 susunan**.")
+
+    # =========================================================
+    # 11. KOMBINASI
+    # =========================================================
+
+    st.markdown("### 👥 9. Kombinasi")
+
+    st.markdown("""
+    Kombinasi digunakan ketika **urutan tidak diperhatikan**.
+
+    Misalnya memilih 3 orang sebagai anggota tim. Tim A-B-C sama dengan
+    C-B-A karena yang diperhatikan hanya siapa yang terpilih.
+    """)
+
+    st.latex(r"C(n,r)=\frac{n!}{r!(n-r)!}")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Dari 5 siswa akan dipilih 3 siswa sebagai anggota tim.
+    """)
+
+    st.latex(r"C(5,3)=\frac{5!}{3!2!}")
+
+    st.latex(r"C(5,3)=10")
+
+    st.markdown("Jadi terdapat **10 kelompok**.")
+
+    st.info("""
+    💡 Ingat:
+
+    **Permutasi → urutan diperhatikan.**
+
+    **Kombinasi → urutan tidak diperhatikan.**
+    """)
+
+    # =========================================================
+    # 12. PERMUTASI VS KOMBINASI
+    # =========================================================
+
+    st.markdown("### ⚖️ 10. Permutasi atau Kombinasi?")
+
+    df_permutasi_kombinasi = pd.DataFrame({
+        "Situasi": [
+            "Menentukan juara 1, 2, dan 3",
+            "Memilih 3 anggota kelompok",
+            "Menyusun buku pada rak",
+            "Memilih 2 siswa untuk mengikuti lomba",
+            "Menentukan kode/susunan"
+        ],
+        "Jenis": [
+            "Permutasi",
+            "Kombinasi",
+            "Permutasi",
+            "Kombinasi",
+            "Permutasi"
+        ],
+        "Alasan": [
+            "Urutan/posisi berbeda",
+            "Hanya memilih anggota",
+            "Urutan buku berbeda",
+            "Urutan tidak diperhatikan",
+            "Urutan menentukan hasil"
+        ]
+    })
+
+    st.dataframe(
+        df_permutasi_kombinasi,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 13. KALKULATOR PERMUTASI DAN KOMBINASI
+    # =========================================================
+
+    st.markdown("### 🧮 11. Kalkulator Pencacahan")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        n_pc = st.number_input(
+            "n",
+            min_value=0,
+            max_value=20,
+            value=5,
+            step=1,
+            key="kaidah_n_pc"
+        )
+
+    with col2:
+
+        r_pc = st.number_input(
+            "r",
+            min_value=0,
+            max_value=20,
+            value=3,
+            step=1,
+            key="kaidah_r_pc"
+        )
+
+    if r_pc <= n_pc:
+
+        permutasi = (
+            math.factorial(n_pc) /
+            math.factorial(n_pc - r_pc)
+        )
+
+        kombinasi = (
+            math.factorial(n_pc) /
+            (
+                math.factorial(r_pc) *
+                math.factorial(n_pc - r_pc)
+            )
+        )
+
+        hasil_pc = pd.DataFrame({
+            "Jenis": [
+                "Permutasi",
+                "Kombinasi"
+            ],
+            "Hasil": [
+                int(permutasi),
+                int(kombinasi)
+            ]
+        })
+
+        st.dataframe(
+            hasil_pc,
+            use_container_width=True,
+            hide_index=True
+        )
+
+    else:
+
+        st.error("Nilai r tidak boleh lebih besar dari n.")
+
+    # =========================================================
+    # 14. SOAL KONTEKSTUAL
+    # =========================================================
+
+    st.markdown("### 🌍 12. Penerapan dalam Kehidupan")
+
+    st.markdown("""
+    Kaidah pencacahan banyak digunakan dalam:
+
+    - penyusunan jadwal;
+    - pemilihan anggota kelompok;
+    - penyusunan kode;
+    - penyusunan tempat duduk;
+    - pemilihan menu;
+    - pembentukan tim;
+    - peluang dan probabilitas;
+    - sistem keamanan dan kode akses.
+    """)
+
+    # =========================================================
+    # 15. CONTOH KASUS 1
+    # =========================================================
+
+    st.markdown("### 🏫 13. Contoh Kasus — Memilih Pengurus")
+
+    st.markdown("""
+    Dari 8 siswa akan dipilih seorang ketua, wakil, dan sekretaris.
+
+    Karena setiap jabatan berbeda, urutan pemilihan diperhatikan.
+    """)
+
+    st.latex(r"P(8,3)=\frac{8!}{5!}")
+
+    st.latex(r"P(8,3)=8\times7\times6=336")
+
+    st.markdown("Jadi terdapat **336 susunan pengurus**.")
+
+    # =========================================================
+    # 16. CONTOH KASUS 2
+    # =========================================================
+
+    st.markdown("### 👥 14. Contoh Kasus — Memilih Tim")
+
+    st.markdown("""
+    Dari 8 siswa akan dipilih 3 siswa untuk menjadi anggota tim.
+
+    Karena posisi anggota tidak dibedakan, digunakan kombinasi.
+    """)
+
+    st.latex(r"C(8,3)=\frac{8!}{3!5!}")
+
+    st.latex(r"C(8,3)=56")
+
+    st.markdown("Jadi terdapat **56 kelompok berbeda**.")
+
+    # =========================================================
+    # 17. CONTOH KASUS 3
+    # =========================================================
+
+    st.markdown("### 🔐 15. Contoh Kasus — Kode")
+
+    st.markdown("""
+    Sebuah kode terdiri dari 3 digit berbeda yang dipilih dari angka
+    1 sampai 5.
+
+    Karena urutan digit berbeda menghasilkan kode yang berbeda, digunakan
+    permutasi.
+    """)
+
+    st.latex(r"P(5,3)=60")
+
+    st.markdown("""
+    Jadi terdapat **60 kode berbeda**.
+    """)
+
+    # =========================================================
+    # 18. ATURAN PERKALIAN LEBIH LANJUT
+    # =========================================================
+
+    st.markdown("### 🧩 16. Aturan Perkalian dalam Beberapa Tahap")
+
+    st.markdown("""
+    Sebuah restoran menyediakan:
+
+    - 3 pilihan makanan;
+    - 2 pilihan minuman;
+    - 4 pilihan makanan penutup.
+
+    Banyak paket yang dapat dibuat:
+    """)
+
+    st.latex(r"3\times2\times4=24")
+
+    st.markdown("Jadi terdapat **24 kemungkinan paket**.")
+
+    # =========================================================
+    # 19. ATURAN PENJUMLAHAN DAN PERKALIAN
+    # =========================================================
+
+    st.markdown("### 🔀 17. Menggabungkan Aturan Penjumlahan dan Perkalian")
+
+    st.markdown("""
+    Sebuah kode dapat dibuat dengan dua cara:
+
+    - Cara A: 2 pilihan huruf dan 3 pilihan angka.
+    - Cara B: 4 pilihan huruf dan 2 pilihan angka.
+
+    Banyak kode:
+    """)
+
+    st.latex(r"(2\times3)+(4\times2)=14")
+
+    st.markdown("""
+    Jadi terdapat **14 kemungkinan kode**.
+    """)
+
+    # =========================================================
+    # 20. EKSPLORASI INTERAKTIF
+    # =========================================================
+
+    st.markdown("### 🧪 18. Eksplorasi Kaidah Pencacahan")
+
+    jenis_pencacahan = st.selectbox(
+        "Pilih jenis pencacahan",
+        [
+            "Aturan Perkalian",
+            "Permutasi",
+            "Kombinasi"
+        ],
+        key="jenis_kaidah"
+    )
+
+    if jenis_pencacahan == "Aturan Perkalian":
+
+        jumlah_tahap = st.number_input(
+            "Jumlah tahap",
+            min_value=2,
+            max_value=5,
+            value=3,
+            step=1,
+            key="jumlah_tahap_kaidah"
+        )
+
+        nilai_tahap = []
+
+        for i in range(jumlah_tahap):
+
+            nilai = st.number_input(
+                f"Banyak cara tahap {i + 1}",
+                min_value=1,
+                max_value=100,
+                value=2,
+                step=1,
+                key=f"tahap_kaidah_{i}"
+            )
+
+            nilai_tahap.append(nilai)
+
+        hasil = 1
+
+        for nilai in nilai_tahap:
+            hasil *= nilai
+
+        st.markdown("Banyak seluruh kemungkinan:")
+
+        st.latex(
+            rf"{' \times '.join(str(int(v)) for v in nilai_tahap)}={hasil}"
+        )
+
+    elif jenis_pencacahan == "Permutasi":
+
+        n_interaktif = st.number_input(
+            "Jumlah objek n",
+            min_value=0,
+            max_value=20,
+            value=6,
+            step=1,
+            key="perm_n_interaktif"
+        )
+
+        r_interaktif = st.number_input(
+            "Objek yang disusun r",
+            min_value=0,
+            max_value=20,
+            value=3,
+            step=1,
+            key="perm_r_interaktif"
+        )
+
+        if r_interaktif <= n_interaktif:
+
+            hasil = (
+                math.factorial(n_interaktif) /
+                math.factorial(n_interaktif - r_interaktif)
+            )
+
+            st.latex(
+                rf"P({n_interaktif},{r_interaktif})={int(hasil)}"
+            )
+
+        else:
+
+            st.error("r tidak boleh lebih besar dari n.")
+
+    else:
+
+        n_interaktif = st.number_input(
+            "Jumlah objek n",
+            min_value=0,
+            max_value=20,
+            value=6,
+            step=1,
+            key="komb_n_interaktif"
+        )
+
+        r_interaktif = st.number_input(
+            "Objek yang dipilih r",
+            min_value=0,
+            max_value=20,
+            value=3,
+            step=1,
+            key="komb_r_interaktif"
+        )
+
+        if r_interaktif <= n_interaktif:
+
+            hasil = (
+                math.factorial(n_interaktif) /
+                (
+                    math.factorial(r_interaktif) *
+                    math.factorial(n_interaktif - r_interaktif)
+                )
+            )
+
+            st.latex(
+                rf"C({n_interaktif},{r_interaktif})={int(hasil)}"
+            )
+
+        else:
+
+            st.error("r tidak boleh lebih besar dari n.")
+
+    # =========================================================
+    # 21. LATIHAN
+    # =========================================================
+
+    st.markdown("### ✏️ 19. Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Sebuah kantin memiliki 4 jenis makanan dan 3 jenis minuman.
+    Jika siswa memilih satu makanan dan satu minuman, berapa banyak
+    kemungkinan pilihan?
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"4\times3=12")
+
+        st.markdown("Jadi terdapat **12 kemungkinan**.")
+
+    st.markdown("""
+    **Soal 2**
+
+    Dari 6 siswa akan dipilih 2 siswa sebagai ketua dan wakil.
+    Berapa banyak susunannya?
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"P(6,2)=\frac{6!}{4!}=30")
+
+    st.markdown("""
+    **Soal 3**
+
+    Dari 6 siswa akan dipilih 2 siswa sebagai anggota kelompok.
+    Berapa banyak kelompok yang dapat dibentuk?
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"C(6,2)=\frac{6!}{2!4!}=15")
+
+    st.markdown("""
+    **Soal 4**
+
+    Berapa banyak susunan berbeda dari huruf-huruf pada kata **MATA**?
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"P=\frac{4!}{2!}=12")
+
+    # =========================================================
+    # 22. KUIS
+    # =========================================================
+
+    st.markdown("### 🎯 20. Kuis Interaktif")
+
+    skor = 0
+
+    q1 = st.radio(
+        "1. Kaidah pencacahan digunakan untuk menentukan:",
+        [
+            "Nilai rata-rata",
+            "Banyak kemungkinan",
+            "Nilai maksimum",
+            "Nilai minimum"
+        ],
+        key="kaidah_q1"
+    )
+
+    if q1 == "Banyak kemungkinan":
+        skor += 1
+
+    q2 = st.radio(
+        "2. Kata kunci yang sering digunakan pada aturan perkalian adalah:",
+        [
+            "atau",
+            "dan",
+            "tetapi",
+            "sedangkan"
+        ],
+        key="kaidah_q2"
+    )
+
+    if q2 == "dan":
+        skor += 1
+
+    q3 = st.radio(
+        "3. Jika urutan diperhatikan, metode yang digunakan adalah:",
+        [
+            "Kombinasi",
+            "Permutasi",
+            "Rata-rata",
+            "Median"
+        ],
+        key="kaidah_q3"
+    )
+
+    if q3 == "Permutasi":
+        skor += 1
+
+    q4 = st.radio(
+        "4. Jika urutan tidak diperhatikan, metode yang digunakan adalah:",
+        [
+            "Permutasi",
+            "Kombinasi",
+            "Faktorial",
+            "Aturan penjumlahan"
+        ],
+        key="kaidah_q4"
+    )
+
+    if q4 == "Kombinasi":
+        skor += 1
+
+    q5 = st.radio(
+        "5. Nilai 5! adalah:",
+        [
+            "25",
+            "60",
+            "100",
+            "120"
+        ],
+        key="kaidah_q5"
+    )
+
+    if q5 == "120":
+        skor += 1
+
+    q6 = st.radio(
+        "6. Nilai C(5,2) adalah:",
+        [
+            "5",
+            "10",
+            "15",
+            "20"
+        ],
+        key="kaidah_q6"
+    )
+
+    if q6 == "10":
+        skor += 1
+
+    if st.button(
+        "📊 Periksa Nilai",
+        key="cek_kuis_kaidah"
+    ):
+
+        st.success(
+            f"Skor Anda: {skor}/6"
+        )
+
+        if skor == 6:
+
+            st.balloons()
+
+            st.success(
+                "🎉 Sangat baik! Anda memahami konsep dasar kaidah pencacahan."
+            )
+
+        elif skor >= 4:
+
+            st.info(
+                "👍 Cukup baik. Pelajari kembali konsep yang masih kurang tepat."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali aturan penjumlahan, perkalian, permutasi, dan kombinasi."
+            )
+
+    # =========================================================
+    # 23. REFLEKSI
+    # =========================================================
+
+    st.markdown("### 📝 21. Refleksi Pembelajaran")
+
+    st.markdown("""
+    Setelah mempelajari kaidah pencacahan, coba jawab pertanyaan berikut:
+
+    1. Kapan aturan penjumlahan digunakan?
+    2. Kapan aturan perkalian digunakan?
+    3. Apa perbedaan permutasi dan kombinasi?
+    4. Mengapa urutan penting dalam permutasi?
+    5. Mengapa urutan tidak penting dalam kombinasi?
+    6. Dalam kehidupan sehari-hari, di mana kaidah pencacahan dapat digunakan?
+    """)
+
+    # =========================================================
+    # 24. RANGKUMAN
+    # =========================================================
+
+    st.markdown("### 📚 22. Rangkuman")
+
+    st.success("""
+    **Kaidah pencacahan secara sederhana:**
+
+    • Aturan penjumlahan → digunakan untuk pilihan yang bersifat "atau".
+
+    • Aturan perkalian → digunakan untuk beberapa tahap yang dilakukan
+      secara berurutan.
+
+    • Faktorial:
+      n! = n(n-1)(n-2)...1
+
+    • Permutasi → urutan diperhatikan.
+
+    • Kombinasi → urutan tidak diperhatikan.
+
+    • Permutasi:
+      P(n,r) = n!/(n-r)!
+
+    • Kombinasi:
+      C(n,r) = n!/[r!(n-r)!]
+
+    • Permutasi siklis:
+      (n-1)!
+    """)
+
+    st.markdown("---")
+
+    st.info("""
+    💡 **Kunci utama**
+
+    Sebelum memilih rumus, tanyakan:
+
+    **"Apakah urutan diperhatikan?"**
+
+    Jika ya → biasanya **permutasi**.
+
+    Jika tidak → biasanya **kombinasi**.
+    """)
+    
 def statistika_bivariat():
 
     st.markdown("## 📊 Statistika Bivariat")
@@ -5973,8 +6837,8 @@ def tampilkan(materi):
         #pass
 
     elif materi == "Kaidah Pencacahan":
-        #kaidah_pencacahan()
-        pass
+        kaidah_pencacahan()
+        #pass
 
     elif materi == "Peluang":
         #peluang()
