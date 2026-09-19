@@ -224,9 +224,21 @@ def statistika_bivariat():
     st.markdown("""
     Interpretasi arah:
 
-    - \(r>0\) → hubungan linear positif.
-    - \(r<0\) → hubungan linear negatif.
-    - \(r\approx0\) → tidak terdapat hubungan linear yang kuat.
+    #- \(r > 0\) → hubungan linear positif.
+    #- \(r < 0\) → hubungan linear negatif.
+    #- \(r\approx0\) → tidak terdapat hubungan linear yang kuat.
+    st.markdown("Jika:")
+    st.latex(r"r>0")
+    st.markdown("menunjukkan hubungan linear positif.")
+    
+    st.markdown("Jika:")
+    st.latex(r"r<0")
+    st.markdown("menunjukkan hubungan linear negatif.")
+    
+    st.markdown("Jika:")
+    st.latex(r"r\approx0")
+    st.markdown("menunjukkan tidak terdapat hubungan linear yang kuat.")
+
 
     Semakin dekat nilai absolut \(r\) dengan 1, semakin kuat hubungan linear
     yang ditunjukkan oleh data.
