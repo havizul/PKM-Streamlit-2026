@@ -354,7 +354,6 @@ def statistika_bivariat():
     b = sum_xy_dev / sum_x_dev2
     a = mean_y - b * mean_x
 
-    #st.markdown("Koefisien slope:")
     st.markdown("Berdasarkan tabel Waktu Belajar (X) dan Nilai Ujian (Y), maka dapat ditentukan nilai koefisien slope:")
 
     st.latex(
