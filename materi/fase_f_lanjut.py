@@ -8,7 +8,6 @@ from textwrap import dedent
 
 
 def distribusi_peluang():
-
     st.markdown(
         '<div class="content-title">📕 Distribusi Peluang (Binomial dan Normal)</div>',
         unsafe_allow_html=True
