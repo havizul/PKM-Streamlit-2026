@@ -60,11 +60,11 @@ def polinomial():
 
     st.latex(r"P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_2x^2+a_1x+a_0")
 
-    st.markdown("""
+    st.markdown(r"""
     dengan:
-
-    - $a_n,a_{n-1},\ldots,a_1,a_0$ merupakan koefisien.
-    - $a_n\neq0$.
+    
+    - $a_n, a_{n-1}, \ldots, a_1, a_0$ merupakan koefisien.
+    - $a_n \neq 0$.
     - $n$ merupakan derajat polinomial.
     - $a_0$ merupakan konstanta.
     """)
