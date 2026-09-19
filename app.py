@@ -221,7 +221,7 @@ elif menu_utama == "📚 Materi Matematika":
 
         with st.expander(
             "📘 FASE E — Kelas X",
-            expanded=True
+            expanded=False #True
         ):
 
             for item in FASE_E:
