@@ -6,6 +6,725 @@ import matplotlib.pyplot as plt
 
 from textwrap import dedent
 
+
+def integral():
+    st.markdown(
+        '<div class="content-title">📕 Integral dan Penerapannya</div>',
+        unsafe_allow_html=True
+    )
+
+    # =========================================================
+    # TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.header("🎯 Tujuan Pembelajaran")
+    st.markdown(r"""
+    Setelah mempelajari materi ini, siswa diharapkan mampu:
+
+    - Menjelaskan konsep integral sebagai antiturunan.
+    - Menentukan integral tak tentu fungsi aljabar.
+    - Menggunakan aturan dasar integral.
+    - Menentukan integral fungsi polinomial.
+    - Menentukan integral fungsi eksponensial dan trigonometri sederhana.
+    - Menentukan integral tentu.
+    - Memahami hubungan integral dan turunan.
+    - Menggunakan Teorema Dasar Kalkulus.
+    - Menentukan luas daerah menggunakan integral.
+    - Menggunakan integral untuk menentukan volume benda putar.
+    - Menerapkan integral dalam masalah kontekstual.
+    """)
+
+    # =========================================================
+    # APERSEPSI
+    # =========================================================
+
+    st.header("💡 Apersepsi")
+    st.markdown(r"""
+    Kita telah mempelajari turunan sebagai alat untuk menentukan **laju
+    perubahan**.
+
+    Sekarang kita membalik proses tersebut.
+
+    Jika diketahui laju perubahan suatu besaran, bagaimana kita dapat
+    memperoleh fungsi asalnya?
+
+    Proses tersebut berkaitan dengan **integral**.
+    """)
+
+    # =========================================================
+    # 1. PENGERTIAN INTEGRAL
+    # =========================================================
+
+    st.header("1. Pengertian Integral")
+    st.markdown(r"""
+    Integral dapat dipahami sebagai proses mencari antiturunan suatu
+    fungsi.
+    """)
+
+    st.latex(r"\int f(x)\,dx=F(x)+C")
+
+    st.markdown(r"""
+    Jika $F'(x)=f(x)$, maka $F(x)$ disebut antiturunan dari $f(x)$.
+
+    Konstanta $C$ diperlukan karena turunan dari konstanta adalah nol.
+    """)
+
+    # =========================================================
+    # 2. HUBUNGAN INTEGRAL DAN TURUNAN
+    # =========================================================
+
+    st.header("2. Hubungan Integral dan Turunan")
+    st.markdown("Integral dan turunan memiliki hubungan yang sangat erat.")
+
+    st.latex(r"\frac{d}{dx}\left(\int f(x)\,dx\right)=f(x)")
+
+    st.markdown(r"Sebaliknya, jika $F'(x)=f(x)$ maka:")
+
+    st.latex(r"\int f(x)\,dx=F(x)+C")
+
+    st.info(r"""
+    **Inti konsep:**
+
+    Turunan → mencari laju perubahan.
+
+    Integral → mengembalikan fungsi dari laju perubahan tersebut.
+    """)
+
+    # =========================================================
+    # 3. ATURAN PANGKAT
+    # =========================================================
+
+    st.header("3. Aturan Pangkat")
+    st.markdown(r"Untuk $n\neq-1$, aturan dasar integral pangkat adalah:")
+
+    st.latex(r"\int x^n\,dx=\frac{x^{n+1}}{n+1}+C")
+
+    st.markdown("Contoh:")
+    st.latex(r"\int x^3\,dx=\frac{x^4}{4}+C")
+
+    # =========================================================
+    # 4. INTEGRAL KONSTANTA
+    # =========================================================
+
+    st.header("4. Integral Konstanta")
+
+    st.latex(r"\int c\,dx=cx+C")
+
+    st.markdown("Contoh:")
+    st.latex(r"\int 5\,dx=5x+C")
+
+    # =========================================================
+    # 5. INTEGRAL PENJUMLAHAN DAN PENGURANGAN
+    # =========================================================
+
+    st.header("5. Integral Penjumlahan dan Pengurangan")
+
+    st.latex(r"\int[f(x)+g(x)]\,dx=\int f(x)\,dx+\int g(x)\,dx")
+    st.latex(r"\int[f(x)-g(x)]\,dx=\int f(x)\,dx-\int g(x)\,dx")
+
+    st.markdown("Contoh:")
+    st.latex(r"\int(3x^2+4x-5)\,dx")
+    st.latex(r"x^3+2x^2-5x+C")
+
+    # =========================================================
+    # 6. INTEGRAL DENGAN KONSTANTA PENGALI
+    # =========================================================
+
+    st.header("6. Integral dengan Konstanta Pengali")
+
+    st.latex(r"\int c\,f(x)\,dx=c\int f(x)\,dx")
+
+    st.markdown("Contoh:")
+    st.latex(r"\int 6x^2\,dx=2x^3+C")
+
+    # =========================================================
+    # 7. INTEGRAL FUNGSI POLINOMIAL
+    # =========================================================
+
+    st.header("7. Integral Fungsi Polinomial")
+    st.markdown(r"""
+    Setiap suku pada polinomial dapat diintegralkan secara terpisah.
+    """)
+
+    st.latex(r"\int(4x^3-6x^2+2x-7)\,dx")
+    st.latex(r"x^4-2x^3+x^2-7x+C")
+
+    # =========================================================
+    # 8. KALKULATOR INTEGRAL POLINOMIAL
+    # =========================================================
+
+    st.header("8. Kalkulator Integral Polinomial")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        koef_i3 = st.number_input(
+            "Koefisien x³", value=2.0, key="integral_x3"
+        )
+        koef_i2 = st.number_input(
+            "Koefisien x²", value=3.0, key="integral_x2"
+        )
+
+    with col2:
+        koef_i = st.number_input(
+            "Koefisien x", value=4.0, key="integral_x"
+        )
+        konstanta_i = st.number_input(
+            "Konstanta", value=5.0, key="integral_const"
+        )
+
+    def format_polinomial(c3, c2, c1, c0):
+        """Format polinomial dengan tanda yang rapi."""
+        parts = []
+        if c3 != 0:
+            parts.append(f"{c3:g}x^3")
+        if c2 != 0:
+            sign = "+" if (c2 > 0 and parts) else ""
+            parts.append(f"{sign}{c2:g}x^2")
+        if c1 != 0:
+            sign = "+" if (c1 > 0 and parts) else ""
+            parts.append(f"{sign}{c1:g}x")
+        if c0 != 0:
+            sign = "+" if (c0 > 0 and parts) else ""
+            parts.append(f"{sign}{c0:g}")
+        return "".join(parts) if parts else "0"
+
+    st.markdown("Fungsi yang dimasukkan:")
+    st.latex(
+        rf"f(x)={format_polinomial(koef_i3, koef_i2, koef_i, konstanta_i)}"
+    )
+
+    st.markdown("Integral tak tentunya:")
+    st.latex(
+        rf"\int f(x)\,dx = "
+        rf"{koef_i3/4:g}x^4 + {koef_i2/3:g}x^3 + "
+        rf"{koef_i/2:g}x^2 + {konstanta_i:g}x + C"
+    )
+
+    # =========================================================
+    # 9. INTEGRAL TENTU
+    # =========================================================
+
+    st.header("9. Integral Tentu")
+    st.markdown("Integral tentu memiliki batas bawah dan batas atas.")
+
+    st.latex(r"\int_a^b f(x)\,dx")
+
+    st.markdown(r"""
+    Berbeda dengan integral tak tentu, integral tentu menghasilkan suatu
+    nilai tertentu.
+    """)
+
+    # =========================================================
+    # 10. TEOREMA DASAR KALKULUS
+    # =========================================================
+
+    st.header("10. Teorema Dasar Kalkulus")
+    st.markdown(r"Jika $F(x)$ merupakan antiturunan dari $f(x)$, maka:")
+
+    st.latex(r"\int_a^b f(x)\,dx=F(b)-F(a)")
+
+    st.markdown("Contoh:")
+    st.latex(r"\int_0^2 x^2\,dx")
+    st.latex(r"\left[\frac{x^3}{3}\right]_0^2")
+    st.latex(r"\frac{8}{3}")
+
+    st.info("Jadi, nilai integral tentu adalah $8/3$.")
+
+    # =========================================================
+    # 11. VISUALISASI INTEGRAL TENTU
+    # =========================================================
+
+    st.header("11. Visualisasi Integral Tentu")
+    st.markdown(r"""
+    Integral tentu dapat diinterpretasikan sebagai **luas bertanda**
+    di bawah kurva.
+    """)
+
+    x_vis = np.linspace(-0.5, 2.5, 400)
+    y_vis = x_vis**2
+
+    x_fill = np.linspace(0, 2, 200)
+    y_fill = x_fill**2
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_vis, y_vis, "b-", label=r"$f(x)=x^2$")
+    ax.fill_between(x_fill, y_fill, color="skyblue", alpha=0.5,
+                    label=r"$\int_0^2 x^2\,dx = 8/3$")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x")
+    ax.set_ylabel("f(x)")
+    ax.set_title(r"Luas di bawah $f(x)=x^2$ pada $[0,2]$")
+    ax.legend()
+    fig.tight_layout()
+    st.pyplot(fig, use_container_width=True)
+
+    # =========================================================
+    # 12. SIFAT-SIFAT INTEGRAL TENTU
+    # =========================================================
+
+    st.header("12. Sifat-Sifat Integral Tentu")
+
+    st.latex(r"\int_a^a f(x)\,dx=0")
+    st.latex(r"\int_a^b f(x)\,dx=-\int_b^a f(x)\,dx")
+    st.latex(
+        r"\int_a^b[f(x)+g(x)]\,dx=\int_a^b f(x)\,dx+\int_a^b g(x)\,dx"
+    )
+
+    # =========================================================
+    # 13. INTEGRAL FUNGSI EKSPONENSIAL
+    # =========================================================
+
+    st.header("13. Integral Fungsi Eksponensial")
+
+    st.latex(r"\int e^x\,dx=e^x+C")
+
+    st.markdown("Contoh:")
+    st.latex(r"\int 3e^x\,dx=3e^x+C")
+
+    st.markdown(r"Untuk bentuk $e^{u(x)}$:")
+
+    st.latex(r"\int e^{u(x)}\,u'(x)\,dx=e^{u(x)}+C")
+
+    # =========================================================
+    # 14. INTEGRAL FUNGSI TRIGONOMETRI
+    # =========================================================
+
+    st.header("14. Integral Fungsi Trigonometri")
+
+    st.latex(r"\int\cos x\,dx=\sin x+C")
+    st.latex(r"\int\sin x\,dx=-\cos x+C")
+
+    st.markdown("Contoh:")
+    st.latex(r"\int(3\cos x-2\sin x)\,dx")
+    st.latex(r"3\sin x+2\cos x+C")
+
+    # =========================================================
+    # 15. INTEGRAL SUBSTITUSI
+    # =========================================================
+
+    st.header("15. Integral Substitusi")
+    st.markdown(r"""
+    Metode substitusi digunakan ketika terdapat fungsi komposisi tertentu
+    yang sesuai dengan turunan bagian dalamnya.
+    """)
+
+    st.markdown("Contoh:")
+    st.latex(r"\int 2x(x^2+1)^3\,dx")
+
+    st.markdown("Misalkan:")
+    st.latex(r"u=x^2+1")
+    st.latex(r"du=2x\,dx")
+
+    st.markdown("Maka:")
+    st.latex(r"\int u^3\,du")
+    st.latex(r"\frac{u^4}{4}+C")
+
+    st.markdown(r"Kembalikan ke variabel $x$:")
+    st.latex(r"\frac{(x^2+1)^4}{4}+C")
+
+    # =========================================================
+    # 16. INTEGRAL PARSIAL
+    # =========================================================
+
+    st.header("16. Integral Parsial")
+    st.markdown(r"""
+    Integral parsial dapat digunakan untuk mengintegralkan hasil perkalian
+    dua fungsi.
+    """)
+
+    st.latex(r"\int u\,dv=uv-\int v\,du")
+
+    st.markdown("Contoh:")
+    st.latex(r"\int x e^x\,dx")
+
+    st.markdown("Ambil:")
+    st.latex(r"u=x,\quad dv=e^x\,dx")
+    st.latex(r"du=dx,\quad v=e^x")
+
+    st.latex(r"\int x e^x\,dx=x e^x-\int e^x\,dx")
+    st.latex(r"\int x e^x\,dx=x e^x-e^x+C")
+
+    # =========================================================
+    # 17. LUAS DAERAH DI BAWAH KURVA
+    # =========================================================
+
+    st.header("17. Luas Daerah di Bawah Kurva")
+    st.markdown(r"""
+    Jika fungsi bernilai tidak negatif pada interval $[a,b]$, luas daerah
+    di bawah kurva dapat dihitung menggunakan:
+    """)
+
+    st.latex(r"A=\int_a^b f(x)\,dx")
+
+    st.markdown("Contoh:")
+    st.latex(r"f(x)=x")
+    st.latex(r"A=\int_0^4 x\,dx")
+    st.latex(r"A=8")
+
+    st.info("Luas daerah di bawah garis $y=x$ dari $x=0$ sampai $x=4$ adalah $8$ satuan luas.")
+
+    # =========================================================
+    # 18. KALKULATOR LUAS
+    # =========================================================
+
+    st.header("18. Kalkulator Luas")
+
+    batas_bawah_integral = st.number_input(
+        "Batas bawah a", value=0.0, key="integral_lower"
+    )
+    batas_atas_integral = st.number_input(
+        "Batas atas b", value=4.0, key="integral_upper"
+    )
+
+    if batas_bawah_integral < batas_atas_integral:
+        luas_linear = (
+            batas_atas_integral**2 / 2
+            - batas_bawah_integral**2 / 2
+        )
+
+        st.latex(r"\int_a^b x\,dx=\frac{b^2-a^2}{2}")
+
+        st.info(f"Nilai integral = {luas_linear:.4f}")
+    else:
+        st.warning("Batas atas harus lebih besar daripada batas bawah.")
+
+    # =========================================================
+    # 19. LUAS ANTARA DUA KURVA
+    # =========================================================
+
+    st.header("19. Luas Antara Dua Kurva")
+    st.markdown(r"""
+    Jika terdapat dua fungsi $f(x)$ dan $g(x)$ dengan $f(x)\geq g(x)$,
+    luas daerah di antara kedua kurva adalah:
+    """)
+
+    st.latex(r"A=\int_a^b[f(x)-g(x)]\,dx")
+
+    st.markdown("Contoh:")
+    st.latex(r"f(x)=x+2")
+    st.latex(r"g(x)=x")
+    st.latex(r"A=\int_0^3[(x+2)-x]\,dx")
+    st.latex(r"A=6")
+
+    # =========================================================
+    # 20. VOLUME BENDA PUTAR
+    # =========================================================
+
+    st.header("20. Volume Benda Putar")
+    st.markdown(r"""
+    Integral juga dapat digunakan untuk menentukan volume benda yang
+    diperoleh dari pemutaran suatu daerah terhadap sumbu.
+
+    **Metode cakram:**
+    """)
+
+    st.latex(r"V=\pi\int_a^b[f(x)]^2\,dx")
+
+    st.markdown(r"""
+    Rumus tersebut digunakan jika daerah diputar terhadap sumbu-$x$ dan
+    fungsi berada di atas sumbu tersebut.
+    """)
+
+    st.markdown(r"""
+    **Contoh:** Daerah di bawah kurva $y=x$ dari $x=0$ sampai $x=2$
+    diputar terhadap sumbu-$x$.
+    """)
+
+    st.latex(r"V=\pi\int_0^2 x^2\,dx")
+    st.latex(r"V=\frac{8\pi}{3}")
+
+    st.info(r"Volume benda putar adalah $8\pi/3$ satuan volume.")
+
+    # =========================================================
+    # 21. HUBUNGAN INTEGRAL DENGAN LUAS
+    # =========================================================
+
+    st.header("21. Hubungan Integral dengan Luas")
+    st.markdown(r"""
+    Integral tentu tidak selalu menghasilkan luas geometris positif.
+    Integral menghasilkan **luas bertanda**.
+
+    Daerah di atas sumbu-$x$ memberikan kontribusi positif, sedangkan
+    daerah di bawah sumbu-$x$ memberikan kontribusi negatif.
+    """)
+
+    st.latex(r"\int_a^b f(x)\,dx")
+
+    # =========================================================
+    # 22. INTEGRAL NUMERIK
+    # =========================================================
+
+    st.header("22. Integral Numerik")
+    st.markdown(r"""
+    Tidak semua integral mudah diselesaikan secara analitik.
+
+    Salah satu pendekatan numerik adalah menggunakan metode trapesium.
+    """)
+
+    st.latex(
+        r"\int_a^b f(x)\,dx \approx "
+        r"\sum_{i=1}^{n} \frac{f(x_{i-1})+f(x_i)}{2}\,\Delta x"
+    )
+
+    jumlah_subinterval = st.slider(
+        "Jumlah subinterval",
+        min_value=2,
+        max_value=100,
+        value=10,
+        key="integral_trapezoid_n"
+    )
+
+    a_num = st.number_input(
+        "Batas bawah numerik", value=0.0, key="integral_num_a"
+    )
+    b_num = st.number_input(
+        "Batas atas numerik", value=2.0, key="integral_num_b"
+    )
+
+    if a_num < b_num:
+        x_num = np.linspace(a_num, b_num, jumlah_subinterval + 1)
+        y_num = x_num**2
+
+        try:
+            nilai_trapesium = np.trapezoid(y_num, x_num)
+        except AttributeError:
+            nilai_trapesium = np.trapz(y_num, x_num)
+
+        st.info(
+            f"Pendekatan integral ∫x² dx = {nilai_trapesium:.6f} "
+            f"(nilai eksak = {b_num**3/3 - a_num**3/3:.6f})"
+        )
+    else:
+        st.warning("Batas atas harus lebih besar daripada batas bawah.")
+
+    # =========================================================
+    # 23. TEOREMA DASAR KALKULUS (BAGIAN 2)
+    # =========================================================
+
+    st.header("23. Teorema Dasar Kalkulus (Bagian 2)")
+    st.markdown(r"""
+    Teorema Dasar Kalkulus menghubungkan integral dan turunan.
+
+    Jika:
+    """)
+
+    st.latex(r"F(x)=\int_a^x f(t)\,dt")
+
+    st.markdown("maka:")
+
+    st.latex(r"F'(x)=f(x)")
+
+    st.info(r"""
+    Konsep ini menunjukkan bahwa diferensiasi dan integrasi merupakan
+    proses yang saling berkaitan.
+    """)
+
+    # =========================================================
+    # 24. PENERAPAN INTEGRAL DALAM KEHIDUPAN
+    # =========================================================
+
+    st.header("24. Penerapan Integral dalam Kehidupan")
+    st.markdown(r"""
+    Integral dapat digunakan dalam berbagai bidang, antara lain:
+
+    - menghitung jarak dari kecepatan,
+    - menghitung perpindahan,
+    - menghitung luas,
+    - menghitung volume,
+    - menghitung akumulasi,
+    - analisis ekonomi,
+    - fisika,
+    - teknik,
+    - pemodelan matematika.
+    """)
+
+    # =========================================================
+    # 25. STUDI KASUS: JARAK DARI KECEPATAN
+    # =========================================================
+
+    st.header("🌍 Studi Kasus: Jarak dari Kecepatan")
+    st.markdown("Misalkan kecepatan suatu benda adalah:")
+
+    st.latex(r"v(t)=2t+3")
+
+    st.markdown(r"Jarak yang ditempuh dari $t=0$ sampai $t=5$:")
+
+    st.latex(r"s=\int_0^5(2t+3)\,dt")
+    st.latex(r"s=[t^2+3t]_0^5")
+    st.latex(r"s=40")
+
+    st.info("Jarak yang ditempuh adalah $40$ satuan panjang.")
+
+    # =========================================================
+    # 26. VISUALISASI FUNGSI DAN LUAS
+    # =========================================================
+
+    st.header("26. Visualisasi Fungsi dan Luas")
+
+    x_area = np.linspace(0, 4, 300)
+    y_area = x_area  # f(x) = x
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_area, y_area, "b-", label=r"$f(x)=x$")
+    ax.fill_between(x_area, y_area, color="skyblue", alpha=0.5,
+                    label=r"$\int_0^4 x\,dx = 8$")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x")
+    ax.set_ylabel("f(x)")
+    ax.set_title(r"Luas di bawah $f(x)=x$ pada $[0,4]$")
+    ax.legend()
+    fig.tight_layout()
+    st.pyplot(fig, use_container_width=True)
+
+    st.markdown(r"""
+    Grafik tersebut menunjukkan fungsi $f(x)=x$. Integral pada interval
+    tertentu memberikan luas bertanda di bawah grafik.
+    """)
+
+    # =========================================================
+    # 27. PERBANDINGAN TURUNAN DAN INTEGRAL
+    # =========================================================
+
+    st.header("27. Perbandingan Turunan dan Integral")
+
+    df_perbandingan_integral = pd.DataFrame({
+        "Konsep": [
+            "Turunan",
+            "Integral tak tentu",
+            "Integral tentu"
+        ],
+        "Makna": [
+            "Laju perubahan",
+            "Antiturunan",
+            "Akumulasi atau luas bertanda"
+        ],
+        "Contoh penerapan": [
+            "Kecepatan dan percepatan",
+            "Mencari fungsi asal",
+            "Luas dan volume"
+        ]
+    })
+
+    st.dataframe(
+        df_perbandingan_integral,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 28. LATIHAN
+    # =========================================================
+
+    st.header("📝 Latihan")
+
+    st.markdown(r"""
+    **Soal 1** — Tentukan:
+    """)
+    st.latex(r"\int(3x^2+4x-5)\,dx")
+
+    st.markdown(r"""
+    **Soal 2** — Tentukan:
+    """)
+    st.latex(r"\int_0^2 x^2\,dx")
+
+    st.markdown(r"""
+    **Soal 3** — Tentukan:
+    """)
+    st.latex(r"\int 2x(x^2+1)^3\,dx")
+
+    st.markdown(r"""
+    **Soal 4** — Tentukan:
+    """)
+    st.latex(r"\int x e^x\,dx")
+
+    st.markdown(r"""
+    **Soal 5** — Tentukan luas daerah di bawah $y=x$ pada interval
+    $[0,4]$.
+    """)
+
+    st.markdown(r"""
+    **Soal 6** — Tentukan volume benda putar daerah di bawah $y=x$ dari
+    $x=0$ sampai $x=2$ terhadap sumbu-$x$.
+    """)
+
+    st.markdown(r"""
+    **Soal 7** — Jika kecepatan benda dinyatakan $v(t)=3t^2$, tentukan
+    jarak yang ditempuh dari $t=0$ sampai $t=2$.
+    """)
+
+    # =========================================================
+    # 29. KUIS
+    # =========================================================
+
+    st.header("🎯 Kuis")
+
+    jawaban_integral = st.radio(
+        "Hasil dari ∫ 2x dx adalah:",
+        ["x + C", "x² + C", "2x² + C", "2x + C"],
+        key="quiz_integral"
+    )
+
+    if st.button("Periksa Jawaban", key="cek_quiz_integral"):
+        if jawaban_integral == "x² + C":
+            st.success("✅ Benar. ∫2x dx = x² + C.")
+        else:
+            st.error("❌ Belum tepat. Gunakan aturan ∫xⁿ dx = xⁿ⁺¹/(n+1) + C.")
+
+    # =========================================================
+    # 30. REFLEKSI
+    # =========================================================
+
+    st.header("💭 Refleksi")
+    st.markdown(r"""
+    Setelah mempelajari integral, coba jelaskan:
+
+    1. Apa yang dimaksud dengan integral?
+    2. Apa hubungan antara integral dan turunan?
+    3. Mengapa integral tak tentu memiliki konstanta $C$?
+    4. Apa perbedaan integral tak tentu dan integral tentu?
+    5. Apa makna geometris integral tentu?
+    6. Kapan metode substitusi digunakan?
+    7. Kapan integral parsial digunakan?
+    8. Bagaimana integral digunakan untuk menghitung luas?
+    9. Bagaimana integral digunakan untuk menghitung volume?
+    10. Bagaimana integral dapat digunakan untuk menentukan jarak dari
+        fungsi kecepatan?
+    """)
+
+    # =========================================================
+    # 31. RANGKUMAN
+    # =========================================================
+
+    st.header("📌 Rangkuman")
+    st.markdown(r"""
+    **Integral** merupakan konsep yang berkaitan dengan antiturunan dan
+    akumulasi.
+
+    Konsep penting:
+
+    - Integral tak tentu menghasilkan keluarga antiturunan.
+    - Konstanta $C$ diperlukan pada integral tak tentu.
+    - Integral tentu menghasilkan nilai tertentu.
+    - Teorema Dasar Kalkulus menghubungkan integral dan turunan.
+    - Integral tentu dapat digunakan untuk menghitung luas bertanda.
+    - Integral dapat digunakan untuk menghitung luas antara dua kurva.
+    - Integral dapat digunakan untuk menghitung volume benda putar.
+    - Substitusi digunakan untuk integral fungsi komposisi tertentu.
+    - Integral parsial digunakan antara lain untuk hasil kali fungsi.
+    - Integral dapat digunakan untuk menghitung jarak dari fungsi
+      kecepatan.
+    - Integral merupakan konsep penting dalam matematika, fisika,
+      teknik, ekonomi, dan pemodelan.
+    """)
+
+    st.success("🎉 Materi Integral selesai dipelajari.")
+
+
 def turunan():
     st.markdown(
         '<div class="content-title">📕 Turunan dan Penerapannya</div>',
@@ -6181,6 +6900,6 @@ def tampilkan(materi):
         turunan()
         #pass
 
-    elif materi == "Integral (Tambahan)":
-        #integral()
-        pass
+    elif materi == "Integral":
+        integral()
+        #pass
