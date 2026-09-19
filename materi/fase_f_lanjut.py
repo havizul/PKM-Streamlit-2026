@@ -5,6 +5,656 @@ import math
 
 from textwrap import dedent
 
+    
+
+def matriks():
+    st.markdown('<div class="content-title">📕 Matriks</div>', unsafe_allow_html=True)
+
+    # =========================================================
+    # TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.header("🎯 Tujuan Pembelajaran")
+
+    st.markdown("""
+    Setelah mempelajari materi ini, siswa diharapkan mampu:
+
+    - Menjelaskan pengertian dan notasi matriks.
+    - Menentukan ordo, elemen, baris, dan kolom matriks.
+    - Menentukan kesamaan dua matriks.
+    - Melakukan operasi penjumlahan dan pengurangan matriks.
+    - Melakukan perkalian matriks dengan skalar.
+    - Melakukan perkalian dua matriks.
+    - Menentukan transpose matriks.
+    - Menentukan determinan matriks.
+    - Menentukan invers matriks.
+    - Menggunakan matriks untuk menyelesaikan sistem persamaan linear.
+    - Menerapkan matriks dalam masalah kontekstual.
+    """)
+
+    # =========================================================
+    # APERSEPSI
+    # =========================================================
+
+    st.header("💡 Apersepsi")
+
+    st.markdown("""
+    Dalam kehidupan sehari-hari kita sering menemukan data yang tersusun
+    dalam bentuk baris dan kolom, misalnya data nilai siswa, harga barang,
+    jumlah produksi, dan data penjualan.
+
+    Data tersebut dapat disajikan secara sistematis menggunakan **matriks**.
+    """)
+
+    st.latex(r"A=\begin{pmatrix}2&4&6\\1&3&5\\7&8&9\end{pmatrix}")
+
+    st.markdown("""
+    Matriks memungkinkan data tersebut diolah menggunakan operasi matematika.
+    """)
+
+    # =========================================================
+    # 1. PENGERTIAN MATRIKS
+    # =========================================================
+
+    st.header("1️⃣ Pengertian Matriks")
+
+    st.markdown("""
+    **Matriks** adalah susunan bilangan atau elemen yang disusun dalam
+    baris dan kolom serta ditulis dalam tanda kurung.
+    """)
+
+    st.latex(r"A=\begin{pmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{pmatrix}")
+
+    st.markdown("""
+    Elemen $a_{ij}$ menunjukkan elemen pada:
+
+    - baris ke-$i$
+    - kolom ke-$j$
+    """)
+
+    # =========================================================
+    # 2. ORDO MATRIKS
+    # =========================================================
+
+    st.header("2️⃣ Ordo Matriks")
+
+    st.markdown(r"""
+    Ordo matriks menunjukkan banyaknya baris dan kolom.
+
+    Jika matriks memiliki $m$ baris dan $n$ kolom, maka ordonya adalah
+    $m \times n$.
+    """)
+
+    st.latex(r"A=\begin{pmatrix}2&4&6\\1&3&5\end{pmatrix}")
+
+    st.markdown(r"""
+    Matriks tersebut mempunyai:
+
+    - 2 baris
+    - 3 kolom
+    - Ordo $2\times3$
+    """)
+
+    # =========================================================
+    # 3. EKSPLORASI ORDO
+    # =========================================================
+
+    st.header("🔎 Eksplorasi Ordo Matriks")
+
+    baris = st.number_input(
+        "Jumlah baris",
+        min_value=1,
+        max_value=6,
+        value=2,
+        step=1,
+        key="mat_baris"
+    )
+
+    kolom = st.number_input(
+        "Jumlah kolom",
+        min_value=1,
+        max_value=6,
+        value=3,
+        step=1,
+        key="mat_kolom"
+    )
+
+    data = np.arange(1, baris * kolom + 1).reshape(baris, kolom)
+
+    df_matriks = pd.DataFrame(
+        data,
+        index=[f"Baris {i+1}" for i in range(baris)],
+        columns=[f"Kolom {j+1}" for j in range(kolom)]
+    )
+
+    st.dataframe(df_matriks, use_container_width=True)
+
+    st.info(f"Ordo matriks adalah {baris} × {kolom}.")
+
+    # =========================================================
+    # 4. JENIS-JENIS MATRIKS
+    # =========================================================
+
+    st.header("3️⃣ Jenis-Jenis Matriks")
+
+    st.markdown("""
+    Beberapa jenis matriks yang penting:
+
+    - **Matriks baris** → hanya memiliki satu baris.
+    - **Matriks kolom** → hanya memiliki satu kolom.
+    - **Matriks persegi** → jumlah baris sama dengan jumlah kolom.
+    - **Matriks nol** → semua elemennya nol.
+    - **Matriks diagonal** → elemen di luar diagonal utama bernilai nol.
+    - **Matriks identitas** → diagonal utama bernilai 1 dan elemen lainnya 0.
+    """)
+
+    st.latex(r"I_3=\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}")
+
+    # =========================================================
+    # 5. KESAMAAN MATRIKS
+    # =========================================================
+
+    st.header("4️⃣ Kesamaan Dua Matriks")
+
+    st.markdown("""
+    Dua matriks dikatakan sama jika:
+
+    1. Mempunyai ordo yang sama.
+    2. Setiap elemen yang bersesuaian mempunyai nilai yang sama.
+    """)
+
+    st.latex(r"A=B\iff a_{ij}=b_{ij}")
+
+    # =========================================================
+    # 6. PENJUMLAHAN DAN PENGURANGAN
+    # =========================================================
+
+    st.header("5️⃣ Penjumlahan dan Pengurangan Matriks")
+
+    st.markdown("""
+    Dua matriks hanya dapat dijumlahkan atau dikurangkan jika mempunyai
+    ordo yang sama.
+    """)
+
+    st.latex(r"A=\begin{pmatrix}1&2\\3&4\end{pmatrix}")
+
+    st.latex(r"B=\begin{pmatrix}5&6\\7&8\end{pmatrix}")
+
+    st.markdown("Maka:")
+
+    st.latex(r"A+B=\begin{pmatrix}6&8\\10&12\end{pmatrix}")
+
+    st.latex(r"A-B=\begin{pmatrix}-4&-4\\-4&-4\end{pmatrix}")
+
+    # =========================================================
+    # 7. PERKALIAN SKALAR
+    # =========================================================
+
+    st.header("6️⃣ Perkalian Matriks dengan Skalar")
+
+    st.markdown("""
+    Setiap elemen matriks dikalikan dengan bilangan skalar tersebut.
+    """)
+
+    st.latex(r"3A=3\begin{pmatrix}1&2\\3&4\end{pmatrix}")
+
+    st.latex(r"3A=\begin{pmatrix}3&6\\9&12\end{pmatrix}")
+
+    # =========================================================
+    # 8. PERKALIAN MATRIKS
+    # =========================================================
+
+    st.header("7️⃣ Perkalian Dua Matriks")
+
+    st.markdown(r"""
+    Matriks $A$ berordo $m\times n$ dapat dikalikan dengan matriks $B$
+    berordo $n\times p$.
+
+    Hasil perkalian akan mempunyai ordo $m\times p$.
+    """)
+
+    st.latex(r"A_{m\times n}B_{n\times p}=C_{m\times p}")
+
+    st.markdown("Contoh:")
+
+    st.latex(r"A=\begin{pmatrix}1&2\\3&4\end{pmatrix}")
+
+    st.latex(r"B=\begin{pmatrix}5&6\\7&8\end{pmatrix}")
+
+    st.latex(r"AB=\begin{pmatrix}19&22\\43&50\end{pmatrix}")
+
+    # =========================================================
+    # 9. SIFAT PERKALIAN
+    # =========================================================
+
+    st.header("8️⃣ Sifat Perkalian Matriks")
+
+    st.markdown("""
+    Berbeda dengan perkalian bilangan biasa, pada umumnya perkalian matriks
+    tidak bersifat komutatif.
+    """)
+
+    st.latex(r"AB\neq BA")
+
+    st.markdown("""
+    Namun, perkalian matriks tetap memenuhi sifat asosiatif:
+    """)
+
+    st.latex(r"(AB)C=A(BC)")
+
+    # =========================================================
+    # 10. TRANSPOSE
+    # =========================================================
+
+    st.header("9️⃣ Transpose Matriks")
+
+    st.markdown("""
+    Transpose matriks diperoleh dengan menukar baris menjadi kolom dan
+    kolom menjadi baris.
+    """)
+
+    st.latex(r"A=\begin{pmatrix}1&2&3\\4&5&6\end{pmatrix}")
+
+    st.latex(r"A^T=\begin{pmatrix}1&4\\2&5\\3&6\end{pmatrix}")
+
+    st.markdown("Sifat penting:")
+
+    st.latex(r"(A^T)^T=A")
+
+    # =========================================================
+    # 11. DETERMINAN
+    # =========================================================
+
+    st.header("🔟 Determinan Matriks")
+
+    st.markdown(r"""
+    Untuk matriks persegi berordo $2\times2$:
+    """)
+
+    st.latex(r"A=\begin{pmatrix}a&b\\c&d\end{pmatrix}")
+
+    st.latex(r"\det(A)=ad-bc")
+
+    st.markdown("Contoh:")
+
+    st.latex(r"A=\begin{pmatrix}3&2\\1&4\end{pmatrix}")
+
+    st.latex(r"\det(A)=(3)(4)-(2)(1)=10")
+
+    # =========================================================
+    # 12. KALKULATOR DETERMINAN
+    # =========================================================
+
+    st.header("🧮 Kalkulator Determinan")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        a11 = st.number_input("a₁₁", value=3.0, key="det_a11")
+        a21 = st.number_input("a₂₁", value=1.0, key="det_a21")
+
+    with col2:
+        a12 = st.number_input("a₁₂", value=2.0, key="det_a12")
+        a22 = st.number_input("a₂₂", value=4.0, key="det_a22")
+
+    det = a11 * a22 - a12 * a21
+
+    st.latex(
+        rf"\det(A)=({a11:g})({a22:g})-({a12:g})({a21:g})={det:g}"
+    )
+
+    if det == 0:
+        st.warning("Determinan = 0. Matriks tidak mempunyai invers.")
+    else:
+        st.success("Determinan ≠ 0. Matriks mempunyai invers.")
+
+    # =========================================================
+    # 13. INVERS
+    # =========================================================
+
+    st.header("1️⃣1️⃣ Invers Matriks")
+
+    st.markdown(r"""
+    Jika:
+
+    $$A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$
+
+    dan $\det(A)\neq0$, maka:
+    """)
+
+    st.latex(r"A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}")
+
+    st.markdown("Contoh:")
+
+    st.latex(r"A=\begin{pmatrix}2&1\\1&1\end{pmatrix}")
+
+    st.latex(r"\det(A)=1")
+
+    st.latex(r"A^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}")
+
+    # =========================================================
+    # 14. VERIFIKASI INVERS
+    # =========================================================
+
+    st.header("🔍 Verifikasi Invers")
+
+    st.markdown("""
+    Suatu matriks $A^{-1}$ merupakan invers dari $A$ jika hasil perkaliannya
+    dengan $A$ menghasilkan matriks identitas.
+    """)
+
+    st.latex(r"AA^{-1}=A^{-1}A=I")
+
+    # =========================================================
+    # 15. SPL DENGAN MATRIKS
+    # =========================================================
+
+    st.header("1️⃣2️⃣ Sistem Persamaan Linear")
+
+    st.markdown("""
+    Sistem persamaan linear dapat ditulis dalam bentuk matriks:
+    """)
+
+    st.latex(r"AX=B")
+
+    st.markdown("""
+    Misalnya:
+    """)
+
+    st.latex(r"2x+y=5")
+
+    st.latex(r"x+y=3")
+
+    st.markdown("Dapat ditulis sebagai:")
+
+    st.latex(r"\begin{pmatrix}2&1\\1&1\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}5\\3\end{pmatrix}")
+
+    st.markdown("Jika $A$ mempunyai invers, maka:")
+
+    st.latex(r"X=A^{-1}B")
+
+    # =========================================================
+    # 16. KALKULATOR SPL
+    # =========================================================
+
+    st.header("🧮 Kalkulator SPL 2 Variabel")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        p = st.number_input("Koefisien x persamaan 1", value=2.0, key="spl_p")
+        q = st.number_input("Koefisien y persamaan 1", value=1.0, key="spl_q")
+        r = st.number_input("Konstanta persamaan 1", value=5.0, key="spl_r")
+
+    with col2:
+        s = st.number_input("Koefisien x persamaan 2", value=1.0, key="spl_s")
+        t = st.number_input("Koefisien y persamaan 2", value=1.0, key="spl_t")
+        u = st.number_input("Konstanta persamaan 2", value=3.0, key="spl_u")
+
+    det_spl = p * t - q * s
+
+    if det_spl != 0:
+
+        x_sol = (r * t - q * u) / det_spl
+        y_sol = (p * u - r * s) / det_spl
+
+        st.success(
+            f"Solusi: x = {x_sol:.4f}, y = {y_sol:.4f}"
+        )
+
+    else:
+        st.warning(
+            "Determinan = 0. Sistem tidak mempunyai solusi tunggal."
+        )
+
+    # =========================================================
+    # 17. MATRIKS DAN TRANSFORMASI GEOMETRI
+    # =========================================================
+
+    st.header("1️⃣3️⃣ Matriks dalam Transformasi Geometri")
+
+    st.markdown("""
+    Matriks dapat digunakan untuk merepresentasikan transformasi titik
+    pada bidang koordinat.
+    """)
+
+    st.markdown("Misalnya rotasi $90^\\circ$ berlawanan arah jarum jam:")
+
+    st.latex(r"R=\begin{pmatrix}0&-1\\1&0\end{pmatrix}")
+
+    st.markdown("Jika titik $P(x,y)$ ditulis sebagai vektor:")
+
+    st.latex(r"P=\begin{pmatrix}x\\y\end{pmatrix}")
+
+    st.markdown("Maka hasil rotasi diperoleh dari:")
+
+    st.latex(r"P'=RP")
+
+    # =========================================================
+    # 18. EKSPLORASI TRANSFORMASI
+    # =========================================================
+
+    st.header("🔬 Eksplorasi Transformasi Matriks")
+
+    x_p = st.number_input(
+        "Koordinat x",
+        value=2.0,
+        key="transform_x"
+    )
+
+    y_p = st.number_input(
+        "Koordinat y",
+        value=1.0,
+        key="transform_y"
+    )
+
+    transformasi = st.selectbox(
+        "Pilih transformasi",
+        [
+            "Identitas",
+            "Rotasi 90° berlawanan arah jarum jam",
+            "Refleksi terhadap sumbu-X",
+            "Refleksi terhadap sumbu-Y"
+        ],
+        key="transformasi_matriks"
+    )
+
+    if transformasi == "Identitas":
+        xp = x_p
+        yp = y_p
+
+    elif transformasi == "Rotasi 90° berlawanan arah jarum jam":
+        xp = -y_p
+        yp = x_p
+
+    elif transformasi == "Refleksi terhadap sumbu-X":
+        xp = x_p
+        yp = -y_p
+
+    else:
+        xp = -x_p
+        yp = y_p
+
+    st.success(
+        f"Hasil transformasi: P'({xp:g}, {yp:g})"
+    )
+
+    # =========================================================
+    # 19. APLIKASI KONTEKSTUAL
+    # =========================================================
+
+    st.header("🌍 Penerapan Matriks")
+
+    st.markdown("""
+    Matriks digunakan dalam berbagai bidang, antara lain:
+
+    - Sistem persamaan linear.
+    - Grafika komputer.
+    - Transformasi gambar.
+    - Pengolahan citra.
+    - Statistik.
+    - Ekonomi.
+    - Teknik.
+    - Pemodelan matematika.
+    - Machine learning dan artificial intelligence.
+    """)
+
+    # =========================================================
+    # 20. KASUS KONTEKSTUAL
+    # =========================================================
+
+    st.header("📊 Studi Kasus")
+
+    st.markdown("""
+    Sebuah toko menjual dua jenis produk, yaitu Produk A dan Produk B.
+
+    Penjualan pada dua hari dicatat dalam matriks:
+    """)
+
+    st.latex(r"Q=\begin{pmatrix}20&15\\30&25\end{pmatrix}")
+
+    st.markdown("""
+    Baris menunjukkan hari dan kolom menunjukkan jenis produk.
+
+    Jika harga produk adalah:
+    """)
+
+    st.latex(r"H=\begin{pmatrix}10000\\15000\end{pmatrix}")
+
+    st.markdown("Maka total pendapatan setiap hari dapat dihitung dengan perkalian matriks:")
+
+    st.latex(r"QH")
+
+    st.markdown("""
+    Dengan demikian, matriks dapat digunakan untuk mengolah data penjualan
+    secara sistematis.
+    """)
+
+    # =========================================================
+    # 21. LATIHAN
+    # =========================================================
+
+    st.header("📝 Latihan")
+
+    st.markdown(r"""
+    **Soal 1**
+
+    Tentukan ordo matriks:
+
+    $$A=\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix}$$
+    """)
+
+    st.markdown(r"""
+    **Soal 2**
+
+    Tentukan hasil:
+
+    $$\begin{pmatrix}1&2\\3&4\end{pmatrix}+\begin{pmatrix}5&6\\7&8\end{pmatrix}$$
+    """)
+
+    st.markdown(r"""
+    **Soal 3**
+
+    Tentukan determinan:
+
+    $$A=\begin{pmatrix}4&2\\3&5\end{pmatrix}$$
+    """)
+
+    st.markdown(r"""
+    **Soal 4**
+
+    Tentukan invers:
+
+    $$A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$$
+    """)
+
+    st.markdown(r"""
+    **Soal 5**
+
+    Tentukan solusi sistem:
+
+    $$2x+y=5$$
+
+    $$x+y=3$$
+    """)
+
+    # =========================================================
+    # 22. KUIS
+    # =========================================================
+
+    st.header("🎯 Kuis")
+
+    soal_matriks = st.radio(
+        "Jika A = [[2,1],[1,1]], maka determinan A adalah:",
+        [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        key="quiz_matriks"
+    )
+
+    if st.button(
+        "Periksa Jawaban",
+        key="cek_quiz_matriks"
+    ):
+
+        if soal_matriks == "1":
+            st.success(
+                "✅ Benar. det(A) = (2)(1) − (1)(1) = 1."
+            )
+        else:
+            st.error(
+                "❌ Belum tepat. Gunakan rumus det(A) = ad − bc."
+            )
+
+    # =========================================================
+    # 23. REFLEKSI
+    # =========================================================
+
+    st.header("💭 Refleksi")
+
+    st.markdown(r"""
+    Setelah mempelajari matriks, coba jelaskan:
+
+    1. Apa yang dimaksud dengan ordo matriks?
+    2. Kapan dua matriks dapat dijumlahkan?
+    3. Bagaimana menentukan hasil perkalian dua matriks?
+    4. Apa fungsi transpose matriks?
+    5. Bagaimana menentukan determinan matriks $2\times2$?
+    6. Kapan sebuah matriks mempunyai invers?
+    7. Bagaimana matriks digunakan untuk menyelesaikan SPL?
+    8. Bagaimana matriks digunakan dalam transformasi geometri?
+    """)
+
+    # =========================================================
+    # 24. RANGKUMAN
+    # =========================================================
+
+    st.header("📌 Rangkuman")
+
+    st.markdown("""
+    **Matriks** merupakan susunan elemen dalam baris dan kolom.
+
+    Konsep penting:
+
+    - Ordo matriks menunjukkan jumlah baris dan kolom.
+    - Matriks dapat dijumlahkan jika memiliki ordo yang sama.
+    - Perkalian matriks memiliki syarat kesesuaian dimensi.
+    - Transpose menukar baris menjadi kolom.
+    - Determinan digunakan untuk mengetahui sifat matriks persegi.
+    - Matriks memiliki invers jika determinannya tidak sama dengan nol.
+    - Matriks dapat digunakan untuk menyelesaikan sistem persamaan linear.
+    - Matriks dapat digunakan untuk merepresentasikan transformasi geometri.
+    - Matriks banyak digunakan dalam matematika, statistik, ekonomi, teknik,
+      grafika komputer, dan machine learning.
+    """)
+
+    st.success("🎉 Materi Matriks selesai dipelajari.")
+
+
+
 def transformasi_geometri():
 
     st.markdown(
@@ -760,654 +1410,13 @@ def transformasi_geometri():
     """)
 
     st.success("🎉 Materi Transformasi Geometri selesai dipelajari.")
-    
 
-def matriks():
-    st.markdown('<div class="content-title">📕 Matriks</div>', unsafe_allow_html=True)
 
-    # =========================================================
-    # TUJUAN PEMBELAJARAN
-    # =========================================================
 
-    st.header("🎯 Tujuan Pembelajaran")
 
-    st.markdown("""
-    Setelah mempelajari materi ini, siswa diharapkan mampu:
 
-    - Menjelaskan pengertian dan notasi matriks.
-    - Menentukan ordo, elemen, baris, dan kolom matriks.
-    - Menentukan kesamaan dua matriks.
-    - Melakukan operasi penjumlahan dan pengurangan matriks.
-    - Melakukan perkalian matriks dengan skalar.
-    - Melakukan perkalian dua matriks.
-    - Menentukan transpose matriks.
-    - Menentukan determinan matriks.
-    - Menentukan invers matriks.
-    - Menggunakan matriks untuk menyelesaikan sistem persamaan linear.
-    - Menerapkan matriks dalam masalah kontekstual.
-    """)
 
-    # =========================================================
-    # APERSEPSI
-    # =========================================================
 
-    st.header("💡 Apersepsi")
-
-    st.markdown("""
-    Dalam kehidupan sehari-hari kita sering menemukan data yang tersusun
-    dalam bentuk baris dan kolom, misalnya data nilai siswa, harga barang,
-    jumlah produksi, dan data penjualan.
-
-    Data tersebut dapat disajikan secara sistematis menggunakan **matriks**.
-    """)
-
-    st.latex(r"A=\begin{pmatrix}2&4&6\\1&3&5\\7&8&9\end{pmatrix}")
-
-    st.markdown("""
-    Matriks memungkinkan data tersebut diolah menggunakan operasi matematika.
-    """)
-
-    # =========================================================
-    # 1. PENGERTIAN MATRIKS
-    # =========================================================
-
-    st.header("1️⃣ Pengertian Matriks")
-
-    st.markdown("""
-    **Matriks** adalah susunan bilangan atau elemen yang disusun dalam
-    baris dan kolom serta ditulis dalam tanda kurung.
-    """)
-
-    st.latex(r"A=\begin{pmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{pmatrix}")
-
-    st.markdown("""
-    Elemen $a_{ij}$ menunjukkan elemen pada:
-
-    - baris ke-$i$
-    - kolom ke-$j$
-    """)
-
-    # =========================================================
-    # 2. ORDO MATRIKS
-    # =========================================================
-
-    st.header("2️⃣ Ordo Matriks")
-
-    st.markdown(r"""
-    Ordo matriks menunjukkan banyaknya baris dan kolom.
-
-    Jika matriks memiliki $m$ baris dan $n$ kolom, maka ordonya adalah
-    $m \times n$.
-    """)
-
-    st.latex(r"A=\begin{pmatrix}2&4&6\\1&3&5\end{pmatrix}")
-
-    st.markdown(r"""
-    Matriks tersebut mempunyai:
-
-    - 2 baris
-    - 3 kolom
-    - Ordo $2\times3$
-    """)
-
-    # =========================================================
-    # 3. EKSPLORASI ORDO
-    # =========================================================
-
-    st.header("🔎 Eksplorasi Ordo Matriks")
-
-    baris = st.number_input(
-        "Jumlah baris",
-        min_value=1,
-        max_value=6,
-        value=2,
-        step=1,
-        key="mat_baris"
-    )
-
-    kolom = st.number_input(
-        "Jumlah kolom",
-        min_value=1,
-        max_value=6,
-        value=3,
-        step=1,
-        key="mat_kolom"
-    )
-
-    data = np.arange(1, baris * kolom + 1).reshape(baris, kolom)
-
-    df_matriks = pd.DataFrame(
-        data,
-        index=[f"Baris {i+1}" for i in range(baris)],
-        columns=[f"Kolom {j+1}" for j in range(kolom)]
-    )
-
-    st.dataframe(df_matriks, use_container_width=True)
-
-    st.info(f"Ordo matriks adalah {baris} × {kolom}.")
-
-    # =========================================================
-    # 4. JENIS-JENIS MATRIKS
-    # =========================================================
-
-    st.header("3️⃣ Jenis-Jenis Matriks")
-
-    st.markdown("""
-    Beberapa jenis matriks yang penting:
-
-    - **Matriks baris** → hanya memiliki satu baris.
-    - **Matriks kolom** → hanya memiliki satu kolom.
-    - **Matriks persegi** → jumlah baris sama dengan jumlah kolom.
-    - **Matriks nol** → semua elemennya nol.
-    - **Matriks diagonal** → elemen di luar diagonal utama bernilai nol.
-    - **Matriks identitas** → diagonal utama bernilai 1 dan elemen lainnya 0.
-    """)
-
-    st.latex(r"I_3=\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}")
-
-    # =========================================================
-    # 5. KESAMAAN MATRIKS
-    # =========================================================
-
-    st.header("4️⃣ Kesamaan Dua Matriks")
-
-    st.markdown("""
-    Dua matriks dikatakan sama jika:
-
-    1. Mempunyai ordo yang sama.
-    2. Setiap elemen yang bersesuaian mempunyai nilai yang sama.
-    """)
-
-    st.latex(r"A=B\iff a_{ij}=b_{ij}")
-
-    # =========================================================
-    # 6. PENJUMLAHAN DAN PENGURANGAN
-    # =========================================================
-
-    st.header("5️⃣ Penjumlahan dan Pengurangan Matriks")
-
-    st.markdown("""
-    Dua matriks hanya dapat dijumlahkan atau dikurangkan jika mempunyai
-    ordo yang sama.
-    """)
-
-    st.latex(r"A=\begin{pmatrix}1&2\\3&4\end{pmatrix}")
-
-    st.latex(r"B=\begin{pmatrix}5&6\\7&8\end{pmatrix}")
-
-    st.markdown("Maka:")
-
-    st.latex(r"A+B=\begin{pmatrix}6&8\\10&12\end{pmatrix}")
-
-    st.latex(r"A-B=\begin{pmatrix}-4&-4\\-4&-4\end{pmatrix}")
-
-    # =========================================================
-    # 7. PERKALIAN SKALAR
-    # =========================================================
-
-    st.header("6️⃣ Perkalian Matriks dengan Skalar")
-
-    st.markdown("""
-    Setiap elemen matriks dikalikan dengan bilangan skalar tersebut.
-    """)
-
-    st.latex(r"3A=3\begin{pmatrix}1&2\\3&4\end{pmatrix}")
-
-    st.latex(r"3A=\begin{pmatrix}3&6\\9&12\end{pmatrix}")
-
-    # =========================================================
-    # 8. PERKALIAN MATRIKS
-    # =========================================================
-
-    st.header("7️⃣ Perkalian Dua Matriks")
-
-    st.markdown(r"""
-    Matriks $A$ berordo $m\times n$ dapat dikalikan dengan matriks $B$
-    berordo $n\times p$.
-
-    Hasil perkalian akan mempunyai ordo $m\times p$.
-    """)
-
-    st.latex(r"A_{m\times n}B_{n\times p}=C_{m\times p}")
-
-    st.markdown("Contoh:")
-
-    st.latex(r"A=\begin{pmatrix}1&2\\3&4\end{pmatrix}")
-
-    st.latex(r"B=\begin{pmatrix}5&6\\7&8\end{pmatrix}")
-
-    st.latex(r"AB=\begin{pmatrix}19&22\\43&50\end{pmatrix}")
-
-    # =========================================================
-    # 9. SIFAT PERKALIAN
-    # =========================================================
-
-    st.header("8️⃣ Sifat Perkalian Matriks")
-
-    st.markdown("""
-    Berbeda dengan perkalian bilangan biasa, pada umumnya perkalian matriks
-    tidak bersifat komutatif.
-    """)
-
-    st.latex(r"AB\neq BA")
-
-    st.markdown("""
-    Namun, perkalian matriks tetap memenuhi sifat asosiatif:
-    """)
-
-    st.latex(r"(AB)C=A(BC)")
-
-    # =========================================================
-    # 10. TRANSPOSE
-    # =========================================================
-
-    st.header("9️⃣ Transpose Matriks")
-
-    st.markdown("""
-    Transpose matriks diperoleh dengan menukar baris menjadi kolom dan
-    kolom menjadi baris.
-    """)
-
-    st.latex(r"A=\begin{pmatrix}1&2&3\\4&5&6\end{pmatrix}")
-
-    st.latex(r"A^T=\begin{pmatrix}1&4\\2&5\\3&6\end{pmatrix}")
-
-    st.markdown("Sifat penting:")
-
-    st.latex(r"(A^T)^T=A")
-
-    # =========================================================
-    # 11. DETERMINAN
-    # =========================================================
-
-    st.header("🔟 Determinan Matriks")
-
-    st.markdown(r"""
-    Untuk matriks persegi berordo $2\times2$:
-    """)
-
-    st.latex(r"A=\begin{pmatrix}a&b\\c&d\end{pmatrix}")
-
-    st.latex(r"\det(A)=ad-bc")
-
-    st.markdown("Contoh:")
-
-    st.latex(r"A=\begin{pmatrix}3&2\\1&4\end{pmatrix}")
-
-    st.latex(r"\det(A)=(3)(4)-(2)(1)=10")
-
-    # =========================================================
-    # 12. KALKULATOR DETERMINAN
-    # =========================================================
-
-    st.header("🧮 Kalkulator Determinan")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        a11 = st.number_input("a₁₁", value=3.0, key="det_a11")
-        a21 = st.number_input("a₂₁", value=1.0, key="det_a21")
-
-    with col2:
-        a12 = st.number_input("a₁₂", value=2.0, key="det_a12")
-        a22 = st.number_input("a₂₂", value=4.0, key="det_a22")
-
-    det = a11 * a22 - a12 * a21
-
-    st.latex(
-        rf"\det(A)=({a11:g})({a22:g})-({a12:g})({a21:g})={det:g}"
-    )
-
-    if det == 0:
-        st.warning("Determinan = 0. Matriks tidak mempunyai invers.")
-    else:
-        st.success("Determinan ≠ 0. Matriks mempunyai invers.")
-
-    # =========================================================
-    # 13. INVERS
-    # =========================================================
-
-    st.header("1️⃣1️⃣ Invers Matriks")
-
-    st.markdown(r"""
-    Jika:
-
-    $$A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$$
-
-    dan $\det(A)\neq0$, maka:
-    """)
-
-    st.latex(r"A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}")
-
-    st.markdown("Contoh:")
-
-    st.latex(r"A=\begin{pmatrix}2&1\\1&1\end{pmatrix}")
-
-    st.latex(r"\det(A)=1")
-
-    st.latex(r"A^{-1}=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}")
-
-    # =========================================================
-    # 14. VERIFIKASI INVERS
-    # =========================================================
-
-    st.header("🔍 Verifikasi Invers")
-
-    st.markdown("""
-    Suatu matriks $A^{-1}$ merupakan invers dari $A$ jika hasil perkaliannya
-    dengan $A$ menghasilkan matriks identitas.
-    """)
-
-    st.latex(r"AA^{-1}=A^{-1}A=I")
-
-    # =========================================================
-    # 15. SPL DENGAN MATRIKS
-    # =========================================================
-
-    st.header("1️⃣2️⃣ Sistem Persamaan Linear")
-
-    st.markdown("""
-    Sistem persamaan linear dapat ditulis dalam bentuk matriks:
-    """)
-
-    st.latex(r"AX=B")
-
-    st.markdown("""
-    Misalnya:
-    """)
-
-    st.latex(r"2x+y=5")
-
-    st.latex(r"x+y=3")
-
-    st.markdown("Dapat ditulis sebagai:")
-
-    st.latex(r"\begin{pmatrix}2&1\\1&1\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}5\\3\end{pmatrix}")
-
-    st.markdown("Jika $A$ mempunyai invers, maka:")
-
-    st.latex(r"X=A^{-1}B")
-
-    # =========================================================
-    # 16. KALKULATOR SPL
-    # =========================================================
-
-    st.header("🧮 Kalkulator SPL 2 Variabel")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        p = st.number_input("Koefisien x persamaan 1", value=2.0, key="spl_p")
-        q = st.number_input("Koefisien y persamaan 1", value=1.0, key="spl_q")
-        r = st.number_input("Konstanta persamaan 1", value=5.0, key="spl_r")
-
-    with col2:
-        s = st.number_input("Koefisien x persamaan 2", value=1.0, key="spl_s")
-        t = st.number_input("Koefisien y persamaan 2", value=1.0, key="spl_t")
-        u = st.number_input("Konstanta persamaan 2", value=3.0, key="spl_u")
-
-    det_spl = p * t - q * s
-
-    if det_spl != 0:
-
-        x_sol = (r * t - q * u) / det_spl
-        y_sol = (p * u - r * s) / det_spl
-
-        st.success(
-            f"Solusi: x = {x_sol:.4f}, y = {y_sol:.4f}"
-        )
-
-    else:
-        st.warning(
-            "Determinan = 0. Sistem tidak mempunyai solusi tunggal."
-        )
-
-    # =========================================================
-    # 17. MATRIKS DAN TRANSFORMASI GEOMETRI
-    # =========================================================
-
-    st.header("1️⃣3️⃣ Matriks dalam Transformasi Geometri")
-
-    st.markdown("""
-    Matriks dapat digunakan untuk merepresentasikan transformasi titik
-    pada bidang koordinat.
-    """)
-
-    st.markdown("Misalnya rotasi $90^\\circ$ berlawanan arah jarum jam:")
-
-    st.latex(r"R=\begin{pmatrix}0&-1\\1&0\end{pmatrix}")
-
-    st.markdown("Jika titik $P(x,y)$ ditulis sebagai vektor:")
-
-    st.latex(r"P=\begin{pmatrix}x\\y\end{pmatrix}")
-
-    st.markdown("Maka hasil rotasi diperoleh dari:")
-
-    st.latex(r"P'=RP")
-
-    # =========================================================
-    # 18. EKSPLORASI TRANSFORMASI
-    # =========================================================
-
-    st.header("🔬 Eksplorasi Transformasi Matriks")
-
-    x_p = st.number_input(
-        "Koordinat x",
-        value=2.0,
-        key="transform_x"
-    )
-
-    y_p = st.number_input(
-        "Koordinat y",
-        value=1.0,
-        key="transform_y"
-    )
-
-    transformasi = st.selectbox(
-        "Pilih transformasi",
-        [
-            "Identitas",
-            "Rotasi 90° berlawanan arah jarum jam",
-            "Refleksi terhadap sumbu-X",
-            "Refleksi terhadap sumbu-Y"
-        ],
-        key="transformasi_matriks"
-    )
-
-    if transformasi == "Identitas":
-        xp = x_p
-        yp = y_p
-
-    elif transformasi == "Rotasi 90° berlawanan arah jarum jam":
-        xp = -y_p
-        yp = x_p
-
-    elif transformasi == "Refleksi terhadap sumbu-X":
-        xp = x_p
-        yp = -y_p
-
-    else:
-        xp = -x_p
-        yp = y_p
-
-    st.success(
-        f"Hasil transformasi: P'({xp:g}, {yp:g})"
-    )
-
-    # =========================================================
-    # 19. APLIKASI KONTEKSTUAL
-    # =========================================================
-
-    st.header("🌍 Penerapan Matriks")
-
-    st.markdown("""
-    Matriks digunakan dalam berbagai bidang, antara lain:
-
-    - Sistem persamaan linear.
-    - Grafika komputer.
-    - Transformasi gambar.
-    - Pengolahan citra.
-    - Statistik.
-    - Ekonomi.
-    - Teknik.
-    - Pemodelan matematika.
-    - Machine learning dan artificial intelligence.
-    """)
-
-    # =========================================================
-    # 20. KASUS KONTEKSTUAL
-    # =========================================================
-
-    st.header("📊 Studi Kasus")
-
-    st.markdown("""
-    Sebuah toko menjual dua jenis produk, yaitu Produk A dan Produk B.
-
-    Penjualan pada dua hari dicatat dalam matriks:
-    """)
-
-    st.latex(r"Q=\begin{pmatrix}20&15\\30&25\end{pmatrix}")
-
-    st.markdown("""
-    Baris menunjukkan hari dan kolom menunjukkan jenis produk.
-
-    Jika harga produk adalah:
-    """)
-
-    st.latex(r"H=\begin{pmatrix}10000\\15000\end{pmatrix}")
-
-    st.markdown("Maka total pendapatan setiap hari dapat dihitung dengan perkalian matriks:")
-
-    st.latex(r"QH")
-
-    st.markdown("""
-    Dengan demikian, matriks dapat digunakan untuk mengolah data penjualan
-    secara sistematis.
-    """)
-
-    # =========================================================
-    # 21. LATIHAN
-    # =========================================================
-
-    st.header("📝 Latihan")
-
-    st.markdown(r"""
-    **Soal 1**
-
-    Tentukan ordo matriks:
-
-    $$A=\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix}$$
-    """)
-
-    st.markdown(r"""
-    **Soal 2**
-
-    Tentukan hasil:
-
-    $$\begin{pmatrix}1&2\\3&4\end{pmatrix}+\begin{pmatrix}5&6\\7&8\end{pmatrix}$$
-    """)
-
-    st.markdown(r"""
-    **Soal 3**
-
-    Tentukan determinan:
-
-    $$A=\begin{pmatrix}4&2\\3&5\end{pmatrix}$$
-    """)
-
-    st.markdown(r"""
-    **Soal 4**
-
-    Tentukan invers:
-
-    $$A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$$
-    """)
-
-    st.markdown(r"""
-    **Soal 5**
-
-    Tentukan solusi sistem:
-
-    $$2x+y=5$$
-
-    $$x+y=3$$
-    """)
-
-    # =========================================================
-    # 22. KUIS
-    # =========================================================
-
-    st.header("🎯 Kuis")
-
-    soal_matriks = st.radio(
-        "Jika A = [[2,1],[1,1]], maka determinan A adalah:",
-        [
-            "0",
-            "1",
-            "2",
-            "3"
-        ],
-        key="quiz_matriks"
-    )
-
-    if st.button(
-        "Periksa Jawaban",
-        key="cek_quiz_matriks"
-    ):
-
-        if soal_matriks == "1":
-            st.success(
-                "✅ Benar. det(A) = (2)(1) − (1)(1) = 1."
-            )
-        else:
-            st.error(
-                "❌ Belum tepat. Gunakan rumus det(A) = ad − bc."
-            )
-
-    # =========================================================
-    # 23. REFLEKSI
-    # =========================================================
-
-    st.header("💭 Refleksi")
-
-    st.markdown(r"""
-    Setelah mempelajari matriks, coba jelaskan:
-
-    1. Apa yang dimaksud dengan ordo matriks?
-    2. Kapan dua matriks dapat dijumlahkan?
-    3. Bagaimana menentukan hasil perkalian dua matriks?
-    4. Apa fungsi transpose matriks?
-    5. Bagaimana menentukan determinan matriks $2\times2$?
-    6. Kapan sebuah matriks mempunyai invers?
-    7. Bagaimana matriks digunakan untuk menyelesaikan SPL?
-    8. Bagaimana matriks digunakan dalam transformasi geometri?
-    """)
-
-    # =========================================================
-    # 24. RANGKUMAN
-    # =========================================================
-
-    st.header("📌 Rangkuman")
-
-    st.markdown("""
-    **Matriks** merupakan susunan elemen dalam baris dan kolom.
-
-    Konsep penting:
-
-    - Ordo matriks menunjukkan jumlah baris dan kolom.
-    - Matriks dapat dijumlahkan jika memiliki ordo yang sama.
-    - Perkalian matriks memiliki syarat kesesuaian dimensi.
-    - Transpose menukar baris menjadi kolom.
-    - Determinan digunakan untuk mengetahui sifat matriks persegi.
-    - Matriks memiliki invers jika determinannya tidak sama dengan nol.
-    - Matriks dapat digunakan untuk menyelesaikan sistem persamaan linear.
-    - Matriks dapat digunakan untuk merepresentasikan transformasi geometri.
-    - Matriks banyak digunakan dalam matematika, statistik, ekonomi, teknik,
-      grafika komputer, dan machine learning.
-    """)
-
-    st.success("🎉 Materi Matriks selesai dipelajari.")
-    
 def polinomial():
 
     st.markdown('<div class="content-title">📕 Polinomial</div>', unsafe_allow_html=True)
