@@ -524,7 +524,9 @@ def fungsi_invers_komposisi():
 
     st.latex(r"g(x)=x^2")
 
-    st.markdown("Tentukan \(f\circ g\).")
+    #st.markdown("Tentukan \(f\circ g\).")
+    st.markdown("Tentukan komposisi fungsi:")
+    st.latex(r"(f\circ g)(x)")
 
     st.latex(r"(f\circ g)(x)=f(g(x))")
 
@@ -532,7 +534,9 @@ def fungsi_invers_komposisi():
 
     st.latex(r"(f\circ g)(x)=2x^2+1")
 
-    st.markdown("Sekarang tentukan \(g\circ f\).")
+    #st.markdown("Sekarang tentukan \(g\circ f\).")
+    st.markdown("Sekarang tentukan komposisi fungsi:")
+    st.latex(r"(g\circ f)(x)")
 
     st.latex(r"(g\circ f)(x)=g(f(x))")
 
