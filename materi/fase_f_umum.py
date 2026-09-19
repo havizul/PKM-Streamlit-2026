@@ -366,7 +366,7 @@ def statistika_bivariat():
         r"a=\bar{y}-b\bar{x}"
     )
 
-    st.markdown("Untuk contoh data di atas diperoleh:")
+    st.markdown("Maka akan diperoleh:")
 
     st.latex(
         rf"b\approx{b:.3f}"
