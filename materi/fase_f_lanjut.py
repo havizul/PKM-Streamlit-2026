@@ -7,6 +7,727 @@ import matplotlib.pyplot as plt
 from textwrap import dedent
 
 
+
+def trigonometri():
+
+    st.markdown(
+        '<div class="content-title">📕 Trigonometri</div>',
+        unsafe_allow_html=True
+    )
+
+    # =========================================================
+    # TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.header("🎯 Tujuan Pembelajaran")
+
+    st.markdown(r"""
+    Setelah mempelajari materi ini, siswa diharapkan mampu:
+
+    - Menjelaskan hubungan sudut dan perbandingan trigonometri.
+    - Menggunakan nilai sinus, cosinus, dan tangen.
+    - Menggunakan identitas dasar trigonometri.
+    - Menentukan nilai trigonometri pada berbagai kuadran.
+    - Menyelesaikan persamaan trigonometri sederhana.
+    - Menggunakan aturan sinus dan aturan cosinus.
+    - Menentukan luas segitiga menggunakan konsep trigonometri.
+    - Menganalisis grafik fungsi sinus, cosinus, dan tangen.
+    - Menentukan amplitudo, periode, dan pergeseran grafik trigonometri.
+    - Menerapkan trigonometri dalam masalah kontekstual.
+    """)
+
+    # =========================================================
+    # APERSEPSI
+    # =========================================================
+
+    st.header("💡 Apersepsi")
+
+    st.markdown(r"""
+    Trigonometri mempelajari hubungan antara sudut dan panjang sisi.
+
+    Konsep ini tidak hanya digunakan pada segitiga, tetapi juga dalam
+    gelombang, astronomi, teknik, navigasi, robotika, fisika, dan
+    pemodelan matematika.
+    """)
+
+    st.latex(r"\sin\theta=\frac{\text{sisi depan}}{\text{sisi miring}}")
+
+    # =========================================================
+    # 1. PERBANDINGAN TRIGONOMETRI
+    # =========================================================
+
+    st.header("1. Perbandingan Trigonometri")
+
+    st.markdown(r"""
+    Pada segitiga siku-siku, tiga perbandingan trigonometri utama adalah
+    sinus, cosinus, dan tangen.
+    """)
+
+    st.latex(r"\sin\theta=\frac{\text{depan}}{\text{miring}}")
+    st.latex(r"\cos\theta=\frac{\text{samping}}{\text{miring}}")
+    st.latex(r"\tan\theta=\frac{\text{depan}}{\text{samping}}")
+
+    st.markdown("Hubungan ketiganya:")
+
+    st.latex(r"\tan\theta=\frac{\sin\theta}{\cos\theta}")
+
+    # =========================================================
+    # 2. UNIT CIRCLE
+    # =========================================================
+
+    st.header("2. Lingkaran Satuan")
+
+    st.markdown(r"""
+    Lingkaran satuan adalah lingkaran yang berpusat di titik asal
+    dengan jari-jari 1.
+    """)
+
+    st.latex(r"x^2+y^2=1")
+
+    st.markdown(r"""
+    Untuk sudut $\theta$, koordinat titik pada lingkaran satuan dapat
+    dinyatakan sebagai:
+    """)
+
+    st.latex(r"P(\cos\theta,\sin\theta)")
+
+    st.markdown(r"""
+    Dengan demikian:
+
+    - koordinat $x$ berkaitan dengan $\cos\theta$,
+    - koordinat $y$ berkaitan dengan $\sin\theta$.
+    """)
+
+    st.markdown("#### 🔎 Eksplorasi Lingkaran Satuan")
+
+    angle_unit = st.slider(
+        "Sudut θ (derajat)",
+        min_value=0,
+        max_value=360,
+        value=45,
+        key="trig_unit_angle"
+    )
+
+    angle_rad = math.radians(angle_unit)
+    sin_val = math.sin(angle_rad)
+    cos_val = math.cos(angle_rad)
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.metric("sin θ", f"{sin_val:.4f}")
+
+    with col2:
+        st.metric("cos θ", f"{cos_val:.4f}")
+
+    with col3:
+        st.metric(
+            "tan θ",
+            "tidak terdefinisi" if abs(cos_val) < 1e-10
+            else f"{math.tan(angle_rad):.4f}"
+        )
+
+    # =========================================================
+    # 3. NILAI SUDUT ISTIMEWA
+    # =========================================================
+
+    st.header("3. Nilai Sudut Istimewa")
+
+    data_sudut = pd.DataFrame({
+        "Sudut": ["0°", "30°", "45°", "60°", "90°"],
+        "sin": ["0", "1/2", "√2/2", "√3/2", "1"],
+        "cos": ["1", "√3/2", "√2/2", "1/2", "0"],
+        "tan": ["0", "√3/3", "1", "√3", "Tidak terdefinisi"]
+    })
+
+    st.dataframe(
+        data_sudut,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 4. KUADRAN
+    # =========================================================
+
+    st.header("4. Tanda Trigonometri pada Kuadran")
+
+    st.markdown(r"""
+    Tanda nilai trigonometri bergantung pada kuadran tempat sudut berada.
+    """)
+
+    st.markdown("#### Kuadran I")
+    st.markdown("- sin positif")
+    st.markdown("- cos positif")
+    st.markdown("- tan positif")
+
+    st.markdown("#### Kuadran II")
+    st.markdown("- sin positif")
+    st.markdown("- cos negatif")
+    st.markdown("- tan negatif")
+
+    st.markdown("#### Kuadran III")
+    st.markdown("- sin negatif")
+    st.markdown("- cos negatif")
+    st.markdown("- tan positif")
+
+    st.markdown("#### Kuadran IV")
+    st.markdown("- sin negatif")
+    st.markdown("- cos positif")
+    st.markdown("- tan negatif")
+
+    # =========================================================
+    # 5. IDENTITAS PYTHAGORAS
+    # =========================================================
+
+    st.header("5. Identitas Trigonometri")
+
+    st.markdown("Identitas dasar yang sangat penting adalah:")
+
+    st.latex(r"\sin^2\theta+\cos^2\theta=1")
+
+    st.markdown("Dari identitas tersebut diperoleh:")
+
+    st.latex(r"1+\tan^2\theta=\sec^2\theta")
+    st.latex(r"1+\cot^2\theta=\csc^2\theta")
+
+    st.markdown(r"""
+    Identitas digunakan untuk menyederhanakan bentuk trigonometri dan
+    membuktikan hubungan matematis.
+    """)
+
+    # =========================================================
+    # 6. EKSPLORASI IDENTITAS
+    # =========================================================
+
+    st.header("6. Eksplorasi Identitas Pythagoras")
+
+    sudut_identitas = st.slider(
+        "Pilih sudut",
+        0.0,
+        360.0,
+        30.0,
+        step=1.0,
+        key="trig_identity_angle"
+    )
+
+    rad_identitas = math.radians(sudut_identitas)
+    nilai_sin = math.sin(rad_identitas)
+    nilai_cos = math.cos(rad_identitas)
+    hasil_identitas = nilai_sin**2 + nilai_cos**2
+
+    st.metric("sin²θ + cos²θ", f"{hasil_identitas:.6f}")
+
+    st.info("Nilainya selalu mendekati 1 karena sin²θ + cos²θ = 1.")
+
+    # =========================================================
+    # 7. RUMUS JUMLAH DAN SELISIH SUDUT
+    # =========================================================
+
+    st.header("7. Rumus Jumlah dan Selisih Sudut")
+
+    st.markdown("#### Untuk Sinus")
+
+    st.latex(r"\sin(A+B)=\sin A\cos B+\cos A\sin B")
+    st.latex(r"\sin(A-B)=\sin A\cos B-\cos A\sin B")
+
+    st.markdown("#### Untuk Cosinus")
+
+    st.latex(r"\cos(A+B)=\cos A\cos B-\sin A\sin B")
+    st.latex(r"\cos(A-B)=\cos A\cos B+\sin A\sin B")
+
+    st.markdown("#### Untuk Tangen")
+
+    st.latex(r"\tan(A+B)=\frac{\tan A+\tan B}{1-\tan A\tan B}")
+
+    # =========================================================
+    # 8. SUDUT GANDA
+    # =========================================================
+
+    st.header("8. Rumus Sudut Ganda")
+
+    st.latex(r"\sin2\theta=2\sin\theta\cos\theta")
+    st.latex(r"\cos2\theta=\cos^2\theta-\sin^2\theta")
+    st.latex(r"\cos2\theta=2\cos^2\theta-1")
+    st.latex(r"\cos2\theta=1-2\sin^2\theta")
+    st.latex(r"\tan2\theta=\frac{2\tan\theta}{1-\tan^2\theta}")
+
+    # =========================================================
+    # 9. PERSAMAAN TRIGONOMETRI
+    # =========================================================
+
+    st.header("9. Persamaan Trigonometri")
+
+    st.markdown(r"""
+    Persamaan trigonometri adalah persamaan yang memuat fungsi
+    trigonometri.
+    """)
+
+    st.markdown("Contoh:")
+
+    st.latex(r"\sin x=\frac{1}{2}")
+
+    st.markdown(r"""
+    Untuk $0^\circ\leq x\leq360^\circ$, penyelesaiannya adalah:
+    """)
+
+    st.latex(r"x=30^\circ\text{ atau }150^\circ")
+
+    st.markdown("Contoh lainnya:")
+
+    st.latex(r"\cos x=0")
+    st.latex(r"x=90^\circ\text{ atau }270^\circ")
+
+    # =========================================================
+    # 10. KALKULATOR NILAI TRIGONOMETRI
+    # =========================================================
+
+    st.header("10. Kalkulator Nilai Trigonometri")
+
+    sudut_kalk = st.number_input(
+        "Masukkan sudut (derajat)",
+        value=30.0,
+        key="trig_kalk_sudut"
+    )
+
+    rad_kalk = math.radians(sudut_kalk)
+    nilai_s = math.sin(rad_kalk)
+    nilai_c = math.cos(rad_kalk)
+
+    if abs(nilai_c) < 1e-10:
+        nilai_t = None
+    else:
+        nilai_t = math.tan(rad_kalk)
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.metric("sin", f"{nilai_s:.6f}")
+
+    with col2:
+        st.metric("cos", f"{nilai_c:.6f}")
+
+    with col3:
+        if nilai_t is None:
+            st.metric("tan", "Tidak terdefinisi")
+        else:
+            st.metric("tan", f"{nilai_t:.6f}")
+
+    # =========================================================
+    # 11. ATURAN SINUS
+    # =========================================================
+
+    st.header("11. Aturan Sinus")
+
+    st.markdown(r"""
+    Aturan sinus digunakan pada segitiga sembarang.
+    """)
+
+    st.latex(r"\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}")
+
+    st.markdown(r"""
+    Aturan sinus berguna ketika diketahui kombinasi sisi dan sudut tertentu
+    pada sebuah segitiga.
+    """)
+
+    # =========================================================
+    # 12. ATURAN COSINUS
+    # =========================================================
+
+    st.header("12. Aturan Cosinus")
+
+    st.markdown(r"""
+    Aturan cosinus merupakan generalisasi Teorema Pythagoras untuk
+    segitiga sembarang.
+    """)
+
+    st.latex(r"c^2=a^2+b^2-2ab\cos C")
+
+    st.markdown(r"""
+    Jika $C=90^\circ$, maka $\cos C=0$, sehingga:
+    """)
+
+    st.latex(r"c^2=a^2+b^2")
+
+    st.markdown("Inilah Teorema Pythagoras.")
+
+    # =========================================================
+    # 13. KALKULATOR ATURAN COSINUS
+    # =========================================================
+
+    st.header("13. Kalkulator Aturan Cosinus")
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        sisi_a = st.number_input(
+            "Sisi a", min_value=0.01, value=5.0, key="cos_a"
+        )
+
+    with col2:
+        sisi_b = st.number_input(
+            "Sisi b", min_value=0.01, value=6.0, key="cos_b"
+        )
+
+    with col3:
+        sudut_C = st.number_input(
+            "Sudut C (derajat)",
+            min_value=0.0,
+            max_value=180.0,
+            value=60.0,
+            key="cos_C"
+        )
+
+    c_squared = (
+        sisi_a**2
+        + sisi_b**2
+        - 2 * sisi_a * sisi_b * math.cos(math.radians(sudut_C))
+    )
+
+    sisi_c = math.sqrt(max(c_squared, 0))
+
+    st.info(f"Sisi c = {sisi_c:.4f}")
+
+    # =========================================================
+    # 14. LUAS SEGITIGA
+    # =========================================================
+
+    st.header("14. Luas Segitiga dengan Trigonometri")
+
+    st.markdown(r"""
+    Jika diketahui dua sisi dan sudut apitnya, luas segitiga dapat
+    dihitung menggunakan:
+    """)
+
+    st.latex(r"L=\frac{1}{2}ab\sin C")
+
+    st.markdown("Contoh:")
+
+    st.latex(r"a=6,\quad b=8,\quad C=30^\circ")
+    st.latex(r"L=\frac{1}{2}(6)(8)\sin30^\circ=12")
+
+    # =========================================================
+    # 15. KALKULATOR LUAS
+    # =========================================================
+
+    st.header("15. Kalkulator Luas Segitiga")
+
+    luas_a = st.number_input(
+        "Sisi a", min_value=0.01, value=6.0, key="luas_a"
+    )
+
+    luas_b = st.number_input(
+        "Sisi b", min_value=0.01, value=8.0, key="luas_b"
+    )
+
+    luas_sudut = st.number_input(
+        "Sudut apit (derajat)",
+        min_value=0.0,
+        max_value=180.0,
+        value=30.0,
+        key="luas_sudut"
+    )
+
+    luas = 0.5 * luas_a * luas_b * math.sin(math.radians(luas_sudut))
+
+    st.info(f"Luas segitiga = {luas:.4f} satuan²")
+
+    # =========================================================
+    # 16. GRAFIK FUNGSI SINUS
+    # =========================================================
+
+    st.header("16. Grafik Fungsi Trigonometri")
+
+    st.markdown("Fungsi sinus dasar adalah:")
+
+    st.latex(r"y=\sin x")
+
+    x_grafik = np.linspace(0, 2 * np.pi, 400)
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_grafik, np.sin(x_grafik), "b-")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x (radian)")
+    ax.set_ylabel("sin x")
+    ax.set_title("y = sin x")
+    st.pyplot(fig)
+
+    # =========================================================
+    # 17. FUNGSI SINUS UMUM
+    # =========================================================
+
+    st.header("17. Bentuk Umum Fungsi Sinus")
+
+    st.latex(r"y=a\sin(bx+c)+d")
+
+    st.markdown(r"""
+    Parameter tersebut memengaruhi bentuk grafik:
+
+    - $|a|$ menentukan amplitudo.
+    - $b$ menentukan periode.
+    - $c$ menentukan pergeseran horizontal.
+    - $d$ menentukan pergeseran vertikal.
+    """)
+
+    st.latex(r"\text{Amplitudo}=|a|")
+    st.latex(r"\text{Periode}=\frac{2\pi}{|b|}")
+
+    # =========================================================
+    # 18. EKSPLORASI GRAFIK
+    # =========================================================
+
+    st.header("18. Eksplorasi Grafik Sinus")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        amp = st.slider(
+            "Amplitudo a", -5.0, 5.0, 1.0, step=0.5, key="trig_amp"
+        )
+
+        freq = st.slider(
+            "Frekuensi b", 0.5, 5.0, 1.0, step=0.5, key="trig_freq"
+        )
+
+    with col2:
+        fase = st.slider(
+            "Pergeseran fase c", -math.pi, math.pi, 0.0,
+            step=0.1, key="trig_fase"
+        )
+
+        vertikal = st.slider(
+            "Pergeseran vertikal d", -5.0, 5.0, 0.0,
+            step=0.5, key="trig_vertikal"
+        )
+
+    y_grafik = amp * np.sin(freq * x_grafik + fase) + vertikal
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_grafik, y_grafik, "m-")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x (radian)")
+    ax.set_ylabel("y")
+    ax.set_title(rf"$y = {amp:.1f}\sin({freq:.1f}x + {fase:.1f}) + {vertikal:.1f}$")
+    st.pyplot(fig)
+
+    periode = 2 * math.pi / abs(freq) if freq != 0 else float("inf")
+
+    st.info(
+        f"Amplitudo = {abs(amp):.2f} | "
+        f"Periode = {periode:.4f} rad"
+    )
+
+    # =========================================================
+    # 19. FUNGSI COSINUS
+    # =========================================================
+
+    st.header("19. Fungsi Cosinus")
+
+    st.latex(r"y=\cos x")
+
+    st.markdown(r"""
+    Grafik cosinus memiliki bentuk gelombang yang serupa dengan sinus,
+    tetapi memiliki titik awal yang berbeda.
+    """)
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_grafik, np.cos(x_grafik), "r-")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x (radian)")
+    ax.set_ylabel("cos x")
+    ax.set_title("y = cos x")
+    st.pyplot(fig)
+
+    # =========================================================
+    # 20. FUNGSI TANGEN
+    # =========================================================
+
+    st.header("20. Fungsi Tangen")
+
+    st.latex(r"y=\tan x")
+
+    st.markdown(r"""
+    Fungsi tangen mempunyai periode $\pi$ dan memiliki asimtot vertikal
+    pada $x=\frac{\pi}{2}+k\pi$ untuk setiap bilangan bulat $k$.
+    """)
+
+    x_tan = np.linspace(-2 * np.pi, 2 * np.pi, 2000)
+    y_tan = np.tan(x_tan)
+    y_tan[np.abs(y_tan) > 10] = np.nan
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(x_tan, y_tan, "g-")
+    ax.axhline(0, color="gray", linewidth=0.6)
+    ax.axvline(0, color="gray", linewidth=0.6)
+    ax.set_ylim(-10, 10)
+    ax.grid(True, linestyle=":", alpha=0.6)
+    ax.set_xlabel("x (radian)")
+    ax.set_ylabel("tan x")
+    ax.set_title("y = tan x")
+    st.pyplot(fig)
+
+    # =========================================================
+    # 21. HUBUNGAN SINUS, COSINUS, TANGEN
+    # =========================================================
+
+    st.header("21. Hubungan Sinus, Cosinus, dan Tangen")
+
+    st.latex(r"\tan\theta=\frac{\sin\theta}{\cos\theta}")
+    st.latex(r"\sin^2\theta+\cos^2\theta=1")
+
+    st.markdown(r"""
+    Dua hubungan tersebut merupakan dasar penting dalam manipulasi
+    aljabar trigonometri.
+    """)
+
+    # =========================================================
+    # 22. PENERAPAN
+    # =========================================================
+
+    st.header("🌍 Penerapan Trigonometri")
+
+    st.markdown(r"""
+    Trigonometri digunakan dalam:
+
+    - Pengukuran tinggi bangunan.
+    - Navigasi.
+    - Astronomi.
+    - Teknik sipil.
+    - Robotika.
+    - Gelombang dan getaran.
+    - Grafika komputer.
+    - Pemodelan periodik.
+    - Sistem GPS.
+    """)
+
+    # =========================================================
+    # 23. STUDI KASUS
+    # =========================================================
+
+    st.header("📐 Studi Kasus: Mengukur Tinggi Bangunan")
+
+    st.markdown(r"""
+    Seorang siswa berdiri sejauh 20 meter dari sebuah gedung.
+
+    Sudut elevasi ke puncak gedung adalah $35^\circ$.
+    Jika tinggi mata siswa diabaikan, tinggi gedung dapat dihitung dengan:
+    """)
+
+    st.latex(r"\tan35^\circ=\frac{h}{20}")
+    st.latex(r"h=20\tan35^\circ")
+
+    tinggi_gedung = 20 * math.tan(math.radians(35))
+
+    st.info(f"Perkiraan tinggi gedung = {tinggi_gedung:.2f} meter.")
+
+    # =========================================================
+    # 24. LATIHAN
+    # =========================================================
+
+    st.header("📝 Latihan")
+
+    st.markdown(r"""
+    **Soal 1**
+
+    Tentukan nilai $\sin30^\circ$, $\cos60^\circ$, dan $\tan45^\circ$.
+    """)
+
+    st.markdown(r"""
+    **Soal 2**
+
+    Jika $\sin\theta=\frac{3}{5}$ dan $\theta$ berada pada kuadran I,
+    tentukan $\cos\theta$.
+    """)
+
+    st.markdown(r"""
+    **Soal 3**
+
+    Tentukan penyelesaian $\sin x=\frac{1}{2}$ untuk
+    $0^\circ\leq x\leq360^\circ$.
+    """)
+
+    st.markdown(r"""
+    **Soal 4**
+
+    Dua sisi segitiga masing-masing 6 cm dan 8 cm dengan sudut apit
+    $30^\circ$. Tentukan luas segitiga.
+    """)
+
+    st.markdown(r"""
+    **Soal 5**
+
+    Tentukan sisi ketiga segitiga jika $a=5$, $b=6$, dan $C=60^\circ$.
+    """)
+
+    # =========================================================
+    # 25. KUIS
+    # =========================================================
+
+    st.header("🎯 Kuis")
+
+    jawaban_trig = st.radio(
+        "Nilai sin 30° adalah:",
+        ["0", "1/2", "√2/2", "√3/2"],
+        key="quiz_trigonometri"
+    )
+
+    if st.button("Periksa Jawaban", key="cek_quiz_trigonometri"):
+        if jawaban_trig == "1/2":
+            st.success("✅ Benar. sin 30° = 1/2.")
+        else:
+            st.error("❌ Belum tepat. Ingat tabel sudut istimewa.")
+
+    # =========================================================
+    # 26. REFLEKSI
+    # =========================================================
+
+    st.header("💭 Refleksi")
+
+    st.markdown(r"""
+    Setelah mempelajari trigonometri, coba jelaskan:
+
+    1. Apa hubungan sinus, cosinus, dan tangen?
+    2. Mengapa lingkaran satuan penting dalam trigonometri?
+    3. Bagaimana tanda fungsi trigonometri ditentukan berdasarkan kuadran?
+    4. Apa perbedaan aturan sinus dan aturan cosinus?
+    5. Bagaimana menentukan amplitudo dan periode fungsi sinus?
+    6. Bagaimana trigonometri digunakan dalam pengukuran tinggi?
+    """)
+
+    # =========================================================
+    # 27. RANGKUMAN
+    # =========================================================
+
+    st.header("📌 Rangkuman")
+
+    st.markdown(r"""
+    **Trigonometri** mempelajari hubungan antara sudut dan panjang sisi.
+
+    Konsep utama:
+
+    - Sinus, cosinus, dan tangen merupakan perbandingan trigonometri utama.
+    - Lingkaran satuan membantu memahami nilai fungsi trigonometri.
+    - Identitas $\sin^2\theta+\cos^2\theta=1$ merupakan identitas dasar.
+    - Rumus jumlah dan selisih sudut digunakan untuk mengembangkan bentuk
+      trigonometri.
+    - Persamaan trigonometri dapat memiliki lebih dari satu penyelesaian
+      dalam suatu interval.
+    - Aturan sinus dan cosinus digunakan pada segitiga sembarang.
+    - Fungsi sinus dan cosinus memiliki pola periodik.
+    - Amplitudo dan periode menentukan karakteristik grafik.
+    - Trigonometri digunakan dalam teknik, sains, navigasi, robotika,
+      grafika komputer, dan berbagai bidang lainnya.
+    """)
+
+    st.success("🎉 Materi Trigonometri selesai dipelajari.")
+    
+
 def transformasi_geometri():
     st.markdown(
         '<div class="content-title">📕 Transformasi Geometri</div>',
@@ -1887,8 +2608,8 @@ def tampilkan(materi):
         #pass
 
     elif materi == "Trigonometri":
-        #trigonometri()
-        pass
+        trigonometri()
+        #pass
 
     elif materi == "Pemodelan fungsi":
         #pemodelan_fungsi()
