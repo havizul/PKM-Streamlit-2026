@@ -205,7 +205,7 @@ def matriks():
 
     st.header("7️⃣ Perkalian Dua Matriks")
 
-    st.markdown("""
+    st.markdown(r"""
     Matriks $A$ berordo $m\times n$ dapat dikalikan dengan matriks $B$
     berordo $n\times p$.
 
