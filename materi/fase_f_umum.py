@@ -540,13 +540,11 @@ def fungsi_invers_komposisi():
 
     st.latex(r"(g\circ f)(x)=4x^2+4x+1")
 
-    st.info("""
-    Perhatikan bahwa pada umumnya:
-
-    \(f\circ g\neq g\circ f\)
-
-    Jadi, komposisi fungsi tidak bersifat komutatif.
-    """)
+    st.markdown("**Perhatikan bahwa pada umumnya:**")
+    
+    st.latex(r"f\circ g\neq g\circ f")
+    
+    st.info("💡 Jadi, komposisi fungsi tidak bersifat komutatif.")
 
     # ========================================================
     # 18. KOMPOSISI TIGA FUNGSI
