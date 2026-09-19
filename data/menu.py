@@ -84,4 +84,14 @@ MEDIA_PEMBELAJARAN = [
     "Spreadsheet"
 ]
 
-
+MATEMATIKA_BUDAYA = [
+    "Tenun dan Motif Tradisional",
+    "Batik dan Pola Geometri",
+    "Rumah Tradisional",
+    "Arsitektur Kesultanan",
+    "Bubu dan Alat Tangkap Tradisional",
+    "Perahu Tradisional",
+    "Geometri dalam Budaya",
+    "Statistika dalam Kehidupan Masyarakat",
+    "Matematika Ekonomi dan Budaya"
+]
