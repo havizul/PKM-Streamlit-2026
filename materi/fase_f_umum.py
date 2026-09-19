@@ -3,7 +3,6 @@ import pandas as pd
 import math
 
 def peluang():
-
     st.markdown("## 🎲 Peluang")
 
     st.markdown("""
