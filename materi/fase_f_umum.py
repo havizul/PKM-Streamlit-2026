@@ -4061,8 +4061,8 @@ def tampilkan(materi):
         #pass
 
     elif materi == "Transformasi Fungsi":
-        #transformasi_fungsi()
-        pass
+        transformasi_fungsi()
+        #pass
 
     elif materi == "Lingkaran":
         #lingkaran()
