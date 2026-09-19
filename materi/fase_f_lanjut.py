@@ -240,6 +240,8 @@ def pemodelan_fungsi():
     ax.set_xlabel("x")
     ax.set_ylabel("f(x)")
     ax.set_title(rf"$f(x) = {qa:.2f}x^2 + {qb:.2f}x + {qc:.2f}$")
+
+    fig.tight_layout()
     st.pyplot(fig)
 
     if qa != 0:
