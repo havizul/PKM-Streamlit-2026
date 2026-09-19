@@ -199,16 +199,16 @@ def transformasi_geometri():
 
     st.markdown(r"Rotasi berpusat di titik asal $O(0,0)$:")
 
-    st.markdown("Rotasi 90° berlawanan arah jarum jam (CCW)")
+    st.markdown("\t Rotasi 90° berlawanan arah jarum jam (CCW)")
     st.latex(r"(x,y)\to(-y,\;x)")
 
-    st.markdown("Rotasi 90° searah jarum jam (CW)")
+    st.markdown("\t Rotasi 90° searah jarum jam (CW)")
     st.latex(r"(x,y)\to(y,\;-x)")
 
-    st.markdown("Rotasi 180°")
+    st.markdown("\t Rotasi 180°")
     st.latex(r"(x,y)\to(-x,\;-y)")
 
-    st.markdown("Rotasi 270° berlawanan arah jarum jam (CCW)")
+    st.markdown("\t Rotasi 270° berlawanan arah jarum jam (CCW)")
     st.latex(r"(x,y)\to(y,\;-x)")
     st.markdown("Perhatikan: rotasi 270° CCW sama dengan rotasi 90° CW.")  # FIX: klarifikasi
 
