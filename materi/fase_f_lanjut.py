@@ -6177,7 +6177,7 @@ def tampilkan(materi):
         limit_fungsi()
         #pass
 
-    elif materi == "Turunan & Penerapannya":
+    elif materi == "Turunan dan Penerapannya":
         turunan()
         #pass
 
