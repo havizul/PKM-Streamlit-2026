@@ -2,6 +2,892 @@ import streamlit as st
 import pandas as pd
 import math
 
+def peluang():
+
+    st.markdown("## 🎲 Peluang")
+
+    st.markdown("""
+    Peluang digunakan untuk mengukur **kemungkinan terjadinya suatu kejadian**.
+
+    Contohnya:
+    - peluang muncul angka tertentu pada dadu;
+    - peluang muncul sisi tertentu pada koin;
+    - peluang terpilihnya suatu objek;
+    - peluang terjadinya suatu kejadian dalam kehidupan sehari-hari.
+    """)
+
+    # =========================================================
+    # 1. TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.markdown("### 🎯 Tujuan Pembelajaran")
+
+    st.info("""
+    Setelah mempelajari materi ini, peserta didik diharapkan mampu:
+
+    1. Menjelaskan konsep peluang.
+    2. Menentukan ruang sampel dan kejadian.
+    3. Menghitung peluang suatu kejadian.
+    4. Menentukan peluang komplemen.
+    5. Menggunakan aturan penjumlahan peluang.
+    6. Menggunakan aturan perkalian peluang.
+    7. Menentukan peluang bersyarat.
+    8. Menjelaskan kejadian saling bebas.
+    9. Menentukan frekuensi harapan.
+    10. Menerapkan konsep peluang dalam masalah kehidupan sehari-hari.
+    """)
+
+    # =========================================================
+    # 2. APERSEPSI
+    # =========================================================
+
+    st.markdown("### 💡 Apersepsi")
+
+    st.markdown("""
+    Sebuah koin dilempar satu kali.
+
+    Hasil yang mungkin adalah **angka** atau **gambar**.
+
+    Apakah kita dapat mengetahui dengan pasti hasil lemparan?
+
+    Tidak. Tetapi kita dapat menghitung kemungkinan munculnya setiap hasil.
+    Inilah yang dipelajari dalam peluang.
+    """)
+
+    # =========================================================
+    # 3. PERCOBAAN ACAK
+    # =========================================================
+
+    st.markdown("### 🎲 1. Percobaan Acak")
+
+    st.markdown("""
+    Percobaan acak adalah percobaan yang hasilnya tidak dapat diketahui
+    secara pasti sebelum percobaan dilakukan.
+
+    Contoh:
+
+    - melempar koin;
+    - melempar dadu;
+    - mengambil kartu secara acak;
+    - memilih satu siswa secara acak.
+    """)
+
+    # =========================================================
+    # 4. RUANG SAMPEL
+    # =========================================================
+
+    st.markdown("### 🌐 2. Ruang Sampel")
+
+    st.markdown("""
+    Ruang sampel adalah himpunan seluruh hasil yang mungkin dari suatu
+    percobaan acak.
+
+    Ruang sampel biasanya dilambangkan dengan \(S\).
+    """)
+
+    st.markdown("#### Contoh 1 — Koin")
+
+    st.latex(r"S=\{\text{Angka},\text{Gambar}\}")
+
+    st.markdown("Banyak anggota ruang sampel:")
+
+    st.latex(r"n(S)=2")
+
+    st.markdown("#### Contoh 2 — Dadu")
+
+    st.latex(r"S=\{1,2,3,4,5,6\}")
+
+    st.latex(r"n(S)=6")
+
+    # =========================================================
+    # 5. KEJADIAN
+    # =========================================================
+
+    st.markdown("### 🎯 3. Kejadian")
+
+    st.markdown("""
+    Kejadian adalah himpunan bagian dari ruang sampel.
+
+    Kejadian biasanya dilambangkan dengan huruf \(A\), \(B\), dan sebagainya.
+    """)
+
+    st.markdown("Contoh pada pelemparan dadu:")
+
+    st.latex(r"S=\{1,2,3,4,5,6\}")
+
+    st.markdown("Kejadian muncul bilangan genap:")
+
+    st.latex(r"A=\{2,4,6\}")
+
+    st.latex(r"n(A)=3")
+
+    # =========================================================
+    # 6. PELUANG KLASIK
+    # =========================================================
+
+    st.markdown("### 📊 4. Peluang Suatu Kejadian")
+
+    st.markdown("""
+    Jika semua hasil dalam ruang sampel memiliki kemungkinan yang sama,
+    peluang kejadian \(A\) dapat dihitung dengan:
+    """)
+
+    st.latex(r"P(A)=\frac{n(A)}{n(S)}")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Sebuah dadu dilempar satu kali. Tentukan peluang muncul bilangan genap.
+    """)
+
+    st.latex(r"P(A)=\frac{3}{6}")
+
+    st.latex(r"P(A)=\frac{1}{2}")
+
+    st.markdown("Jadi peluang muncul bilangan genap adalah **1/2 atau 50%**.")
+
+    # =========================================================
+    # 7. RENTANG NILAI PELUANG
+    # =========================================================
+
+    st.markdown("### 📏 5. Rentang Nilai Peluang")
+
+    st.markdown("""
+    Nilai peluang selalu berada antara 0 dan 1.
+    """)
+
+    st.latex(r"0\leq P(A)\leq1")
+
+    st.markdown("""
+    - \(P(A)=0\) → kejadian mustahil.
+    - \(P(A)=1\) → kejadian pasti.
+    - Nilai di antara 0 dan 1 → kejadian memiliki kemungkinan terjadi.
+    """)
+
+    # =========================================================
+    # 8. KOMPLEMEN
+    # =========================================================
+
+    st.markdown("### 🔄 6. Peluang Komplemen")
+
+    st.markdown("""
+    Komplemen kejadian \(A\) adalah kejadian **bukan A** dan biasanya
+    ditulis \(A^c\).
+    """)
+
+    st.latex(r"P(A^c)=1-P(A)")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Peluang seorang siswa lulus ujian adalah 0,8.
+
+    Maka peluang siswa tersebut tidak lulus adalah:
+    """)
+
+    st.latex(r"P(A^c)=1-0.8=0.2")
+
+    # =========================================================
+    # 9. PELUANG GABUNGAN
+    # =========================================================
+
+    st.markdown("### ➕ 7. Peluang Gabungan")
+
+    st.markdown("""
+    Peluang gabungan digunakan ketika kita ingin menentukan peluang kejadian
+    \(A\) **atau** \(B\).
+    """)
+
+    st.latex(r"P(A\cup B)=P(A)+P(B)-P(A\cap B)")
+
+    st.markdown("""
+    Jika \(A\) dan \(B\) saling lepas, maka:
+    """)
+
+    st.latex(r"P(A\cap B)=0")
+
+    st.latex(r"P(A\cup B)=P(A)+P(B)")
+
+    # =========================================================
+    # 10. CONTOH GABUNGAN
+    # =========================================================
+
+    st.markdown("### 🧮 8. Contoh Peluang Gabungan")
+
+    st.markdown("""
+    Sebuah dadu dilempar satu kali.
+
+    Misalkan:
+
+    - \(A\) = muncul bilangan genap;
+    - \(B\) = muncul bilangan lebih dari 4.
+    """)
+
+    st.latex(r"A=\{2,4,6\}")
+
+    st.latex(r"B=\{5,6\}")
+
+    st.markdown("Irisannya adalah:")
+
+    st.latex(r"A\cap B=\{6\}")
+
+    st.markdown("Sehingga:")
+
+    st.latex(r"P(A\cup B)=\frac{3}{6}+\frac{2}{6}-\frac{1}{6}")
+
+    st.latex(r"P(A\cup B)=\frac{4}{6}=\frac{2}{3}")
+
+    # =========================================================
+    # 11. KEJADIAN SALING LEPAS
+    # =========================================================
+
+    st.markdown("### 🚫 9. Kejadian Saling Lepas")
+
+    st.markdown("""
+    Dua kejadian dikatakan saling lepas jika keduanya tidak dapat terjadi
+    secara bersamaan.
+    """)
+
+    st.latex(r"A\cap B=\varnothing")
+
+    st.markdown("""
+    Contoh pada satu kali pelemparan dadu:
+
+    - A = muncul angka 1;
+    - B = muncul angka 6.
+
+    Keduanya tidak dapat terjadi bersamaan.
+    """)
+
+    # =========================================================
+    # 12. PELUANG PERKALIAN
+    # =========================================================
+
+    st.markdown("### ✖️ 10. Aturan Perkalian Peluang")
+
+    st.markdown("""
+    Untuk dua kejadian, aturan perkalian secara umum dapat ditulis:
+    """)
+
+    st.latex(r"P(A\cap B)=P(A)P(B|A)")
+
+    st.markdown("""
+    Jika \(A\) dan \(B\) saling bebas, maka:
+    """)
+
+    st.latex(r"P(A\cap B)=P(A)P(B)")
+
+    # =========================================================
+    # 13. KEJADIAN SALING BEBAS
+    # =========================================================
+
+    st.markdown("### 🔗 11. Kejadian Saling Bebas")
+
+    st.markdown("""
+    Dua kejadian disebut saling bebas jika terjadinya satu kejadian tidak
+    memengaruhi peluang terjadinya kejadian lainnya.
+    """)
+
+    st.markdown("""
+    Contoh:
+
+    Melempar koin dua kali.
+
+    Hasil lemparan pertama tidak memengaruhi hasil lemparan kedua.
+    """)
+
+    st.markdown("Misalkan peluang muncul angka pada setiap lemparan adalah:")
+
+    st.latex(r"P(A)=\frac{1}{2}")
+
+    st.latex(r"P(B)=\frac{1}{2}")
+
+    st.markdown("Peluang muncul angka dua kali:")
+
+    st.latex(r"P(A\cap B)=\frac{1}{2}\times\frac{1}{2}=\frac{1}{4}")
+
+    # =========================================================
+    # 14. PELUANG BERSYARAT
+    # =========================================================
+
+    st.markdown("### 🔍 12. Peluang Bersyarat")
+
+    st.markdown("""
+    Peluang bersyarat adalah peluang suatu kejadian dengan syarat kejadian
+    lain telah terjadi.
+    """)
+
+    st.latex(r"P(A|B)=\frac{P(A\cap B)}{P(B)}")
+
+    st.markdown("""
+    Dibaca: peluang \(A\) jika diketahui \(B\) telah terjadi.
+    """)
+
+    # =========================================================
+    # 15. CONTOH PELUANG BERSYARAT
+    # =========================================================
+
+    st.markdown("### 🧮 13. Contoh Peluang Bersyarat")
+
+    st.markdown("""
+    Dalam sebuah kelas terdapat 20 siswa.
+
+    - 12 siswa menyukai matematika.
+    - 8 siswa menyukai matematika dan fisika.
+
+    Jika diketahui seorang siswa menyukai matematika, peluang siswa tersebut
+    juga menyukai fisika adalah:
+    """)
+
+    st.latex(r"P(F|M)=\frac{8}{12}")
+
+    st.latex(r"P(F|M)=\frac{2}{3}")
+
+    # =========================================================
+    # 16. FREKUENSI HARAPAN
+    # =========================================================
+
+    st.markdown("### 📈 14. Frekuensi Harapan")
+
+    st.markdown("""
+    Frekuensi harapan adalah banyaknya kemunculan suatu kejadian yang
+    diperkirakan terjadi dalam sejumlah percobaan.
+    """)
+
+    st.latex(r"F_h=nP(A)")
+
+    st.markdown("#### Contoh")
+
+    st.markdown("""
+    Sebuah dadu dilempar 120 kali.
+
+    Berapa frekuensi harapan muncul angka 6?
+    """)
+
+    st.latex(r"P(6)=\frac{1}{6}")
+
+    st.latex(r"F_h=120\times\frac{1}{6}=20")
+
+    st.markdown("Jadi frekuensi harapannya adalah **20 kali**.")
+
+    # =========================================================
+    # 17. KALKULATOR PELUANG
+    # =========================================================
+
+    st.markdown("### 🧮 15. Kalkulator Peluang")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        banyak_kejadian = st.number_input(
+            "Banyak hasil yang mendukung kejadian",
+            min_value=0,
+            value=3,
+            step=1,
+            key="peluang_n_a"
+        )
+
+    with col2:
+
+        banyak_sampel = st.number_input(
+            "Banyak seluruh hasil",
+            min_value=1,
+            value=6,
+            step=1,
+            key="peluang_n_s"
+        )
+
+    if banyak_kejadian <= banyak_sampel:
+
+        peluang_hasil = (
+            banyak_kejadian /
+            banyak_sampel
+        )
+
+        st.latex(
+            rf"P(A)=\frac{{{banyak_kejadian}}}{{{banyak_sampel}}}={peluang_hasil:.3f}"
+        )
+
+        st.markdown(
+            f"atau sekitar **{peluang_hasil * 100:.2f}%**."
+        )
+
+    else:
+
+        st.error(
+            "Banyak hasil kejadian tidak boleh lebih besar dari seluruh hasil."
+        )
+
+    # =========================================================
+    # 18. SIMULASI KOIN
+    # =========================================================
+
+    st.markdown("### 🪙 16. Simulasi Lemparan Koin")
+
+    jumlah_lemparan = st.slider(
+        "Jumlah lemparan",
+        min_value=10,
+        max_value=1000,
+        value=100,
+        step=10,
+        key="simulasi_koin_jumlah"
+    )
+
+    if st.button(
+        "🪙 Lempar Koin",
+        key="simulasi_koin"
+    ):
+
+        import random
+
+        hasil_koin = [
+            random.choice(
+                ["Angka", "Gambar"]
+            )
+            for _ in range(jumlah_lemparan)
+        ]
+
+        jumlah_angka = hasil_koin.count("Angka")
+        jumlah_gambar = hasil_koin.count("Gambar")
+
+        df_koin = pd.DataFrame({
+            "Hasil": [
+                "Angka",
+                "Gambar"
+            ],
+            "Frekuensi": [
+                jumlah_angka,
+                jumlah_gambar
+            ]
+        })
+
+        st.dataframe(
+            df_koin,
+            use_container_width=True,
+            hide_index=True
+        )
+
+        st.bar_chart(
+            df_koin,
+            x="Hasil",
+            y="Frekuensi",
+            use_container_width=True
+        )
+
+        st.markdown("Frekuensi relatif:")
+
+        st.latex(
+            rf"P(\text{{Angka}})\approx\frac{{{jumlah_angka}}}{{{jumlah_lemparan}}}={jumlah_angka/jumlah_lemparan:.3f}"
+        )
+
+        st.latex(
+            rf"P(\text{{Gambar}})\approx\frac{{{jumlah_gambar}}}{{{jumlah_lemparan}}}={jumlah_gambar/jumlah_lemparan:.3f}"
+        )
+
+    # =========================================================
+    # 19. SIMULASI DADU
+    # =========================================================
+
+    st.markdown("### 🎲 17. Simulasi Lemparan Dadu")
+
+    jumlah_dadu = st.slider(
+        "Jumlah lemparan dadu",
+        min_value=10,
+        max_value=1000,
+        value=100,
+        step=10,
+        key="simulasi_dadu_jumlah"
+    )
+
+    if st.button(
+        "🎲 Lempar Dadu",
+        key="simulasi_dadu"
+    ):
+
+        import random
+
+        hasil_dadu = [
+            random.randint(1, 6)
+            for _ in range(jumlah_dadu)
+        ]
+
+        frekuensi = [
+            hasil_dadu.count(i)
+            for i in range(1, 7)
+        ]
+
+        df_dadu = pd.DataFrame({
+            "Mata Dadu": [
+                1, 2, 3, 4, 5, 6
+            ],
+            "Frekuensi": frekuensi
+        })
+
+        st.dataframe(
+            df_dadu,
+            use_container_width=True,
+            hide_index=True
+        )
+
+        st.bar_chart(
+            df_dadu,
+            x="Mata Dadu",
+            y="Frekuensi",
+            use_container_width=True
+        )
+
+        st.markdown("""
+        Secara teori, peluang setiap mata dadu adalah sama:
+        """)
+
+        st.latex(r"P(1)=P(2)=\cdots=P(6)=\frac{1}{6}")
+
+    # =========================================================
+    # 20. PELUANG DENGAN KOMBINASI
+    # =========================================================
+
+    st.markdown("### 🎯 18. Peluang Menggunakan Kombinasi")
+
+    st.markdown("""
+    Dalam beberapa masalah peluang, kombinasi digunakan untuk menghitung
+    banyak cara memilih objek.
+    """)
+
+    st.markdown("""
+    Misalkan dari 10 siswa dipilih 3 siswa secara acak.
+
+    Banyak seluruh cara memilih:
+    """)
+
+    st.latex(r"C(10,3)=120")
+
+    st.markdown("""
+    Jika terdapat 4 siswa tertentu dan kita ingin memilih tepat 2 dari
+    keempat siswa tersebut, banyak cara yang memenuhi:
+    """)
+
+    st.latex(r"C(4,2)=6")
+
+    st.markdown("Maka peluangnya:")
+
+    st.latex(r"P=\frac{C(4,2)}{C(10,3)}")
+
+    st.latex(r"P=\frac{6}{120}=\frac{1}{20}")
+
+    # =========================================================
+    # 21. PELUANG BINOMIAL DASAR
+    # =========================================================
+
+    st.markdown("### 📦 19. Percobaan Bernoulli")
+
+    st.markdown("""
+    Percobaan Bernoulli adalah percobaan yang memiliki dua hasil yang
+    biasanya disebut **sukses** dan **gagal**.
+
+    Contoh:
+
+    - berhasil/gagal;
+    - ya/tidak;
+    - angka/gambar pada koin.
+    """)
+
+    st.markdown("""
+    Jika peluang sukses adalah \(p\), maka peluang gagal adalah:
+    """)
+
+    st.latex(r"q=1-p")
+
+    st.markdown("""
+    Untuk \(n\) percobaan independen, peluang tepat \(k\) sukses dapat
+    dihitung dengan:
+    """)
+
+    st.latex(r"P(X=k)=C(n,k)p^k(1-p)^{n-k}")
+
+    st.markdown("""
+    Materi distribusi binomial secara lebih mendalam dapat dipelajari pada
+    **FASE F Lanjut**.
+    """)
+
+    # =========================================================
+    # 22. CONTOH BINOMIAL
+    # =========================================================
+
+    st.markdown("### 🧮 20. Contoh Binomial Sederhana")
+
+    st.markdown("""
+    Sebuah koin dilempar 3 kali. Tentukan peluang muncul tepat 2 angka.
+    """)
+
+    st.latex(r"n=3")
+
+    st.latex(r"k=2")
+
+    st.latex(r"p=\frac{1}{2}")
+
+    st.latex(r"P(X=2)=C(3,2)\left(\frac{1}{2}\right)^2\left(\frac{1}{2}\right)^1")
+
+    st.latex(r"P(X=2)=\frac{3}{8}")
+
+    # =========================================================
+    # 23. CONTOH KONTEKSTUAL
+    # =========================================================
+
+    st.markdown("### 🏫 21. Contoh Masalah Kontekstual")
+
+    st.markdown("""
+    Sebuah sekolah memilih satu siswa secara acak dari 40 siswa.
+    Terdapat 10 siswa yang mengikuti klub matematika.
+
+    Peluang siswa yang terpilih mengikuti klub matematika adalah:
+    """)
+
+    st.latex(r"P(A)=\frac{10}{40}")
+
+    st.latex(r"P(A)=\frac{1}{4}=25\%")
+
+    # =========================================================
+    # 24. LATIHAN
+    # =========================================================
+
+    st.markdown("### ✏️ 22. Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Sebuah dadu dilempar satu kali. Tentukan peluang muncul angka ganjil.
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"A=\{1,3,5\}")
+
+        st.latex(r"P(A)=\frac{3}{6}=\frac{1}{2}")
+
+    st.markdown("""
+    **Soal 2**
+
+    Sebuah koin dilempar dua kali. Tentukan peluang muncul dua gambar.
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"P=\frac{1}{2}\times\frac{1}{2}=\frac{1}{4}")
+
+    st.markdown("""
+    **Soal 3**
+
+    Peluang seorang siswa hadir dalam suatu kegiatan adalah 0,9.
+    Tentukan peluang siswa tersebut tidak hadir.
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"P(A^c)=1-0.9=0.1")
+
+    st.markdown("""
+    **Soal 4**
+
+    Sebuah dadu dilempar 120 kali. Tentukan frekuensi harapan muncul
+    angka 4.
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"F_h=120\times\frac{1}{6}=20")
+
+    # =========================================================
+    # 25. KUIS INTERAKTIF
+    # =========================================================
+
+    st.markdown("### 🎯 23. Kuis Interaktif")
+
+    skor = 0
+
+    q1 = st.radio(
+        "1. Peluang suatu kejadian selalu berada pada:",
+        [
+            "0 sampai 1",
+            "1 sampai 10",
+            "-1 sampai 1",
+            "0 sampai 100"
+        ],
+        key="peluang_q1"
+    )
+
+    if q1 == "0 sampai 1":
+        skor += 1
+
+    q2 = st.radio(
+        "2. Ruang sampel adalah:",
+        [
+            "Satu hasil percobaan",
+            "Seluruh hasil yang mungkin",
+            "Hasil yang paling sering muncul",
+            "Hasil yang tidak mungkin"
+        ],
+        key="peluang_q2"
+    )
+
+    if q2 == "Seluruh hasil yang mungkin":
+        skor += 1
+
+    q3 = st.radio(
+        "3. Peluang muncul angka genap pada sebuah dadu adalah:",
+        [
+            "1/6",
+            "1/3",
+            "1/2",
+            "2/3"
+        ],
+        key="peluang_q3"
+    )
+
+    if q3 == "1/2":
+        skor += 1
+
+    q4 = st.radio(
+        "4. Rumus peluang komplemen adalah:",
+        [
+            "P(Aᶜ)=P(A)",
+            "P(Aᶜ)=1-P(A)",
+            "P(Aᶜ)=P(A)+1",
+            "P(Aᶜ)=P(A)-1"
+        ],
+        key="peluang_q4"
+    )
+
+    if q4 == "P(Aᶜ)=1-P(A)":
+        skor += 1
+
+    q5 = st.radio(
+        "5. Jika A dan B saling bebas, maka:",
+        [
+            "P(A∩B)=P(A)+P(B)",
+            "P(A∩B)=P(A)-P(B)",
+            "P(A∩B)=P(A)P(B)",
+            "P(A∩B)=1"
+        ],
+        key="peluang_q5"
+    )
+
+    if q5 == "P(A∩B)=P(A)P(B)":
+        skor += 1
+
+    q6 = st.radio(
+        "6. Frekuensi harapan dirumuskan dengan:",
+        [
+            "Fh=n+P(A)",
+            "Fh=nP(A)",
+            "Fh=n/P(A)",
+            "Fh=P(A)-n"
+        ],
+        key="peluang_q6"
+    )
+
+    if q6 == "Fh=nP(A)":
+        skor += 1
+
+    if st.button(
+        "📊 Periksa Nilai",
+        key="cek_kuis_peluang"
+    ):
+
+        st.success(
+            f"Skor Anda: {skor}/6"
+        )
+
+        if skor == 6:
+
+            st.balloons()
+
+            st.success(
+                "🎉 Sangat baik! Anda memahami konsep dasar peluang."
+            )
+
+        elif skor >= 4:
+
+            st.info(
+                "👍 Cukup baik. Pelajari kembali konsep yang masih kurang tepat."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali konsep ruang sampel, kejadian, dan peluang."
+            )
+
+    # =========================================================
+    # 26. REFLEKSI
+    # =========================================================
+
+    st.markdown("### 📝 24. Refleksi Pembelajaran")
+
+    st.markdown("""
+    Setelah mempelajari peluang, coba jawab pertanyaan berikut:
+
+    1. Apa yang dimaksud dengan ruang sampel?
+    2. Apa yang dimaksud dengan kejadian?
+    3. Bagaimana cara menghitung peluang suatu kejadian?
+    4. Apa hubungan peluang suatu kejadian dengan komplemennya?
+    5. Apa perbedaan kejadian saling lepas dan saling bebas?
+    6. Kapan peluang bersyarat digunakan?
+    7. Apa yang dimaksud dengan frekuensi harapan?
+    8. Bagaimana konsep peluang digunakan dalam kehidupan sehari-hari?
+    """)
+
+    # =========================================================
+    # 27. RANGKUMAN
+    # =========================================================
+
+    st.markdown("### 📚 25. Rangkuman")
+
+    st.success("""
+    **Konsep utama peluang:**
+
+    • Ruang sampel → seluruh hasil yang mungkin.
+
+    • Kejadian → bagian dari ruang sampel.
+
+    • Peluang:
+      P(A)=n(A)/n(S)
+
+    • Rentang peluang:
+      0 ≤ P(A) ≤ 1
+
+    • Komplemen:
+      P(Aᶜ)=1-P(A)
+
+    • Peluang gabungan:
+      P(A∪B)=P(A)+P(B)-P(A∩B)
+
+    • Jika A dan B saling bebas:
+      P(A∩B)=P(A)P(B)
+
+    • Peluang bersyarat:
+      P(A|B)=P(A∩B)/P(B)
+
+    • Frekuensi harapan:
+      Fh=nP(A)
+
+    • Pada percobaan Bernoulli:
+      P(X=k)=C(n,k)p^k(1-p)^(n-k)
+    """)
+
+    st.markdown("---")
+
+    st.info("""
+    💡 **Kunci utama**
+
+    Peluang pada dasarnya menjawab satu pertanyaan:
+
+    **"Seberapa besar kemungkinan suatu kejadian terjadi?"**
+
+    Mulailah dengan menentukan ruang sampel dan kejadian, kemudian pilih
+    aturan peluang yang sesuai.
+    """)
+    
 def kaidah_pencacahan():
 
     st.markdown("## 🔢 Kaidah Pencacahan")
@@ -6844,5 +7730,5 @@ def tampilkan(materi):
         #pass
 
     elif materi == "Peluang":
-        #peluang()
-        pass
+        peluang()
+        #pass
