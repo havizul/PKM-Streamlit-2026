@@ -543,7 +543,7 @@ def matriks():
     $$A=\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix}$$
     """)
 
-    st.markdown("""
+    st.markdown(r"""
     **Soal 2**
 
     Tentukan hasil:
@@ -552,7 +552,7 @@ def matriks():
     \begin{pmatrix}5&6\\7&8\end{pmatrix}$$
     """)
 
-    st.markdown("""
+    st.markdown(r"""
     **Soal 3**
 
     Tentukan determinan:
@@ -560,7 +560,7 @@ def matriks():
     $$A=\begin{pmatrix}4&2\\3&5\end{pmatrix}$$
     """)
 
-    st.markdown("""
+    st.markdown(r"""
     **Soal 4**
 
     Tentukan invers:
@@ -568,7 +568,7 @@ def matriks():
     $$A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$$
     """)
 
-    st.markdown("""
+    st.markdown(r"""
     **Soal 5**
 
     Tentukan solusi sistem:
