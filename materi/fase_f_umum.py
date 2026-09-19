@@ -1395,20 +1395,18 @@ def fungsi_invers_komposisi():
     st.markdown("Tentukan komposisi fungsi:")
     st.latex(r"(f\circ g)(x)")
 
+    st.markdown("Penyelesaian:")
     st.latex(r"(f\circ g)(x)=f(g(x))")
-
     st.latex(r"(f\circ g)(x)=f(x^2)")
-
     st.latex(r"(f\circ g)(x)=2x^2+1")
 
     #st.markdown("Sekarang tentukan \(g\circ f\).")
     st.markdown("Sekarang tentukan komposisi fungsi:")
     st.latex(r"(g\circ f)(x)")
 
+    st.markdown("Penyelesaian:")
     st.latex(r"(g\circ f)(x)=g(f(x))")
-
     st.latex(r"(g\circ f)(x)=(2x+1)^2")
-
     st.latex(r"(g\circ f)(x)=4x^2+4x+1")
 
     st.markdown("**Perhatikan bahwa pada umumnya:**")
