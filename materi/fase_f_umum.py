@@ -2,6 +2,954 @@ import streamlit as st
 import pandas as pd
 import math
 
+def statistika_bivariat():
+
+    st.markdown("## 📊 Statistika Bivariat")
+
+    st.markdown("""
+    Statistika bivariat adalah statistika yang digunakan untuk mempelajari
+    **hubungan antara dua variabel**.
+
+    Berbeda dengan statistika univariat yang hanya mempelajari satu variabel,
+    statistika bivariat memungkinkan kita menganalisis apakah perubahan pada
+    suatu variabel berkaitan dengan perubahan pada variabel lainnya.
+    """)
+
+    # =========================================================
+    # 1. TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.markdown("### 🎯 Tujuan Pembelajaran")
+
+    st.info("""
+    Setelah mempelajari materi ini, peserta didik diharapkan mampu:
+
+    1. Menjelaskan konsep statistika bivariat.
+    2. Mengidentifikasi variabel bebas dan variabel terikat.
+    3. Menyajikan data bivariat dalam tabel.
+    4. Membuat dan membaca diagram pencar.
+    5. Mengidentifikasi pola hubungan antara dua variabel.
+    6. Menentukan koefisien korelasi.
+    7. Menentukan persamaan regresi linear sederhana.
+    8. Menggunakan persamaan regresi untuk melakukan prediksi.
+    9. Menafsirkan hubungan antara dua variabel secara tepat.
+    10. Memahami keterbatasan korelasi dan regresi.
+    """)
+
+    # =========================================================
+    # 2. APERSEPSI
+    # =========================================================
+
+    st.markdown("### 💡 Apersepsi")
+
+    st.markdown("""
+    Misalkan seorang guru ingin mengetahui apakah terdapat hubungan antara
+    **waktu belajar** dan **nilai ujian matematika** peserta didik.
+
+    Setiap peserta didik memiliki dua data:
+
+    - waktu belajar;
+    - nilai ujian.
+
+    Karena terdapat dua variabel yang diamati pada setiap individu,
+    data tersebut disebut **data bivariat**.
+    """)
+
+    st.markdown("Contoh:")
+
+    df_ap = pd.DataFrame({
+        "Waktu Belajar (jam)": [1, 2, 2, 3, 4, 4, 5, 6],
+        "Nilai Ujian": [55, 60, 65, 68, 75, 78, 82, 90]
+    })
+
+    st.dataframe(
+        df_ap,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 3. KONSEP DATA BIVARIAT
+    # =========================================================
+
+    st.markdown("### 📖 1. Konsep Data Bivariat")
+
+    st.markdown("""
+    Data bivariat adalah data yang terdiri atas dua variabel yang diamati
+    pada unit pengamatan yang sama.
+
+    Misalkan:
+
+    - \(X\) = waktu belajar;
+    - \(Y\) = nilai ujian.
+
+    Maka setiap pengamatan dapat ditulis sebagai pasangan:
+    """)
+
+    st.latex(r"(x_i,y_i)")
+
+    st.markdown("""
+    Contohnya, seorang peserta didik belajar 4 jam dan memperoleh nilai 75,
+    sehingga datanya adalah:
+    """)
+
+    st.latex(r"(4,75)")
+
+    # =========================================================
+    # 4. VARIABEL X DAN Y
+    # =========================================================
+
+    st.markdown("### 🔤 2. Variabel X dan Y")
+
+    st.markdown("""
+    Dalam analisis bivariat, kita sering menggunakan:
+
+    - \(X\) = variabel prediktor/penjelas;
+    - \(Y\) = variabel respons/yang dijelaskan.
+
+    Contoh:
+
+    **X = waktu belajar**
+
+    **Y = nilai ujian**
+
+    Namun, penggunaan istilah "variabel bebas" dan "variabel terikat"
+    harus disesuaikan dengan konteks penelitian. Hubungan statistik
+    tidak otomatis membuktikan hubungan sebab-akibat.
+    """)
+
+    # =========================================================
+    # 5. TABEL DATA BIVARIAT
+    # =========================================================
+
+    st.markdown("### 📋 3. Tabel Data Bivariat")
+
+    st.markdown("""
+    Data bivariat biasanya disajikan dalam bentuk pasangan pengamatan.
+    """)
+
+    df_bivariat = pd.DataFrame({
+        "No": range(1, 9),
+        "X — Waktu Belajar (jam)": [1, 2, 2, 3, 4, 4, 5, 6],
+        "Y — Nilai": [55, 60, 65, 68, 75, 78, 82, 90]
+    })
+
+    st.dataframe(
+        df_bivariat,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 6. DIAGRAM PENCAR
+    # =========================================================
+
+    st.markdown("### 📍 4. Diagram Pencar")
+
+    st.markdown("""
+    **Diagram pencar (scatter plot)** digunakan untuk melihat pola hubungan
+    antara dua variabel.
+
+    Setiap pasangan data \((x,y)\) digambarkan sebagai satu titik pada
+    bidang koordinat.
+    """)
+
+    st.scatter_chart(
+        df_bivariat,
+        x="X — Waktu Belajar (jam)",
+        y="Y — Nilai",
+        use_container_width=True
+    )
+
+    st.markdown("""
+    Dari diagram pencar, kita dapat mengamati:
+
+    - arah hubungan;
+    - kekuatan pola hubungan;
+    - adanya pencilan (outlier);
+    - apakah hubungan cenderung linear atau tidak.
+    """)
+
+    # =========================================================
+    # 7. ARAH HUBUNGAN
+    # =========================================================
+
+    st.markdown("### ↗️ 5. Arah Hubungan")
+
+    st.markdown("""
+    Secara umum, hubungan antara dua variabel dapat menunjukkan:
+
+    **Hubungan positif**
+
+    Ketika \(X\) meningkat, \(Y\) cenderung meningkat.
+
+    **Hubungan negatif**
+
+    Ketika \(X\) meningkat, \(Y\) cenderung menurun.
+
+    **Tidak ada hubungan linear yang jelas**
+
+    Perubahan \(X\) tidak menunjukkan pola linear yang jelas terhadap \(Y\).
+    """)
+
+    st.markdown("Secara sederhana:")
+
+    st.latex(r"X\uparrow\Rightarrow Y\uparrow")
+
+    st.latex(r"X\uparrow\Rightarrow Y\downarrow")
+
+    # =========================================================
+    # 8. KORELASI
+    # =========================================================
+
+    st.markdown("### 🔗 6. Korelasi")
+
+    st.markdown("""
+    Korelasi digunakan untuk mengukur **arah dan kekuatan hubungan linear**
+    antara dua variabel kuantitatif.
+    """)
+
+    st.markdown("Koefisien korelasi Pearson dinyatakan dengan \(r\):")
+
+    st.latex(
+        r"r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{[n\sum x^2-(\sum x)^2][n\sum y^2-(\sum y)^2]}}"
+    )
+
+    st.markdown("""
+    Nilai koefisien korelasi memenuhi:
+    """)
+
+    st.latex(r"-1\leq r\leq1")
+
+    st.markdown("""
+    Interpretasi arah:
+
+    - \(r>0\) → hubungan linear positif.
+    - \(r<0\) → hubungan linear negatif.
+    - \(r\approx0\) → tidak terdapat hubungan linear yang kuat.
+
+    Semakin dekat nilai absolut \(r\) dengan 1, semakin kuat hubungan linear
+    yang ditunjukkan oleh data.
+    """)
+
+    # =========================================================
+    # 9. CONTOH KORELASI
+    # =========================================================
+
+    st.markdown("### 🧮 7. Contoh Menghitung Korelasi")
+
+    x_contoh = [1, 2, 2, 3, 4, 4, 5, 6]
+    y_contoh = [55, 60, 65, 68, 75, 78, 82, 90]
+
+    n = len(x_contoh)
+
+    sum_x = sum(x_contoh)
+    sum_y = sum(y_contoh)
+    sum_xy = sum(
+        x * y for x, y in zip(x_contoh, y_contoh)
+    )
+    sum_x2 = sum(
+        x ** 2 for x in x_contoh
+    )
+    sum_y2 = sum(
+        y ** 2 for y in y_contoh
+    )
+
+    penyebut = math.sqrt(
+        (n * sum_x2 - sum_x ** 2) *
+        (n * sum_y2 - sum_y ** 2)
+    )
+
+    r_contoh = (
+        (n * sum_xy - sum_x * sum_y) /
+        penyebut
+    )
+
+    st.markdown("Hasil perhitungan:")
+
+    st.latex(
+        rf"r\approx{r_contoh:.3f}"
+    )
+
+    st.markdown("""
+    Nilai \(r\) positif menunjukkan bahwa pada data tersebut terdapat
+    hubungan linear positif antara waktu belajar dan nilai ujian.
+    """)
+
+    # =========================================================
+    # 10. KOEFISIEN DETERMINASI
+    # =========================================================
+
+    st.markdown("### 📈 8. Koefisien Determinasi")
+
+    st.markdown("""
+    Koefisien determinasi dapat digunakan untuk melihat proporsi variasi
+    \(Y\) yang dapat dijelaskan oleh hubungan linear dengan \(X\).
+    """)
+
+    st.latex(r"R^2=r^2")
+
+    r2 = r_contoh ** 2
+
+    st.latex(
+        rf"R^2\approx{r2:.3f}"
+    )
+
+    st.latex(
+        rf"R^2\times100\%\approx{r2*100:.2f}\%"
+    )
+
+    st.warning("""
+    ⚠️ Koefisien determinasi bukan berarti hubungan tersebut membuktikan
+    bahwa X menyebabkan Y.
+    """)
+
+    # =========================================================
+    # 11. REGRESI LINEAR
+    # =========================================================
+
+    st.markdown("### 📐 9. Regresi Linear Sederhana")
+
+    st.markdown("""
+    Jika diagram pencar menunjukkan kecenderungan hubungan linear,
+    kita dapat menggunakan model regresi linear sederhana.
+    """)
+
+    st.latex(r"\hat{y}=a+bx")
+
+    st.markdown("""
+    Keterangan:
+
+    - \(\hat{y}\) = nilai prediksi \(Y\);
+    - \(a\) = intercept;
+    - \(b\) = slope/kemiringan garis regresi.
+    """)
+
+    # =========================================================
+    # 12. MENENTUKAN KOEFISIEN REGRESI
+    # =========================================================
+
+    st.markdown("### 🧮 10. Menentukan Persamaan Regresi")
+
+    mean_x = sum_x / n
+    mean_y = sum_y / n
+
+    sum_x_dev2 = sum(
+        (x - mean_x) ** 2
+        for x in x_contoh
+    )
+
+    sum_xy_dev = sum(
+        (x - mean_x) * (y - mean_y)
+        for x, y in zip(x_contoh, y_contoh)
+    )
+
+    b = sum_xy_dev / sum_x_dev2
+    a = mean_y - b * mean_x
+
+    st.markdown("Koefisien slope:")
+
+    st.latex(
+        r"b=\frac{\sum(x-\bar{x})(y-\bar{y})}{\sum(x-\bar{x})^2}"
+    )
+
+    st.markdown("Intercept:")
+
+    st.latex(
+        r"a=\bar{y}-b\bar{x}"
+    )
+
+    st.markdown("Untuk contoh data di atas diperoleh:")
+
+    st.latex(
+        rf"b\approx{b:.3f}"
+    )
+
+    st.latex(
+        rf"a\approx{a:.3f}"
+    )
+
+    st.markdown("Sehingga persamaan regresinya:")
+
+    st.latex(
+        rf"\hat{{y}}={a:.3f}+{b:.3f}x"
+    )
+
+    # =========================================================
+    # 13. INTERPRETASI SLOPE
+    # =========================================================
+
+    st.markdown("### 🔎 11. Interpretasi Slope")
+
+    st.markdown(f"""
+    Pada contoh ini, nilai slope sekitar **{b:.3f}**.
+
+    Artinya, dalam model linear tersebut, setiap kenaikan waktu belajar
+    sebesar 1 jam berkaitan dengan kenaikan nilai prediksi sekitar
+    **{b:.3f} poin**.
+
+    Perhatikan bahwa interpretasi ini adalah interpretasi model statistik,
+    bukan bukti bahwa tambahan waktu belajar secara otomatis menyebabkan
+    kenaikan nilai.
+    """)
+
+    # =========================================================
+    # 14. PREDIKSI
+    # =========================================================
+
+    st.markdown("### 🔮 12. Prediksi dengan Regresi")
+
+    x_pred = st.number_input(
+        "Masukkan nilai X untuk prediksi",
+        min_value=0.0,
+        value=5.0,
+        step=0.5,
+        key="stat_bivariat_x_pred"
+    )
+
+    y_pred = a + b * x_pred
+
+    st.markdown("Prediksi nilai \(Y\):")
+
+    st.latex(
+        rf"\hat{{y}}={a:.3f}+{b:.3f}({x_pred:.2f})"
+    )
+
+    st.latex(
+        rf"\hat{{y}}\approx{y_pred:.3f}"
+    )
+
+    # =========================================================
+    # 15. RESIDUAL
+    # =========================================================
+
+    st.markdown("### 📉 13. Residual")
+
+    st.markdown("""
+    Residual adalah selisih antara nilai aktual dan nilai prediksi.
+    """)
+
+    st.latex(r"e=y-\hat{y}")
+
+    st.markdown("""
+    Jika residual:
+
+    - positif → nilai aktual lebih besar daripada prediksi;
+    - negatif → nilai aktual lebih kecil daripada prediksi;
+    - mendekati nol → prediksi dekat dengan nilai aktual.
+    """)
+
+    # =========================================================
+    # 16. DATA RESIDUAL
+    # =========================================================
+
+    y_pred_all = [
+        a + b * x
+        for x in x_contoh
+    ]
+
+    residuals = [
+        y - yp
+        for y, yp in zip(y_contoh, y_pred_all)
+    ]
+
+    df_residual = pd.DataFrame({
+        "X": x_contoh,
+        "Y Aktual": y_contoh,
+        "Y Prediksi": [
+            round(value, 3)
+            for value in y_pred_all
+        ],
+        "Residual": [
+            round(value, 3)
+            for value in residuals
+        ]
+    })
+
+    st.dataframe(
+        df_residual,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # =========================================================
+    # 17. EKSPLORASI DATA SENDIRI
+    # =========================================================
+
+    st.markdown("### 🧪 14. Eksplorasi Data Bivariat")
+
+    st.markdown("""
+    Masukkan data \(X\) dan \(Y\) sendiri.
+
+    Gunakan koma untuk memisahkan setiap nilai.
+    """)
+
+    x_input = st.text_input(
+        "Data X",
+        value="1,2,3,4,5",
+        key="stat_bivariat_x_input"
+    )
+
+    y_input = st.text_input(
+        "Data Y",
+        value="2,4,5,8,10",
+        key="stat_bivariat_y_input"
+    )
+
+    if st.button(
+        "📊 Analisis Data",
+        key="analisis_stat_bivariat"
+    ):
+
+        try:
+
+            x_data = [
+                float(value.strip())
+                for value in x_input.split(",")
+            ]
+
+            y_data = [
+                float(value.strip())
+                for value in y_input.split(",")
+            ]
+
+            if len(x_data) != len(y_data):
+
+                st.error(
+                    "Jumlah data X dan Y harus sama."
+                )
+
+            elif len(x_data) < 2:
+
+                st.error(
+                    "Masukkan minimal dua pasangan data."
+                )
+
+            else:
+
+                n_user = len(x_data)
+
+                mean_x_user = sum(x_data) / n_user
+                mean_y_user = sum(y_data) / n_user
+
+                numerator = sum(
+                    (x - mean_x_user) *
+                    (y - mean_y_user)
+                    for x, y in zip(x_data, y_data)
+                )
+
+                denominator = math.sqrt(
+                    sum(
+                        (x - mean_x_user) ** 2
+                        for x in x_data
+                    ) *
+                    sum(
+                        (y - mean_y_user) ** 2
+                        for y in y_data
+                    )
+                )
+
+                if denominator == 0:
+
+                    st.error(
+                        "Korelasi tidak dapat dihitung karena salah satu variabel tidak memiliki variasi."
+                    )
+
+                else:
+
+                    r_user = numerator / denominator
+
+                    st.markdown("#### Hasil Analisis")
+
+                    st.latex(
+                        rf"r\approx{r_user:.4f}"
+                    )
+
+                    if r_user > 0:
+                        arah = "positif"
+                    elif r_user < 0:
+                        arah = "negatif"
+                    else:
+                        arah = "tidak menunjukkan arah linear"
+
+                    st.info(
+                        f"Arah hubungan linear: **{arah}**."
+                    )
+
+                    df_user = pd.DataFrame({
+                        "X": x_data,
+                        "Y": y_data
+                    })
+
+                    st.scatter_chart(
+                        df_user,
+                        x="X",
+                        y="Y",
+                        use_container_width=True
+                    )
+
+        except ValueError:
+
+            st.error(
+                "Format data tidak valid. Gunakan angka yang dipisahkan dengan koma."
+            )
+
+    # =========================================================
+    # 18. PENCATATAN DATA MANUAL
+    # =========================================================
+
+    st.markdown("### 📝 15. Membuat Data Bivariat")
+
+    st.markdown("""
+    Contoh data yang dapat dianalisis:
+    """)
+
+    df_contoh = pd.DataFrame({
+        "Jam Belajar": [1, 2, 3, 4, 5],
+        "Nilai": [60, 65, 70, 78, 85]
+    })
+
+    st.data_editor(
+        df_contoh,
+        num_rows="dynamic",
+        use_container_width=True,
+        key="editor_stat_bivariat"
+    )
+
+    # =========================================================
+    # 19. KORELASI BUKAN SEBAB-AKIBAT
+    # =========================================================
+
+    st.markdown("### ⚠️ 16. Korelasi Tidak Selalu Berarti Sebab-Akibat")
+
+    st.warning("""
+    Dua variabel dapat memiliki korelasi tanpa hubungan sebab-akibat langsung.
+
+    Misalnya, dua variabel dapat sama-sama dipengaruhi oleh variabel ketiga.
+    Oleh karena itu, hasil korelasi harus ditafsirkan berdasarkan konteks,
+    desain penelitian, dan informasi lain yang tersedia.
+    """)
+
+    st.markdown("""
+    Prinsip penting:
+
+    **Korelasi menunjukkan hubungan statistik, bukan otomatis hubungan kausal.**
+    """)
+
+    # =========================================================
+    # 20. OUTLIER
+    # =========================================================
+
+    st.markdown("### ⚠️ 17. Pencilan (Outlier)")
+
+    st.markdown("""
+    Outlier adalah pengamatan yang memiliki pola sangat berbeda dari sebagian
+    besar data.
+
+    Dalam analisis bivariat, outlier dapat memengaruhi:
+
+    - nilai korelasi;
+    - garis regresi;
+    - hasil prediksi.
+    """)
+
+    st.markdown("""
+    Oleh karena itu, keberadaan outlier perlu diperiksa sebelum menarik
+    kesimpulan dari analisis.
+    """)
+
+    # =========================================================
+    # 21. CONTOH KONTEKSTUAL
+    # =========================================================
+
+    st.markdown("### 🏫 18. Studi Kasus")
+
+    st.markdown("""
+    Seorang guru ingin mengetahui hubungan antara waktu belajar mandiri
+    dengan nilai matematika siswa.
+
+    Data yang diperoleh:
+    """)
+
+    df_kasus = pd.DataFrame({
+        "Siswa": [
+            "A", "B", "C", "D",
+            "E", "F", "G", "H"
+        ],
+        "Jam Belajar": [
+            1, 2, 2, 3,
+            4, 4, 5, 6
+        ],
+        "Nilai": [
+            55, 60, 65, 68,
+            75, 78, 82, 90
+        ]
+    })
+
+    st.dataframe(
+        df_kasus,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    st.markdown("""
+    Berdasarkan data tersebut, kita dapat:
+
+    1. membuat diagram pencar;
+    2. menghitung korelasi;
+    3. membuat model regresi;
+    4. melakukan prediksi;
+    5. mengevaluasi residual;
+    6. menafsirkan hubungan dengan mempertimbangkan konteks.
+    """)
+
+    # =========================================================
+    # 22. LATIHAN
+    # =========================================================
+
+    st.markdown("### ✏️ 19. Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Apa yang dimaksud dengan data bivariat?
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.markdown("""
+        Data bivariat adalah data yang terdiri atas dua variabel yang diamati
+        pada unit pengamatan yang sama.
+        """)
+
+    st.markdown("""
+    **Soal 2**
+
+    Apa fungsi diagram pencar?
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.markdown("""
+        Diagram pencar digunakan untuk melihat pola, arah, dan bentuk hubungan
+        antara dua variabel.
+        """)
+
+    st.markdown("""
+    **Soal 3**
+
+    Jika koefisien korelasi bernilai negatif, apa artinya?
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.markdown("""
+        Artinya terdapat kecenderungan hubungan linear negatif: ketika satu
+        variabel meningkat, variabel lainnya cenderung menurun.
+        """)
+
+    st.markdown("""
+    **Soal 4**
+
+    Diketahui persamaan regresi:
+    """)
+
+    st.latex(r"\hat{y}=40+5x")
+
+    st.markdown("""
+    Tentukan prediksi \(Y\) ketika \(X=6\).
+    """)
+
+    with st.expander("💡 Lihat Pembahasan"):
+
+        st.latex(r"\hat{y}=40+5(6)")
+
+        st.latex(r"\hat{y}=70")
+
+    # =========================================================
+    # 23. KUIS INTERAKTIF
+    # =========================================================
+
+    st.markdown("### 🎯 20. Kuis Interaktif")
+
+    skor = 0
+
+    q1 = st.radio(
+        "1. Statistika bivariat mempelajari:",
+        [
+            "Satu variabel",
+            "Dua variabel",
+            "Tiga variabel saja",
+            "Tidak ada variabel"
+        ],
+        key="stat_bivariat_q1"
+    )
+
+    if q1 == "Dua variabel":
+        skor += 1
+
+    q2 = st.radio(
+        "2. Grafik yang digunakan untuk melihat hubungan dua variabel kuantitatif adalah:",
+        [
+            "Diagram lingkaran",
+            "Histogram",
+            "Diagram pencar",
+            "Diagram batang tunggal"
+        ],
+        key="stat_bivariat_q2"
+    )
+
+    if q2 == "Diagram pencar":
+        skor += 1
+
+    q3 = st.radio(
+        "3. Nilai koefisien korelasi berada pada interval:",
+        [
+            "0 sampai 100",
+            "-1 sampai 1",
+            "-100 sampai 100",
+            "1 sampai 10"
+        ],
+        key="stat_bivariat_q3"
+    )
+
+    if q3 == "-1 sampai 1":
+        skor += 1
+
+    q4 = st.radio(
+        "4. Jika r bernilai positif, maka hubungan linear cenderung:",
+        [
+            "Negatif",
+            "Positif",
+            "Tidak ada",
+            "Selalu kausal"
+        ],
+        key="stat_bivariat_q4"
+    )
+
+    if q4 == "Positif":
+        skor += 1
+
+    q5 = st.radio(
+        "5. Persamaan regresi linear sederhana berbentuk:",
+        [
+            "ŷ = a + bx",
+            "ŷ = ax² + b",
+            "ŷ = a/x",
+            "ŷ = x + y"
+        ],
+        key="stat_bivariat_q5"
+    )
+
+    if q5 == "ŷ = a + bx":
+        skor += 1
+
+    q6 = st.radio(
+        "6. Residual adalah:",
+        [
+            "x - y",
+            "y - ŷ",
+            "x + y",
+            "ŷ - x"
+        ],
+        key="stat_bivariat_q6"
+    )
+
+    if q6 == "y - ŷ":
+        skor += 1
+
+    if st.button(
+        "📊 Periksa Nilai",
+        key="cek_kuis_stat_bivariat"
+    ):
+
+        st.success(
+            f"Skor Anda: {skor}/6"
+        )
+
+        if skor == 6:
+
+            st.balloons()
+
+            st.success(
+                "🎉 Sangat baik! Anda memahami konsep dasar statistika bivariat."
+            )
+
+        elif skor >= 4:
+
+            st.info(
+                "👍 Cukup baik. Pelajari kembali konsep yang masih kurang tepat."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Silakan pelajari kembali konsep data bivariat, korelasi, dan regresi."
+            )
+
+    # =========================================================
+    # 24. REFLEKSI
+    # =========================================================
+
+    st.markdown("### 📝 21. Refleksi Pembelajaran")
+
+    st.markdown("""
+    Setelah mempelajari statistika bivariat, coba jawab pertanyaan berikut:
+
+    1. Apa perbedaan statistika univariat dan bivariat?
+    2. Apa fungsi diagram pencar?
+    3. Apa arti tanda positif dan negatif pada koefisien korelasi?
+    4. Apa arti nilai korelasi yang mendekati 1 atau -1?
+    5. Apa fungsi persamaan regresi?
+    6. Apa yang dimaksud dengan residual?
+    7. Mengapa korelasi tidak selalu menunjukkan hubungan sebab-akibat?
+    8. Bagaimana outlier dapat memengaruhi analisis?
+    """)
+
+    # =========================================================
+    # 25. RANGKUMAN
+    # =========================================================
+
+    st.markdown("### 📚 22. Rangkuman")
+
+    st.success("""
+    **Konsep utama Statistika Bivariat:**
+
+    • Data bivariat terdiri atas dua variabel.
+
+    • Data dapat ditulis sebagai pasangan (x,y).
+
+    • Diagram pencar digunakan untuk melihat pola hubungan.
+
+    • Korelasi digunakan untuk mengukur arah dan kekuatan hubungan linear.
+
+    • Koefisien korelasi memenuhi:
+      -1 ≤ r ≤ 1
+
+    • Regresi linear sederhana:
+      ŷ = a + bx
+
+    • Residual:
+      e = y - ŷ
+
+    • Koefisien determinasi:
+      R² = r²
+
+    • Korelasi tidak otomatis membuktikan sebab-akibat.
+
+    • Outlier dapat memengaruhi korelasi dan regresi.
+    """)
+
+    st.markdown("---")
+
+    st.info("""
+    💡 **Inti konsep**
+
+    Statistika bivariat membantu kita melihat hubungan antara dua variabel,
+    tetapi hasil analisis harus selalu ditafsirkan berdasarkan pola data,
+    konteks, dan keterbatasan metode statistik yang digunakan.
+    """)
+    
 def lingkaran():
 
     st.markdown("## ⭕ Lingkaran")
@@ -5014,8 +5962,8 @@ def tampilkan(materi):
         #pass
 
     elif materi == "Statistika Bivariat":
-        #statistika_bivariat()
-        pass
+        statistika_bivariat()
+        #pass
 
     elif materi == "Kaidah Pencacahan":
         #kaidah_pencacahan()
