@@ -86,7 +86,7 @@ def matriks():
 
     st.latex(r"A=\begin{pmatrix}2&4&6\\1&3&5\end{pmatrix}")
 
-    st.markdown("""
+    st.markdown(r"""
     Matriks tersebut mempunyai:
 
     - 2 baris
