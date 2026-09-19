@@ -5,8 +5,765 @@ import math
 
 from textwrap import dedent
 
-def matriks():
 
+def transformasi_geometri():
+
+    st.markdown(
+        '<div class="content-title">📕 Transformasi Geometri</div>',
+        unsafe_allow_html=True
+    )
+
+    # =========================================================
+    # TUJUAN PEMBELAJARAN
+    # =========================================================
+
+    st.header("🎯 Tujuan Pembelajaran")
+
+    st.markdown("""
+    Setelah mempelajari materi ini, siswa diharapkan mampu:
+
+    - Menjelaskan konsep transformasi geometri.
+    - Menentukan hasil translasi suatu titik atau bangun.
+    - Menentukan hasil refleksi terhadap berbagai garis.
+    - Menentukan hasil rotasi terhadap pusat tertentu.
+    - Menentukan hasil dilatasi suatu titik atau bangun.
+    - Menggunakan matriks untuk merepresentasikan transformasi.
+    - Menentukan hasil komposisi transformasi.
+    - Menganalisis hubungan antara transformasi dan koordinat.
+    - Menerapkan transformasi geometri dalam masalah kontekstual.
+    """)
+
+    # =========================================================
+    # APERSEPSI
+    # =========================================================
+
+    st.header("💡 Apersepsi")
+
+    st.markdown("""
+    Pernahkah kamu melihat gambar yang digeser, dicerminkan, diputar,
+    atau diperbesar?
+
+    Perubahan posisi, orientasi, maupun ukuran suatu objek tersebut dapat
+    dipelajari menggunakan **transformasi geometri**.
+
+    Dalam sistem koordinat, transformasi digunakan untuk menentukan posisi
+    baru suatu titik atau bangun.
+    """)
+
+    st.latex(r"P(x,y)\rightarrow P'(x',y')")
+
+    # =========================================================
+    # 1. KONSEP DASAR
+    # =========================================================
+
+    st.header("1️⃣ Konsep Dasar Transformasi")
+
+    st.markdown("""
+    Transformasi geometri adalah pemetaan setiap titik pada suatu bidang
+    ke titik lain sehingga diperoleh objek hasil transformasi.
+
+    Titik sebelum transformasi disebut **titik asal**, sedangkan titik
+    setelah transformasi disebut **bayangan**.
+    """)
+
+    st.latex(r"P(x,y)\rightarrow P'(x',y')")
+
+    st.markdown("""
+    Empat transformasi dasar yang dipelajari adalah:
+
+    - **Translasi** → pergeseran.
+    - **Refleksi** → pencerminan.
+    - **Rotasi** → perputaran.
+    - **Dilatasi** → perubahan ukuran.
+    """)
+
+    # =========================================================
+    # 2. TRANSLASI
+    # =========================================================
+
+    st.header("2️⃣ Translasi")
+
+    st.markdown("""
+    Translasi adalah transformasi yang memindahkan setiap titik dengan
+    jarak dan arah yang sama.
+    """)
+
+    st.latex(r"T=\begin{pmatrix}a\\b\end{pmatrix}")
+
+    st.markdown("Jika titik $P(x,y)$ ditranslasikan oleh $T(a,b)$, maka:")
+
+    st.latex(r"P'(x',y')=(x+a,y+b)")
+
+    st.markdown("Contoh:")
+
+    st.latex(r"P(2,3)\xrightarrow{T(4,-1)}P'(6,2)")
+
+    # =========================================================
+    # 3. EKSPLORASI TRANSLASI
+    # =========================================================
+
+    st.header("🔎 Eksplorasi Translasi")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        tx = st.number_input(
+            "Koordinat x titik P",
+            value=2.0,
+            key="geo_tx"
+        )
+
+        ty = st.number_input(
+            "Koordinat y titik P",
+            value=3.0,
+            key="geo_ty"
+        )
+
+    with col2:
+        a_trans = st.number_input(
+            "Pergeseran horizontal (a)",
+            value=4.0,
+            key="geo_a_trans"
+        )
+
+        b_trans = st.number_input(
+            "Pergeseran vertikal (b)",
+            value=-1.0,
+            key="geo_b_trans"
+        )
+
+    tx_baru = tx + a_trans
+    ty_baru = ty + b_trans
+
+    st.success(
+        f"P({tx:g}, {ty:g}) → P'({tx_baru:g}, {ty_baru:g})"
+    )
+
+    # =========================================================
+    # 4. REFLEKSI
+    # =========================================================
+
+    st.header("3️⃣ Refleksi")
+
+    st.markdown("""
+    Refleksi atau pencerminan menghasilkan bayangan yang memiliki jarak
+    sama terhadap garis cermin.
+    """)
+
+    st.subheader("Refleksi terhadap sumbu-X")
+
+    st.latex(r"(x,y)\rightarrow(x,-y)")
+
+    st.subheader("Refleksi terhadap sumbu-Y")
+
+    st.latex(r"(x,y)\rightarrow(-x,y)")
+
+    st.subheader("Refleksi terhadap titik asal O")
+
+    st.latex(r"(x,y)\rightarrow(-x,-y)")
+
+    st.subheader("Refleksi terhadap garis y=x")
+
+    st.latex(r"(x,y)\rightarrow(y,x)")
+
+    st.subheader("Refleksi terhadap garis y=-x")
+
+    st.latex(r"(x,y)\rightarrow(-y,-x)")
+
+    # =========================================================
+    # 5. REFLEKSI TERHADAP GARIS VERTIKAL / HORIZONTAL
+    # =========================================================
+
+    st.subheader("Refleksi terhadap garis x=a")
+
+    st.latex(r"(x,y)\rightarrow(2a-x,y)")
+
+    st.subheader("Refleksi terhadap garis y=b")
+
+    st.latex(r"(x,y)\rightarrow(x,2b-y)")
+
+    # =========================================================
+    # 6. EKSPLORASI REFLEKSI
+    # =========================================================
+
+    st.header("🔎 Eksplorasi Refleksi")
+
+    rx = st.number_input(
+        "Koordinat x",
+        value=3.0,
+        key="geo_rx"
+    )
+
+    ry = st.number_input(
+        "Koordinat y",
+        value=2.0,
+        key="geo_ry"
+    )
+
+    refleksi = st.selectbox(
+        "Pilih jenis refleksi",
+        [
+            "Sumbu-X",
+            "Sumbu-Y",
+            "Titik Asal O",
+            "Garis y = x",
+            "Garis y = -x"
+        ],
+        key="geo_refleksi"
+    )
+
+    if refleksi == "Sumbu-X":
+        xr = rx
+        yr = -ry
+
+    elif refleksi == "Sumbu-Y":
+        xr = -rx
+        yr = ry
+
+    elif refleksi == "Titik Asal O":
+        xr = -rx
+        yr = -ry
+
+    elif refleksi == "Garis y = x":
+        xr = ry
+        yr = rx
+
+    else:
+        xr = -ry
+        yr = -rx
+
+    st.success(
+        f"P({rx:g}, {ry:g}) → P'({xr:g}, {yr:g})"
+    )
+
+    # =========================================================
+    # 7. ROTASI
+    # =========================================================
+
+    st.header("4️⃣ Rotasi")
+
+    st.markdown("""
+    Rotasi adalah transformasi yang memutar titik atau bangun terhadap
+    suatu pusat dengan besar sudut tertentu.
+    """)
+
+    st.markdown("Rotasi berpusat di titik asal $O(0,0)$:")
+
+    st.subheader("Rotasi 90° berlawanan arah jarum jam")
+
+    st.latex(r"(x,y)\rightarrow(-y,x)")
+
+    st.subheader("Rotasi 90° searah jarum jam")
+
+    st.latex(r"(x,y)\rightarrow(y,-x)")
+
+    st.subheader("Rotasi 180°")
+
+    st.latex(r"(x,y)\rightarrow(-x,-y)")
+
+    st.subheader("Rotasi 270° berlawanan arah jarum jam")
+
+    st.latex(r"(x,y)\rightarrow(y,-x)")
+
+    # =========================================================
+    # 8. MATRIKS ROTASI
+    # =========================================================
+
+    st.header("5️⃣ Matriks Rotasi")
+
+    st.markdown("""
+    Rotasi dapat direpresentasikan menggunakan matriks.
+    """)
+
+    st.subheader("Rotasi 90°")
+
+    st.latex(r"R_{90}=\begin{pmatrix}0&-1\\1&0\end{pmatrix}")
+
+    st.subheader("Rotasi 180°")
+
+    st.latex(r"R_{180}=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}")
+
+    st.subheader("Rotasi 270°")
+
+    st.latex(r"R_{270}=\begin{pmatrix}0&1\\-1&0\end{pmatrix}")
+
+    # =========================================================
+    # 9. ROTASI DENGAN SUDUT UMUM
+    # =========================================================
+
+    st.header("6️⃣ Rotasi dengan Sudut Umum")
+
+    st.markdown("""
+    Untuk rotasi sebesar sudut $\theta$ terhadap titik asal:
+    """)
+
+    st.latex(r"R_\theta=\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}")
+
+    st.markdown("Sehingga:")
+
+    st.latex(r"\begin{pmatrix}x'\\y'\end{pmatrix}=R_\theta\begin{pmatrix}x\\y\end{pmatrix}")
+
+    # =========================================================
+    # 10. EKSPLORASI ROTASI
+    # =========================================================
+
+    st.header("🔎 Eksplorasi Rotasi")
+
+    rot_x = st.number_input(
+        "x titik P",
+        value=2.0,
+        key="geo_rot_x"
+    )
+
+    rot_y = st.number_input(
+        "y titik P",
+        value=3.0,
+        key="geo_rot_y"
+    )
+
+    sudut = st.selectbox(
+        "Sudut rotasi",
+        [90, 180, 270],
+        key="geo_sudut_rotasi"
+    )
+
+    if sudut == 90:
+        x_rot = -rot_y
+        y_rot = rot_x
+
+    elif sudut == 180:
+        x_rot = -rot_x
+        y_rot = -rot_y
+
+    else:
+        x_rot = rot_y
+        y_rot = -rot_x
+
+    st.success(
+        f"P({rot_x:g}, {rot_y:g}) → P'({x_rot:g}, {y_rot:g})"
+    )
+
+    # =========================================================
+    # 11. DILATASI
+    # =========================================================
+
+    st.header("7️⃣ Dilatasi")
+
+    st.markdown("""
+    Dilatasi adalah transformasi yang mengubah ukuran suatu objek
+    berdasarkan faktor skala tertentu.
+    """)
+
+    st.markdown("Jika pusat dilatasi adalah $O(0,0)$ dan faktor skala $k$, maka:")
+
+    st.latex(r"(x,y)\rightarrow(kx,ky)")
+
+    st.markdown("""
+    Interpretasi faktor skala:
+
+    - $k>1$ → diperbesar.
+    - $0<k<1$ → diperkecil.
+    - $k=1$ → tetap.
+    - $k<0$ → bayangan berada pada arah berlawanan dari pusat.
+    """)
+
+    st.markdown("Contoh:")
+
+    st.latex(r"P(2,3)\xrightarrow{k=2}P'(4,6)")
+
+    # =========================================================
+    # 12. DILATASI DENGAN PUSAT LAIN
+    # =========================================================
+
+    st.header("8️⃣ Dilatasi dengan Pusat $(a,b)$")
+
+    st.markdown("""
+    Jika pusat dilatasi adalah $C(a,b)$ dan faktor skala $k$, maka:
+    """)
+
+    st.latex(r"x'=a+k(x-a)")
+
+    st.latex(r"y'=b+k(y-b)")
+
+    # =========================================================
+    # 13. EKSPLORASI DILATASI
+    # =========================================================
+
+    st.header("🔎 Eksplorasi Dilatasi")
+
+    dx = st.number_input(
+        "Koordinat x titik P",
+        value=2.0,
+        key="geo_dx"
+    )
+
+    dy = st.number_input(
+        "Koordinat y titik P",
+        value=3.0,
+        key="geo_dy"
+    )
+
+    faktor = st.number_input(
+        "Faktor skala k",
+        value=2.0,
+        key="geo_faktor"
+    )
+
+    dx_baru = faktor * dx
+    dy_baru = faktor * dy
+
+    st.success(
+        f"P({dx:g}, {dy:g}) → P'({dx_baru:g}, {dy_baru:g})"
+    )
+
+    # =========================================================
+    # 14. KOMPOSISI TRANSFORMASI
+    # =========================================================
+
+    st.header("9️⃣ Komposisi Transformasi")
+
+    st.markdown("""
+    Dua atau lebih transformasi dapat dilakukan secara berurutan.
+    Transformasi gabungan tersebut disebut **komposisi transformasi**.
+    """)
+
+    st.markdown("Misalnya titik $P$ terlebih dahulu ditranslasikan kemudian direfleksikan.")
+
+    st.latex(r"P\xrightarrow{T}P'\xrightarrow{R}P''")
+
+    st.markdown("""
+    Urutan transformasi penting karena pada umumnya hasilnya dapat berbeda
+    jika urutannya ditukar.
+    """)
+
+    st.latex(r"R\circ T\neq T\circ R")
+
+    # =========================================================
+    # 15. EKSPLORASI KOMPOSISI
+    # =========================================================
+
+    st.header("🔬 Eksplorasi Komposisi Transformasi")
+
+    cx = st.number_input(
+        "x titik awal",
+        value=2.0,
+        key="geo_comp_x"
+    )
+
+    cy = st.number_input(
+        "y titik awal",
+        value=1.0,
+        key="geo_comp_y"
+    )
+
+    ct = st.number_input(
+        "Translasi horizontal",
+        value=3.0,
+        key="geo_comp_tx"
+    )
+
+    cv = st.number_input(
+        "Translasi vertikal",
+        value=2.0,
+        key="geo_comp_ty"
+    )
+
+    komposisi = st.selectbox(
+        "Transformasi kedua",
+        [
+            "Refleksi sumbu-X",
+            "Refleksi sumbu-Y",
+            "Rotasi 90°",
+            "Dilatasi k = 2"
+        ],
+        key="geo_komposisi"
+    )
+
+    # Transformasi pertama: translasi
+    x1 = cx + ct
+    y1 = cy + cv
+
+    if komposisi == "Refleksi sumbu-X":
+        x2 = x1
+        y2 = -y1
+
+    elif komposisi == "Refleksi sumbu-Y":
+        x2 = -x1
+        y2 = y1
+
+    elif komposisi == "Rotasi 90°":
+        x2 = -y1
+        y2 = x1
+
+    else:
+        x2 = 2 * x1
+        y2 = 2 * y1
+
+    st.success(
+        f"P({cx:g}, {cy:g}) → P'({x1:g}, {y1:g}) → P''({x2:g}, {y2:g})"
+    )
+
+    # =========================================================
+    # 16. MATRKS REFLEKSI
+    # =========================================================
+
+    st.header("🔢 Matriks Transformasi")
+
+    st.markdown("Refleksi terhadap sumbu-X:")
+
+    st.latex(r"M_x=\begin{pmatrix}1&0\\0&-1\end{pmatrix}")
+
+    st.markdown("Refleksi terhadap sumbu-Y:")
+
+    st.latex(r"M_y=\begin{pmatrix}-1&0\\0&1\end{pmatrix}")
+
+    st.markdown("Dilatasi dengan faktor $k$:")
+
+    st.latex(r"D=\begin{pmatrix}k&0\\0&k\end{pmatrix}")
+
+    # =========================================================
+    # 17. TRANSFORMASI PADA BANGUN
+    # =========================================================
+
+    st.header("🔺 Transformasi pada Bangun")
+
+    st.markdown("""
+    Transformasi tidak hanya dapat diterapkan pada satu titik.
+
+    Jika sebuah bangun memiliki beberapa titik sudut, transformasi diterapkan
+    pada setiap titik tersebut.
+    """)
+
+    st.markdown("Misalnya segitiga:")
+
+    st.latex(r"A(1,1),\quad B(4,1),\quad C(2,4)")
+
+    st.markdown("Jika direfleksikan terhadap sumbu-X:")
+
+    st.latex(r"A'(1,-1),\quad B'(4,-1),\quad C'(2,-4)")
+
+    # =========================================================
+    # 18. VISUALISASI SEDERHANA
+    # =========================================================
+
+    st.header("📈 Visualisasi Transformasi")
+
+    titik_asal = pd.DataFrame({
+        "x": [1, 4, 2, 1],
+        "y": [1, 1, 4, 1]
+    })
+
+    titik_bayangan = pd.DataFrame({
+        "x": [1, 4, 2, 1],
+        "y": [-1, -1, -4, -1]
+    })
+
+    st.markdown("Segitiga asal:")
+
+    st.line_chart(
+        titik_asal.set_index("x")
+    )
+
+    st.markdown("Bayangan terhadap sumbu-X:")
+
+    st.line_chart(
+        titik_bayangan.set_index("x")
+    )
+
+    # =========================================================
+    # 19. SIFAT-SIFAT TRANSFORMASI
+    # =========================================================
+
+    st.header("🔍 Sifat Transformasi")
+
+    st.markdown("""
+    Beberapa transformasi mempertahankan bentuk dan ukuran bangun.
+
+    **Isometri** meliputi:
+
+    - Translasi.
+    - Refleksi.
+    - Rotasi.
+
+    Transformasi tersebut mempertahankan:
+
+    - panjang sisi,
+    - besar sudut,
+    - bentuk bangun.
+
+    Dilatasi mempertahankan bentuk dan besar sudut, tetapi dapat mengubah
+    ukuran bangun.
+    """)
+
+    # =========================================================
+    # 20. APLIKASI
+    # =========================================================
+
+    st.header("🌍 Penerapan Transformasi Geometri")
+
+    st.markdown("""
+    Transformasi geometri digunakan dalam berbagai bidang:
+
+    - Grafika komputer.
+    - Desain dan animasi.
+    - Pengolahan citra.
+    - Arsitektur.
+    - Robotika.
+    - Computer vision.
+    - Sistem informasi geografis.
+    - Pemodelan 3D.
+    - Permainan digital.
+    """)
+
+    # =========================================================
+    # 21. KASUS ROBOTIKA
+    # =========================================================
+
+    st.header("🤖 Studi Kasus: Robotika")
+
+    st.markdown("""
+    Dalam robotika, posisi suatu objek dapat dinyatakan menggunakan
+    koordinat. Perubahan posisi atau orientasi objek dapat dimodelkan
+    menggunakan transformasi geometri.
+
+    Misalnya sebuah titik pada lengan robot:
+
+    """)
+
+    st.latex(r"P=\begin{pmatrix}2\\3\end{pmatrix}")
+
+    st.markdown("""
+    Jika titik tersebut diputar $90^\circ$ berlawanan arah jarum jam:
+    """)
+
+    st.latex(r"P'=R_{90}P")
+
+    st.latex(r"P'=\begin{pmatrix}-3\\2\end{pmatrix}")
+
+    st.info("""
+    Konsep transformasi seperti ini menjadi dasar dalam pemodelan posisi
+    objek pada robotika dan grafika komputer.
+    """)
+
+    # =========================================================
+    # 22. LATIHAN
+    # =========================================================
+
+    st.header("📝 Latihan")
+
+    st.markdown("""
+    **Soal 1**
+
+    Titik $P(3,4)$ ditranslasikan oleh $T(2,-1)$.
+    Tentukan koordinat bayangannya.
+    """)
+
+    st.markdown("""
+    **Soal 2**
+
+    Titik $A(5,-2)$ direfleksikan terhadap sumbu-X.
+    Tentukan koordinat bayangannya.
+    """)
+
+    st.markdown("""
+    **Soal 3**
+
+    Titik $B(2,3)$ diputar $90^\circ$ berlawanan arah jarum jam terhadap
+    titik asal. Tentukan koordinat bayangannya.
+    """)
+
+    st.markdown("""
+    **Soal 4**
+
+    Titik $C(3,4)$ didilatasi terhadap titik asal dengan faktor skala $2$.
+    Tentukan koordinat bayangannya.
+    """)
+
+    st.markdown("""
+    **Soal 5**
+
+    Titik $P(2,1)$ ditranslasikan oleh $T(3,2)$ kemudian direfleksikan
+    terhadap sumbu-X. Tentukan koordinat akhirnya.
+    """)
+
+    # =========================================================
+    # 23. KUIS
+    # =========================================================
+
+    st.header("🎯 Kuis")
+
+    jawaban = st.radio(
+        "Titik P(2,3) diputar 90° berlawanan arah jarum jam terhadap O. "
+        "Koordinat bayangannya adalah:",
+        [
+            "(3, −2)",
+            "(−3, 2)",
+            "(−2, −3)",
+            "(2, −3)"
+        ],
+        key="quiz_transformasi_geometri"
+    )
+
+    if st.button(
+        "Periksa Jawaban",
+        key="cek_quiz_transformasi_geometri"
+    ):
+
+        if jawaban == "(−3, 2)":
+            st.success(
+                "✅ Benar. Rotasi 90° berlawanan arah jarum jam mengikuti "
+                "aturan (x,y) → (−y,x)."
+            )
+        else:
+            st.error(
+                "❌ Belum tepat. Gunakan aturan (x,y) → (−y,x)."
+            )
+
+    # =========================================================
+    # 24. REFLEKSI
+    # =========================================================
+
+    st.header("💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari transformasi geometri, coba jelaskan:
+
+    1. Apa perbedaan translasi dan refleksi?
+    2. Bagaimana menentukan bayangan titik setelah rotasi?
+    3. Apa fungsi faktor skala pada dilatasi?
+    4. Mengapa urutan komposisi transformasi dapat memengaruhi hasil?
+    5. Bagaimana matriks dapat digunakan untuk merepresentasikan transformasi?
+    6. Di mana transformasi geometri digunakan dalam kehidupan nyata?
+    """)
+
+    # =========================================================
+    # 25. RANGKUMAN
+    # =========================================================
+
+    st.header("📌 Rangkuman")
+
+    st.markdown("""
+    **Transformasi geometri** merupakan pemetaan titik atau bangun ke posisi
+    baru pada bidang.
+
+    Konsep utama:
+
+    - Translasi merupakan pergeseran.
+    - Refleksi merupakan pencerminan.
+    - Rotasi merupakan perputaran.
+    - Dilatasi merupakan perubahan ukuran.
+    - Translasi, refleksi, dan rotasi mempertahankan panjang dan bentuk.
+    - Dilatasi mempertahankan bentuk tetapi mengubah ukuran.
+    - Transformasi dapat direpresentasikan menggunakan matriks.
+    - Beberapa transformasi dapat dikombinasikan menjadi komposisi.
+    - Transformasi geometri banyak digunakan dalam grafika komputer,
+      robotika, pengolahan citra, dan pemodelan matematika.
+    """)
+
+    st.success("🎉 Materi Transformasi Geometri selesai dipelajari.")
+    
+
+def matriks():
     st.markdown('<div class="content-title">📕 Matriks</div>', unsafe_allow_html=True)
 
     # =========================================================
@@ -1262,8 +2019,8 @@ def tampilkan(materi):
         #pass
 
     elif materi == "Transformasi geometri":
-        #transformasi_geometri()
-        pass
+        transformasi_geometri()
+        #pass
 
     elif materi == "Trigonometri":
         #trigonometri()
