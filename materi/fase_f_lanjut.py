@@ -535,7 +535,7 @@ def matriks():
 
     st.header("📝 Latihan")
 
-    st.markdown("""
+    st.markdown(r"""
     **Soal 1**
 
     Tentukan ordo matriks:
