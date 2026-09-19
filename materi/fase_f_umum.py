@@ -235,7 +235,7 @@ def statistika_bivariat():
     st.markdown("""
     - $r > 0$ → hubungan linear positif.
     - $r < 0$ → hubungan linear negatif.
-    - $r \approx 0$ → tidak terdapat hubungan linear yang kuat.
+    - $r \\approx 0$ → tidak terdapat hubungan linear yang kuat.
     """)
 
     # =========================================================
