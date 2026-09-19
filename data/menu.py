@@ -2,10 +2,12 @@
 # MENU UTAMA
 # ============================================================
 
+
 MENU_UTAMA = [
     "🏠 Beranda",
     "📚 Materi Matematika",
-    "🎓 Media Pembelajaran"
+    "🎓 Media Pembelajaran",
+    "🌿 Matematika dalam Budaya"
 ]
 
 
