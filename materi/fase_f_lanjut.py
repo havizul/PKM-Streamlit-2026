@@ -609,34 +609,41 @@ def tampilkan(materi):
         polinomial()
 
     elif materi == "Matriks":
-        matriks()
+        #matriks()
+        pass
 
     elif materi == "Transformasi geometri":
-        transformasi_geometri()
+        #transformasi_geometri()
+        pass
 
     elif materi == "Trigonometri":
-        trigonometri()
+        #trigonometri()
+        pass
 
     elif materi == "Pemodelan fungsi":
-        pemodelan_fungsi()
+        #pemodelan_fungsi()
+        pass
 
     elif materi == "Vektor":
-        vektor()
+        #vektor()
+        pass
 
     elif materi == "Irisan kerucut (lingkaran & elips)":
-        irisan_kerucut()
+        #irisan_kerucut()
+        pass
 
     elif materi == "Distribusi peluang (binom & normal)":
-        distribusi_peluang()
+        #distribusi_peluang()
+        pass
 
     elif materi == "Limit Fungsi (Tambahan)":
-        limit_fungsi()
+        #limit_fungsi()
+        pass
 
     elif materi == "Turunan & Penerapannya (Tambahan)":
-        turunan()
+        #turunan()
+        pass
 
     elif materi == "Integral (Tambahan)":
-        integral()
-
-    else:
-      pass
+        #integral()
+        pass
