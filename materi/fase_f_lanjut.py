@@ -3992,7 +3992,7 @@ def tampilkan(materi):
         #vektor()
         pass
 
-    elif materi == "Irisan Kerucut: # (lingkaran & elips)":
+    elif materi == "Irisan Kerucut": # (lingkaran & elips)":
         irisan_kerucut()
         #pass
 
