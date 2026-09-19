@@ -424,7 +424,7 @@ def transformasi_geometri():
     titik_bayangan_x = [1, 4, 2, 1]
     titik_bayangan_y = [-1, -1, -4, -1]
 
-    fig, ax = plt.subplots(figsize=(3, 3))
+    fig, ax = plt.subplots(figsize=(5, 5))
     ax.plot(titik_asal_x, titik_asal_y, "b-o", label="Segitiga asal")
     ax.plot(titik_bayangan_x, titik_bayangan_y, "r--o", label="Bayangan (sumbu-X)")
 
