@@ -1311,7 +1311,7 @@ def tampilkan(materi):
         matriks()
         #pass
 
-    elif materi == "Transformasi geometri":
+    elif materi == "Transformasi Geometri":
         transformasi_geometri()
         #pass
 
