@@ -614,7 +614,7 @@ def matriks():
 
     st.header("💭 Refleksi")
 
-    st.markdown("""
+    st.markdown(r"""
     Setelah mempelajari matriks, coba jelaskan:
 
     1. Apa yang dimaksud dengan ordo matriks?
