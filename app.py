@@ -377,7 +377,6 @@ elif menu_utama == "🌿 Matematika dalam Budaya":
         )
 
         for item in MATEMATIKA_BUDAYA:
-
             if st.button(
                 item,
                 key=f"budaya_{item}",
