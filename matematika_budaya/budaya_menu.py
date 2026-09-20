@@ -4,10 +4,6 @@ import numpy as np
 import math
 
 
-def rumah_tradisional():
-    st.header("🏠 Rumah Tradisional")
-    st.info("Materi akan dikembangkan.")
-
 
 def arsitektur_kesultanan():
     st.header("🕌 Arsitektur Kesultanan")
@@ -37,7 +33,526 @@ def statistika_masyarakat():
 def matematika_ekonomi():
     st.header("💰 Matematika Ekonomi dan Budaya")
     st.info("Materi akan dikembangkan.")
-    
+
+
+def rumah_tradisional():
+
+    st.markdown(
+        '<div class="content-title">🏠 Rumah Tradisional</div>',
+        unsafe_allow_html=True
+    )
+
+    # ==========================================================
+    # MATERI
+    # ==========================================================
+
+    st.header("🌿 Mengenal Rumah Tradisional")
+
+    st.markdown("""
+    Rumah tradisional merupakan bagian penting dari kebudayaan masyarakat
+    Indonesia. Bentuk rumah tidak hanya berkaitan dengan tempat tinggal,
+    tetapi juga menunjukkan **adaptasi terhadap lingkungan, kehidupan
+    sosial, dan nilai budaya masyarakat**.
+
+    Di Kalimantan Barat terdapat berbagai rumah tradisional, salah satunya
+    **Rumah Radakng**, yaitu rumah panjang tradisional masyarakat Dayak
+    Kanayatn.
+    """)
+
+    st.image(
+        "https://kemenparekraf.go.id/_next/image?q=75&url=https%3A%2F%2Fapi2.kemenparekraf.go.id%2Fstorage%2Fapp%2Fuploads%2Fpublic%2F623%2F55e%2Fea6%2F62355eea6db07646051473.jpeg&w=3840",
+        caption="Rumah Radakng di Pontianak, Kalimantan Barat — Sumber: Kementerian Pariwisata dan Ekonomi Kreatif",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber: Kementerian Pariwisata dan Ekonomi Kreatif Republik Indonesia."
+    )
+
+    st.markdown("""
+    Rumah Radakng berbentuk panjang dan digunakan sebagai ruang kehidupan
+    bersama. Bentuk tersebut dapat dipelajari menggunakan konsep matematika
+    seperti **panjang, lebar, tinggi, luas, volume, perbandingan, dan
+    geometri**.
+    """)
+
+    st.header("📐 Bentuk Geometri Rumah")
+
+    st.markdown("""
+    Dalam sebuah rumah tradisional, kita dapat menemukan berbagai bentuk
+    geometri.
+
+    - Lantai dapat dimodelkan sebagai **persegi panjang**.
+    - Tiang dapat dimodelkan sebagai **balok atau tabung**.
+    - Atap dapat dimodelkan menggunakan **segitiga atau prisma**.
+    - Jendela dan pintu dapat berbentuk **persegi atau persegi panjang**.
+    - Denah rumah dapat dianalisis menggunakan **luas dan keliling**.
+    """)
+
+    st.header("📏 Rumah Betang dan Pengukuran")
+
+    st.markdown("""
+    Salah satu contoh di Kalimantan Barat adalah **Rumah Betang Sungai
+    Uluk Palin** di Kapuas Hulu.
+
+    Berdasarkan sumber kebudayaan, rumah tersebut memiliki panjang sekitar
+    204 m, tinggi tiang sekitar 8 m, luas bangunan 3.672 m², dan 53
+    bilik/ruang.
+    """)
+
+    st.image(
+        "https://kebudayaan.kemdikbud.go.id/bpcbkaltim/wp-content/uploads/sites/24/2017/09/IMG_20170927_101520.jpg",
+        caption="Rumah Betang Sungai Uluk Palin — Sumber: Direktorat Jenderal Kebudayaan",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber: Direktorat Jenderal Kebudayaan — Rumah Adat Betang Panjang "
+        "Sungai Uluk Palin."
+    )
+
+    st.markdown("""
+    Data ukuran tersebut dapat digunakan sebagai konteks pembelajaran
+    matematika. Misalnya, luas lantai, perbandingan panjang dan lebar,
+    jumlah bilik, maupun tinggi tiang dapat dihitung dan dianalisis.
+    """)
+
+    st.header("🌧️ Matematika dan Adaptasi Lingkungan")
+
+    st.markdown("""
+    Rumah tradisional di daerah tertentu dibuat berbentuk panggung.
+    Bentuk tersebut berkaitan dengan kondisi lingkungan.
+
+    Pada Rumah Betang Sungai Uluk Palin, bentuk rumah yang tinggi dan
+    panjang dikaitkan dengan upaya menghadapi kondisi lingkungan seperti
+    banjir dan binatang buas.
+
+    Dari sudut pandang matematika, kita dapat mengukur:
+
+    - tinggi lantai dari tanah;
+    - panjang dan lebar bangunan;
+    - kemiringan tangga;
+    - luas lantai;
+    - luas permukaan atap;
+    - volume ruang.
+    """)
+
+    st.header("🔢 Contoh Perhitungan")
+
+    st.markdown("""
+    Misalkan sebuah ruang pada rumah tradisional berbentuk persegi panjang
+    dengan panjang 12 m dan lebar 8 m.
+    """)
+
+    st.latex(r"L = p \times l = 12 \times 8 = 96\text{ m}^2")
+
+    st.markdown("""
+    Jadi, luas ruang tersebut adalah **96 m²**.
+
+    Jika panjang sebuah rumah 20 m dan lebarnya 8 m, maka keliling denah
+    rumah adalah:
+    """)
+
+    st.latex(r"K = 2(p+l) = 2(20+8) = 56\text{ m}")
+
+    st.markdown("""
+    Dengan demikian, rumah tradisional dapat menjadi konteks nyata untuk
+    mempelajari geometri dan pengukuran.
+    """)
+
+    # ==========================================================
+    # SOAL INTERAKTIF
+    # ==========================================================
+
+    st.divider()
+    st.header("🧠 Latihan Interaktif — 20 Soal")
+
+    st.info(
+        "Pilih jawaban. Hasil benar atau salah akan langsung muncul. "
+        "Setelah selesai, gunakan tombol **Periksa Semua Jawaban**."
+    )
+
+    soal = [
+
+        {
+            "soal": "1. Sebuah lantai rumah berbentuk persegi panjang dengan panjang 12 m dan lebar 8 m. Berapa luasnya?",
+            "pilihan": ["20 m²", "40 m²", "96 m²", "192 m²"],
+            "jawaban": "96 m²",
+            "pembahasan": "Luas = 12 × 8 = 96 m²."
+        },
+
+        {
+            "soal": "2. Sebuah denah rumah memiliki panjang 20 m dan lebar 8 m. Berapa kelilingnya?",
+            "pilihan": ["28 m", "40 m", "56 m", "160 m"],
+            "jawaban": "56 m",
+            "pembahasan": "Keliling = 2(20 + 8) = 56 m."
+        },
+
+        {
+            "soal": "3. Jika sebuah ruangan berbentuk persegi memiliki sisi 6 m, luasnya adalah...",
+            "pilihan": ["12 m²", "24 m²", "36 m²", "48 m²"],
+            "jawaban": "36 m²",
+            "pembahasan": "Luas persegi = 6 × 6 = 36 m²."
+        },
+
+        {
+            "soal": "4. Sebuah rumah memiliki panjang 30 m dan lebar 10 m. Luas denah rumah adalah...",
+            "pilihan": ["40 m²", "100 m²", "300 m²", "600 m²"],
+            "jawaban": "300 m²",
+            "pembahasan": "Luas = 30 × 10 = 300 m²."
+        },
+
+        {
+            "soal": "5. Rumah Betang Sungai Uluk Palin memiliki panjang sekitar...",
+            "pilihan": ["104 m", "154 m", "204 m", "304 m"],
+            "jawaban": "204 m",
+            "pembahasan": "Sumber kebudayaan mencatat panjang bangunan sekitar 204 m."
+        },
+
+        {
+            "soal": "6. Tinggi tiang Rumah Betang Sungai Uluk Palin yang disebutkan dalam sumber adalah sekitar...",
+            "pilihan": ["4 m", "6 m", "8 m", "12 m"],
+            "jawaban": "8 m",
+            "pembahasan": "Tinggi tiang yang tercatat adalah sekitar 8 m."
+        },
+
+        {
+            "soal": "7. Jika panjang rumah 20 m dan dibuat model dengan skala 1 : 10, panjang modelnya adalah...",
+            "pilihan": ["0,2 m", "2 m", "10 m", "200 m"],
+            "jawaban": "2 m",
+            "pembahasan": "Panjang model = 20 ÷ 10 = 2 m."
+        },
+
+        {
+            "soal": "8. Sebuah tiang rumah berbentuk balok dengan panjang 2 m, lebar 0,5 m, dan tinggi 3 m. Volumenya adalah...",
+            "pilihan": ["1 m³", "2 m³", "3 m³", "6 m³"],
+            "jawaban": "3 m³",
+            "pembahasan": "Volume = 2 × 0,5 × 3 = 3 m³."
+        },
+
+        {
+            "soal": "9. Atap rumah dimodelkan sebagai segitiga dengan alas 10 m dan tinggi 4 m. Luasnya adalah...",
+            "pilihan": ["20 m²", "40 m²", "50 m²", "80 m²"],
+            "jawaban": "20 m²",
+            "pembahasan": "Luas segitiga = 1/2 × 10 × 4 = 20 m²."
+        },
+
+        {
+            "soal": "10. Sebuah rumah memiliki 10 bilik. Jika setiap bilik memiliki luas 24 m², total luas bilik adalah...",
+            "pilihan": ["34 m²", "120 m²", "240 m²", "340 m²"],
+            "jawaban": "240 m²",
+            "pembahasan": "Total luas = 10 × 24 = 240 m²."
+        },
+
+        {
+            "soal": "11. Rumah Betang Sungai Uluk Palin memiliki 53 bilik/ruang. Jika dibagi menjadi 5 kelompok sama banyak, hasil pembagian mendekati...",
+            "pilihan": ["8,6", "10,6", "12,6", "15,6"],
+            "jawaban": "10,6",
+            "pembahasan": "53 ÷ 5 = 10,6."
+        },
+
+        {
+            "soal": "12. Sebuah tangga memiliki tinggi 3 m dan panjang mendatar 4 m. Jika dianggap sebagai segitiga siku-siku, panjang sisi miringnya adalah...",
+            "pilihan": ["4 m", "5 m", "6 m", "7 m"],
+            "jawaban": "5 m",
+            "pembahasan": "Dengan Teorema Pythagoras: √(3² + 4²) = √25 = 5 m."
+        },
+
+        {
+            "soal": "13. Sebuah jendela berbentuk persegi panjang berukuran 2 m × 1,5 m. Luasnya adalah...",
+            "pilihan": ["2 m²", "3 m²", "3,5 m²", "4 m²"],
+            "jawaban": "3 m²",
+            "pembahasan": "Luas = 2 × 1,5 = 3 m²."
+        },
+
+        {
+            "soal": "14. Sebuah rumah memiliki dua bagian lantai yang masing-masing berukuran 10 m × 5 m. Total luas lantainya adalah...",
+            "pilihan": ["50 m²", "75 m²", "100 m²", "150 m²"],
+            "jawaban": "100 m²",
+            "pembahasan": "Satu bagian = 50 m², sehingga dua bagian = 100 m²."
+        },
+
+        {
+            "soal": "15. Sebuah rumah dibuat dengan bentuk panggung. Salah satu fungsi bentuk tersebut dalam konteks lingkungan adalah...",
+            "pilihan": [
+                "Mengurangi luas rumah",
+                "Menghindari kondisi lingkungan tertentu seperti banjir",
+                "Membuat rumah selalu berbentuk lingkaran",
+                "Menghilangkan kebutuhan tangga"
+            ],
+            "jawaban": "Menghindari kondisi lingkungan tertentu seperti banjir",
+            "pembahasan": "Rumah panggung dapat menjadi bentuk adaptasi terhadap kondisi lingkungan."
+        },
+
+        {
+            "soal": "16. Sebuah denah rumah berbentuk persegi panjang memiliki panjang 25 m dan lebar 10 m. Perbandingan panjang : lebar adalah...",
+            "pilihan": ["1 : 2", "2 : 5", "5 : 2", "25 : 10"],
+            "jawaban": "5 : 2",
+            "pembahasan": "25 : 10 disederhanakan menjadi 5 : 2."
+        },
+
+        {
+            "soal": "17. Jika tinggi sebuah rumah 8 m kemudian dibuat model dengan skala 1 : 4, tinggi model adalah...",
+            "pilihan": ["1 m", "2 m", "4 m", "32 m"],
+            "jawaban": "2 m",
+            "pembahasan": "Tinggi model = 8 ÷ 4 = 2 m."
+        },
+
+        {
+            "soal": "18. Bentuk lantai rumah yang memiliki panjang dan lebar dapat dimodelkan menggunakan bangun...",
+            "pilihan": ["Lingkaran", "Segitiga", "Persegi panjang", "Trapesium"],
+            "jawaban": "Persegi panjang",
+            "pembahasan": "Denah lantai rumah sering dapat dimodelkan sebagai persegi panjang."
+        },
+
+        {
+            "soal": "19. Jika sebuah rumah memiliki dua bagian yang sama besar dan simetris terhadap garis tengah, konsep geometri yang digunakan adalah...",
+            "pilihan": [
+                "Refleksi",
+                "Translasi",
+                "Dilatasi",
+                "Barisan"
+            ],
+            "jawaban": "Refleksi",
+            "pembahasan": "Kesimetrian terhadap garis dapat dikaji menggunakan konsep refleksi."
+        },
+
+        {
+            "soal": "20. Konsep matematika yang paling banyak digunakan untuk mengkaji ukuran rumah tradisional adalah...",
+            "pilihan": [
+                "Geometri dan pengukuran",
+                "Peluang saja",
+                "Statistika saja",
+                "Logika saja"
+            ],
+            "jawaban": "Geometri dan pengukuran",
+            "pembahasan": "Bentuk, panjang, lebar, tinggi, luas, keliling, dan volume berkaitan dengan geometri dan pengukuran."
+        }
+    ]
+
+    jawaban_user = []
+
+    for i, item in enumerate(soal):
+
+        st.markdown(f"### {item['soal']}")
+
+        jawaban = st.radio(
+            "Pilih jawaban:",
+            item["pilihan"],
+            index=None,
+            key=f"rumah_q_{i}",
+            label_visibility="collapsed"
+        )
+
+        jawaban_user.append(jawaban)
+
+        if jawaban is not None:
+
+            if jawaban == item["jawaban"]:
+
+                st.success(
+                    f"✅ Benar! {item['pembahasan']}"
+                )
+
+            else:
+
+                st.error(
+                    f"❌ Salah. Jawaban yang benar adalah "
+                    f"**{item['jawaban']}**. {item['pembahasan']}"
+                )
+
+    # ==========================================================
+    # PERIKSA SEMUA JAWABAN
+    # ==========================================================
+
+    st.divider()
+
+    if st.button(
+        "✅ Periksa Semua Jawaban",
+        key="cek_semua_rumah",
+        use_container_width=True
+    ):
+
+        jumlah_dijawab = sum(
+            jawaban is not None
+            for jawaban in jawaban_user
+        )
+
+        jumlah_benar = sum(
+            jawaban_user[i] == soal[i]["jawaban"]
+            for i in range(len(soal))
+            if jawaban_user[i] is not None
+        )
+
+        jumlah_belum = len(soal) - jumlah_dijawab
+
+        nilai = jumlah_benar / len(soal) * 100
+
+        st.subheader("📊 Hasil Latihan")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        col1.metric(
+            "Benar",
+            jumlah_benar
+        )
+
+        col2.metric(
+            "Dijawab",
+            jumlah_dijawab
+        )
+
+        col3.metric(
+            "Belum Dijawab",
+            jumlah_belum
+        )
+
+        col4.metric(
+            "Nilai",
+            f"{nilai:.0f}"
+        )
+
+        if jumlah_dijawab < len(soal):
+
+            st.warning(
+                f"⚠️ Masih ada {jumlah_belum} soal yang belum dijawab."
+            )
+
+        elif nilai >= 80:
+
+            st.success(
+                "🎉 Semua soal sudah dijawab. Pertahankan pemahamanmu!"
+            )
+
+        elif nilai >= 60:
+
+            st.info(
+                "👍 Semua soal sudah dijawab. Pelajari kembali konsep "
+                "yang masih belum dikuasai."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali materi geometri dan pengukuran."
+            )
+
+    # ==========================================================
+    # SOAL ESSAY
+    # ==========================================================
+
+    st.divider()
+
+    st.header("✍️ Soal Essay")
+
+    st.markdown(
+        "Kerjakan terlebih dahulu. Klik **Tampilkan Jawaban** "
+        "untuk melihat pembahasan."
+    )
+
+    essay = [
+
+        (
+            "Essay 1",
+            "Sebuah lantai rumah berbentuk persegi panjang dengan "
+            "panjang 15 m dan lebar 8 m. Hitung luasnya.",
+            "Luas = 15 × 8 = 120 m²."
+        ),
+
+        (
+            "Essay 2",
+            "Sebuah denah rumah memiliki panjang 20 m dan lebar 10 m. "
+            "Hitung luas dan kelilingnya.",
+            "Luas = 20 × 10 = 200 m². "
+            "Keliling = 2(20 + 10) = 60 m."
+        ),
+
+        (
+            "Essay 3",
+            "Sebuah rumah dibuat dengan skala 1 : 10. Jika panjang "
+            "rumah sebenarnya 30 m, berapa panjang modelnya?",
+            "Panjang model = 30 ÷ 10 = 3 m."
+        ),
+
+        (
+            "Essay 4",
+            "Sebuah rumah memiliki 12 bilik dengan luas masing-masing "
+            "20 m². Berapa total luas seluruh bilik?",
+            "Total luas = 12 × 20 = 240 m²."
+        ),
+
+        (
+            "Essay 5",
+            "Sebuah tangga memiliki tinggi 3 m dan panjang mendatar "
+            "4 m. Hitung panjang sisi miringnya.",
+            "Dengan Teorema Pythagoras: "
+            "√(3² + 4²) = √25 = 5 m."
+        ),
+
+        (
+            "Essay 6",
+            "Jelaskan mengapa rumah tradisional tertentu dibuat "
+            "berbentuk panggung.",
+            "Rumah panggung dapat menjadi bentuk adaptasi terhadap "
+            "kondisi lingkungan, misalnya untuk menghadapi banjir "
+            "atau kondisi permukaan tanah tertentu."
+        ),
+
+        (
+            "Essay 7",
+            "Sebutkan minimal lima konsep matematika yang dapat "
+            "digunakan untuk mempelajari rumah tradisional.",
+            "Contohnya adalah panjang, lebar, tinggi, luas, keliling, "
+            "volume, perbandingan, skala, sudut, dan geometri."
+        ),
+
+        (
+            "Essay 8",
+            "Jelaskan bagaimana rumah tradisional dapat digunakan "
+            "sebagai konteks pembelajaran matematika.",
+            "Rumah tradisional dapat digunakan untuk mempelajari "
+            "pengukuran, bangun datar, bangun ruang, skala, "
+            "perbandingan, luas, keliling, volume, dan bentuk geometri "
+            "melalui objek budaya yang nyata."
+        )
+    ]
+
+    for judul, pertanyaan, jawaban in essay:
+
+        st.markdown(f"### {judul}")
+
+        st.markdown(pertanyaan)
+
+        with st.expander("👁️ Tampilkan Jawaban"):
+
+            st.success(jawaban)
+
+    # ==========================================================
+    # REFLEKSI
+    # ==========================================================
+
+    st.divider()
+
+    st.header("💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari rumah tradisional, coba pikirkan:
+
+    - Bentuk geometri apa yang dapat ditemukan pada rumah tradisional?
+    - Bagaimana cara menghitung luas sebuah denah rumah?
+    - Mengapa ukuran dan bentuk rumah dapat berkaitan dengan lingkungan?
+    - Bagaimana matematika dapat membantu mendokumentasikan bentuk
+      rumah tradisional?
+    - Apa yang dapat dilakukan generasi muda untuk mengenal dan
+      melestarikan rumah tradisional?
+    """)
+
+    st.success(
+        "🏠 Rumah tradisional bukan hanya warisan budaya, "
+        "tetapi juga sumber belajar matematika yang dekat dengan kehidupan."
+    )
+
+
 def batik_geometri():
     st.markdown(
         '<div class="content-title">🎨 Batik dan Pola Geometri</div>',
