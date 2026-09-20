@@ -59,15 +59,50 @@ def rumah_tradisional():
     **Rumah Adat Melayu Pontianak**.
     """)
 
+     # ==========================================================
+    # GAMBAR 1: RUMAH ADAT MELAYU PONTIANAK
     # ==========================================================
-    # GAMBAR 1: RUMAH RADAKNG
+
+    st.header("🏡 Rumah Adat Melayu Pontianak")
+
+    st.image(
+        "https://github.com/havizul/PKM-Streamlit-2026/blob/main/images/Rumah-Adat-Melayu-Pontianak.jpg",
+        caption="Rumah Adat Melayu Pontianak, Kalimantan Barat — Rumah panggung dengan atap limasan. Sumber: salsawisata.com",
+        use_container_width=True
+    )
+
+    st.markdown(r"""
+    **Rumah Adat Melayu Pontianak** terletak di Jalan Sutan Syahrir,
+    Komplek Perkampungan Budaya Kota Pontianak. Pembangunan rumah ini
+    dimulai pada 17 Mei 2003 dan diresmikan pada 9 November 2005
+    [citation:20].
+
+    Bangunan ini berbentuk **rumah panggung** dengan luas 25,62 m × 17,85 m.
+    Atapnya berbentuk **limasan** yang memiliki makna sebagai pelindung,
+    mengundang, dan menerima [citation:20]. Rumah ini berfungsi sebagai
+    pusat kegiatan Majelis Adat Budaya Melayu (MABM) Kalimantan Barat
+    [citation:11].
+    """)
+
+    st.markdown(r"""
+    **Ciri khas Rumah Adat Melayu Pontianak:**
+
+    - Berbentuk rumah panggung dengan tiang tinggi.
+    - Atap limasan dengan kemiringan sekitar 30 derajat.
+    - Ornamen khas keraton Kalimantan Barat.
+    - Terdapat ruang pustaka, ruang budaya, dan area pertemuan [citation:11].
+    - Dibangun untuk menghindari banjir dan binatang liar [citation:20].
+    """)
+    
+    # ==========================================================
+    # GAMBAR 2: RUMAH RADAKNG
     # ==========================================================
 
     st.header("🏠 Rumah Radakng (Rumah Panjang Dayak)")
 
     st.image(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Rumah_Radakng_Pontianak.jpg/1280px-Rumah_Radakng_Pontianak.jpg",
-        caption="Rumah Radakng di Pontianak, Kalimantan Barat — Rumah panjang masyarakat Dayak Kanayatn. Sumber: Wikimedia Commons",
+        "https://github.com/havizul/PKM-Streamlit-2026/blob/main/images/Rumah-Radakng-Pontianak.jpg",
+        caption="Rumah Radakng di Pontianak, Kalimantan Barat — Rumah panjang masyarakat Dayak Kanayatn. Sumber: salsawisata.com",
         use_container_width=True
     )
 
@@ -94,40 +129,7 @@ def rumah_tradisional():
     - Tangga masuk (*hejot*) berjumlah ganjil sesuai kepercayaan Dayak [citation:16].
     """)
 
-    # ==========================================================
-    # GAMBAR 2: RUMAH ADAT MELAYU PONTIANAK
-    # ==========================================================
-
-    st.header("🏡 Rumah Adat Melayu Pontianak")
-
-    st.image(
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Rumah_Adat_Melayu_Pontianak.jpg/1280px-Rumah_Adat_Melayu_Pontianak.jpg",
-        caption="Rumah Adat Melayu Pontianak, Kalimantan Barat — Rumah panggung dengan atap limasan. Sumber: Wikimedia Commons",
-        use_container_width=True
-    )
-
-    st.markdown(r"""
-    **Rumah Adat Melayu Pontianak** terletak di Jalan Sutan Syahrir,
-    Komplek Perkampungan Budaya Kota Pontianak. Pembangunan rumah ini
-    dimulai pada 17 Mei 2003 dan diresmikan pada 9 November 2005
-    [citation:20].
-
-    Bangunan ini berbentuk **rumah panggung** dengan luas 25,62 m × 17,85 m.
-    Atapnya berbentuk **limasan** yang memiliki makna sebagai pelindung,
-    mengundang, dan menerima [citation:20]. Rumah ini berfungsi sebagai
-    pusat kegiatan Majelis Adat Budaya Melayu (MABM) Kalimantan Barat
-    [citation:11].
-    """)
-
-    st.markdown(r"""
-    **Ciri khas Rumah Adat Melayu Pontianak:**
-
-    - Berbentuk rumah panggung dengan tiang tinggi.
-    - Atap limasan dengan kemiringan sekitar 30 derajat.
-    - Ornamen khas keraton Kalimantan Barat.
-    - Terdapat ruang pustaka, ruang budaya, dan area pertemuan [citation:11].
-    - Dibangun untuk menghindari banjir dan binatang liar [citation:20].
-    """)
+   
 
     # ==========================================================
     # BENTUK GEOMETRI
