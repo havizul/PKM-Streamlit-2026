@@ -3,7 +3,6 @@ import streamlit as st
 from materi import fase_e
 from materi import fase_f_umum
 from materi import fase_f_lanjut
-#from media import media_menu
 from media.media_menu import (
     media_geogebra,
     media_desmos,
@@ -20,8 +19,13 @@ from data.menu import (
     FASE_E,
     FASE_F_UMUM,
     FASE_F_LANJUT,
-    MEDIA_PEMBELAJARAN
+    MEDIA_PEMBELAJARAN,
+    MATEMATIKA_BUDAYA
 )
+
+from matematika_budaya import budaya_menu
+
+
 
 # ============================================================
 # KONFIGURASI HALAMAN
@@ -364,6 +368,32 @@ elif menu_utama == "🎓 Media Pembelajaran":
     elif media == "Spreadsheet":
         media_spreadsheet()
         #pass
+
+elif menu_utama == "🌿 Matematika dalam Budaya":
+    with st.sidebar:
+        st.markdown(
+            '<div class="sidebar-title">🌿 Matematika dalam Budaya</div>',
+            unsafe_allow_html=True
+        )
+
+        for item in MATEMATIKA_BUDAYA:
+
+            if st.button(
+                item,
+                key=f"budaya_{item}",
+                use_container_width=True
+            ):
+                st.session_state.budaya = item
+                st.rerun()
+
+    budaya = st.session_state.budaya
+
+    st.header("🌿 Matematika dalam Budaya")
+
+    st.divider()
+
+    if budaya:
+        budaya_menu.tampilkan(budaya)
 
 
 
