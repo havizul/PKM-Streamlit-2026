@@ -97,6 +97,9 @@ if "materi" not in st.session_state:
 if "media" not in st.session_state:
     st.session_state.media = MEDIA_PEMBELAJARAN[0]
 
+if "budaya" not in st.session_state:
+    st.session_state.budaya = MATEMATIKA_BUDAYA[0]
+
 
 # ============================================================
 # HEADER
