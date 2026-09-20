@@ -36,7 +36,6 @@ def matematika_ekonomi():
 
 
 def rumah_tradisional():
-
     st.markdown(
         '<div class="content-title">🏠 Rumah Tradisional Kalimantan Barat</div>',
         unsafe_allow_html=True
@@ -65,10 +64,16 @@ def rumah_tradisional():
 
     st.header("🏡 Rumah Adat Melayu Pontianak")
 
+    #st.image(
+    #    "https://github.com/havizul/PKM-Streamlit-2026/blob/main/images/Rumah-Adat-Melayu-Pontianak.jpg",
+    #    caption="Rumah Adat Melayu Pontianak, Kalimantan Barat — Rumah panggung dengan atap limasan. Sumber: salsawisata.com",
+    #    use_container_width=True
+    #)
+
     st.image(
-        "https://github.com/havizul/PKM-Streamlit-2026/blob/main/images/Rumah-Adat-Melayu-Pontianak.jpg",
-        caption="Rumah Adat Melayu Pontianak, Kalimantan Barat — Rumah panggung dengan atap limasan. Sumber: salsawisata.com",
-        use_container_width=True
+    "../images/Rumah-Adat-Melayu-Pontianak.jpg",
+    caption="Rumah Adat Melayu Pontianak, Kalimantan Barat — Rumah panggung dengan atap limasan. Sumber: salsawisata.com",
+    use_container_width=True
     )
 
     st.markdown(r"""
@@ -101,7 +106,7 @@ def rumah_tradisional():
     st.header("🏠 Rumah Radakng (Rumah Panjang Dayak)")
 
     st.image(
-        "https://github.com/havizul/PKM-Streamlit-2026/blob/main/images/Rumah-Radakng-Pontianak.jpg",
+        "../images/Rumah-Radakng-Pontianak.jpg",
         caption="Rumah Radakng di Pontianak, Kalimantan Barat — Rumah panjang masyarakat Dayak Kanayatn. Sumber: salsawisata.com",
         use_container_width=True
     )
