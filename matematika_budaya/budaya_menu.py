@@ -3,10 +3,6 @@ import pandas as pd
 import numpy as np
 import math
 
-from pathlib import Path
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 def arsitektur_kesultanan():
     st.header("🕌 Arsitektur Kesultanan")
@@ -37,6 +33,9 @@ def matematika_ekonomi():
     st.header("💰 Matematika Ekonomi dan Budaya")
     st.info("Materi akan dikembangkan.")
 
+
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 def rumah_tradisional():
     st.markdown(
@@ -73,7 +72,7 @@ def rumah_tradisional():
     #    use_container_width=True
     #)
 
-   st.image(
+    st.image(
     str(BASE_DIR / "images" / "Rumah-Adat-Melayu-Pontianak.jpg"),
     caption="Rumah Adat Melayu Pontianak, Kalimantan Barat — Rumah panggung dengan atap limasan. Sumber: salsawisata.com",
     use_container_width=True
