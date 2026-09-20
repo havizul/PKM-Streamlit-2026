@@ -82,13 +82,11 @@ def rumah_tradisional():
     **Rumah Adat Melayu Pontianak** terletak di Jalan Sutan Syahrir,
     Komplek Perkampungan Budaya Kota Pontianak. Pembangunan rumah ini
     dimulai pada 17 Mei 2003 dan diresmikan pada 9 November 2005
-    [citation:20].
 
     Bangunan ini berbentuk **rumah panggung** dengan luas 25,62 m × 17,85 m.
     Atapnya berbentuk **limasan** yang memiliki makna sebagai pelindung,
     mengundang, dan menerima [citation:20]. Rumah ini berfungsi sebagai
     pusat kegiatan Majelis Adat Budaya Melayu (MABM) Kalimantan Barat
-    [citation:11].
     """)
 
     st.markdown(r"""
@@ -97,8 +95,8 @@ def rumah_tradisional():
     - Berbentuk rumah panggung dengan tiang tinggi.
     - Atap limasan dengan kemiringan sekitar 30 derajat.
     - Ornamen khas keraton Kalimantan Barat.
-    - Terdapat ruang pustaka, ruang budaya, dan area pertemuan [citation:11].
-    - Dibangun untuk menghindari banjir dan binatang liar [citation:20].
+    - Terdapat ruang pustaka, ruang budaya, dan area pertemuan.
+    - Dibangun untuk menghindari banjir dan binatang liar.
     """)
     
     # ==========================================================
@@ -117,23 +115,22 @@ def rumah_tradisional():
     **Rumah Radakng** adalah rumah panjang tradisional masyarakat Dayak
     Kanayatn di Kalimantan Barat. Dalam bahasa Dayak, *radakng* berarti
     rumah panjang. Bangunan ini berfungsi sebagai hunian bersama banyak
-    keluarga dalam satu komunitas [citation:16].
+    keluarga dalam satu komunitas.
 
     Rumah Radakng yang berdiri di Pontianak merupakan rumah adat terbesar
     dan terpanjang di Indonesia, dengan panjang sekitar **138 meter** dan
     tinggi sekitar **7 meter**. Rumah ini diresmikan pada 2 Juli 2013 dan
-    kini berfungsi sebagai pusat kegiatan seni, budaya, dan wisata edukasi
-    [citation:16].
+    kini berfungsi sebagai pusat kegiatan seni, budaya, dan wisata edukasi.
     """)
 
     st.markdown(r"""
     **Ciri khas Rumah Radakng:**
 
-    - Berbentuk rumah panggung dengan tiang setinggi 3–5 meter [citation:16].
-    - Memiliki ornamen burung Enggang sebagai simbol masyarakat Dayak [citation:2].
-    - Dibangun menghadap matahari terbit, melambangkan kerja keras sejak pagi [citation:16].
-    - Terdapat kolong rumah untuk menyimpan hasil panen dan alat pertanian [citation:16].
-    - Tangga masuk (*hejot*) berjumlah ganjil sesuai kepercayaan Dayak [citation:16].
+    - Berbentuk rumah panggung dengan tiang setinggi 3–5 meter.
+    - Memiliki ornamen burung Enggang sebagai simbol masyarakat Dayak.
+    - Dibangun menghadap matahari terbit, melambangkan kerja keras sejak pagi.
+    - Terdapat kolong rumah untuk menyimpan hasil panen dan alat pertanian.
+    - Tangga masuk (*hejot*) berjumlah ganjil sesuai kepercayaan Dayak.
     """)
 
    
