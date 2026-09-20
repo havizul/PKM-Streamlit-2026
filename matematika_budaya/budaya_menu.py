@@ -38,7 +38,7 @@ def matematika_ekonomi():
 def rumah_tradisional():
 
     st.markdown(
-        '<div class="content-title">🏠 Rumah Tradisional</div>',
+        '<div class="content-title">🏠 Rumah Tradisional Kalimantan Barat</div>',
         unsafe_allow_html=True
     )
 
@@ -48,105 +48,118 @@ def rumah_tradisional():
 
     st.header("🌿 Mengenal Rumah Tradisional")
 
-    st.markdown("""
+    st.markdown(r"""
     Rumah tradisional merupakan bagian penting dari kebudayaan masyarakat
     Indonesia. Bentuk rumah tidak hanya berkaitan dengan tempat tinggal,
     tetapi juga menunjukkan **adaptasi terhadap lingkungan, kehidupan
     sosial, dan nilai budaya masyarakat**.
 
-    Di Kalimantan Barat terdapat berbagai rumah tradisional, salah satunya
-    **Rumah Radakng**, yaitu rumah panjang tradisional masyarakat Dayak
-    Kanayatn.
+    Di Kalimantan Barat terdapat berbagai rumah tradisional, antara lain
+    **Rumah Radakng** (rumah panjang masyarakat Dayak) dan
+    **Rumah Adat Melayu Pontianak**.
     """)
 
+    # ==========================================================
+    # GAMBAR 1: RUMAH RADAKNG
+    # ==========================================================
+
+    st.header("🏠 Rumah Radakng (Rumah Panjang Dayak)")
+
     st.image(
-        "https://kemenparekraf.go.id/_next/image?q=75&url=https%3A%2F%2Fapi2.kemenparekraf.go.id%2Fstorage%2Fapp%2Fuploads%2Fpublic%2F623%2F55e%2Fea6%2F62355eea6db07646051473.jpeg&w=3840",
-        caption="Rumah Radakng di Pontianak, Kalimantan Barat — Sumber: Kementerian Pariwisata dan Ekonomi Kreatif",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Rumah_Radakng_Pontianak.jpg/1280px-Rumah_Radakng_Pontianak.jpg",
+        caption="Rumah Radakng di Pontianak, Kalimantan Barat — Rumah panjang masyarakat Dayak Kanayatn. Sumber: Wikimedia Commons",
         use_container_width=True
     )
 
-    st.caption(
-        "Sumber: Kementerian Pariwisata dan Ekonomi Kreatif Republik Indonesia."
-    )
+    st.markdown(r"""
+    **Rumah Radakng** adalah rumah panjang tradisional masyarakat Dayak
+    Kanayatn di Kalimantan Barat. Dalam bahasa Dayak, *radakng* berarti
+    rumah panjang. Bangunan ini berfungsi sebagai hunian bersama banyak
+    keluarga dalam satu komunitas [citation:16].
 
-    st.markdown("""
-    Rumah Radakng berbentuk panjang dan digunakan sebagai ruang kehidupan
-    bersama. Bentuk tersebut dapat dipelajari menggunakan konsep matematika
-    seperti **panjang, lebar, tinggi, luas, volume, perbandingan, dan
-    geometri**.
+    Rumah Radakng yang berdiri di Pontianak merupakan rumah adat terbesar
+    dan terpanjang di Indonesia, dengan panjang sekitar **138 meter** dan
+    tinggi sekitar **7 meter**. Rumah ini diresmikan pada 2 Juli 2013 dan
+    kini berfungsi sebagai pusat kegiatan seni, budaya, dan wisata edukasi
+    [citation:16].
     """)
 
-    st.header("📐 Bentuk Geometri Rumah")
+    st.markdown(r"""
+    **Ciri khas Rumah Radakng:**
 
-    st.markdown("""
-    Dalam sebuah rumah tradisional, kita dapat menemukan berbagai bentuk
-    geometri.
-
-    - Lantai dapat dimodelkan sebagai **persegi panjang**.
-    - Tiang dapat dimodelkan sebagai **balok atau tabung**.
-    - Atap dapat dimodelkan menggunakan **segitiga atau prisma**.
-    - Jendela dan pintu dapat berbentuk **persegi atau persegi panjang**.
-    - Denah rumah dapat dianalisis menggunakan **luas dan keliling**.
+    - Berbentuk rumah panggung dengan tiang setinggi 3–5 meter [citation:16].
+    - Memiliki ornamen burung Enggang sebagai simbol masyarakat Dayak [citation:2].
+    - Dibangun menghadap matahari terbit, melambangkan kerja keras sejak pagi [citation:16].
+    - Terdapat kolong rumah untuk menyimpan hasil panen dan alat pertanian [citation:16].
+    - Tangga masuk (*hejot*) berjumlah ganjil sesuai kepercayaan Dayak [citation:16].
     """)
 
-    st.header("📏 Rumah Betang dan Pengukuran")
+    # ==========================================================
+    # GAMBAR 2: RUMAH ADAT MELAYU PONTIANAK
+    # ==========================================================
 
-    st.markdown("""
-    Salah satu contoh di Kalimantan Barat adalah **Rumah Betang Sungai
-    Uluk Palin** di Kapuas Hulu.
-
-    Berdasarkan sumber kebudayaan, rumah tersebut memiliki panjang sekitar
-    204 m, tinggi tiang sekitar 8 m, luas bangunan 3.672 m², dan 53
-    bilik/ruang.
-    """)
+    st.header("🏡 Rumah Adat Melayu Pontianak")
 
     st.image(
-        "https://kebudayaan.kemdikbud.go.id/bpcbkaltim/wp-content/uploads/sites/24/2017/09/IMG_20170927_101520.jpg",
-        caption="Rumah Betang Sungai Uluk Palin — Sumber: Direktorat Jenderal Kebudayaan",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Rumah_Adat_Melayu_Pontianak.jpg/1280px-Rumah_Adat_Melayu_Pontianak.jpg",
+        caption="Rumah Adat Melayu Pontianak, Kalimantan Barat — Rumah panggung dengan atap limasan. Sumber: Wikimedia Commons",
         use_container_width=True
     )
 
-    st.caption(
-        "Sumber: Direktorat Jenderal Kebudayaan — Rumah Adat Betang Panjang "
-        "Sungai Uluk Palin."
-    )
+    st.markdown(r"""
+    **Rumah Adat Melayu Pontianak** terletak di Jalan Sutan Syahrir,
+    Komplek Perkampungan Budaya Kota Pontianak. Pembangunan rumah ini
+    dimulai pada 17 Mei 2003 dan diresmikan pada 9 November 2005
+    [citation:20].
 
-    st.markdown("""
-    Data ukuran tersebut dapat digunakan sebagai konteks pembelajaran
-    matematika. Misalnya, luas lantai, perbandingan panjang dan lebar,
-    jumlah bilik, maupun tinggi tiang dapat dihitung dan dianalisis.
+    Bangunan ini berbentuk **rumah panggung** dengan luas 25,62 m × 17,85 m.
+    Atapnya berbentuk **limasan** yang memiliki makna sebagai pelindung,
+    mengundang, dan menerima [citation:20]. Rumah ini berfungsi sebagai
+    pusat kegiatan Majelis Adat Budaya Melayu (MABM) Kalimantan Barat
+    [citation:11].
     """)
 
-    st.header("🌧️ Matematika dan Adaptasi Lingkungan")
+    st.markdown(r"""
+    **Ciri khas Rumah Adat Melayu Pontianak:**
 
-    st.markdown("""
-    Rumah tradisional di daerah tertentu dibuat berbentuk panggung.
-    Bentuk tersebut berkaitan dengan kondisi lingkungan.
-
-    Pada Rumah Betang Sungai Uluk Palin, bentuk rumah yang tinggi dan
-    panjang dikaitkan dengan upaya menghadapi kondisi lingkungan seperti
-    banjir dan binatang buas.
-
-    Dari sudut pandang matematika, kita dapat mengukur:
-
-    - tinggi lantai dari tanah;
-    - panjang dan lebar bangunan;
-    - kemiringan tangga;
-    - luas lantai;
-    - luas permukaan atap;
-    - volume ruang.
+    - Berbentuk rumah panggung dengan tiang tinggi.
+    - Atap limasan dengan kemiringan sekitar 30 derajat.
+    - Ornamen khas keraton Kalimantan Barat.
+    - Terdapat ruang pustaka, ruang budaya, dan area pertemuan [citation:11].
+    - Dibangun untuk menghindari banjir dan binatang liar [citation:20].
     """)
+
+    # ==========================================================
+    # BENTUK GEOMETRI
+    # ==========================================================
+
+    st.header("📐 Bentuk Geometri pada Rumah Tradisional")
+
+    st.markdown(r"""
+    Dalam rumah tradisional Kalimantan Barat, kita dapat menemukan
+    berbagai bentuk geometri:
+
+    - **Lantai** dapat dimodelkan sebagai **persegi panjang**.
+    - **Tiang** dapat dimodelkan sebagai **balok atau tabung**.
+    - **Atap** dapat dimodelkan menggunakan **segitiga atau limasan**.
+    - **Jendela dan pintu** dapat berbentuk **persegi atau persegi panjang**.
+    - **Denah rumah** dapat dianalisis menggunakan **luas dan keliling**.
+    """)
+
+    # ==========================================================
+    # CONTOH PERHITUNGAN
+    # ==========================================================
 
     st.header("🔢 Contoh Perhitungan")
 
-    st.markdown("""
+    st.markdown(r"""
     Misalkan sebuah ruang pada rumah tradisional berbentuk persegi panjang
     dengan panjang 12 m dan lebar 8 m.
     """)
 
     st.latex(r"L = p \times l = 12 \times 8 = 96\text{ m}^2")
 
-    st.markdown("""
+    st.markdown(r"""
     Jadi, luas ruang tersebut adalah **96 m²**.
 
     Jika panjang sebuah rumah 20 m dan lebarnya 8 m, maka keliling denah
@@ -155,7 +168,7 @@ def rumah_tradisional():
 
     st.latex(r"K = 2(p+l) = 2(20+8) = 56\text{ m}")
 
-    st.markdown("""
+    st.markdown(r"""
     Dengan demikian, rumah tradisional dapat menjadi konteks nyata untuk
     mempelajari geometri dan pengukuran.
     """)
@@ -203,17 +216,17 @@ def rumah_tradisional():
         },
 
         {
-            "soal": "5. Rumah Betang Sungai Uluk Palin memiliki panjang sekitar...",
-            "pilihan": ["104 m", "154 m", "204 m", "304 m"],
-            "jawaban": "204 m",
-            "pembahasan": "Sumber kebudayaan mencatat panjang bangunan sekitar 204 m."
+            "soal": "5. Rumah Radakng di Pontianak memiliki panjang sekitar...",
+            "pilihan": ["38 m", "88 m", "138 m", "204 m"],
+            "jawaban": "138 m",
+            "pembahasan": "Rumah Radakng Pontianak memiliki panjang sekitar 138 meter [citation:16]."
         },
 
         {
             "soal": "6. Tinggi tiang Rumah Betang Sungai Uluk Palin yang disebutkan dalam sumber adalah sekitar...",
             "pilihan": ["4 m", "6 m", "8 m", "12 m"],
             "jawaban": "8 m",
-            "pembahasan": "Tinggi tiang yang tercatat adalah sekitar 8 m."
+            "pembahasan": "Tinggi tiang yang tercatat adalah sekitar 8 m [citation:3]."
         },
 
         {
@@ -281,7 +294,7 @@ def rumah_tradisional():
                 "Menghilangkan kebutuhan tangga"
             ],
             "jawaban": "Menghindari kondisi lingkungan tertentu seperti banjir",
-            "pembahasan": "Rumah panggung dapat menjadi bentuk adaptasi terhadap kondisi lingkungan."
+            "pembahasan": "Rumah panggung dapat menjadi bentuk adaptasi terhadap kondisi lingkungan [citation:3]."
         },
 
         {
@@ -495,7 +508,7 @@ def rumah_tradisional():
             "berbentuk panggung.",
             "Rumah panggung dapat menjadi bentuk adaptasi terhadap "
             "kondisi lingkungan, misalnya untuk menghadapi banjir "
-            "atau kondisi permukaan tanah tertentu."
+            "atau kondisi permukaan tanah tertentu [citation:3]."
         ),
 
         (
@@ -535,7 +548,7 @@ def rumah_tradisional():
 
     st.header("💭 Refleksi")
 
-    st.markdown("""
+    st.markdown(r"""
     Setelah mempelajari rumah tradisional, coba pikirkan:
 
     - Bentuk geometri apa yang dapat ditemukan pada rumah tradisional?
@@ -551,6 +564,7 @@ def rumah_tradisional():
         "🏠 Rumah tradisional bukan hanya warisan budaya, "
         "tetapi juga sumber belajar matematika yang dekat dengan kehidupan."
     )
+    
 
 
 def batik_geometri():
