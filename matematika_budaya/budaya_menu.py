@@ -4,6 +4,527 @@ import numpy as np
 import math
 
 
+def rumah_tradisional():
+    st.header("🏠 Rumah Tradisional")
+    st.info("Materi akan dikembangkan.")
+
+
+def arsitektur_kesultanan():
+    st.header("🕌 Arsitektur Kesultanan")
+    st.info("Materi akan dikembangkan.")
+
+
+def bubu():
+    st.header("🐟 Bubu dan Alat Tangkap Tradisional")
+    st.info("Materi akan dikembangkan.")
+
+
+def perahu():
+    st.header("🛶 Perahu Tradisional")
+    st.info("Materi akan dikembangkan.")
+
+
+def geometri_budaya():
+    st.header("📐 Geometri dalam Budaya")
+    st.info("Materi akan dikembangkan.")
+
+
+def statistika_masyarakat():
+    st.header("📊 Statistika dalam Kehidupan Masyarakat")
+    st.info("Materi akan dikembangkan.")
+
+
+def matematika_ekonomi():
+    st.header("💰 Matematika Ekonomi dan Budaya")
+    st.info("Materi akan dikembangkan.")
+    
+def batik_geometri():
+    st.markdown(
+        '<div class="content-title">🎨 Batik dan Pola Geometri</div>',
+        unsafe_allow_html=True
+    )
+
+    # ==========================================================
+    # MATERI
+    # ==========================================================
+
+    st.header("🌺 Mengenal Batik dan Geometri")
+
+    st.markdown("""
+    Batik merupakan salah satu warisan budaya Indonesia yang memiliki
+    beragam motif. Banyak motif batik dapat dikaji menggunakan konsep
+    matematika, khususnya **geometri dan pola**.
+
+    Pada beberapa motif dapat ditemukan bentuk seperti **persegi,
+    persegi panjang, segitiga, belah ketupat, lingkaran, garis diagonal,
+    serta pola yang berulang**.
+    """)
+
+    st.image(
+        "https://commons.wikimedia.org/wiki/Special:Redirect/file/Motif_Tapak_Kebo.jpg",
+        caption="Motif Batik Baduy Tapak Kebo — Sumber: Wikimedia Commons, CC BY-SA 4.0",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber gambar: Wikimedia Commons — Motif Batik Tapak Kebo."
+    )
+
+    st.header("📐 Unsur Geometri pada Motif Batik")
+
+    st.markdown("""
+    Beberapa unsur matematika yang dapat diamati pada motif batik:
+
+    **1. Titik dan garis**  
+    Garis horizontal, vertikal, diagonal, maupun lengkung dapat menjadi
+    bagian dasar pembentukan motif.
+
+    **2. Bangun datar**  
+    Motif dapat membentuk persegi, segitiga, lingkaran, belah ketupat,
+    dan bentuk geometris lainnya.
+
+    **3. Simetri**  
+    Sebagian motif memiliki simetri lipat atau simetri putar.
+
+    **4. Transformasi geometri**  
+    Pola dapat terbentuk melalui translasi, rotasi, dan refleksi.
+
+    **5. Pola berulang**  
+    Satu motif dasar dapat diulang sehingga menghasilkan pola yang
+    memenuhi permukaan kain.
+    """)
+
+    st.image(
+        "https://commons.wikimedia.org/wiki/Special:Redirect/file/Batik_jumputan_motif_persegi.png",
+        caption="Contoh pola batik berbentuk persegi — Sumber: Wikimedia Commons, CC BY-SA 4.0",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber gambar: Wikimedia Commons — Batik Jumputan Motif Persegi."
+    )
+
+    st.header("🔷 Contoh Motif Geometris")
+
+    st.markdown("""
+    Motif geometris dapat dijumpai dalam berbagai tradisi batik Indonesia.
+    Misalnya, batik Cirebon memiliki kelompok ragam hias geometris yang
+    mencakup motif seperti **tambal sewu, liris, kawung, dan
+    lengko-lengko**.
+
+    Motif tumpal juga memiliki bentuk geometris yang jelas, yaitu
+    susunan segitiga yang berulang.
+
+    Dalam matematika, pola tersebut dapat digunakan untuk mempelajari
+    **bentuk, ukuran, sudut, simetri, transformasi, dan keteraturan pola**.
+    """)
+
+    st.image(
+        "https://commons.wikimedia.org/wiki/Special:Redirect/file/Batik_Motif_Pasisiran.jpg",
+        caption="Contoh kain batik bermotif — Sumber: Wikimedia Commons, CC0",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber gambar: Wikimedia Commons — Batik Motif Pasisiran."
+    )
+
+    st.header("🔄 Transformasi pada Motif Batik")
+
+    st.markdown("""
+    Pola batik dapat dipahami menggunakan transformasi geometri.
+
+    **Translasi** → menggeser motif tanpa mengubah bentuk dan ukurannya.
+
+    **Rotasi** → memutar motif terhadap suatu titik.
+
+    **Refleksi** → mencerminkan motif terhadap suatu garis.
+
+    **Dilatasi** → memperbesar atau memperkecil motif dengan faktor skala.
+
+    Contoh sederhana: jika sebuah motif persegi berukuran $4 \\times 4$ cm
+    diperbesar dengan faktor skala 2, maka panjang sisinya menjadi 8 cm.
+    """)
+
+    st.header("📊 Batik sebagai Pola Matematika")
+
+    st.markdown("""
+    Misalkan sebuah motif memiliki lebar 5 cm dan motif tersebut diulang
+    sebanyak 12 kali.
+
+    Panjang pola yang terbentuk:
+
+    """)
+    st.latex(r"P = 12 \times 5 = 60\text{ cm}")
+
+    st.markdown("""
+    Dengan demikian, matematika dapat membantu kita menganalisis
+    keteraturan motif sekaligus memahami bagaimana pola budaya dapat
+    dimodelkan secara matematis.
+    """)
+
+    # ==========================================================
+    # SOAL INTERAKTIF
+    # ==========================================================
+
+    st.divider()
+    st.header("🧠 Latihan Interaktif — 20 Soal")
+
+    st.info(
+        "Pilih jawaban. Setelah pilihan diklik, hasil benar/salah akan "
+        "langsung ditampilkan. Setelah selesai, gunakan tombol "
+        "**Periksa Semua Jawaban** di bagian bawah."
+    )
+
+    soal = [
+        {
+            "soal": "1. Sebuah motif persegi memiliki sisi 6 cm. Berapa luasnya?",
+            "pilihan": ["12 cm²", "24 cm²", "36 cm²", "42 cm²"],
+            "jawaban": "36 cm²",
+            "pembahasan": "Luas persegi = sisi × sisi = 6 × 6 = 36 cm²."
+        },
+        {
+            "soal": "2. Sebuah pola batik berbentuk persegi panjang berukuran 10 cm × 4 cm. Berapa luasnya?",
+            "pilihan": ["14 cm²", "28 cm²", "40 cm²", "80 cm²"],
+            "jawaban": "40 cm²",
+            "pembahasan": "Luas = panjang × lebar = 10 × 4 = 40 cm²."
+        },
+        {
+            "soal": "3. Persegi panjang berukuran 10 cm × 4 cm. Berapa kelilingnya?",
+            "pilihan": ["14 cm", "20 cm", "28 cm", "40 cm"],
+            "jawaban": "28 cm",
+            "pembahasan": "Keliling = 2(10 + 4) = 28 cm."
+        },
+        {
+            "soal": "4. Motif digeser 5 cm ke kanan tanpa mengubah bentuknya. Transformasi tersebut disebut...",
+            "pilihan": ["Rotasi", "Refleksi", "Translasi", "Dilatasi"],
+            "jawaban": "Translasi",
+            "pembahasan": "Translasi adalah perpindahan atau penggeseran suatu objek."
+        },
+        {
+            "soal": "5. Sebuah motif diputar 90° terhadap titik pusat. Transformasi tersebut disebut...",
+            "pilihan": ["Translasi", "Rotasi", "Refleksi", "Dilatasi"],
+            "jawaban": "Rotasi",
+            "pembahasan": "Rotasi adalah transformasi berupa perputaran."
+        },
+        {
+            "soal": "6. Motif dicerminkan terhadap garis vertikal. Transformasi tersebut disebut...",
+            "pilihan": ["Rotasi", "Translasi", "Refleksi", "Dilatasi"],
+            "jawaban": "Refleksi",
+            "pembahasan": "Refleksi adalah pencerminan terhadap suatu garis."
+        },
+        {
+            "soal": "7. Sebuah motif berukuran 4 cm diulang sebanyak 15 kali. Berapa panjang susunan motif?",
+            "pilihan": ["19 cm", "45 cm", "60 cm", "75 cm"],
+            "jawaban": "60 cm",
+            "pembahasan": "Panjang = 15 × 4 = 60 cm."
+        },
+        {
+            "soal": "8. Sebuah motif berukuran 20 cm diperbesar dengan skala 2. Berapa ukurannya?",
+            "pilihan": ["10 cm", "22 cm", "40 cm", "60 cm"],
+            "jawaban": "40 cm",
+            "pembahasan": "Ukuran baru = 2 × 20 = 40 cm."
+        },
+        {
+            "soal": "9. Sebuah motif memiliki panjang 30 cm dan lebar 10 cm. Perbandingan panjang : lebar adalah...",
+            "pilihan": ["1 : 3", "2 : 1", "3 : 1", "3 : 2"],
+            "jawaban": "3 : 1",
+            "pembahasan": "30 : 10 = 3 : 1."
+        },
+        {
+            "soal": "10. Sebuah kain batik berukuran 200 cm × 80 cm. Luas kain adalah...",
+            "pilihan": ["280 cm²", "800 cm²", "16.000 cm²", "28.000 cm²"],
+            "jawaban": "16.000 cm²",
+            "pembahasan": "Luas = 200 × 80 = 16.000 cm²."
+        },
+        {
+            "soal": "11. Sebanyak 25% dari luas kain 16.000 cm² digunakan untuk motif utama. Berapa luasnya?",
+            "pilihan": ["2.000 cm²", "4.000 cm²", "6.000 cm²", "8.000 cm²"],
+            "jawaban": "4.000 cm²",
+            "pembahasan": "25% × 16.000 = 4.000 cm²."
+        },
+        {
+            "soal": "12. Pola motif memiliki jumlah 3, 6, 9, 12, ... Pola tersebut memiliki beda...",
+            "pilihan": ["2", "3", "4", "6"],
+            "jawaban": "3",
+            "pembahasan": "Setiap suku bertambah 3."
+        },
+        {
+            "soal": "13. Jika pola jumlah motif adalah 3, 6, 9, 12, ..., berapa suku ke-10?",
+            "pilihan": ["27", "30", "33", "36"],
+            "jawaban": "30",
+            "pembahasan": "Suku ke-n = 3n, sehingga suku ke-10 = 30."
+        },
+        {
+            "soal": "14. Sebuah motif memiliki simetri lipat. Artinya...",
+            "pilihan": [
+                "Motif dapat digeser",
+                "Motif dapat dibagi menjadi bagian yang saling berimpit ketika dilipat",
+                "Motif selalu berbentuk lingkaran",
+                "Motif harus memiliki warna yang sama"
+            ],
+            "jawaban": "Motif dapat dibagi menjadi bagian yang saling berimpit ketika dilipat",
+            "pembahasan": "Simetri lipat terjadi ketika dua bagian objek dapat berimpit setelah dilipat."
+        },
+        {
+            "soal": "15. Sebuah motif diputar dan kembali tepat ke posisi semula setelah 180°. Konsep yang berkaitan adalah...",
+            "pilihan": ["Simetri putar", "Keliling", "Luas", "Translasi"],
+            "jawaban": "Simetri putar",
+            "pembahasan": "Simetri putar berkaitan dengan posisi objek yang kembali berimpit setelah diputar."
+        },
+        {
+            "soal": "16. Sebuah motif segitiga memiliki alas 10 cm dan tinggi 8 cm. Berapa luasnya?",
+            "pilihan": ["18 cm²", "40 cm²", "80 cm²", "160 cm²"],
+            "jawaban": "40 cm²",
+            "pembahasan": "Luas segitiga = 1/2 × 10 × 8 = 40 cm²."
+        },
+        {
+            "soal": "17. Sebuah motif lingkaran memiliki jari-jari 7 cm. Dengan π = 22/7, luasnya adalah...",
+            "pilihan": ["44 cm²", "88 cm²", "154 cm²", "308 cm²"],
+            "jawaban": "154 cm²",
+            "pembahasan": "Luas = πr² = 22/7 × 7² = 154 cm²."
+        },
+        {
+            "soal": "18. Sebuah pola terdiri dari motif A-B-C yang berulang. Setelah C, motif berikutnya adalah...",
+            "pilihan": ["A", "B", "C", "D"],
+            "jawaban": "A",
+            "pembahasan": "Pola A-B-C berulang sehingga setelah C kembali ke A."
+        },
+        {
+            "soal": "19. Motif batik berupa deretan belah ketupat yang sama dan berulang. Konsep matematika yang paling tepat adalah...",
+            "pilihan": [
+                "Pola berulang",
+                "Persamaan kuadrat",
+                "Peluang",
+                "Statistika bivariat"
+            ],
+            "jawaban": "Pola berulang",
+            "pembahasan": "Pengulangan bentuk yang sama merupakan contoh pola berulang."
+        },
+        {
+            "soal": "20. Dalam menganalisis motif batik, kombinasi konsep yang paling sesuai adalah...",
+            "pilihan": [
+                "Geometri dan transformasi",
+                "Hanya aritmetika",
+                "Hanya statistika",
+                "Hanya peluang"
+            ],
+            "jawaban": "Geometri dan transformasi",
+            "pembahasan": "Motif batik dapat dianalisis melalui bentuk geometri dan transformasi seperti translasi, rotasi, refleksi, dan dilatasi."
+        }
+    ]
+
+    jawaban_user = []
+
+    for i, item in enumerate(soal):
+
+        st.markdown(f"### {item['soal']}")
+
+        jawaban = st.radio(
+            "Pilih jawaban:",
+            item["pilihan"],
+            index=None,
+            key=f"batik_q_{i}",
+            label_visibility="collapsed"
+        )
+
+        jawaban_user.append(jawaban)
+
+        if jawaban is not None:
+
+            if jawaban == item["jawaban"]:
+                st.success(
+                    f"✅ Benar! {item['pembahasan']}"
+                )
+
+            else:
+                st.error(
+                    f"❌ Salah. Jawaban yang benar adalah **{item['jawaban']}**. "
+                    f"{item['pembahasan']}"
+                )
+
+    # ==========================================================
+    # PERIKSA SEMUA
+    # ==========================================================
+
+    st.divider()
+
+    if st.button(
+        "✅ Periksa Semua Jawaban",
+        key="cek_semua_batik",
+        use_container_width=True
+    ):
+
+        jumlah_dijawab = sum(
+            jawaban is not None
+            for jawaban in jawaban_user
+        )
+
+        jumlah_benar = sum(
+            jawaban_user[i] == soal[i]["jawaban"]
+            for i in range(len(soal))
+            if jawaban_user[i] is not None
+        )
+
+        jumlah_belum = len(soal) - jumlah_dijawab
+
+        nilai = jumlah_benar / len(soal) * 100
+
+        st.subheader("📊 Hasil Latihan")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        col1.metric(
+            "Benar",
+            jumlah_benar
+        )
+
+        col2.metric(
+            "Dijawab",
+            jumlah_dijawab
+        )
+
+        col3.metric(
+            "Belum Dijawab",
+            jumlah_belum
+        )
+
+        col4.metric(
+            "Nilai",
+            f"{nilai:.0f}"
+        )
+
+        if jumlah_dijawab < len(soal):
+
+            st.warning(
+                f"⚠️ Masih ada {jumlah_belum} soal yang belum dijawab."
+            )
+
+        elif nilai >= 80:
+
+            st.success(
+                "🎉 Semua soal sudah dijawab. Pertahankan pemahamanmu!"
+            )
+
+        elif nilai >= 60:
+
+            st.info(
+                "👍 Semua soal sudah dijawab. Coba pelajari kembali "
+                "materi yang masih belum dikuasai."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali konsep geometri dan pola sebelum "
+                "mengerjakan latihan berikutnya."
+            )
+
+    # ==========================================================
+    # ESSAY
+    # ==========================================================
+
+    st.divider()
+
+    st.header("✍️ Soal Essay")
+
+    st.markdown(
+        "Kerjakan terlebih dahulu. Klik bagian **Tampilkan Jawaban** "
+        "untuk melihat pembahasan."
+    )
+
+    essay = [
+        (
+            "Essay 1",
+            "Sebuah motif batik berbentuk persegi panjang berukuran "
+            "25 cm × 12 cm. Hitung luasnya.",
+            "Luas = panjang × lebar = 25 × 12 = 300 cm²."
+        ),
+        (
+            "Essay 2",
+            "Sebuah motif berbentuk persegi memiliki sisi 15 cm. "
+            "Hitung luas dan kelilingnya.",
+            "Luas = 15 × 15 = 225 cm². Keliling = 4 × 15 = 60 cm."
+        ),
+        (
+            "Essay 3",
+            "Sebuah motif memiliki titik A(2, 3). Motif tersebut "
+            "ditranslasikan 5 satuan ke kanan. Tentukan koordinat "
+            "bayangan titik A.",
+            "Translasi ke kanan 5 satuan: A'(2 + 5, 3) = A'(7, 3)."
+        ),
+        (
+            "Essay 4",
+            "Sebuah pola motif memiliki lebar 6 cm dan diulang "
+            "sebanyak 20 kali. Berapa panjang pola seluruhnya?",
+            "Panjang pola = 6 × 20 = 120 cm."
+        ),
+        (
+            "Essay 5",
+            "Jelaskan perbedaan translasi, rotasi, dan refleksi "
+            "dalam pola batik.",
+            "Translasi adalah pergeseran, rotasi adalah perputaran, "
+            "sedangkan refleksi adalah pencerminan terhadap suatu garis."
+        ),
+        (
+            "Essay 6",
+            "Sebuah motif memiliki pola jumlah 4, 8, 12, 16, ... "
+            "Tentukan suku ke-10.",
+            "Barisan memiliki beda 4. Suku ke-10 = 4 × 10 = 40."
+        ),
+        (
+            "Essay 7",
+            "Sebuah kain batik berukuran 200 cm × 80 cm. "
+            "Jika 25% luas kain digunakan untuk motif utama, "
+            "berapa luas bagian tersebut?",
+            "Luas kain = 200 × 80 = 16.000 cm². "
+            "Bagian motif = 25% × 16.000 = 4.000 cm²."
+        ),
+        (
+            "Essay 8",
+            "Sebutkan minimal tiga konsep matematika yang dapat "
+            "digunakan untuk menganalisis pola batik.",
+            "Contohnya adalah bangun datar, simetri, translasi, "
+            "rotasi, refleksi, dilatasi, pola berulang, luas, "
+            "keliling, dan perbandingan."
+        )
+    ]
+
+    for judul, pertanyaan, jawaban in essay:
+
+        st.markdown(f"### {judul}")
+
+        st.markdown(pertanyaan)
+
+        with st.expander("👁️ Tampilkan Jawaban"):
+
+            st.success(jawaban)
+
+    # ==========================================================
+    # REFLEKSI
+    # ==========================================================
+
+    st.divider()
+
+    st.header("💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari materi ini, coba pikirkan:
+
+    - Bentuk geometri apa yang paling sering kamu temukan pada motif batik?
+    - Apakah kamu dapat menemukan pola pengulangan pada kain batik?
+    - Transformasi geometri apa yang dapat digunakan untuk menjelaskan
+      pengulangan motif?
+    - Bagaimana matematika dapat membantu mendokumentasikan dan
+      mengembangkan motif budaya Indonesia?
+    """)
+
+    st.success(
+        "🌺 Matematika tidak hanya ditemukan di dalam buku, "
+        "tetapi juga dapat ditemukan dalam seni, budaya, dan kehidupan masyarakat."
+    )
+
+
 def tenun_motif():
 
     st.markdown(
@@ -578,51 +1099,9 @@ def tenun_motif():
 
 
 
-    
-
-
-def batik_geometri():
-    st.header("🎨 Batik dan Pola Geometri")
-    st.info("Materi akan dikembangkan.")
-
-
-def rumah_tradisional():
-    st.header("🏠 Rumah Tradisional")
-    st.info("Materi akan dikembangkan.")
-
-
-def arsitektur_kesultanan():
-    st.header("🕌 Arsitektur Kesultanan")
-    st.info("Materi akan dikembangkan.")
-
-
-def bubu():
-    st.header("🐟 Bubu dan Alat Tangkap Tradisional")
-    st.info("Materi akan dikembangkan.")
-
-
-def perahu():
-    st.header("🛶 Perahu Tradisional")
-    st.info("Materi akan dikembangkan.")
-
-
-def geometri_budaya():
-    st.header("📐 Geometri dalam Budaya")
-    st.info("Materi akan dikembangkan.")
-
-
-def statistika_masyarakat():
-    st.header("📊 Statistika dalam Kehidupan Masyarakat")
-    st.info("Materi akan dikembangkan.")
-
-
-def matematika_ekonomi():
-    st.header("💰 Matematika Ekonomi dan Budaya")
-    st.info("Materi akan dikembangkan.")
 
 
 def tampilkan(materi):
-
     if materi == "Tenun dan Motif Tradisional":
         tenun_motif()
 
