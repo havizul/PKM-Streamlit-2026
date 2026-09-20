@@ -109,9 +109,9 @@ def rumah_tradisional():
     st.header("🏠 Rumah Radakng (Rumah Panjang Dayak)")
 
     st.image(
-        str(BASE_DIR / "images" / "Rumah-Radakng-Pontianak.jpg"),
-        caption="Rumah Radakng di Pontianak, Kalimantan Barat — Rumah panjang masyarakat Dayak Kanayatn. Sumber: salsawisata.com",
-        use_container_width=True
+    str(BASE_DIR / "images" / "Rumah-Radakng-Pontianak.jpg"),
+    caption="Rumah Radakng di Pontianak, Kalimantan Barat — Rumah panjang masyarakat Dayak Kanayatn.",
+    use_container_width=True
     )
 
     st.markdown(r"""
