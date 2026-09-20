@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 import math
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 def arsitektur_kesultanan():
@@ -70,8 +73,8 @@ def rumah_tradisional():
     #    use_container_width=True
     #)
 
-    st.image(
-    "../images/Rumah-Adat-Melayu-Pontianak.jpg",
+   st.image(
+    str(BASE_DIR / "images" / "Rumah-Adat-Melayu-Pontianak.jpg"),
     caption="Rumah Adat Melayu Pontianak, Kalimantan Barat — Rumah panggung dengan atap limasan. Sumber: salsawisata.com",
     use_container_width=True
     )
@@ -106,7 +109,7 @@ def rumah_tradisional():
     st.header("🏠 Rumah Radakng (Rumah Panjang Dayak)")
 
     st.image(
-        "../images/Rumah-Radakng-Pontianak.jpg",
+        str(BASE_DIR / "images" / "Rumah-Radakng-Pontianak.jpg"),
         caption="Rumah Radakng di Pontianak, Kalimantan Barat — Rumah panjang masyarakat Dayak Kanayatn. Sumber: salsawisata.com",
         use_container_width=True
     )
