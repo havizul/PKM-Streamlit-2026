@@ -8,19 +8,784 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-def statistika_masyarakat():
-    st.header("📊 Statistika dalam Kehidupan Masyarakat")
-    st.info("Materi akan dikembangkan.")
-
 
 def matematika_ekonomi():
     st.header("💰 Matematika Ekonomi dan Budaya")
     st.info("Materi akan dikembangkan.")
 
 
+def statistika_masyarakat():
+
+    st.markdown(
+        '<div class="content-title">📊 Statistika dalam Kehidupan Masyarakat</div>',
+        unsafe_allow_html=True
+    )
+
+    # ==========================================================
+    # MATERI
+    # ==========================================================
+
+    st.header("🌿 Mengenal Statistika dalam Kehidupan Masyarakat")
+
+    st.markdown("""
+    Statistika merupakan ilmu yang digunakan untuk **mengumpulkan,
+    menyajikan, menganalisis, dan menarik kesimpulan dari data**.
+
+    Dalam kehidupan masyarakat, data dapat ditemukan dalam berbagai
+    aktivitas, misalnya:
+
+    - jumlah penduduk;
+    - pekerjaan masyarakat;
+    - hasil produksi;
+    - pendapatan;
+    - pendidikan;
+    - penggunaan transportasi;
+    - hasil pertanian dan perikanan;
+    - kegiatan ekonomi;
+    - penggunaan produk budaya.
+    
+    Melalui statistika, data yang banyak dapat disajikan menjadi informasi
+    yang lebih mudah dipahami.
+    """)
+
+    st.header("📋 Contoh Data Masyarakat")
+
+    st.markdown("""
+    Misalnya dilakukan pendataan terhadap jenis pekerjaan 20 orang
+    masyarakat di suatu wilayah. Data ilustratifnya adalah:
+    """)
+
+    data_pekerjaan = pd.DataFrame({
+        "Pekerjaan": [
+            "Petani",
+            "Nelayan",
+            "Pedagang",
+            "Guru",
+            "Pengrajin"
+        ],
+        "Jumlah": [
+            6,
+            4,
+            5,
+            3,
+            2
+        ]
+    })
+
+    st.dataframe(
+        data_pekerjaan,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    st.markdown("""
+    Dari tabel tersebut dapat diketahui bahwa jumlah seluruh responden
+    adalah:
+    """)
+
+    st.latex(r"6+4+5+3+2=20")
+
+    st.markdown("""
+    Data seperti ini dapat digunakan untuk membuat tabel, diagram batang,
+    diagram lingkaran, maupun analisis statistik sederhana.
+    """)
+
+    st.header("📊 Diagram Batang")
+
+    st.markdown("""
+    Diagram batang digunakan untuk membandingkan jumlah atau frekuensi
+    beberapa kategori.
+    """)
+
+    st.bar_chart(
+        data_pekerjaan.set_index("Pekerjaan")
+    )
+
+    st.header("🥧 Persentase")
+
+    st.markdown("""
+    Persentase menunjukkan bagian suatu kategori dibandingkan dengan
+    keseluruhan data.
+
+    Misalnya terdapat 6 petani dari 20 responden.
+    """)
+
+    st.latex(r"Persentase=\frac{6}{20}\times100\%=30\%")
+
+    st.markdown("""
+    Jadi, petani merupakan **30%** dari seluruh responden.
+    """)
+
+    st.header("📈 Rata-rata (Mean)")
+
+    st.markdown("""
+    Rata-rata atau mean diperoleh dengan menjumlahkan seluruh data
+    kemudian membaginya dengan banyak data.
+
+    Misalnya jumlah ikan yang diperoleh seorang nelayan selama lima
+    hari adalah 10, 12, 8, 15, dan 10 kg.
+    """)
+
+    st.latex(r"\bar{x}=\frac{10+12+8+15+10}{5}=11")
+
+    st.markdown("""
+    Jadi, rata-rata hasil tangkapan adalah **11 kg per hari**.
+    """)
+
+    st.header("📍 Median")
+
+    st.markdown("""
+    Median adalah nilai tengah setelah data diurutkan.
+
+    Contoh data:
+
+    8, 10, 10, 12, 15
+
+    Karena terdapat lima data, nilai yang berada di tengah adalah 10.
+    """)
+
+    st.latex(r"Median=10")
+
+    st.header("🔁 Modus")
+
+    st.markdown("""
+    Modus adalah nilai yang paling sering muncul.
+
+    Contoh:
+
+    5, 7, 7, 8, 9, 7, 10
+
+    Nilai 7 muncul paling banyak.
+    """)
+
+    st.latex(r"Modus=7")
+
+    st.header("📏 Jangkauan (Range)")
+
+    st.markdown("""
+    Jangkauan menunjukkan selisih antara nilai terbesar dan nilai terkecil.
+    """)
+
+    st.latex(r"Range=x_{maks}-x_{min}")
+
+    st.markdown("""
+    Misalnya data hasil produksi adalah:
+
+    10, 12, 15, 18, 20
+
+    Maka:
+    """)
+
+    st.latex(r"Range=20-10=10")
+
+    st.header("🏘️ Statistika dan Budaya")
+
+    st.markdown("""
+    Statistika juga dapat digunakan untuk mempelajari budaya masyarakat.
+
+    Misalnya peneliti ingin mengetahui:
+
+    - motif tenun yang paling banyak dipilih;
+    - jenis batik yang paling dikenal;
+    - jumlah masyarakat yang masih menggunakan alat tradisional;
+    - usia pengrajin;
+    - jumlah produksi kerajinan;
+    - frekuensi penggunaan perahu tradisional;
+    - tingkat pengetahuan siswa terhadap budaya lokal.
+    
+    Data tersebut dapat membantu peneliti memahami kondisi budaya
+    masyarakat secara lebih sistematis.
+    """)
+
+    st.header("🧵 Contoh Data Motif Tenun")
+
+    st.markdown("""
+    Misalnya dilakukan survei ilustratif terhadap 40 responden mengenai
+    motif tenun yang paling mereka kenal.
+    """)
+
+    data_motif = pd.DataFrame({
+        "Motif": [
+            "Pucuk Rebung",
+            "Bintang",
+            "Melati",
+            "Bunga Tanjung",
+            "Parang"
+        ],
+        "Responden": [
+            14,
+            8,
+            7,
+            6,
+            5
+        ]
+    })
+
+    st.dataframe(
+        data_motif,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    st.bar_chart(
+        data_motif.set_index("Motif")
+    )
+
+    st.markdown("""
+    Jumlah responden:
+    """)
+
+    st.latex(r"14+8+7+6+5=40")
+
+    st.header("📊 Populasi dan Sampel")
+
+    st.markdown("""
+    **Populasi** adalah seluruh objek atau individu yang menjadi sasaran
+    penelitian.
+
+    **Sampel** adalah sebagian anggota populasi yang digunakan untuk
+    mewakili populasi.
+
+    Contoh:
+
+    Sebuah penelitian ingin mengetahui pengetahuan budaya lokal
+    mahasiswa di sebuah perguruan tinggi.
+
+    Jika terdapat 1.000 mahasiswa yang menjadi sasaran penelitian,
+    maka 1.000 mahasiswa tersebut merupakan **populasi**.
+
+    Jika peneliti mengambil 100 mahasiswa untuk diteliti, maka 100
+    mahasiswa tersebut merupakan **sampel**.
+    """)
+
+    st.header("📐 Variabel dan Data")
+
+    st.markdown("""
+    Variabel adalah karakteristik yang diamati dalam penelitian.
+
+    Contohnya:
+
+    - usia;
+    - tinggi badan;
+    - jumlah produksi;
+    - pendapatan;
+    - jenis pekerjaan;
+    - jumlah kunjungan;
+    - tingkat pengetahuan budaya.
+
+    Data dapat berbentuk **kuantitatif** maupun **kualitatif**.
+    """)
+
+    st.header("📝 Contoh Survei Budaya")
+
+    st.markdown("""
+    Misalnya peneliti memberikan pertanyaan:
+
+    > "Apakah Anda mengenal motif tenun tradisional daerah Anda?"
+
+    Pilihan jawaban:
+
+    - Sangat mengenal
+    - Mengenal
+    - Kurang mengenal
+    - Tidak mengenal
+
+    Jawaban tersebut dapat dihitung frekuensinya dan kemudian
+    disajikan dalam bentuk tabel atau diagram.
+    """)
+
+    st.header("📊 Statistika untuk Pengambilan Keputusan")
+
+    st.markdown("""
+    Data statistik dapat membantu masyarakat dan peneliti dalam
+    mengambil keputusan.
+
+    Contohnya:
+
+    **Pemerintah** dapat menggunakan data untuk perencanaan program.
+
+    **Pengrajin** dapat melihat produk yang paling banyak diminati.
+
+    **Peneliti** dapat mengetahui pola tertentu dalam masyarakat.
+
+    **Guru** dapat mengetahui tingkat pemahaman siswa.
+
+    Dengan demikian, statistika membantu mengubah data menjadi
+    informasi yang dapat digunakan untuk memahami suatu keadaan.
+    """)
+
+    st.info(
+        "💡 Dalam penelitian budaya, data harus dikumpulkan secara "
+        "sistematis agar kesimpulan yang diperoleh dapat dipertanggungjawabkan."
+    )
+
+    # ==========================================================
+    # SOAL INTERAKTIF
+    # ==========================================================
+
+    st.divider()
+    st.header("🧠 Latihan Interaktif — 20 Soal")
+
+    st.info(
+        "Pilih jawaban. Hasil benar atau salah akan langsung muncul. "
+        "Setelah selesai, gunakan tombol **Periksa Semua Jawaban**."
+    )
+
+    soal = [
+
+        {
+            "soal": "1. Ilmu yang digunakan untuk mengumpulkan, menyajikan, menganalisis, dan menafsirkan data disebut...",
+            "pilihan": [
+                "Geometri",
+                "Statistika",
+                "Trigonometri",
+                "Aljabar"
+            ],
+            "jawaban": "Statistika",
+            "pembahasan": "Statistika berkaitan dengan pengumpulan, penyajian, analisis, dan interpretasi data."
+        },
+
+        {
+            "soal": "2. Data jumlah penduduk suatu desa termasuk data...",
+            "pilihan": [
+                "Kuantitatif",
+                "Kualitatif",
+                "Simbolik",
+                "Geometris"
+            ],
+            "jawaban": "Kuantitatif",
+            "pembahasan": "Jumlah penduduk dinyatakan dalam bentuk angka sehingga termasuk data kuantitatif."
+        },
+
+        {
+            "soal": "3. Seluruh masyarakat yang menjadi sasaran penelitian disebut...",
+            "pilihan": [
+                "Sampel",
+                "Populasi",
+                "Variabel",
+                "Modus"
+            ],
+            "jawaban": "Populasi",
+            "pembahasan": "Populasi adalah keseluruhan objek atau individu yang menjadi sasaran penelitian."
+        },
+
+        {
+            "soal": "4. Sebagian anggota populasi yang digunakan dalam penelitian disebut...",
+            "pilihan": [
+                "Sampel",
+                "Median",
+                "Modus",
+                "Parameter"
+            ],
+            "jawaban": "Sampel",
+            "pembahasan": "Sampel merupakan sebagian anggota populasi yang diteliti."
+        },
+
+        {
+            "soal": "5. Data 10, 12, 14, 16, 18 memiliki rata-rata...",
+            "pilihan": [
+                "12",
+                "13",
+                "14",
+                "15"
+            ],
+            "jawaban": "14",
+            "pembahasan": "Mean = (10 + 12 + 14 + 16 + 18) ÷ 5 = 14."
+        },
+
+        {
+            "soal": "6. Median dari data 5, 7, 8, 10, 12 adalah...",
+            "pilihan": [
+                "5",
+                "7",
+                "8",
+                "10"
+            ],
+            "jawaban": "8",
+            "pembahasan": "Data sudah berurutan dan nilai tengahnya adalah 8."
+        },
+
+        {
+            "soal": "7. Modus dari data 4, 5, 5, 6, 7, 5, 8 adalah...",
+            "pilihan": [
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+            "jawaban": "5",
+            "pembahasan": "Nilai 5 muncul paling banyak."
+        },
+
+        {
+            "soal": "8. Range dari data 10, 12, 15, 18, 20 adalah...",
+            "pilihan": [
+                "5",
+                "8",
+                "10",
+                "20"
+            ],
+            "jawaban": "10",
+            "pembahasan": "Range = nilai terbesar − nilai terkecil = 20 − 10 = 10."
+        },
+
+        {
+            "soal": "9. Dari 20 responden, 6 orang bekerja sebagai petani. Persentasenya adalah...",
+            "pilihan": [
+                "20%",
+                "25%",
+                "30%",
+                "40%"
+            ],
+            "jawaban": "30%",
+            "pembahasan": "Persentase = 6 ÷ 20 × 100% = 30%."
+        },
+
+        {
+            "soal": "10. Diagram yang paling sesuai untuk membandingkan jumlah beberapa jenis pekerjaan adalah...",
+            "pilihan": [
+                "Diagram batang",
+                "Diagram garis",
+                "Peta",
+                "Diagram koordinat"
+            ],
+            "jawaban": "Diagram batang",
+            "pembahasan": "Diagram batang cocok untuk membandingkan frekuensi beberapa kategori."
+        },
+
+        {
+            "soal": "11. Diagram lingkaran paling tepat digunakan untuk menunjukkan...",
+            "pilihan": [
+                "Bagian dari keseluruhan",
+                "Perubahan suhu setiap jam",
+                "Koordinat titik",
+                "Panjang benda"
+            ],
+            "jawaban": "Bagian dari keseluruhan",
+            "pembahasan": "Diagram lingkaran digunakan untuk menunjukkan proporsi atau bagian dari suatu keseluruhan."
+        },
+
+        {
+            "soal": "12. Jika data jumlah ikan selama lima hari adalah 10, 12, 8, 15, dan 10 kg, rata-ratanya adalah...",
+            "pilihan": [
+                "10 kg",
+                "11 kg",
+                "12 kg",
+                "13 kg"
+            ],
+            "jawaban": "11 kg",
+            "pembahasan": "Mean = (10 + 12 + 8 + 15 + 10) ÷ 5 = 11 kg."
+        },
+
+        {
+            "soal": "13. Jika jumlah responden yang mengenal suatu motif adalah 14 dari 40 orang, persentasenya adalah...",
+            "pilihan": [
+                "25%",
+                "30%",
+                "35%",
+                "40%"
+            ],
+            "jawaban": "35%",
+            "pembahasan": "14 ÷ 40 × 100% = 35%."
+        },
+
+        {
+            "soal": "14. Variabel 'jenis pekerjaan' termasuk data...",
+            "pilihan": [
+                "Kualitatif",
+                "Kuantitatif kontinu",
+                "Kuantitatif diskrit",
+                "Numerik murni"
+            ],
+            "jawaban": "Kualitatif",
+            "pembahasan": "Jenis pekerjaan berupa kategori, sehingga termasuk data kualitatif."
+        },
+
+        {
+            "soal": "15. Variabel 'jumlah ikan yang ditangkap' termasuk data...",
+            "pilihan": [
+                "Kualitatif",
+                "Kuantitatif",
+                "Nominal",
+                "Simbolik"
+            ],
+            "jawaban": "Kuantitatif",
+            "pembahasan": "Jumlah ikan dinyatakan dengan angka sehingga termasuk data kuantitatif."
+        },
+
+        {
+            "soal": "16. Jika data 4, 6, 8, 10, 12 memiliki rata-rata 8, maka jumlah seluruh data adalah...",
+            "pilihan": [
+                "20",
+                "30",
+                "40",
+                "50"
+            ],
+            "jawaban": "40",
+            "pembahasan": "Jumlah data = rata-rata × banyak data = 8 × 5 = 40."
+        },
+
+        {
+            "soal": "17. Data 5, 7, 7, 8, 9, 10 memiliki...",
+            "pilihan": [
+                "Tidak memiliki modus",
+                "Modus 5",
+                "Modus 7",
+                "Modus 10"
+            ],
+            "jawaban": "Modus 7",
+            "pembahasan": "Nilai 7 muncul dua kali, sedangkan nilai lainnya satu kali."
+        },
+
+        {
+            "soal": "18. Jika nilai terbesar suatu data adalah 25 dan nilai terkecil 10, range-nya adalah...",
+            "pilihan": [
+                "10",
+                "15",
+                "20",
+                "35"
+            ],
+            "jawaban": "15",
+            "pembahasan": "Range = 25 − 10 = 15."
+        },
+
+        {
+            "soal": "19. Dalam penelitian budaya, data hasil survei dapat digunakan untuk...",
+            "pilihan": [
+                "Membuat kesimpulan berdasarkan data",
+                "Menghilangkan semua data",
+                "Mengubah budaya masyarakat",
+                "Menghindari pengukuran"
+            ],
+            "jawaban": "Membuat kesimpulan berdasarkan data",
+            "pembahasan": "Analisis data membantu peneliti memperoleh informasi dan menarik kesimpulan."
+        },
+
+        {
+            "soal": "20. Mengapa statistika penting dalam mempelajari kehidupan masyarakat?",
+            "pilihan": [
+                "Karena statistika dapat mengubah data menjadi informasi yang lebih mudah dipahami",
+                "Karena statistika hanya digunakan dalam matematika murni",
+                "Karena semua data harus berbentuk geometri",
+                "Karena statistika tidak membutuhkan data"
+            ],
+            "jawaban": "Karena statistika dapat mengubah data menjadi informasi yang lebih mudah dipahami",
+            "pembahasan": "Statistika membantu mengorganisasi, menganalisis, dan menyajikan data sehingga informasi lebih mudah dipahami."
+        }
+    ]
+
+    jawaban_user = []
+
+    for i, item in enumerate(soal):
+
+        st.markdown(f"###### {item['soal']}")
+
+        jawaban = st.radio(
+            "Pilih jawaban:",
+            item["pilihan"],
+            index=None,
+            key=f"stat_masyarakat_q_{i}",
+            label_visibility="collapsed"
+        )
+
+        jawaban_user.append(jawaban)
+
+        if jawaban is not None:
+
+            if jawaban == item["jawaban"]:
+
+                st.success(
+                    f"✅ Benar! {item['pembahasan']}"
+                )
+
+            else:
+
+                st.error(
+                    f"❌ Salah. Jawaban yang benar adalah "
+                    f"**{item['jawaban']}**. {item['pembahasan']}"
+                )
+
+    # ==========================================================
+    # PERIKSA SEMUA JAWABAN
+    # ==========================================================
+
+    st.divider()
+
+    if st.button(
+        "✅ Periksa Semua Jawaban",
+        key="cek_semua_stat_masyarakat",
+        use_container_width=True
+    ):
+
+        jumlah_dijawab = sum(
+            jawaban is not None
+            for jawaban in jawaban_user
+        )
+
+        jumlah_benar = sum(
+            jawaban_user[i] == soal[i]["jawaban"]
+            for i in range(len(soal))
+            if jawaban_user[i] is not None
+        )
+
+        jumlah_belum = len(soal) - jumlah_dijawab
+
+        nilai = jumlah_benar / len(soal) * 100
+
+        st.subheader("📊 Hasil Latihan")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        col1.metric("Benar", jumlah_benar)
+        col2.metric("Dijawab", jumlah_dijawab)
+        col3.metric("Belum Dijawab", jumlah_belum)
+        col4.metric("Nilai", f"{nilai:.0f}")
+
+        if jumlah_dijawab < len(soal):
+
+            st.warning(
+                f"⚠️ Masih ada {jumlah_belum} soal yang belum dijawab."
+            )
+
+        elif nilai >= 80:
+
+            st.success(
+                "🎉 Semua soal sudah dijawab. "
+                "Pemahaman statistika dalam kehidupan masyarakat sudah baik!"
+            )
+
+        elif nilai >= 60:
+
+            st.info(
+                "👍 Semua soal sudah dijawab. "
+                "Pelajari kembali konsep yang masih belum dikuasai."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali konsep mean, median, modus, "
+                "range, persentase, populasi, dan sampel."
+            )
+
+    # ==========================================================
+    # SOAL ESSAY
+    # ==========================================================
+
+    st.divider()
+
+    st.header("✍️ Soal Essay")
+
+    st.markdown(
+        "Kerjakan terlebih dahulu. Klik **Tampilkan Jawaban** "
+        "untuk melihat pembahasan."
+    )
+
+    essay = [
+
+        (
+            "Essay 1",
+            "Jelaskan pengertian statistika dan mengapa statistika "
+            "penting dalam kehidupan masyarakat.",
+            "Statistika adalah ilmu yang berkaitan dengan pengumpulan, "
+            "penyajian, analisis, dan interpretasi data. Statistika "
+            "membantu mengubah data menjadi informasi yang dapat "
+            "digunakan untuk memahami suatu keadaan dan mengambil keputusan."
+        ),
+
+        (
+            "Essay 2",
+            "Tentukan mean dari data hasil produksi: "
+            "10, 12, 15, 13, dan 10 unit.",
+            "Mean = (10 + 12 + 15 + 13 + 10) ÷ 5 = 60 ÷ 5 = 12 unit."
+        ),
+
+        (
+            "Essay 3",
+            "Tentukan median dari data: 8, 12, 10, 15, 7.",
+            "Urutkan data: 7, 8, 10, 12, 15. "
+            "Nilai tengahnya adalah 10, sehingga median = 10."
+        ),
+
+        (
+            "Essay 4",
+            "Tentukan modus dari data: 5, 7, 8, 7, 10, 7, 9.",
+            "Nilai 7 muncul paling banyak, sehingga modus = 7."
+        ),
+
+        (
+            "Essay 5",
+            "Sebuah survei melibatkan 50 responden. Sebanyak 20 orang "
+            "mengenal suatu motif budaya. Berapa persentasenya?",
+            "Persentase = 20 ÷ 50 × 100% = 40%."
+        ),
+
+        (
+            "Essay 6",
+            "Jelaskan perbedaan populasi dan sampel dalam penelitian budaya.",
+            "Populasi adalah seluruh objek atau individu yang menjadi "
+            "sasaran penelitian, sedangkan sampel adalah sebagian "
+            "anggota populasi yang digunakan untuk penelitian."
+        ),
+
+        (
+            "Essay 7",
+            "Sebutkan minimal lima contoh data yang dapat dikumpulkan "
+            "dalam penelitian kehidupan masyarakat.",
+            "Contohnya usia, pekerjaan, pendapatan, jumlah produksi, "
+            "tingkat pendidikan, jumlah penduduk, hasil tangkapan ikan, "
+            "frekuensi penggunaan transportasi, dan pengetahuan budaya."
+        ),
+
+        (
+            "Essay 8",
+            "Jelaskan bagaimana statistika dapat digunakan untuk "
+            "mempelajari budaya lokal.",
+            "Statistika dapat digunakan untuk mengumpulkan dan menganalisis "
+            "data tentang pengetahuan masyarakat terhadap budaya, motif "
+            "yang paling dikenal, jumlah pengrajin, produksi kerajinan, "
+            "atau tingkat penggunaan teknologi tradisional."
+        )
+    ]
+
+    for judul, pertanyaan, jawaban in essay:
+
+        st.markdown(f"{judul}")
+
+        st.markdown(pertanyaan)
+
+        with st.expander("👁️ Tampilkan Jawaban"):
+
+            st.success(jawaban)
+
+    # ==========================================================
+    # REFLEKSI
+    # ==========================================================
+
+    st.divider()
+
+    st.header("💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari statistika dalam kehidupan masyarakat, coba pikirkan:
+
+    - Data apa yang dapat kamu kumpulkan dari masyarakat di sekitar?
+    - Bagaimana cara menyajikan data tersebut agar mudah dipahami?
+    - Kapan mean lebih berguna daripada median?
+    - Mengapa peneliti perlu menggunakan sampel?
+    - Bagaimana statistika dapat membantu melestarikan budaya lokal?
+    - Data budaya apa yang menarik untuk kamu teliti?
+    """)
+
+    st.success(
+        "📊 Data yang dikumpulkan dari kehidupan masyarakat dapat "
+        "menjadi sumber informasi untuk memahami kehidupan, ekonomi, "
+        "pendidikan, dan budaya lokal."
+    )
+
+
 
 def geometri_budaya():
-
     st.markdown(
         '<div class="content-title">📐 Geometri dalam Budaya</div>',
         unsafe_allow_html=True
