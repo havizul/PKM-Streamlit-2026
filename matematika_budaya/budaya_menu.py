@@ -437,7 +437,7 @@ def bubu():
 
     for i, item in enumerate(soal):
 
-        st.markdown(f"### {item['soal']}")
+        st.markdown(f"{item['soal']}")
 
         jawaban = st.radio(
             "Pilih jawaban:",
