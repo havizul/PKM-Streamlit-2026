@@ -10,12 +10,381 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 def matematika_ekonomi():
-    st.header("💰 Matematika Ekonomi dan Budaya")
-    st.info("Materi akan dikembangkan.")
+    st.subheader("💰 Matematika Ekonomi dan Budaya")
+
+    st.markdown("""
+    Matematika ekonomi digunakan untuk memahami berbagai aktivitas ekonomi
+    dalam kehidupan masyarakat, seperti jual beli, keuntungan, diskon,
+    modal, omzet, persentase, dan perencanaan usaha.
+
+    Dalam konteks budaya, konsep matematika ekonomi dapat diterapkan pada
+    kegiatan produksi dan perdagangan produk budaya lokal seperti kain tenun,
+    batik, kerajinan, makanan tradisional, serta produk UMKM.
+    """)
+
+    st.markdown("### 🧮 1. Modal, Harga Jual, dan Keuntungan")
+
+    st.markdown("""
+    **Modal** adalah biaya yang dikeluarkan untuk menghasilkan atau memperoleh
+    suatu produk.
+
+    **Harga jual** adalah harga yang dibayarkan oleh pembeli.
+
+    **Keuntungan** diperoleh ketika harga jual lebih besar daripada modal.
+    """)
+
+    st.latex(r"\text{Keuntungan}=\text{Harga Jual}-\text{Modal}")
+
+    st.markdown("Contoh: seorang pengrajin membeli bahan untuk membuat kain dengan modal Rp500.000 dan menjualnya Rp650.000.")
+
+    st.latex(r"\text{Keuntungan}=650.000-500.000=150.000")
+
+    st.markdown("Jadi, keuntungan pengrajin adalah **Rp150.000**.")
+
+    st.markdown("### 📊 2. Persentase Keuntungan")
+
+    st.latex(r"\text{Persentase Keuntungan}=\frac{\text{Keuntungan}}{\text{Modal}}\times100\%")
+
+    st.markdown("Jika modal Rp500.000 dan keuntungan Rp150.000:")
+
+    st.latex(r"\text{Persentase Keuntungan}=\frac{150.000}{500.000}\times100\%=30\%")
+
+    st.markdown("### 🏷️ 3. Diskon")
+
+    st.markdown("""
+    Diskon adalah potongan harga yang diberikan kepada pembeli.
+    """)
+
+    st.latex(r"\text{Diskon}=\text{Persentase Diskon}\times\text{Harga Awal}")
+
+    st.latex(r"\text{Harga Setelah Diskon}=\text{Harga Awal}-\text{Diskon}")
+
+    st.markdown("Contoh: kain tenun seharga Rp800.000 mendapat diskon 10%.")
+
+    st.latex(r"\text{Diskon}=10\%\times800.000=80.000")
+
+    st.latex(r"\text{Harga Setelah Diskon}=800.000-80.000=720.000")
+
+    st.markdown("### 📈 4. Omzet dan Pendapatan")
+
+    st.markdown("""
+    Omzet adalah total nilai penjualan sebelum dikurangi biaya.
+
+    Jika seorang pengrajin menjual 5 kain dengan harga Rp600.000 per kain:
+    """)
+
+    st.latex(r"\text{Omzet}=5\times600.000=3.000.000")
+
+    st.markdown("Jadi, omzet penjualan adalah **Rp3.000.000**.")
+
+    st.markdown("### 🧵 5. Matematika Ekonomi dalam Produk Budaya")
+
+    st.markdown("""
+    Konsep matematika ekonomi dapat digunakan untuk menganalisis usaha
+    berbasis budaya lokal, misalnya:
+
+    - menentukan harga kain tenun;
+    - menghitung biaya bahan;
+    - menentukan keuntungan pengrajin;
+    - menghitung diskon;
+    - menghitung omzet penjualan;
+    - membandingkan harga produk;
+    - menentukan target penjualan;
+    - merencanakan modal usaha.
+
+    Dengan demikian, matematika tidak hanya digunakan dalam pembelajaran
+    di kelas, tetapi juga dapat membantu masyarakat dalam mengambil
+    keputusan ekonomi secara rasional.
+    """)
+
+    st.markdown("### 📋 Contoh Usaha Produk Budaya")
+
+    data = pd.DataFrame({
+        "Produk": [
+            "Kain Tenun",
+            "Batik",
+            "Tas Anyaman",
+            "Kerajinan Rotan"
+        ],
+        "Modal (Rp)": [
+            500000,
+            300000,
+            150000,
+            200000
+        ],
+        "Harga Jual (Rp)": [
+            650000,
+            400000,
+            225000,
+            280000
+        ]
+    })
+
+    data["Keuntungan (Rp)"] = data["Harga Jual (Rp)"] - data["Modal (Rp)"]
+
+    st.dataframe(data, use_container_width=True)
+
+    st.markdown("### 💡 Analisis")
+
+    st.markdown("""
+    Dari tabel tersebut, keuntungan dapat dihitung dengan mengurangkan modal
+    dari harga jual. Konsep ini dapat dikembangkan menjadi kegiatan proyek
+    matematika, misalnya peserta didik membuat simulasi usaha sederhana
+    berbasis produk budaya lokal.
+    """)
+
+    st.divider()
+
+    # ============================================================
+    # 20 SOAL INTERAKTIF
+    # ============================================================
+
+    st.markdown("## 📝 Latihan Interaktif")
+
+    soal = [
+        (
+            "1. Modal digunakan untuk ...",
+            ["Menghitung luas", "Menghasilkan atau memperoleh produk",
+             "Menghitung jarak", "Mengukur suhu"],
+            "Menghasilkan atau memperoleh produk"
+        ),
+        (
+            "2. Modal sebuah produk Rp500.000 dan harga jual Rp650.000. Keuntungannya adalah ...",
+            ["Rp100.000", "Rp125.000", "Rp150.000", "Rp175.000"],
+            "Rp150.000"
+        ),
+        (
+            "3. Rumus keuntungan yang benar adalah ...",
+            ["Modal − Harga Jual",
+             "Harga Jual − Modal",
+             "Modal + Harga Jual",
+             "Harga Jual × Modal"],
+            "Harga Jual − Modal"
+        ),
+        (
+            "4. Modal Rp400.000 dan harga jual Rp500.000. Keuntungan adalah ...",
+            ["Rp50.000", "Rp75.000", "Rp100.000", "Rp150.000"],
+            "Rp100.000"
+        ),
+        (
+            "5. Modal Rp500.000 dan keuntungan Rp100.000. Persentase keuntungan adalah ...",
+            ["10%", "15%", "20%", "25%"],
+            "20%"
+        ),
+        (
+            "6. Harga kain Rp800.000 mendapat diskon 10%. Besarnya diskon adalah ...",
+            ["Rp40.000", "Rp60.000", "Rp80.000", "Rp100.000"],
+            "Rp80.000"
+        ),
+        (
+            "7. Harga Rp800.000 mendapat diskon 10%. Harga setelah diskon adalah ...",
+            ["Rp700.000", "Rp720.000", "Rp740.000", "Rp760.000"],
+            "Rp720.000"
+        ),
+        (
+            "8. Seorang pengrajin menjual 5 produk dengan harga Rp200.000 per produk. Omzetnya adalah ...",
+            ["Rp500.000", "Rp800.000", "Rp1.000.000", "Rp1.200.000"],
+            "Rp1.000.000"
+        ),
+        (
+            "9. Jika modal Rp300.000 dan harga jual Rp360.000, persentase keuntungan adalah ...",
+            ["10%", "15%", "20%", "25%"],
+            "20%"
+        ),
+        (
+            "10. Sebuah batik seharga Rp400.000 mendapat diskon 25%. Harga setelah diskon adalah ...",
+            ["Rp250.000", "Rp300.000", "Rp325.000", "Rp350.000"],
+            "Rp300.000"
+        ),
+        (
+            "11. Jika biaya bahan Rp150.000 dan biaya produksi Rp50.000, total modal adalah ...",
+            ["Rp100.000", "Rp150.000", "Rp200.000", "Rp250.000"],
+            "Rp200.000"
+        ),
+        (
+            "12. Modal Rp200.000 dan harga jual Rp280.000. Keuntungan adalah ...",
+            ["Rp60.000", "Rp70.000", "Rp80.000", "Rp90.000"],
+            "Rp80.000"
+        ),
+        (
+            "13. Jika sebuah produk menghasilkan keuntungan Rp80.000 dari modal Rp200.000, persentase keuntungannya adalah ...",
+            ["20%", "30%", "40%", "50%"],
+            "40%"
+        ),
+        (
+            "14. Seorang pengrajin menjual 10 produk dengan harga Rp150.000 per produk. Omzetnya adalah ...",
+            ["Rp1.000.000", "Rp1.250.000", "Rp1.500.000", "Rp2.000.000"],
+            "Rp1.500.000"
+        ),
+        (
+            "15. Jika omzet Rp2.000.000 dan total biaya Rp1.500.000, keuntungan adalah ...",
+            ["Rp250.000", "Rp400.000", "Rp500.000", "Rp750.000"],
+            "Rp500.000"
+        ),
+        (
+            "16. Harga awal produk Rp600.000 dan diskon 15%. Besarnya diskon adalah ...",
+            ["Rp60.000", "Rp75.000", "Rp90.000", "Rp105.000"],
+            "Rp90.000"
+        ),
+        (
+            "17. Harga Rp600.000 mendapat diskon 15%. Harga akhirnya adalah ...",
+            ["Rp500.000", "Rp510.000", "Rp520.000", "Rp530.000"],
+            "Rp510.000"
+        ),
+        (
+            "18. Dalam usaha budaya lokal, data biaya dan penjualan dapat digunakan untuk ...",
+            ["Menghitung keuntungan",
+             "Menghilangkan modal",
+             "Menghapus harga jual",
+             "Mengurangi jumlah produk secara otomatis"],
+            "Menghitung keuntungan"
+        ),
+        (
+            "19. Jika modal Rp1.000.000 dan harga jual Rp1.250.000, persentase keuntungan adalah ...",
+            ["15%", "20%", "25%", "30%"],
+            "25%"
+        ),
+        (
+            "20. Mengapa matematika ekonomi penting bagi pengrajin produk budaya?",
+            ["Hanya untuk menghitung luas",
+             "Membantu merencanakan dan menganalisis usaha",
+             "Hanya untuk menghitung waktu",
+             "Tidak memiliki hubungan dengan usaha"],
+            "Membantu merencanakan dan menganalisis usaha"
+        )
+    ]
+
+    jawaban_user = []
+    skor = 0
+
+    for i, (pertanyaan, pilihan, jawaban) in enumerate(soal):
+
+        jawaban_pilih = st.radio(
+            pertanyaan,
+            pilihan,
+            index=None,
+            key=f"mat_ekonomi_q_{i}"
+        )
+
+        jawaban_user.append(jawaban_pilih)
+
+        if jawaban_pilih is not None:
+            if jawaban_pilih == jawaban:
+                st.success("✅ Jawaban benar!")
+            else:
+                st.error("❌ Jawaban belum tepat.")
+
+    st.markdown("---")
+
+    if st.button(
+        "📊 Periksa Semua Jawaban",
+        key="cek_semua_mat_ekonomi",
+        use_container_width=True
+    ):
+
+        for i, (_, _, jawaban) in enumerate(soal):
+            if jawaban_user[i] == jawaban:
+                skor += 1
+
+        nilai = skor / len(soal) * 100
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.metric("Jawaban Benar", f"{skor}/{len(soal)}")
+
+        with col2:
+            st.metric("Nilai", f"{nilai:.0f}")
+
+        if nilai >= 80:
+            st.success("🎉 Sangat baik! Pemahaman matematika ekonomi sudah sangat baik.")
+        elif nilai >= 60:
+            st.info("👍 Cukup baik. Pelajari kembali konsep yang masih belum tepat.")
+        else:
+            st.warning("📚 Yuk pelajari kembali materi modal, keuntungan, diskon, dan omzet.")
+
+    # ============================================================
+    # SOAL URAIAN
+    # ============================================================
+
+    st.divider()
+
+    st.markdown("## ✍️ Soal Uraian")
+
+    uraian = [
+        (
+            "1. Jelaskan pengertian modal, harga jual, dan keuntungan.",
+            "Modal adalah biaya yang dikeluarkan untuk menghasilkan atau memperoleh produk. Harga jual adalah harga yang dibayarkan pembeli. Keuntungan adalah selisih antara harga jual dan modal."
+        ),
+        (
+            "2. Seorang pengrajin memiliki modal Rp400.000 dan menjual produknya Rp520.000. Hitung keuntungannya.",
+            "Keuntungan = Rp520.000 − Rp400.000 = Rp120.000."
+        ),
+        (
+            "3. Modal sebuah produk Rp500.000 dan keuntungan Rp150.000. Hitung persentase keuntungannya.",
+            "Persentase keuntungan = (Rp150.000/Rp500.000) × 100% = 30%."
+        ),
+        (
+            "4. Sebuah kain budaya memiliki harga Rp800.000 dan mendapat diskon 15%. Berapa harga setelah diskon?",
+            "Diskon = 15% × Rp800.000 = Rp120.000. Harga setelah diskon = Rp800.000 − Rp120.000 = Rp680.000."
+        ),
+        (
+            "5. Seorang pengrajin menjual 8 produk dengan harga Rp250.000 per produk. Hitung omzetnya.",
+            "Omzet = 8 × Rp250.000 = Rp2.000.000."
+        ),
+        (
+            "6. Jelaskan perbedaan omzet dan keuntungan.",
+            "Omzet adalah total nilai penjualan. Keuntungan adalah omzet atau pendapatan yang telah dikurangi biaya/modal."
+        ),
+        (
+            "7. Berikan lima contoh penerapan matematika ekonomi dalam usaha produk budaya lokal.",
+            "Contohnya menghitung modal, harga jual, keuntungan, diskon, omzet, biaya produksi, persentase keuntungan, dan target penjualan."
+        ),
+        (
+            "8. Jelaskan bagaimana matematika ekonomi dapat membantu pelestarian budaya lokal.",
+            "Matematika ekonomi dapat membantu pengrajin menghitung biaya, menentukan harga yang sesuai, memperkirakan keuntungan, dan merencanakan usaha sehingga produk budaya lokal dapat diproduksi dan dipasarkan secara berkelanjutan."
+        )
+    ]
+
+    for pertanyaan, jawaban in uraian:
+
+        st.markdown(f"**{pertanyaan}**")
+
+        with st.expander("👁️ Tampilkan Jawaban"):
+            st.markdown(jawaban)
+
+    # ============================================================
+    # REFLEKSI
+    # ============================================================
+
+    st.divider()
+
+    st.markdown("## 💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari materi ini, kita dapat melihat bahwa matematika
+    memiliki hubungan yang erat dengan kehidupan ekonomi masyarakat.
+
+    Produk budaya seperti **tenun, batik, kerajinan rotan, dan produk
+    tradisional lainnya** tidak hanya memiliki nilai budaya, tetapi juga
+    memiliki nilai ekonomi.
+
+    Dengan menggunakan matematika, masyarakat dapat menghitung modal,
+    menentukan harga jual, memperkirakan keuntungan, menghitung diskon,
+    serta menganalisis hasil penjualan.
+
+    **Matematika → Ekonomi → Budaya → Kewirausahaan**
+    """)
+
+    st.success(
+        "🌿 Matematika dapat menjadi alat untuk memahami sekaligus "
+        "mengembangkan ekonomi berbasis budaya lokal."
+    )
+
+
 
 
 def statistika_masyarakat():
-
     st.markdown(
         '<div class="content-title">📊 Statistika dalam Kehidupan Masyarakat</div>',
         unsafe_allow_html=True
