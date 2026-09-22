@@ -7,12 +7,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
-def perahu():
-    st.header("🛶 Perahu Tradisional")
-    st.info("Materi akan dikembangkan.")
-
-
 def geometri_budaya():
     st.header("📐 Geometri dalam Budaya")
     st.info("Materi akan dikembangkan.")
@@ -27,8 +21,619 @@ def matematika_ekonomi():
     st.header("💰 Matematika Ekonomi dan Budaya")
     st.info("Materi akan dikembangkan.")
 
-def bubu():
 
+def perahu():
+
+    st.markdown(
+        '<div class="content-title">🛶 Perahu Tradisional</div>',
+        unsafe_allow_html=True
+    )
+
+    # ==========================================================
+    # MATERI
+    # ==========================================================
+
+    st.header("🌊 Mengenal Perahu Tradisional")
+
+    st.markdown("""
+    Perahu tradisional merupakan bagian penting dari kehidupan masyarakat
+    yang tinggal di sekitar sungai dan wilayah perairan.
+
+    Di Kalimantan Barat, **sampan/perahu** telah digunakan sebagai sarana
+    transportasi air, termasuk di kawasan Sungai Kapuas di Pontianak.
+
+    Bentuk perahu yang memanjang dan ramping dapat menjadi objek menarik
+    untuk mempelajari **geometri, pengukuran, perbandingan, skala,
+    luas, volume, dan pemodelan matematika**.
+    """)
+
+    st.image(
+        "https://www.liputan6.com/photo/read/2299439/menikmati-asyiknya-naik-perahu-sampan-di-sungai-kapuas",
+        caption="Perahu sampan di Sungai Kapuas, Pontianak — Sumber: Liputan6",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber gambar: Liputan6 — Menikmati Asyiknya Naik Perahu Sampan "
+        "di Sungai Kapuas."
+    )
+
+    st.header("🛶 Sampan di Sungai Kapuas")
+
+    st.markdown("""
+    Sampan masih menjadi bagian dari aktivitas transportasi air di
+    Pontianak. Perahu digunakan untuk menyeberangi sungai maupun
+    melakukan perjalanan di sepanjang kawasan perairan.
+
+    Bentuk perahu yang panjang dan relatif sempit membantu perahu bergerak
+    di permukaan air.
+
+    Dalam pembelajaran matematika, bentuk tersebut dapat disederhanakan
+    menjadi model geometri.
+    """)
+
+    st.image(
+        "https://media.zenfs.com/en_SG/News/jackposttravel/7ijlrjtjs6wwkkw48o04o88kg.JPG",
+        caption="Sampan tradisional di Sungai Kapuas — Sumber: Yahoo News Singapore",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber gambar: Yahoo News Singapore — River Crossing in Pontianak."
+    )
+
+    st.header("📐 Bentuk Geometri Perahu")
+
+    st.markdown("""
+    Perahu tradisional memiliki bentuk yang kompleks. Untuk mempelajarinya
+    secara matematis, bentuk tersebut dapat disederhanakan menjadi beberapa
+    bagian.
+
+    - **Persegi panjang** → lantai atau bagian dasar tertentu.
+    - **Segitiga** → bagian ujung atau penampang sederhana.
+    - **Trapesium** → penampang badan perahu.
+    - **Balok** → model sederhana bagian tertentu.
+    - **Prisma** → model ruang badan perahu.
+    - **Gabungan bangun** → model keseluruhan perahu.
+
+    Penyederhanaan ini disebut **pemodelan matematika**.
+    """)
+
+    st.header("📏 Mengukur Perahu")
+
+    st.markdown("""
+    Beberapa ukuran yang dapat diamati pada sebuah perahu antara lain:
+
+    - panjang perahu;
+    - lebar perahu;
+    - tinggi badan perahu;
+    - kedalaman bagian dalam;
+    - panjang tempat duduk;
+    - jarak antarbagian perahu.
+
+    Pengukuran tersebut dapat digunakan untuk menghitung luas,
+    volume, perbandingan, maupun membuat model berskala.
+    """)
+
+    st.header("📊 Contoh Luas Dasar")
+
+    st.markdown("""
+    Misalkan bagian dasar sebuah perahu dimodelkan sebagai persegi panjang
+    dengan panjang 6 m dan lebar 1,5 m.
+    """)
+
+    st.latex(r"L = p \times l = 6 \times 1,5 = 9\text{ m}^2")
+
+    st.markdown("""
+    Jadi, luas model bagian dasar perahu adalah **9 m²**.
+    """)
+
+    st.header("📦 Contoh Volume")
+
+    st.markdown("""
+    Misalkan badan perahu disederhanakan sebagai balok dengan panjang
+    6 m, lebar 1,5 m, dan tinggi 0,5 m.
+    """)
+
+    st.latex(r"V = p \times l \times t = 6 \times 1,5 \times 0,5 = 4,5\text{ m}^3")
+
+    st.markdown("""
+    Jadi, volume model tersebut adalah **4,5 m³**.
+
+    Perhitungan ini merupakan model matematika sederhana. Bentuk perahu
+    sebenarnya tidak berbentuk balok sempurna.
+    """)
+
+    st.header("🔺 Penampang Perahu")
+
+    st.markdown("""
+    Penampang badan perahu dapat dimodelkan menggunakan trapesium.
+
+    Misalnya sebuah penampang memiliki sisi sejajar 1,2 m dan 0,8 m
+    dengan tinggi 0,5 m.
+    """)
+
+    st.latex(r"L = \frac{1}{2}(a+b)t")
+
+    st.latex(r"L = \frac{1}{2}(1,2+0,8)(0,5) = 0,5\text{ m}^2")
+
+    st.markdown("""
+    Dengan model tersebut, luas penampang adalah **0,5 m²**.
+    """)
+
+    st.header("⚖️ Perbandingan Ukuran")
+
+    st.markdown("""
+    Perbandingan panjang dan lebar merupakan salah satu karakteristik
+    penting dalam mempelajari bentuk perahu.
+
+    Misalnya panjang perahu 8 m dan lebarnya 1 m.
+    """)
+
+    st.latex(r"Panjang:Lebar = 8:1")
+
+    st.markdown("""
+    Perbandingan tersebut menunjukkan bahwa perahu jauh lebih panjang
+    daripada lebarnya.
+
+    Perbandingan seperti ini dapat digunakan untuk membandingkan bentuk
+    beberapa jenis perahu.
+    """)
+
+    st.header("📐 Skala dan Miniatur Perahu")
+
+    st.markdown("""
+    Perahu tradisional dapat dibuat menjadi miniatur atau maket.
+
+    Misalnya panjang perahu sebenarnya 8 m dan dibuat dengan skala 1 : 20.
+    """)
+
+    st.latex(r"Panjang\ model = \frac{8}{20} = 0,4\text{ m} = 40\text{ cm}")
+
+    st.markdown("""
+    Jadi, panjang model perahu adalah **40 cm**.
+
+    Konsep skala juga dapat digunakan untuk membuat gambar teknik,
+    denah, maupun model 3D.
+    """)
+
+    st.header("🔄 Simetri pada Perahu")
+
+    st.markdown("""
+    Jika dilihat dari bagian depan atau atas, beberapa perahu memiliki
+    bentuk yang mendekati simetris terhadap garis tengah.
+
+    Konsep tersebut dapat dikaji menggunakan **simetri refleksi**.
+
+    Misalnya bagian kiri dan kanan badan perahu memiliki bentuk yang
+    hampir sama terhadap garis tengah.
+    """)
+
+    st.header("🏞️ Perahu dan Lingkungan Sungai")
+
+    st.markdown("""
+    Bentuk perahu tradisional tidak terlepas dari lingkungan tempat
+    perahu digunakan.
+
+    Pada wilayah sungai, ukuran, bentuk, kedalaman, dan kemampuan
+    manuver perahu menjadi bagian penting dalam penggunaannya.
+
+    Kajian kebudayaan di Kalimantan juga menunjukkan bahwa teknologi
+    perahu berkembang berkaitan dengan aktivitas manusia di sungai.
+    Pada masa awal, perahu dibuat dari batang kayu yang dipahat bagian
+    tengahnya dan kemudian berkembang dengan penambahan papan pada
+    bagian badan perahu. :contentReference[oaicite:1]{index=1}
+    """)
+
+    st.header("🧮 Kecepatan Perahu")
+
+    st.markdown("""
+    Matematika juga dapat digunakan untuk menghitung kecepatan perjalanan.
+
+    Jika sebuah perahu menempuh jarak 6 km dalam waktu 30 menit,
+    terlebih dahulu waktu diubah menjadi jam.
+    """)
+
+    st.latex(r"30\text{ menit} = 0,5\text{ jam}")
+
+    st.latex(r"v = \frac{s}{t} = \frac{6}{0,5} = 12\text{ km/jam}")
+
+    st.markdown("""
+    Jadi, kecepatan rata-rata perahu adalah **12 km/jam**.
+    """)
+
+    # ==========================================================
+    # SOAL INTERAKTIF
+    # ==========================================================
+
+    st.divider()
+    st.header("🧠 Latihan Interaktif — 20 Soal")
+
+    st.info(
+        "Pilih jawaban. Hasil benar atau salah akan langsung muncul. "
+        "Setelah selesai, gunakan tombol **Periksa Semua Jawaban**."
+    )
+
+    soal = [
+
+        {
+            "soal": "1. Sebuah perahu memiliki panjang 6 m dan lebar 1,5 m. Berapa luas model bagian dasarnya?",
+            "pilihan": ["7 m²", "9 m²", "12 m²", "15 m²"],
+            "jawaban": "9 m²",
+            "pembahasan": "Luas = 6 × 1,5 = 9 m²."
+        },
+
+        {
+            "soal": "2. Sebuah perahu memiliki panjang 8 m dan lebar 1 m. Perbandingan panjang : lebar adalah...",
+            "pilihan": ["1 : 8", "2 : 1", "8 : 1", "8 : 2"],
+            "jawaban": "8 : 1",
+            "pembahasan": "8 : 1 = 8 : 1."
+        },
+
+        {
+            "soal": "3. Sebuah model perahu berbentuk balok dengan panjang 6 m, lebar 1,5 m, dan tinggi 0,5 m. Volumenya adalah...",
+            "pilihan": ["3 m³", "4 m³", "4,5 m³", "6 m³"],
+            "jawaban": "4,5 m³",
+            "pembahasan": "V = 6 × 1,5 × 0,5 = 4,5 m³."
+        },
+
+        {
+            "soal": "4. Panjang perahu sebenarnya 8 m. Jika dibuat dengan skala 1 : 20, panjang modelnya adalah...",
+            "pilihan": ["20 cm", "30 cm", "40 cm", "80 cm"],
+            "jawaban": "40 cm",
+            "pembahasan": "8 m = 800 cm. 800 ÷ 20 = 40 cm."
+        },
+
+        {
+            "soal": "5. Bagian badan perahu dapat dimodelkan sebagai gabungan beberapa bangun. Proses tersebut disebut...",
+            "pilihan": [
+                "Pemodelan matematika",
+                "Pengurangan",
+                "Pengkodean",
+                "Pencacahan"
+            ],
+            "jawaban": "Pemodelan matematika",
+            "pembahasan": "Bentuk nyata disederhanakan menjadi model matematika."
+        },
+
+        {
+            "soal": "6. Sebuah penampang perahu berbentuk trapesium memiliki sisi sejajar 1,2 m dan 0,8 m serta tinggi 0,5 m. Luasnya adalah...",
+            "pilihan": ["0,25 m²", "0,5 m²", "1 m²", "1,5 m²"],
+            "jawaban": "0,5 m²",
+            "pembahasan": "L = 1/2(1,2 + 0,8) × 0,5 = 0,5 m²."
+        },
+
+        {
+            "soal": "7. Jika sebuah perahu menempuh 6 km dalam 30 menit, kecepatan rata-ratanya adalah...",
+            "pilihan": ["6 km/jam", "10 km/jam", "12 km/jam", "18 km/jam"],
+            "jawaban": "12 km/jam",
+            "pembahasan": "30 menit = 0,5 jam. v = 6 ÷ 0,5 = 12 km/jam."
+        },
+
+        {
+            "soal": "8. Jika panjang perahu 10 m dan lebarnya 2 m, perbandingan panjang : lebar adalah...",
+            "pilihan": ["2 : 10", "5 : 1", "10 : 2", "1 : 5"],
+            "jawaban": "5 : 1",
+            "pembahasan": "10 : 2 disederhanakan menjadi 5 : 1."
+        },
+
+        {
+            "soal": "9. Perahu yang memiliki bagian kiri dan kanan hampir sama terhadap garis tengah menunjukkan konsep...",
+            "pilihan": [
+                "Simetri refleksi",
+                "Translasi",
+                "Peluang",
+                "Barisan"
+            ],
+            "jawaban": "Simetri refleksi",
+            "pembahasan": "Kesamaan bentuk terhadap garis tengah merupakan contoh simetri refleksi."
+        },
+
+        {
+            "soal": "10. Sebuah perahu panjangnya 12 m. Jika dibuat model dengan skala 1 : 30, panjang modelnya adalah...",
+            "pilihan": ["20 cm", "30 cm", "40 cm", "60 cm"],
+            "jawaban": "40 cm",
+            "pembahasan": "12 m = 1200 cm. 1200 ÷ 30 = 40 cm."
+        },
+
+        {
+            "soal": "11. Bagian lantai perahu berukuran 5 m × 1,2 m. Luasnya adalah...",
+            "pilihan": ["5 m²", "6 m²", "7 m²", "8 m²"],
+            "jawaban": "6 m²",
+            "pembahasan": "Luas = 5 × 1,2 = 6 m²."
+        },
+
+        {
+            "soal": "12. Sebuah perahu memiliki panjang 10 m. Jika bertambah 2 m, panjang barunya adalah...",
+            "pilihan": ["8 m", "10 m", "12 m", "20 m"],
+            "jawaban": "12 m",
+            "pembahasan": "10 + 2 = 12 m."
+        },
+
+        {
+            "soal": "13. Sebuah perahu menempuh 10 km dengan kecepatan 5 km/jam. Waktu yang diperlukan adalah...",
+            "pilihan": ["1 jam", "2 jam", "3 jam", "5 jam"],
+            "jawaban": "2 jam",
+            "pembahasan": "t = s ÷ v = 10 ÷ 5 = 2 jam."
+        },
+
+        {
+            "soal": "14. Sebuah perahu panjangnya 8 m. Jika setiap 1 m terdapat satu tempat duduk, jumlah tempat duduk secara sederhana adalah...",
+            "pilihan": ["4", "6", "8", "10"],
+            "jawaban": "8",
+            "pembahasan": "8 m ÷ 1 m = 8 tempat."
+        },
+
+        {
+            "soal": "15. Bentuk yang paling sesuai untuk memodelkan penampang badan perahu yang melebar di bagian atas adalah...",
+            "pilihan": [
+                "Trapesium",
+                "Lingkaran",
+                "Persegi sempurna",
+                "Segi enam beraturan"
+            ],
+            "jawaban": "Trapesium",
+            "pembahasan": "Penampang yang memiliki dua sisi sejajar dengan panjang berbeda dapat dimodelkan sebagai trapesium."
+        },
+
+        {
+            "soal": "16. Jika panjang sebuah perahu diperbesar 2 kali dan lebarnya tetap, luas model lantai menjadi...",
+            "pilihan": ["1/2 kali", "2 kali", "3 kali", "4 kali"],
+            "jawaban": "2 kali",
+            "pembahasan": "Luas persegi panjang sebanding dengan panjang jika lebar tetap."
+        },
+
+        {
+            "soal": "17. Jika panjang dan lebar sebuah model perahu masing-masing diperbesar 2 kali, luasnya menjadi...",
+            "pilihan": ["2 kali", "3 kali", "4 kali", "8 kali"],
+            "jawaban": "4 kali",
+            "pembahasan": "Luas baru = (2p)(2l) = 4pl."
+        },
+
+        {
+            "soal": "18. Salah satu fungsi utama perahu tradisional di wilayah sungai adalah...",
+            "pilihan": [
+                "Transportasi air",
+                "Tempat menyimpan tanah",
+                "Alat ukur suhu",
+                "Bangunan permanen"
+            ],
+            "jawaban": "Transportasi air",
+            "pembahasan": "Sampan/perahu digunakan sebagai sarana transportasi di wilayah perairan."
+        },
+
+        {
+            "soal": "19. Konsep matematika yang dapat digunakan untuk membuat miniatur perahu adalah...",
+            "pilihan": [
+                "Skala",
+                "Median",
+                "Modus",
+                "Peluang"
+            ],
+            "jawaban": "Skala",
+            "pembahasan": "Skala digunakan untuk mengubah ukuran sebenarnya menjadi ukuran model secara proporsional."
+        },
+
+        {
+            "soal": "20. Mengapa perahu tradisional dapat menjadi objek pembelajaran etnomatematika?",
+            "pilihan": [
+                "Karena hanya memiliki nilai sejarah",
+                "Karena mengandung bentuk, ukuran, pola, dan teknik pembuatan yang dapat dikaji secara matematis",
+                "Karena tidak memiliki bentuk geometris",
+                "Karena hanya digunakan untuk perlombaan"
+            ],
+            "jawaban": "Karena mengandung bentuk, ukuran, pola, dan teknik pembuatan yang dapat dikaji secara matematis",
+            "pembahasan": "Perahu menghubungkan konsep matematika dengan teknologi dan budaya masyarakat."
+        }
+    ]
+
+    jawaban_user = []
+
+    for i, item in enumerate(soal):
+
+        st.markdown(f"{item['soal']}")
+
+        jawaban = st.radio(
+            "Pilih jawaban:",
+            item["pilihan"],
+            index=None,
+            key=f"perahu_q_{i}",
+            label_visibility="collapsed"
+        )
+
+        jawaban_user.append(jawaban)
+
+        if jawaban is not None:
+
+            if jawaban == item["jawaban"]:
+
+                st.success(
+                    f"✅ Benar! {item['pembahasan']}"
+                )
+
+            else:
+
+                st.error(
+                    f"❌ Salah. Jawaban yang benar adalah "
+                    f"**{item['jawaban']}**. {item['pembahasan']}"
+                )
+
+    # ==========================================================
+    # PERIKSA SEMUA JAWABAN
+    # ==========================================================
+
+    st.divider()
+
+    if st.button(
+        "✅ Periksa Semua Jawaban",
+        key="cek_semua_perahu",
+        use_container_width=True
+    ):
+
+        jumlah_dijawab = sum(
+            jawaban is not None
+            for jawaban in jawaban_user
+        )
+
+        jumlah_benar = sum(
+            jawaban_user[i] == soal[i]["jawaban"]
+            for i in range(len(soal))
+            if jawaban_user[i] is not None
+        )
+
+        jumlah_belum = len(soal) - jumlah_dijawab
+
+        nilai = jumlah_benar / len(soal) * 100
+
+        st.subheader("📊 Hasil Latihan")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        col1.metric("Benar", jumlah_benar)
+        col2.metric("Dijawab", jumlah_dijawab)
+        col3.metric("Belum Dijawab", jumlah_belum)
+        col4.metric("Nilai", f"{nilai:.0f}")
+
+        if jumlah_dijawab < len(soal):
+
+            st.warning(
+                f"⚠️ Masih ada {jumlah_belum} soal yang belum dijawab."
+            )
+
+        elif nilai >= 80:
+
+            st.success(
+                "🎉 Semua soal sudah dijawab. "
+                "Pemahaman matematika pada perahu tradisional sudah baik!"
+            )
+
+        elif nilai >= 60:
+
+            st.info(
+                "👍 Semua soal sudah dijawab. "
+                "Pelajari kembali konsep yang masih belum dikuasai."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali konsep geometri, skala, "
+                "perbandingan, luas, volume, dan kecepatan."
+            )
+
+    # ==========================================================
+    # SOAL ESSAY
+    # ==========================================================
+
+    st.divider()
+
+    st.header("✍️ Soal Essay")
+
+    st.markdown(
+        "Kerjakan terlebih dahulu. Klik **Tampilkan Jawaban** "
+        "untuk melihat pembahasan."
+    )
+
+    essay = [
+
+        (
+            "Essay 1",
+            "Sebuah perahu memiliki panjang 8 m dan lebar 1,5 m. "
+            "Hitung luas model bagian dasarnya.",
+            "Luas = 8 × 1,5 = 12 m²."
+        ),
+
+        (
+            "Essay 2",
+            "Sebuah perahu dimodelkan sebagai balok dengan panjang "
+            "6 m, lebar 1,5 m, dan tinggi 0,5 m. Hitung volumenya.",
+            "V = 6 × 1,5 × 0,5 = 4,5 m³."
+        ),
+
+        (
+            "Essay 3",
+            "Panjang sebuah perahu sebenarnya 10 m. Jika dibuat "
+            "dengan skala 1 : 25, berapa panjang modelnya?",
+            "10 m = 1000 cm. Panjang model = 1000 ÷ 25 = 40 cm."
+        ),
+
+        (
+            "Essay 4",
+            "Sebuah perahu menempuh jarak 12 km dalam waktu 1,5 jam. "
+            "Hitung kecepatan rata-ratanya.",
+            "v = s ÷ t = 12 ÷ 1,5 = 8 km/jam."
+        ),
+
+        (
+            "Essay 5",
+            "Sebuah penampang perahu berbentuk trapesium dengan sisi "
+            "sejajar 1,2 m dan 0,8 m serta tinggi 0,5 m. Hitung luasnya.",
+            "L = 1/2(1,2 + 0,8) × 0,5 = 0,5 m²."
+        ),
+
+        (
+            "Essay 6",
+            "Jelaskan bagaimana konsep simetri dapat digunakan untuk "
+            "menganalisis bentuk perahu.",
+            "Jika bagian kiri dan kanan perahu memiliki bentuk yang "
+            "hampir sama terhadap garis tengah, bentuk tersebut dapat "
+            "dikaji menggunakan konsep simetri refleksi."
+        ),
+
+        (
+            "Essay 7",
+            "Sebutkan minimal lima konsep matematika yang dapat "
+            "digunakan untuk mengkaji perahu tradisional.",
+            "Contohnya panjang, lebar, tinggi, luas, volume, skala, "
+            "perbandingan, sudut, simetri, kecepatan, dan geometri."
+        ),
+
+        (
+            "Essay 8",
+            "Jelaskan hubungan antara perahu tradisional dan "
+            "etnomatematika.",
+            "Perahu merupakan teknologi budaya yang memiliki bentuk, "
+            "ukuran, pola, proporsi, dan teknik pembuatan. Unsur tersebut "
+            "dapat dihubungkan dengan berbagai konsep matematika."
+        )
+    ]
+
+    for judul, pertanyaan, jawaban in essay:
+
+        st.markdown(f"### {judul}")
+
+        st.markdown(pertanyaan)
+
+        with st.expander("👁️ Tampilkan Jawaban"):
+
+            st.success(jawaban)
+
+    # ==========================================================
+    # REFLEKSI
+    # ==========================================================
+
+    st.divider()
+
+    st.header("💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari perahu tradisional, coba pikirkan:
+
+    - Bentuk geometri apa yang dapat digunakan untuk memodelkan badan perahu?
+    - Bagaimana cara menghitung luas dan volume sebuah perahu?
+    - Mengapa perahu dibuat dengan bentuk yang panjang dan relatif sempit?
+    - Bagaimana skala dapat digunakan untuk membuat miniatur perahu?
+    - Bagaimana matematika dapat membantu mendokumentasikan teknologi
+      perahu tradisional?
+    """)
+
+    st.success(
+        "🛶 Perahu tradisional menunjukkan bahwa matematika hadir "
+        "dalam teknologi, lingkungan sungai, dan kehidupan masyarakat."
+    )
+
+
+def bubu():
     st.markdown(
         '<div class="content-title">🐟 Bubu dan Alat Tangkap Tradisional</div>',
         unsafe_allow_html=True
