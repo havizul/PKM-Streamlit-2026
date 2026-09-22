@@ -7,15 +7,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-def arsitektur_kesultanan():
-    st.header("🕌 Arsitektur Kesultanan")
-    st.info("Materi akan dikembangkan.")
-
-
-def bubu():
-    st.header("🐟 Bubu dan Alat Tangkap Tradisional")
-    st.info("Materi akan dikembangkan.")
-
 
 def perahu():
     st.header("🛶 Perahu Tradisional")
@@ -35,6 +26,621 @@ def statistika_masyarakat():
 def matematika_ekonomi():
     st.header("💰 Matematika Ekonomi dan Budaya")
     st.info("Materi akan dikembangkan.")
+
+def bubu():
+
+    st.markdown(
+        '<div class="content-title">🐟 Bubu dan Alat Tangkap Tradisional</div>',
+        unsafe_allow_html=True
+    )
+
+    # ==========================================================
+    # MATERI
+    # ==========================================================
+
+    st.header("🌿 Mengenal Bubu")
+
+    st.markdown("""
+    **Bubu** merupakan alat tangkap ikan tradisional berbentuk perangkap.
+    Bubu dibuat dari bahan alami seperti **bambu atau rotan** yang
+    dianyam dan disusun membentuk ruang dengan lubang masuk bagi ikan.
+
+    Bubu merupakan alat tangkap yang bersifat pasif. Ikan masuk melalui
+    bagian mulut bubu dan kemudian sulit keluar kembali.
+
+    Dalam pembelajaran etnomatematika, bubu menarik dikaji karena bentuknya
+    dapat dimodelkan menggunakan **geometri dan pengukuran**.
+    """)
+
+    st.image(
+        "https://berkatnewstv.com/wp-content/uploads/2023/03/SALI-PENANGKAP-IKAN-DI-TEBAS-KABUPATEN-SAMBAS-GUNAKAN-BUBU-TRADISIONAL-UNTUK-MENANGKAP-IKAN.jpeg",
+        caption="Pembuatan bubu tradisional di Kabupaten Sambas — Sumber: Berkatnews TV",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber gambar: Berkatnews TV — Lestarikan Kearifan Lokal, "
+        "Penangkap Ikan Gunakan Bubu Tradisional."
+    )
+
+    st.header("🧺 Bubu Kapuas Hulu")
+
+    st.markdown("""
+    Bubu juga digunakan oleh masyarakat di Kabupaten Kapuas Hulu,
+    Kalimantan Barat.
+
+    Salah satu kajian tentang pemanfaatan rotan di Desa Landau Mentail,
+    Kecamatan Boyan Tanjung, mencatat bahwa perangkap ikan atau bubu
+    dibuat dari **rotan tapah**, dengan **rotan segak sebagai bahan
+    pengikat**.
+
+    Ukurannya sekitar:
+
+    - Diameter: **35–45 cm**
+    - Panjang: **45 cm–1,5 m**
+    - Bahan utama: **rotan**
+    - Lokasi pemasangan: **parit atau sungai kecil**
+
+    Bubu dibuat dengan cara menganyam rotan sehingga membentuk keranjang
+    atau perangkap dengan lubang masuk ikan.
+    """)
+
+    st.image(
+        "https://img.antaranews.com/cache/730x487/2020/07/25/Screenshot_2020-07-25-WhatsApp-1.png",
+        caption="Pembuatan bubu bambu secara tradisional — Sumber: ANTARA",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber gambar: ANTARA News Kalimantan Barat — "
+        "Satgas TMMD belajar membuat perangkap ikan."
+    )
+
+    st.header("📐 Bentuk Geometri Bubu")
+
+    st.markdown("""
+    Bentuk bubu dapat disederhanakan menjadi beberapa bentuk geometri.
+
+    **1. Lingkaran**
+
+    Penampang bubu dapat berbentuk lingkaran.
+
+    **2. Tabung**
+
+    Bagian badan bubu yang memiliki diameter relatif tetap dapat
+    dimodelkan sebagai tabung.
+
+    **3. Kerucut terpancung**
+
+    Bubu yang semakin mengecil ke salah satu ujung dapat dimodelkan
+    sebagai kerucut terpancung.
+
+    **4. Kerucut**
+
+    Bagian ujung tertentu dapat dimodelkan sebagai kerucut.
+
+    **5. Pola anyaman**
+
+    Susunan rotan atau bambu dapat membentuk pola garis horizontal,
+    vertikal, diagonal, atau kombinasi di antaranya.
+    """)
+
+    st.header("🔵 Diameter dan Jari-jari")
+
+    st.markdown("""
+    Jika diameter sebuah bubu adalah 40 cm, maka jari-jarinya adalah:
+    """)
+
+    st.latex(r"r = \frac{d}{2} = \frac{40}{2} = 20\text{ cm}")
+
+    st.markdown("""
+    Jika penampang bubu dianggap berbentuk lingkaran, luas penampangnya
+    dapat dihitung dengan:
+    """)
+
+    st.latex(r"L = \pi r^2")
+
+    st.markdown("""
+    Dengan $r = 20$ cm dan $\pi = 3,14$:
+    """)
+
+    st.latex(r"L = 3,14 \times 20^2 = 1.256\text{ cm}^2")
+
+    st.header("📦 Volume Bubu")
+
+    st.markdown("""
+    Jika badan bubu dimodelkan sebagai tabung, volume dapat dihitung
+    menggunakan:
+    """)
+
+    st.latex(r"V = \pi r^2t")
+
+    st.markdown("""
+    Misalnya diameter bubu 40 cm dan panjangnya 100 cm.
+    Maka $r = 20$ cm dan $t = 100$ cm.
+    """)
+
+    st.latex(r"V = 3,14 \times 20^2 \times 100 = 125.600\text{ cm}^3")
+
+    st.markdown("""
+    Jadi, volume model bubu tersebut sekitar **125.600 cm³**.
+
+    Perhitungan ini merupakan model matematika. Bentuk bubu sebenarnya
+    tidak selalu merupakan tabung sempurna.
+    """)
+
+    st.header("🔺 Bubu sebagai Kerucut Terpancung")
+
+    st.markdown("""
+    Banyak bubu memiliki bentuk yang mengecil ke arah ujung.
+    Bentuk tersebut dapat dimodelkan sebagai **kerucut terpancung**.
+
+    Jika jari-jari besar adalah $R$, jari-jari kecil adalah $r$, dan
+    tinggi bubu adalah $t$, maka volumenya dapat dihitung dengan:
+    """)
+
+    st.latex(r"V = \frac{1}{3}\pi t(R^2+Rr+r^2)")
+
+    st.markdown("""
+    Model ini membantu kita memahami bahwa benda tradisional yang dibuat
+    secara manual dapat dipelajari menggunakan konsep geometri ruang.
+    """)
+
+    st.header("🧶 Pola Anyaman")
+
+    st.markdown("""
+    Anyaman pada bubu juga memiliki pola matematika.
+
+    Batang rotan atau bambu dapat disusun secara:
+
+    - horizontal;
+    - vertikal;
+    - diagonal;
+    - melingkar;
+    - berulang.
+
+    Jarak antarbatang dapat diukur dan dibandingkan. Dengan demikian,
+    pola anyaman dapat dikaji menggunakan **pengukuran, perbandingan,
+    pola, simetri, dan geometri**.
+    """)
+
+    st.header("📏 Skala Bubu")
+
+    st.markdown("""
+    Bubu juga dapat dibuat menjadi model atau miniatur.
+
+    Misalnya panjang bubu sebenarnya 100 cm dan dibuat dengan skala
+    1 : 5.
+    """)
+
+    st.latex(r"Panjang\ model = \frac{100}{5} = 20\text{ cm}")
+
+    st.markdown("""
+    Dengan demikian, panjang model bubu adalah **20 cm**.
+
+    Konsep skala dapat digunakan ketika siswa membuat **maket bubu,
+    gambar teknik, atau model 3D menggunakan GeoGebra**.
+    """)
+
+    st.header("🌿 Bubu dan Kearifan Lokal")
+
+    st.markdown("""
+    Bubu bukan hanya objek matematika. Bubu juga menunjukkan keterampilan
+    masyarakat dalam memanfaatkan bahan alam dan menyesuaikan alat dengan
+    lingkungan perairan.
+
+    Di Kapuas Hulu, penggunaan bubu tercatat dalam aktivitas perikanan
+    masyarakat. Pemerintah daerah juga mencatat keberadaan bubu sebagai
+    salah satu alat penangkap ikan di perairan umum. :contentReference[oaicite:2]{index=2}
+
+    Dengan demikian, bubu dapat menjadi contoh nyata bahwa matematika
+    dapat dipelajari melalui **budaya, lingkungan, teknologi tradisional,
+    dan kehidupan masyarakat**.
+    """)
+
+    # ==========================================================
+    # SOAL INTERAKTIF
+    # ==========================================================
+
+    st.divider()
+    st.header("🧠 Latihan Interaktif — 20 Soal")
+
+    st.info(
+        "Pilih jawaban. Hasil benar atau salah akan langsung muncul. "
+        "Setelah selesai, gunakan tombol **Periksa Semua Jawaban**."
+    )
+
+    soal = [
+
+        {
+            "soal": "1. Jika diameter bubu 40 cm, berapa jari-jarinya?",
+            "pilihan": ["10 cm", "20 cm", "30 cm", "40 cm"],
+            "jawaban": "20 cm",
+            "pembahasan": "Jari-jari = diameter ÷ 2 = 40 ÷ 2 = 20 cm."
+        },
+
+        {
+            "soal": "2. Sebuah bubu memiliki diameter 50 cm. Jari-jarinya adalah...",
+            "pilihan": ["15 cm", "20 cm", "25 cm", "50 cm"],
+            "jawaban": "25 cm",
+            "pembahasan": "Jari-jari = 50 ÷ 2 = 25 cm."
+        },
+
+        {
+            "soal": "3. Jika jari-jari penampang bubu 10 cm, luas penampang dengan π = 3,14 adalah...",
+            "pilihan": ["31,4 cm²", "62,8 cm²", "314 cm²", "628 cm²"],
+            "jawaban": "314 cm²",
+            "pembahasan": "Luas = πr² = 3,14 × 10² = 314 cm²."
+        },
+
+        {
+            "soal": "4. Sebuah bubu dimodelkan sebagai tabung dengan r = 10 cm dan t = 50 cm. Dengan π = 3,14, volumenya adalah...",
+            "pilihan": ["1.570 cm³", "3.140 cm³", "15.700 cm³", "31.400 cm³"],
+            "jawaban": "15.700 cm³",
+            "pembahasan": "V = πr²t = 3,14 × 10² × 50 = 15.700 cm³."
+        },
+
+        {
+            "soal": "5. Bubu yang diameter badannya semakin mengecil ke salah satu ujung dapat dimodelkan sebagai...",
+            "pilihan": [
+                "Kerucut terpancung",
+                "Kubus",
+                "Bola",
+                "Prisma segi enam"
+            ],
+            "jawaban": "Kerucut terpancung",
+            "pembahasan": "Bentuk yang memiliki dua ukuran jari-jari berbeda dapat dimodelkan sebagai kerucut terpancung."
+        },
+
+        {
+            "soal": "6. Dalam kajian bubu di Desa Landau Mentail, bahan utama bubu adalah...",
+            "pilihan": ["Besi", "Rotan", "Plastik", "Kaca"],
+            "jawaban": "Rotan",
+            "pembahasan": "Kajian tersebut mencatat bubu dibuat menggunakan rotan tapah dengan rotan segak sebagai pengikat."
+        },
+
+        {
+            "soal": "7. Diameter bubu yang dicatat dalam kajian Desa Landau Mentail sekitar...",
+            "pilihan": ["5–10 cm", "15–25 cm", "35–45 cm", "60–80 cm"],
+            "jawaban": "35–45 cm",
+            "pembahasan": "Ukuran diameter yang dicatat sekitar 35–45 cm."
+        },
+
+        {
+            "soal": "8. Panjang bubu yang dicatat dalam kajian tersebut sekitar...",
+            "pilihan": [
+                "5–15 cm",
+                "20–30 cm",
+                "45 cm–1,5 m",
+                "3–5 m"
+            ],
+            "jawaban": "45 cm–1,5 m",
+            "pembahasan": "Panjang bubu yang dicatat sekitar 45 cm sampai 1,5 m."
+        },
+
+        {
+            "soal": "9. Jika panjang bubu 100 cm dibuat dengan skala 1 : 5, panjang modelnya adalah...",
+            "pilihan": ["5 cm", "10 cm", "20 cm", "50 cm"],
+            "jawaban": "20 cm",
+            "pembahasan": "Panjang model = 100 ÷ 5 = 20 cm."
+        },
+
+        {
+            "soal": "10. Jika diameter bubu 40 cm, keliling penampang dengan π = 3,14 adalah...",
+            "pilihan": ["62,8 cm", "100 cm", "125,6 cm", "251,2 cm"],
+            "jawaban": "125,6 cm",
+            "pembahasan": "Keliling = πd = 3,14 × 40 = 125,6 cm."
+        },
+
+        {
+            "soal": "11. Jika sebuah bubu memiliki panjang 80 cm dan diameter 40 cm, perbandingan panjang : diameter adalah...",
+            "pilihan": ["1 : 2", "2 : 1", "3 : 1", "4 : 1"],
+            "jawaban": "2 : 1",
+            "pembahasan": "80 : 40 = 2 : 1."
+        },
+
+        {
+            "soal": "12. Pola batang rotan yang berulang pada badan bubu merupakan contoh...",
+            "pilihan": [
+                "Pola berulang",
+                "Peluang",
+                "Median",
+                "Persamaan kuadrat"
+            ],
+            "jawaban": "Pola berulang",
+            "pembahasan": "Susunan bentuk atau garis yang terus diulang merupakan pola berulang."
+        },
+
+        {
+            "soal": "13. Jika jarak antarbatang anyaman adalah 2 cm dan terdapat 20 jarak yang sama, panjang susunannya adalah...",
+            "pilihan": ["10 cm", "20 cm", "40 cm", "60 cm"],
+            "jawaban": "40 cm",
+            "pembahasan": "Panjang = 20 × 2 = 40 cm."
+        },
+
+        {
+            "soal": "14. Jika sebuah bubu memiliki diameter 40 cm, luas penampang dengan π = 22/7 adalah...",
+            "pilihan": [
+                "1.200 cm²",
+                "1.257 cm²",
+                "1.400 cm²",
+                "2.800 cm²"
+            ],
+            "jawaban": "1.257 cm²",
+            "pembahasan": "r = 20 cm. Luas = 22/7 × 20² ≈ 1.257 cm²."
+        },
+
+        {
+            "soal": "15. Rumus volume tabung adalah...",
+            "pilihan": [
+                "V = 2πr",
+                "V = πr²t",
+                "V = πd",
+                "V = 2πr²"
+            ],
+            "jawaban": "V = πr²t",
+            "pembahasan": "Volume tabung = luas alas × tinggi = πr²t."
+        },
+
+        {
+            "soal": "16. Jika ukuran panjang bubu diperbesar 2 kali tetapi jari-jari tetap, volumenya menjadi...",
+            "pilihan": ["1/2 kali", "2 kali", "3 kali", "4 kali"],
+            "jawaban": "2 kali",
+            "pembahasan": "Volume tabung sebanding dengan tinggi. Jika tinggi menjadi 2 kali, volume juga menjadi 2 kali."
+        },
+
+        {
+            "soal": "17. Jika jari-jari bubu diperbesar 2 kali sementara tinggi tetap, volume menjadi...",
+            "pilihan": ["2 kali", "3 kali", "4 kali", "8 kali"],
+            "jawaban": "4 kali",
+            "pembahasan": "Volume sebanding dengan r². Jika r menjadi 2r, volume menjadi 4 kali."
+        },
+
+        {
+            "soal": "18. Salah satu fungsi lubang masuk pada bubu adalah...",
+            "pilihan": [
+                "Memperbesar berat bubu",
+                "Memungkinkan ikan masuk ke perangkap",
+                "Mengubah warna bubu",
+                "Mengurangi panjang bubu"
+            ],
+            "jawaban": "Memungkinkan ikan masuk ke perangkap",
+            "pembahasan": "Bagian mulut atau lubang masuk merupakan jalan ikan masuk ke dalam perangkap."
+        },
+
+        {
+            "soal": "19. Konsep matematika yang dapat digunakan untuk menganalisis bentuk bubu adalah...",
+            "pilihan": [
+                "Geometri dan pengukuran",
+                "Hanya statistika",
+                "Hanya peluang",
+                "Hanya logika"
+            ],
+            "jawaban": "Geometri dan pengukuran",
+            "pembahasan": "Bentuk, diameter, panjang, luas, volume, dan skala dapat dianalisis dengan geometri dan pengukuran."
+        },
+
+        {
+            "soal": "20. Bubu dapat menjadi objek pembelajaran etnomatematika karena...",
+            "pilihan": [
+                "Hanya memiliki nilai ekonomi",
+                "Mengandung bentuk, ukuran, pola, dan teknik tradisional",
+                "Tidak memiliki bentuk geometris",
+                "Hanya digunakan sebagai hiasan"
+            ],
+            "jawaban": "Mengandung bentuk, ukuran, pola, dan teknik tradisional",
+            "pembahasan": "Bubu menghubungkan konsep matematika dengan budaya dan teknologi tradisional masyarakat."
+        }
+    ]
+
+    jawaban_user = []
+
+    for i, item in enumerate(soal):
+
+        st.markdown(f"### {item['soal']}")
+
+        jawaban = st.radio(
+            "Pilih jawaban:",
+            item["pilihan"],
+            index=None,
+            key=f"bubu_q_{i}",
+            label_visibility="collapsed"
+        )
+
+        jawaban_user.append(jawaban)
+
+        if jawaban is not None:
+
+            if jawaban == item["jawaban"]:
+
+                st.success(
+                    f"✅ Benar! {item['pembahasan']}"
+                )
+
+            else:
+
+                st.error(
+                    f"❌ Salah. Jawaban yang benar adalah "
+                    f"**{item['jawaban']}**. {item['pembahasan']}"
+                )
+
+    # ==========================================================
+    # PERIKSA SEMUA JAWABAN
+    # ==========================================================
+
+    st.divider()
+
+    if st.button(
+        "✅ Periksa Semua Jawaban",
+        key="cek_semua_bubu",
+        use_container_width=True
+    ):
+
+        jumlah_dijawab = sum(
+            jawaban is not None
+            for jawaban in jawaban_user
+        )
+
+        jumlah_benar = sum(
+            jawaban_user[i] == soal[i]["jawaban"]
+            for i in range(len(soal))
+            if jawaban_user[i] is not None
+        )
+
+        jumlah_belum = len(soal) - jumlah_dijawab
+
+        nilai = jumlah_benar / len(soal) * 100
+
+        st.subheader("📊 Hasil Latihan")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        col1.metric("Benar", jumlah_benar)
+        col2.metric("Dijawab", jumlah_dijawab)
+        col3.metric("Belum Dijawab", jumlah_belum)
+        col4.metric("Nilai", f"{nilai:.0f}")
+
+        if jumlah_dijawab < len(soal):
+
+            st.warning(
+                f"⚠️ Masih ada {jumlah_belum} soal yang belum dijawab."
+            )
+
+        elif nilai >= 80:
+
+            st.success(
+                "🎉 Semua soal sudah dijawab. "
+                "Pemahaman tentang bubu dan geometri sudah baik!"
+            )
+
+        elif nilai >= 60:
+
+            st.info(
+                "👍 Semua soal sudah dijawab. "
+                "Pelajari kembali konsep yang masih belum dikuasai."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali konsep diameter, luas, volume, "
+                "skala, dan bentuk geometri."
+            )
+
+    # ==========================================================
+    # SOAL ESSAY
+    # ==========================================================
+
+    st.divider()
+
+    st.header("✍️ Soal Essay")
+
+    st.markdown(
+        "Kerjakan terlebih dahulu. Klik **Tampilkan Jawaban** "
+        "untuk melihat pembahasan."
+    )
+
+    essay = [
+
+        (
+            "Essay 1",
+            "Sebuah bubu memiliki diameter 40 cm. Tentukan jari-jari "
+            "dan keliling penampangnya dengan π = 3,14.",
+            "Jari-jari = 40 ÷ 2 = 20 cm. "
+            "Keliling = 2πr = 2 × 3,14 × 20 = 125,6 cm."
+        ),
+
+        (
+            "Essay 2",
+            "Sebuah bubu dimodelkan sebagai tabung dengan jari-jari "
+            "20 cm dan tinggi 100 cm. Hitung volumenya dengan π = 3,14.",
+            "V = πr²t = 3,14 × 20² × 100 = 125.600 cm³."
+        ),
+
+        (
+            "Essay 3",
+            "Sebuah bubu memiliki panjang sebenarnya 120 cm. "
+            "Jika dibuat model dengan skala 1 : 6, berapa panjang model?",
+            "Panjang model = 120 ÷ 6 = 20 cm."
+        ),
+
+        (
+            "Essay 4",
+            "Jelaskan mengapa bentuk bubu dapat dimodelkan menggunakan "
+            "kerucut terpancung.",
+            "Bubu tertentu memiliki bagian yang lebih besar dan bagian "
+            "yang lebih kecil sehingga bentuknya menyerupai kerucut "
+            "yang dipotong. Model tersebut disebut kerucut terpancung."
+        ),
+
+        (
+            "Essay 5",
+            "Sebuah bubu memiliki diameter 40 cm dan panjang 80 cm. "
+            "Tentukan perbandingan panjang terhadap diameter.",
+            "80 : 40 = 2 : 1."
+        ),
+
+        (
+            "Essay 6",
+            "Jelaskan hubungan antara pola anyaman bubu dan matematika.",
+            "Pola anyaman dapat dianalisis menggunakan konsep garis, "
+            "jarak, pengulangan, simetri, sudut, pola, dan pengukuran."
+        ),
+
+        (
+            "Essay 7",
+            "Sebutkan minimal lima konsep matematika yang dapat "
+            "digunakan untuk mengkaji bubu.",
+            "Contohnya diameter, jari-jari, keliling, luas, volume, "
+            "skala, perbandingan, pola, simetri, dan geometri ruang."
+        ),
+
+        (
+            "Essay 8",
+            "Jelaskan mengapa bubu dapat dijadikan objek pembelajaran "
+            "etnomatematika.",
+            "Bubu merupakan teknologi tradisional masyarakat yang "
+            "mengandung unsur bentuk, ukuran, pola anyaman, ruang, "
+            "dan teknik pembuatan. Unsur tersebut dapat dihubungkan "
+            "dengan konsep matematika."
+        )
+    ]
+
+    for judul, pertanyaan, jawaban in essay:
+
+        st.markdown(f"{judul}")
+
+        st.markdown(pertanyaan)
+
+        with st.expander("👁️ Tampilkan Jawaban"):
+
+            st.success(jawaban)
+
+    # ==========================================================
+    # REFLEKSI
+    # ==========================================================
+
+    st.divider()
+
+    st.header("💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari bubu, coba pikirkan:
+
+    - Bentuk geometri apa yang paling sesuai untuk memodelkan bubu?
+    - Bagaimana cara menentukan volume sebuah bubu?
+    - Bagaimana pola anyaman dapat dianalisis menggunakan matematika?
+    - Mengapa ukuran bubu perlu disesuaikan dengan lingkungan penggunaannya?
+    - Bagaimana teknologi tradisional seperti bubu dapat digunakan
+      sebagai sumber belajar matematika?
+    """)
+
+    st.success(
+        "🐟 Bubu menunjukkan bahwa matematika dapat ditemukan "
+        "dalam teknologi tradisional, keterampilan menganyam, "
+        "dan kehidupan masyarakat di sekitar perairan."
+    )
+
 
 
 def arsitektur_kesultanan():
