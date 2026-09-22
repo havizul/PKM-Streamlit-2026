@@ -7,8 +7,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
-
 def matematika_ekonomi():
     st.subheader("💰 Matematika Ekonomi dan Budaya")
 
