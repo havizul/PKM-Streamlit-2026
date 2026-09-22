@@ -7,10 +7,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-def geometri_budaya():
-    st.header("📐 Geometri dalam Budaya")
-    st.info("Materi akan dikembangkan.")
-
 
 def statistika_masyarakat():
     st.header("📊 Statistika dalam Kehidupan Masyarakat")
@@ -22,8 +18,688 @@ def matematika_ekonomi():
     st.info("Materi akan dikembangkan.")
 
 
-def perahu():
 
+def geometri_budaya():
+
+    st.markdown(
+        '<div class="content-title">📐 Geometri dalam Budaya</div>',
+        unsafe_allow_html=True
+    )
+
+    # ==========================================================
+    # MATERI
+    # ==========================================================
+
+    st.header("🌿 Mengenal Geometri dalam Budaya")
+
+    st.markdown("""
+    Geometri tidak hanya ditemukan dalam buku matematika.
+    Berbagai bentuk geometri dapat ditemukan dalam **karya seni,
+    arsitektur, kerajinan, teknologi tradisional, dan kehidupan
+    masyarakat**.
+
+    Kajian hubungan antara matematika dan budaya dapat menjadi bagian
+    dari **etnomatematika**.
+
+    Dalam budaya Indonesia, konsep geometri dapat ditemukan pada:
+
+    - motif tenun;
+    - motif batik;
+    - rumah tradisional;
+    - arsitektur kesultanan;
+    - bubu atau alat tangkap tradisional;
+    - perahu tradisional;
+    - ornamen dan kerajinan masyarakat.
+    """)
+
+    st.header("🔷 Bentuk Geometri dalam Budaya")
+
+    st.markdown("""
+    Berbagai bangun geometri dapat ditemukan pada objek budaya.
+
+    **Persegi**  
+    Dapat ditemukan pada pola motif, lantai, atau ornamen.
+
+    **Persegi panjang**  
+    Dapat digunakan untuk memodelkan kain, lantai rumah,
+    pintu, jendela, atau bagian perahu.
+
+    **Segitiga**  
+    Dapat ditemukan pada motif, ornamen, dan bentuk atap.
+
+    **Lingkaran**  
+    Dapat ditemukan pada penampang bubu, ornamen, dan berbagai
+    pola budaya.
+
+    **Segi banyak**  
+    Misalnya segi delapan pada unsur arsitektur tertentu.
+
+    **Bangun ruang**  
+    Balok, prisma, tabung, dan kerucut dapat digunakan sebagai
+    model sederhana berbagai benda budaya.
+    """)
+
+    st.header("🧵 Geometri pada Tenun")
+
+    st.markdown("""
+    Motif tenun dapat mengandung garis, titik, bidang, dan pola
+    yang berulang.
+
+    Pola geometris dapat dibentuk melalui pengulangan suatu motif
+    secara horizontal, vertikal, atau diagonal.
+
+    Contoh konsep matematika yang dapat dipelajari:
+
+    - panjang dan lebar;
+    - luas;
+    - keliling;
+    - sudut;
+    - simetri;
+    - pola berulang;
+    - transformasi geometri.
+    """)
+
+    st.header("🎨 Geometri pada Batik")
+
+    st.markdown("""
+    Banyak motif batik memiliki bentuk geometris dan pola yang teratur.
+
+    Motif dapat dianalisis menggunakan:
+
+    **Translasi** → menggeser motif.
+
+    **Rotasi** → memutar motif.
+
+    **Refleksi** → mencerminkan motif.
+
+    **Dilatasi** → memperbesar atau memperkecil motif.
+
+    Penggunaan transformasi tersebut dapat menghasilkan pola yang
+    berulang dan memenuhi bidang kain.
+    """)
+
+    st.header("🏠 Geometri pada Rumah Tradisional")
+
+    st.markdown("""
+    Rumah tradisional dapat digunakan sebagai objek pengukuran.
+
+    Contohnya:
+
+    - lantai → persegi panjang;
+    - jendela → persegi atau persegi panjang;
+    - tiang → balok atau tabung;
+    - atap → segitiga atau prisma;
+    - tangga → dapat dimodelkan sebagai segitiga siku-siku.
+
+    Dengan demikian, siswa dapat mempelajari luas, keliling, volume,
+    panjang, tinggi, sudut, dan skala melalui objek budaya.
+    """)
+
+    st.header("🕌 Geometri pada Arsitektur Kesultanan")
+
+    st.markdown("""
+    Arsitektur kesultanan juga memiliki berbagai unsur geometris.
+
+    Contohnya dapat berupa:
+
+    - persegi;
+    - persegi panjang;
+    - segitiga;
+    - lingkaran;
+    - segi banyak;
+    - bentuk ruang;
+    - pola ornamen;
+    - simetri.
+
+    Sebagai contoh, gerbang berbentuk segi delapan dapat digunakan
+    untuk mempelajari jumlah sisi, jumlah sudut, keliling, dan
+    simetri.
+    """)
+
+    st.header("🐟 Geometri pada Bubu")
+
+    st.markdown("""
+    Bubu merupakan contoh teknologi tradisional yang dapat dimodelkan
+    menggunakan geometri ruang.
+
+    Bagian badan bubu dapat disederhanakan sebagai:
+
+    - tabung;
+    - kerucut;
+    - kerucut terpancung;
+    - gabungan beberapa bangun ruang.
+
+    Pola anyaman juga dapat dianalisis menggunakan garis, sudut,
+    jarak, pengulangan, dan simetri.
+    """)
+
+    st.header("🛶 Geometri pada Perahu")
+
+    st.markdown("""
+    Perahu tradisional memiliki bentuk yang kompleks sehingga dapat
+    disederhanakan menjadi model matematika.
+
+    Bagian tertentu dapat dimodelkan menggunakan:
+
+    - persegi panjang;
+    - segitiga;
+    - trapesium;
+    - prisma;
+    - gabungan bangun ruang.
+
+    Pengukuran panjang, lebar, tinggi, kedalaman, luas, volume,
+    dan perbandingan dapat digunakan untuk menganalisis bentuk perahu.
+    """)
+
+    st.header("🔄 Transformasi Geometri dalam Budaya")
+
+    st.markdown("""
+    Salah satu konsep penting dalam geometri budaya adalah
+    **transformasi geometri**.
+
+    Transformasi dapat digunakan untuk menjelaskan bagaimana suatu
+    motif atau bentuk menghasilkan pola baru.
+
+    **Translasi** → pergeseran.
+
+    **Rotasi** → perputaran.
+
+    **Refleksi** → pencerminan.
+
+    **Dilatasi** → perubahan ukuran dengan faktor skala.
+    """)
+
+    st.latex(r"T(x,y)=(x+a,y+b)")
+
+    st.markdown("""
+    Persamaan tersebut merupakan contoh translasi titik sebesar
+    $(a,b)$.
+
+    Misalnya titik $(2,3)$ ditranslasikan 4 satuan ke kanan dan
+    2 satuan ke atas.
+    """)
+
+    st.latex(r"(2,3)\rightarrow(2+4,3+2)=(6,5)")
+
+    st.header("🪞 Simetri dalam Budaya")
+
+    st.markdown("""
+    Simetri merupakan keteraturan bentuk yang dapat ditemukan pada
+    banyak objek budaya.
+
+    Dua konsep yang mudah diamati adalah:
+
+    **Simetri lipat**  
+    Suatu bentuk dapat dilipat sehingga dua bagiannya berimpit.
+
+    **Simetri putar**  
+    Suatu bentuk dapat diputar dengan sudut tertentu dan kembali
+    berimpit dengan bentuk awal.
+    """)
+
+    st.header("📏 Skala dalam Budaya")
+
+    st.markdown("""
+    Skala digunakan ketika objek budaya dibuat dalam bentuk gambar,
+    maket, miniatur, atau model.
+
+    Misalnya sebuah rumah memiliki panjang sebenarnya 20 m dan
+    dibuat dengan skala 1 : 100.
+    """)
+
+    st.latex(r"Panjang\ model=\frac{20}{100}=0,2\text{ m}=20\text{ cm}")
+
+    st.markdown("""
+    Dengan demikian, panjang rumah pada model adalah **20 cm**.
+    """)
+
+    st.header("📊 Perbandingan dalam Bentuk Budaya")
+
+    st.markdown("""
+    Perbandingan dapat digunakan untuk membandingkan ukuran bagian
+    suatu objek budaya.
+
+    Misalnya sebuah perahu memiliki panjang 8 m dan lebar 1 m.
+    """)
+
+    st.latex(r"Panjang:Lebar=8:1")
+
+    st.markdown("""
+    Perbandingan tersebut menunjukkan bahwa bentuk perahu lebih
+    panjang daripada lebarnya.
+    """)
+
+    st.header("🧮 Contoh Perhitungan Geometri")
+
+    st.markdown("""
+    Sebuah motif budaya berbentuk persegi dengan sisi 10 cm.
+    """)
+    st.latex(r"L=s^2=10^2=100\text{ cm}^2")
+
+    st.markdown("""
+    Kelilingnya:
+    """)
+    st.latex(r"K=4s=4(10)=40\text{ cm}")
+
+    st.markdown("""
+    Contoh sederhana tersebut menunjukkan bahwa objek budaya dapat
+    digunakan untuk mempelajari konsep luas dan keliling.
+    """)
+
+    st.header("🌏 Etnomatematika")
+
+    st.markdown("""
+    Etnomatematika memandang matematika sebagai sesuatu yang dapat
+    dipelajari melalui aktivitas dan praktik budaya masyarakat.
+
+    Dalam konteks pembelajaran, siswa dapat:
+
+    1. mengamati objek budaya;
+    2. mengidentifikasi bentuk geometris;
+    3. melakukan pengukuran;
+    4. menemukan pola;
+    5. membuat model matematika;
+    6. menghitung ukuran;
+    7. menjelaskan hubungan matematika dengan budaya.
+    """)
+
+    st.info(
+        "💡 Intinya: budaya dapat menjadi sumber belajar matematika, "
+        "sedangkan matematika dapat digunakan untuk mendeskripsikan "
+        "dan memahami bentuk serta pola budaya."
+    )
+
+    # ==========================================================
+    # SOAL INTERAKTIF
+    # ==========================================================
+
+    st.divider()
+    st.header("🧠 Latihan Interaktif — 20 Soal")
+
+    st.info(
+        "Pilih jawaban. Hasil benar atau salah akan langsung muncul. "
+        "Setelah selesai, gunakan tombol **Periksa Semua Jawaban**."
+    )
+
+    soal = [
+
+        {
+            "soal": "1. Bangun datar yang memiliki empat sisi sama panjang dan empat sudut siku-siku adalah...",
+            "pilihan": ["Persegi", "Segitiga", "Lingkaran", "Trapesium"],
+            "jawaban": "Persegi",
+            "pembahasan": "Persegi memiliki empat sisi sama panjang dan empat sudut siku-siku."
+        },
+
+        {
+            "soal": "2. Sebuah motif persegi memiliki sisi 8 cm. Luasnya adalah...",
+            "pilihan": ["16 cm²", "32 cm²", "64 cm²", "128 cm²"],
+            "jawaban": "64 cm²",
+            "pembahasan": "Luas = 8 × 8 = 64 cm²."
+        },
+
+        {
+            "soal": "3. Sebuah motif persegi memiliki sisi 8 cm. Kelilingnya adalah...",
+            "pilihan": ["16 cm", "24 cm", "32 cm", "64 cm"],
+            "jawaban": "32 cm",
+            "pembahasan": "Keliling = 4 × 8 = 32 cm."
+        },
+
+        {
+            "soal": "4. Motif batik digeser 5 cm ke kanan. Transformasi tersebut disebut...",
+            "pilihan": ["Rotasi", "Refleksi", "Translasi", "Dilatasi"],
+            "jawaban": "Translasi",
+            "pembahasan": "Translasi adalah transformasi berupa pergeseran."
+        },
+
+        {
+            "soal": "5. Motif diputar sebesar 90°. Transformasi tersebut disebut...",
+            "pilihan": ["Translasi", "Rotasi", "Refleksi", "Dilatasi"],
+            "jawaban": "Rotasi",
+            "pembahasan": "Rotasi adalah transformasi berupa perputaran."
+        },
+
+        {
+            "soal": "6. Motif dicerminkan terhadap garis tengah. Transformasi tersebut disebut...",
+            "pilihan": ["Translasi", "Rotasi", "Refleksi", "Dilatasi"],
+            "jawaban": "Refleksi",
+            "pembahasan": "Refleksi merupakan pencerminan terhadap suatu garis."
+        },
+
+        {
+            "soal": "7. Motif diperbesar dengan faktor skala 2. Jika panjang awal 5 cm, panjang barunya adalah...",
+            "pilihan": ["2,5 cm", "5 cm", "7 cm", "10 cm"],
+            "jawaban": "10 cm",
+            "pembahasan": "Ukuran baru = 2 × 5 = 10 cm."
+        },
+
+        {
+            "soal": "8. Sebuah rumah memiliki panjang 20 m. Jika dibuat dengan skala 1 : 100, panjang modelnya adalah...",
+            "pilihan": ["10 cm", "20 cm", "50 cm", "100 cm"],
+            "jawaban": "20 cm",
+            "pembahasan": "20 m = 2.000 cm. 2.000 ÷ 100 = 20 cm."
+        },
+
+        {
+            "soal": "9. Sebuah bubu memiliki diameter 40 cm. Jari-jarinya adalah...",
+            "pilihan": ["10 cm", "20 cm", "30 cm", "40 cm"],
+            "jawaban": "20 cm",
+            "pembahasan": "Jari-jari = diameter ÷ 2 = 20 cm."
+        },
+
+        {
+            "soal": "10. Jika jari-jari penampang bubu 10 cm dan π = 3,14, luas penampangnya adalah...",
+            "pilihan": ["31,4 cm²", "62,8 cm²", "314 cm²", "628 cm²"],
+            "jawaban": "314 cm²",
+            "pembahasan": "Luas = πr² = 3,14 × 10² = 314 cm²."
+        },
+
+        {
+            "soal": "11. Sebuah perahu memiliki panjang 8 m dan lebar 2 m. Luas model bagian dasarnya adalah...",
+            "pilihan": ["10 m²", "16 m²", "20 m²", "32 m²"],
+            "jawaban": "16 m²",
+            "pembahasan": "Luas = 8 × 2 = 16 m²."
+        },
+
+        {
+            "soal": "12. Sebuah gerbang berbentuk segi delapan memiliki jumlah sisi...",
+            "pilihan": ["6", "7", "8", "10"],
+            "jawaban": "8",
+            "pembahasan": "Segi delapan atau oktagon memiliki 8 sisi."
+        },
+
+        {
+            "soal": "13. Jika setiap sisi segi delapan beraturan panjangnya 3 m, kelilingnya adalah...",
+            "pilihan": ["11 m", "18 m", "24 m", "30 m"],
+            "jawaban": "24 m",
+            "pembahasan": "Keliling = 8 × 3 = 24 m."
+        },
+
+        {
+            "soal": "14. Sebuah lantai rumah berukuran 12 m × 8 m. Luasnya adalah...",
+            "pilihan": ["20 m²", "40 m²", "96 m²", "192 m²"],
+            "jawaban": "96 m²",
+            "pembahasan": "Luas = 12 × 8 = 96 m²."
+        },
+
+        {
+            "soal": "15. Susunan motif yang terus berulang disebut...",
+            "pilihan": [
+                "Pola berulang",
+                "Peluang",
+                "Median",
+                "Persamaan linear"
+            ],
+            "jawaban": "Pola berulang",
+            "pembahasan": "Pola yang mengulang bentuk atau susunan tertentu disebut pola berulang."
+        },
+
+        {
+            "soal": "16. Jika titik (2, 3) ditranslasikan 4 satuan ke kanan dan 2 satuan ke atas, koordinat bayangannya adalah...",
+            "pilihan": ["(4, 5)", "(6, 5)", "(6, 1)", "(2, 5)"],
+            "jawaban": "(6, 5)",
+            "pembahasan": "x bertambah 4 dan y bertambah 2, sehingga (2,3) → (6,5)."
+        },
+
+        {
+            "soal": "17. Jika panjang dan lebar sebuah bangun masing-masing diperbesar 2 kali, luasnya menjadi...",
+            "pilihan": ["2 kali", "3 kali", "4 kali", "8 kali"],
+            "jawaban": "4 kali",
+            "pembahasan": "Luas baru = (2p)(2l) = 4pl."
+        },
+
+        {
+            "soal": "18. Konsep yang paling tepat untuk menganalisis kesamaan bagian kiri dan kanan sebuah ornamen adalah...",
+            "pilihan": [
+                "Simetri",
+                "Peluang",
+                "Statistika",
+                "Barisan"
+            ],
+            "jawaban": "Simetri",
+            "pembahasan": "Kesamaan bentuk terhadap garis atau pusat tertentu berkaitan dengan simetri."
+        },
+
+        {
+            "soal": "19. Benda budaya yang bentuknya dapat dimodelkan menggunakan tabung adalah...",
+            "pilihan": [
+                "Penampang badan bubu",
+                "Motif segitiga",
+                "Pintu persegi",
+                "Kain persegi panjang"
+            ],
+            "jawaban": "Penampang badan bubu",
+            "pembahasan": "Bagian badan bubu dengan diameter relatif tetap dapat dimodelkan sebagai tabung."
+        },
+
+        {
+            "soal": "20. Mengapa objek budaya dapat digunakan dalam pembelajaran geometri?",
+            "pilihan": [
+                "Karena objek budaya tidak memiliki bentuk",
+                "Karena objek budaya mengandung bentuk, ukuran, pola, dan ruang yang dapat dianalisis secara matematis",
+                "Karena matematika tidak membutuhkan pengukuran",
+                "Karena semua budaya berbentuk sama"
+            ],
+            "jawaban": "Karena objek budaya mengandung bentuk, ukuran, pola, dan ruang yang dapat dianalisis secara matematis",
+            "pembahasan": "Objek budaya dapat menjadi konteks nyata untuk mempelajari konsep geometri."
+        }
+    ]
+
+    jawaban_user = []
+
+    for i, item in enumerate(soal):
+
+        st.markdown(f"{item['soal']}")
+
+        jawaban = st.radio(
+            "Pilih jawaban:",
+            item["pilihan"],
+            index=None,
+            key=f"geometri_budaya_q_{i}",
+            label_visibility="collapsed"
+        )
+
+        jawaban_user.append(jawaban)
+
+        if jawaban is not None:
+
+            if jawaban == item["jawaban"]:
+
+                st.success(
+                    f"✅ Benar! {item['pembahasan']}"
+                )
+
+            else:
+
+                st.error(
+                    f"❌ Salah. Jawaban yang benar adalah "
+                    f"**{item['jawaban']}**. {item['pembahasan']}"
+                )
+
+    # ==========================================================
+    # PERIKSA SEMUA JAWABAN
+    # ==========================================================
+
+    st.divider()
+
+    if st.button(
+        "✅ Periksa Semua Jawaban",
+        key="cek_semua_geometri_budaya",
+        use_container_width=True
+    ):
+
+        jumlah_dijawab = sum(
+            jawaban is not None
+            for jawaban in jawaban_user
+        )
+
+        jumlah_benar = sum(
+            jawaban_user[i] == soal[i]["jawaban"]
+            for i in range(len(soal))
+            if jawaban_user[i] is not None
+        )
+
+        jumlah_belum = len(soal) - jumlah_dijawab
+
+        nilai = jumlah_benar / len(soal) * 100
+
+        st.subheader("📊 Hasil Latihan")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        col1.metric("Benar", jumlah_benar)
+        col2.metric("Dijawab", jumlah_dijawab)
+        col3.metric("Belum Dijawab", jumlah_belum)
+        col4.metric("Nilai", f"{nilai:.0f}")
+
+        if jumlah_dijawab < len(soal):
+
+            st.warning(
+                f"⚠️ Masih ada {jumlah_belum} soal yang belum dijawab."
+            )
+
+        elif nilai >= 80:
+
+            st.success(
+                "🎉 Semua soal sudah dijawab. "
+                "Pemahaman geometri dalam budaya sudah baik!"
+            )
+
+        elif nilai >= 60:
+
+            st.info(
+                "👍 Semua soal sudah dijawab. "
+                "Pelajari kembali konsep yang masih belum dikuasai."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali konsep bangun datar, "
+                "transformasi, simetri, skala, dan bangun ruang."
+            )
+
+    # ==========================================================
+    # SOAL ESSAY
+    # ==========================================================
+
+    st.divider()
+
+    st.header("✍️ Soal Essay")
+
+    st.markdown(
+        "Kerjakan terlebih dahulu. Klik **Tampilkan Jawaban** "
+        "untuk melihat pembahasan."
+    )
+
+    essay = [
+
+        (
+            "Essay 1",
+            "Sebutkan minimal lima objek budaya yang dapat digunakan "
+            "sebagai sumber belajar geometri.",
+            "Contohnya adalah tenun, batik, rumah tradisional, "
+            "arsitektur kesultanan, bubu, perahu, ornamen, dan kerajinan."
+        ),
+
+        (
+            "Essay 2",
+            "Sebuah motif budaya berbentuk persegi dengan sisi 12 cm. "
+            "Hitung luas dan kelilingnya.",
+            "Luas = 12² = 144 cm². "
+            "Keliling = 4 × 12 = 48 cm."
+        ),
+
+        (
+            "Essay 3",
+            "Jelaskan perbedaan translasi, rotasi, refleksi, "
+            "dan dilatasi.",
+            "Translasi adalah pergeseran, rotasi adalah perputaran, "
+            "refleksi adalah pencerminan, sedangkan dilatasi adalah "
+            "perubahan ukuran berdasarkan faktor skala."
+        ),
+
+        (
+            "Essay 4",
+            "Sebuah rumah memiliki panjang sebenarnya 25 m. "
+            "Jika dibuat dengan skala 1 : 100, berapa panjang "
+            "pada model?",
+            "25 m = 2.500 cm. "
+            "Panjang model = 2.500 ÷ 100 = 25 cm."
+        ),
+
+        (
+            "Essay 5",
+            "Sebuah bubu berbentuk tabung memiliki jari-jari 20 cm "
+            "dan panjang 100 cm. Hitung volumenya menggunakan "
+            "π = 3,14.",
+            "V = πr²t = 3,14 × 20² × 100 = 125.600 cm³."
+        ),
+
+        (
+            "Essay 6",
+            "Sebuah perahu memiliki panjang 10 m dan lebar 2 m. "
+            "Tentukan perbandingan panjang terhadap lebarnya.",
+            "10 : 2 = 5 : 1."
+        ),
+
+        (
+            "Essay 7",
+            "Jelaskan bagaimana pola budaya dapat digunakan untuk "
+            "mempelajari konsep simetri.",
+            "Pola budaya dapat diamati untuk menemukan kesamaan bentuk "
+            "terhadap suatu garis atau pusat. Kesamaan tersebut dapat "
+            "digunakan untuk mempelajari simetri lipat maupun simetri putar."
+        ),
+
+        (
+            "Essay 8",
+            "Jelaskan hubungan geometri dan etnomatematika.",
+            "Geometri mempelajari bentuk, ukuran, ruang, dan hubungan "
+            "antarobjek. Etnomatematika dapat menggunakan objek budaya "
+            "sebagai konteks untuk menemukan dan mempelajari konsep "
+            "geometri yang terdapat dalam kehidupan masyarakat."
+        )
+    ]
+
+    for judul, pertanyaan, jawaban in essay:
+
+        st.markdown(f"{judul}")
+
+        st.markdown(pertanyaan)
+
+        with st.expander("👁️ Tampilkan Jawaban"):
+
+            st.success(jawaban)
+
+    # ==========================================================
+    # REFLEKSI
+    # ==========================================================
+
+    st.divider()
+
+    st.header("💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari geometri dalam budaya, coba pikirkan:
+
+    - Bentuk geometri apa yang paling sering kamu temukan dalam budaya?
+    - Di mana kamu menemukan simetri?
+    - Di mana kamu menemukan pola berulang?
+    - Objek budaya apa yang paling mudah dimodelkan secara matematis?
+    - Bagaimana matematika dapat membantu mendokumentasikan budaya lokal?
+    - Bagaimana pembelajaran geometri dapat dibuat lebih dekat dengan
+      kehidupan masyarakat?
+    """)
+
+    st.success(
+        "📐 Geometri tidak hanya berada di dalam buku matematika. "
+        "Ia juga hadir dalam kain, rumah, istana, alat tangkap, "
+        "perahu, dan berbagai karya budaya masyarakat."
+    )
+
+
+
+def perahu():
     st.markdown(
         '<div class="content-title">🛶 Perahu Tradisional</div>',
         unsafe_allow_html=True
