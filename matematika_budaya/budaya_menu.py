@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 import math
 
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 def arsitektur_kesultanan():
     st.header("🕌 Arsitektur Kesultanan")
@@ -34,8 +37,580 @@ def matematika_ekonomi():
     st.info("Materi akan dikembangkan.")
 
 
-from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
+def arsitektur_kesultanan():
+
+    st.markdown(
+        '<div class="content-title">🕌 Arsitektur Kesultanan</div>',
+        unsafe_allow_html=True
+    )
+
+    # ==========================================================
+    # MATERI
+    # ==========================================================
+
+    st.header("🏛️ Mengenal Arsitektur Kesultanan")
+
+    st.markdown("""
+    Istana atau keraton merupakan bagian penting dari sejarah dan budaya
+    masyarakat Indonesia. Selain sebagai tempat tinggal dan pusat
+    pemerintahan kesultanan, kompleks istana juga memiliki bentuk ruang,
+    bangunan, dan ornamen yang dapat dikaji menggunakan matematika.
+
+    Dalam pembelajaran etnomatematika, arsitektur kesultanan dapat digunakan
+    untuk mempelajari **geometri, ukuran, luas, keliling, volume, simetri,
+    pola, perbandingan, dan tata ruang**.
+    """)
+
+    st.image(
+        "https://images.bisnis.com/photos/2023/01/31/187275/antarafoto-wisata-sejarah-istana-sambas-300123-aez-3.jpg",
+        caption="Istana Alwatzikhoebillah Kesultanan Sambas — Sumber: Bisnis.com/Antara",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber gambar: Bisnis.com/Antara — Kompleks Istana Sambas."
+    )
+
+    st.header("👑 Istana Alwatzikhoebillah Sambas")
+
+    st.markdown("""
+    Istana Alwatzikhoebillah merupakan istana Kesultanan Sambas di
+    Kalimantan Barat. Kompleks istana berada di kawasan pertemuan
+    Sungai Subah, Sungai Sambas Kecil, dan Sungai Teberau.
+
+    Istana yang ada sekarang dibangun pada masa Sultan Muhammad Mulia
+    Ibrahim Syafiuddin. Kompleks tersebut memiliki berbagai elemen
+    arsitektur seperti gerbang, alun-alun, balairung, paseban, paviliun,
+    masjid, dan bangunan pendukung.
+
+    Salah satu ciri menariknya adalah **gerbang berbentuk segi delapan
+    (oktagon)**. Bentuk tersebut dapat menjadi konteks pembelajaran
+    geometri.
+    """)
+
+    st.header("🔷 Gerbang Segi Delapan")
+
+    st.markdown("""
+    Segi delapan atau oktagon merupakan bangun datar yang memiliki
+    **8 sisi dan 8 sudut**.
+
+    Jika sebuah gerbang berbentuk segi delapan beraturan memiliki panjang
+    setiap sisi 2 m, maka kelilingnya dapat dihitung dengan:
+    """)
+
+    st.latex(r"K = 8 \times 2 = 16\text{ m}")
+
+    st.markdown("""
+    Jadi, keliling gerbang tersebut adalah **16 m**.
+
+    Bentuk segi delapan juga dapat digunakan untuk mengenalkan konsep
+    **simetri putar dan simetri lipat**.
+    """)
+
+    st.header("📐 Ruang Geometris Istana")
+
+    st.markdown("""
+    Penelitian mengenai arsitektur Istana Alwatzikhoebillah menunjukkan
+    adanya ruang geometris dan ruang fungsional dalam kompleks istana.
+
+    Ruang tersebut terbentuk melalui hubungan antara bangunan, pagar,
+    pepohonan, permukaan tanah, dan tata massa bangunan.
+
+    **Alun-alun dan balairung** merupakan ruang yang memiliki karakter
+    ruang yang kuat dalam kompleks istana. :contentReference[oaicite:1]{index=1}
+    """)
+
+    st.header("🏛️ Bentuk Geometri pada Arsitektur")
+
+    st.markdown("""
+    Beberapa bentuk matematika yang dapat diamati pada arsitektur
+    kesultanan antara lain:
+
+    - **Persegi dan persegi panjang** → lantai, pintu, jendela, dinding.
+    - **Segitiga** → bagian tertentu pada atap dan ornamen.
+    - **Segi delapan** → gerbang utama Istana Alwatzikhoebillah.
+    - **Lingkaran** → beberapa unsur ornamen dan dekorasi.
+    - **Balok** → model sederhana ruang atau bagian bangunan.
+    - **Prisma/piramida** → model sederhana bagian atap.
+    """)
+
+    st.header("🔄 Simetri dan Ornamen")
+
+    st.markdown("""
+    Ornamen pada bangunan kesultanan dapat dianalisis menggunakan
+    konsep **titik, garis, bidang, dan volume**.
+
+    Penelitian terhadap Istana Kadriyah Pontianak dan Istana
+    Alwatzikhoebillah Sambas juga mengkaji karakteristik bentuk ornamen
+    bangunan bersejarah di Kalimantan Barat. :contentReference[oaicite:2]{index=2}
+
+    Jika bagian kiri dan kanan sebuah ornamen memiliki bentuk yang
+    berpasangan terhadap suatu garis, kita dapat mengaitkannya dengan
+    **simetri refleksi**.
+    """)
+
+    st.image(
+        "https://awsimages.detik.net.id/community/media/visual/2021/02/05/dev-megahnya-istana-kadriyah-pontianak-2.jpeg?q=90&w=600",
+        caption="Interior Istana Kadriyah Pontianak — Sumber: detikTravel",
+        use_container_width=True
+    )
+
+    st.caption(
+        "Sumber gambar: detikTravel — Megahnya Istana Kadriyah Pontianak."
+    )
+
+    st.header("🏰 Istana Kadriyah Pontianak")
+
+    st.markdown("""
+    Selain Istana Alwatzikhoebillah, Kalimantan Barat juga memiliki
+    Istana Kadriyah di Pontianak.
+
+    Istana Kadriyah didirikan pada tahun 1771 dan sebagian besar struktur
+    bangunannya menggunakan kayu belian. Bangunan ini merupakan bagian
+    penting dari sejarah Kesultanan Pontianak. :contentReference[oaicite:3]{index=3}
+
+    Dari sudut pandang matematika, bangunan istana dapat dikaji melalui
+    **bentuk, ukuran, proporsi, simetri, luas, dan hubungan antar-ruang**.
+    """)
+
+    st.header("📏 Contoh Perhitungan Luas")
+
+    st.markdown("""
+    Misalkan sebuah balairung berbentuk persegi panjang dengan panjang
+    20 m dan lebar 10 m.
+    """)
+
+    st.latex(r"L = p \times l = 20 \times 10 = 200\text{ m}^2")
+
+    st.markdown("""
+    Jadi, luas lantai balairung tersebut adalah **200 m²**.
+
+    Jika panjang dan lebar sebuah ruang masing-masing diperbesar 2 kali,
+    maka luasnya menjadi 4 kali lebih besar.
+    """)
+
+    st.latex(r"L' = (2p)(2l) = 4pl = 4L")
+
+    st.header("📊 Perbandingan dan Skala")
+
+    st.markdown("""
+    Arsitektur istana juga dapat dipelajari menggunakan skala.
+
+    Misalnya, sebuah bangunan memiliki panjang sebenarnya 20 m dan dibuat
+    dalam gambar dengan skala 1 : 100.
+    """)
+
+    st.latex(r"Panjang\ gambar = \frac{20}{100} = 0,2\text{ m} = 20\text{ cm}")
+
+    st.markdown("""
+    Dengan demikian, panjang bangunan pada gambar adalah **20 cm**.
+
+    Skala sangat berguna ketika arsitektur bangunan dibuat dalam bentuk
+    denah, maket, atau model 3D.
+    """)
+
+    st.header("🌿 Arsitektur, Lingkungan, dan Budaya")
+
+    st.markdown("""
+    Kompleks Istana Alwatzikhoebillah berada pada lingkungan yang berkaitan
+    erat dengan sungai. Penelitian arsitektur menunjukkan bahwa tata ruang
+    dan bentuk kompleks istana dipengaruhi oleh konteks lingkungan serta
+    perkembangan pemerintahan Kesultanan Sambas dan Hindia Belanda.
+    :contentReference[oaicite:4]{index=4}
+
+    Karena itu, arsitektur kesultanan dapat dipelajari tidak hanya sebagai
+    bentuk bangunan, tetapi juga sebagai hubungan antara **ruang, manusia,
+    lingkungan, sejarah, dan budaya**.
+    """)
+
+    # ==========================================================
+    # SOAL INTERAKTIF
+    # ==========================================================
+
+    st.divider()
+    st.header("🧠 Latihan Interaktif — 20 Soal")
+
+    st.info(
+        "Pilih jawaban. Hasil benar atau salah akan langsung muncul. "
+        "Setelah selesai, gunakan tombol **Periksa Semua Jawaban**."
+    )
+
+    soal = [
+
+        {
+            "soal": "1. Gerbang segi delapan memiliki berapa sisi?",
+            "pilihan": ["6", "7", "8", "10"],
+            "jawaban": "8",
+            "pembahasan": "Segi delapan atau oktagon memiliki 8 sisi."
+        },
+
+        {
+            "soal": "2. Jika setiap sisi gerbang segi delapan panjangnya 2 m, berapa kelilingnya?",
+            "pilihan": ["8 m", "12 m", "16 m", "20 m"],
+            "jawaban": "16 m",
+            "pembahasan": "Keliling = 8 × 2 = 16 m."
+        },
+
+        {
+            "soal": "3. Transformasi yang menghasilkan pencerminan suatu ornamen disebut...",
+            "pilihan": ["Translasi", "Rotasi", "Refleksi", "Dilatasi"],
+            "jawaban": "Refleksi",
+            "pembahasan": "Refleksi adalah transformasi berupa pencerminan."
+        },
+
+        {
+            "soal": "4. Segi delapan beraturan memiliki jumlah sudut sebesar...",
+            "pilihan": ["360°", "720°", "900°", "1080°"],
+            "jawaban": "1080°",
+            "pembahasan": "Jumlah sudut dalam segi-n adalah (n − 2) × 180°. Untuk n = 8, diperoleh 1080°."
+        },
+
+        {
+            "soal": "5. Besar setiap sudut dalam segi delapan beraturan adalah...",
+            "pilihan": ["90°", "120°", "135°", "150°"],
+            "jawaban": "135°",
+            "pembahasan": "1080° ÷ 8 = 135°."
+        },
+
+        {
+            "soal": "6. Sebuah balairung berukuran 20 m × 10 m. Berapa luas lantainya?",
+            "pilihan": ["30 m²", "100 m²", "200 m²", "400 m²"],
+            "jawaban": "200 m²",
+            "pembahasan": "Luas = 20 × 10 = 200 m²."
+        },
+
+        {
+            "soal": "7. Sebuah ruang berbentuk persegi panjang memiliki panjang 15 m dan lebar 8 m. Kelilingnya adalah...",
+            "pilihan": ["23 m", "46 m", "120 m", "240 m"],
+            "jawaban": "46 m",
+            "pembahasan": "Keliling = 2(15 + 8) = 46 m."
+        },
+
+        {
+            "soal": "8. Sebuah ruangan berukuran 12 m × 8 m. Luasnya adalah...",
+            "pilihan": ["20 m²", "40 m²", "96 m²", "192 m²"],
+            "jawaban": "96 m²",
+            "pembahasan": "Luas = 12 × 8 = 96 m²."
+        },
+
+        {
+            "soal": "9. Jika sebuah bangunan panjang sebenarnya 20 m dan dibuat dengan skala 1 : 100, panjang pada gambar adalah...",
+            "pilihan": ["2 cm", "10 cm", "20 cm", "200 cm"],
+            "jawaban": "20 cm",
+            "pembahasan": "20 m = 2000 cm. 2000 ÷ 100 = 20 cm."
+        },
+
+        {
+            "soal": "10. Jika panjang dan lebar suatu ruangan masing-masing diperbesar 2 kali, luas menjadi...",
+            "pilihan": ["2 kali", "3 kali", "4 kali", "8 kali"],
+            "jawaban": "4 kali",
+            "pembahasan": "Luas baru = (2p)(2l) = 4pl."
+        },
+
+        {
+            "soal": "11. Bangun yang paling sesuai untuk memodelkan lantai berbentuk panjang dan lebar adalah...",
+            "pilihan": ["Lingkaran", "Persegi panjang", "Segitiga", "Segi enam"],
+            "jawaban": "Persegi panjang",
+            "pembahasan": "Lantai ruangan umumnya dapat dimodelkan sebagai persegi panjang."
+        },
+
+        {
+            "soal": "12. Jika sebuah ornamen kiri dan kanan berimpit ketika dicerminkan terhadap garis tengah, ornamen tersebut memiliki...",
+            "pilihan": ["Simetri refleksi", "Translasi", "Dilatasi", "Barisan"],
+            "jawaban": "Simetri refleksi",
+            "pembahasan": "Kesamaan dua bagian terhadap suatu garis merupakan simetri refleksi."
+        },
+
+        {
+            "soal": "13. Istana Alwatzikhoebillah berada di wilayah pertemuan beberapa sungai. Salah satu sungai yang disebut dalam sumber adalah...",
+            "pilihan": [
+                "Sungai Kapuas",
+                "Sungai Subah",
+                "Sungai Mahakam",
+                "Sungai Barito"
+            ],
+            "jawaban": "Sungai Subah",
+            "pembahasan": "Kompleks istana berada di kawasan pertemuan Sungai Subah, Sungai Sambas Kecil, dan Sungai Teberau."
+        },
+
+        {
+            "soal": "14. Salah satu ruang yang memiliki karakter ruang kuat dalam penelitian arsitektur Istana Alwatzikhoebillah adalah...",
+            "pilihan": [
+                "Alun-alun dan balairung",
+                "Gudang dan dapur",
+                "Kamar dan gudang",
+                "Garasi dan gudang"
+            ],
+            "jawaban": "Alun-alun dan balairung",
+            "pembahasan": "Penelitian arsitektur mengidentifikasi alun-alun dan balairung sebagai ruang dengan sense of place yang kuat."
+        },
+
+        {
+            "soal": "15. Sebuah tiang berbentuk balok memiliki panjang 2 m, lebar 0,5 m, dan tinggi 4 m. Volumenya adalah...",
+            "pilihan": ["2 m³", "3 m³", "4 m³", "8 m³"],
+            "jawaban": "4 m³",
+            "pembahasan": "Volume = 2 × 0,5 × 4 = 4 m³."
+        },
+
+        {
+            "soal": "16. Sebuah atap dimodelkan sebagai prisma segitiga. Konsep matematika yang digunakan untuk menghitung ruangnya adalah...",
+            "pilihan": ["Volume", "Median", "Modus", "Peluang"],
+            "jawaban": "Volume",
+            "pembahasan": "Bangun ruang seperti prisma dapat dianalisis menggunakan konsep volume."
+        },
+
+        {
+            "soal": "17. Jika sebuah denah memiliki panjang 30 m dan lebar 10 m, perbandingan panjang : lebar adalah...",
+            "pilihan": ["1 : 3", "2 : 1", "3 : 1", "3 : 2"],
+            "jawaban": "3 : 1",
+            "pembahasan": "30 : 10 = 3 : 1."
+        },
+
+        {
+            "soal": "18. Jika sebuah motif pada ornamen diputar 90°, transformasi tersebut disebut...",
+            "pilihan": ["Translasi", "Rotasi", "Refleksi", "Dilatasi"],
+            "jawaban": "Rotasi",
+            "pembahasan": "Rotasi adalah transformasi berupa perputaran."
+        },
+
+        {
+            "soal": "19. Penelitian tentang ornamen bangunan bersejarah di Kalimantan Barat mengkaji unsur bentuk berupa...",
+            "pilihan": [
+                "Titik, garis, bidang, dan volume",
+                "Hanya angka",
+                "Hanya warna",
+                "Hanya panjang"
+            ],
+            "jawaban": "Titik, garis, bidang, dan volume",
+            "pembahasan": "Elemen arsitektur dapat dianalisis melalui konsep titik, garis, bidang, dan volume."
+        },
+
+        {
+            "soal": "20. Konsep matematika yang paling sesuai untuk mengkaji arsitektur kesultanan adalah...",
+            "pilihan": [
+                "Geometri, pengukuran, simetri, dan skala",
+                "Hanya peluang",
+                "Hanya statistika",
+                "Hanya aritmetika"
+            ],
+            "jawaban": "Geometri, pengukuran, simetri, dan skala",
+            "pembahasan": "Arsitektur dapat dikaji melalui bentuk, ukuran, simetri, proporsi, skala, luas, keliling, dan volume."
+        }
+    ]
+
+    jawaban_user = []
+
+    for i, item in enumerate(soal):
+
+        st.markdown(f"### {item['soal']}")
+
+        jawaban = st.radio(
+            "Pilih jawaban:",
+            item["pilihan"],
+            index=None,
+            key=f"arsitektur_q_{i}",
+            label_visibility="collapsed"
+        )
+
+        jawaban_user.append(jawaban)
+
+        if jawaban is not None:
+
+            if jawaban == item["jawaban"]:
+
+                st.success(
+                    f"✅ Benar! {item['pembahasan']}"
+                )
+
+            else:
+
+                st.error(
+                    f"❌ Salah. Jawaban yang benar adalah "
+                    f"**{item['jawaban']}**. {item['pembahasan']}"
+                )
+
+    # ==========================================================
+    # PERIKSA SEMUA
+    # ==========================================================
+
+    st.divider()
+
+    if st.button(
+        "✅ Periksa Semua Jawaban",
+        key="cek_semua_arsitektur",
+        use_container_width=True
+    ):
+
+        jumlah_dijawab = sum(
+            jawaban is not None
+            for jawaban in jawaban_user
+        )
+
+        jumlah_benar = sum(
+            jawaban_user[i] == soal[i]["jawaban"]
+            for i in range(len(soal))
+            if jawaban_user[i] is not None
+        )
+
+        jumlah_belum = len(soal) - jumlah_dijawab
+
+        nilai = jumlah_benar / len(soal) * 100
+
+        st.subheader("📊 Hasil Latihan")
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        col1.metric("Benar", jumlah_benar)
+        col2.metric("Dijawab", jumlah_dijawab)
+        col3.metric("Belum Dijawab", jumlah_belum)
+        col4.metric("Nilai", f"{nilai:.0f}")
+
+        if jumlah_dijawab < len(soal):
+
+            st.warning(
+                f"⚠️ Masih ada {jumlah_belum} soal yang belum dijawab."
+            )
+
+        elif nilai >= 80:
+
+            st.success(
+                "🎉 Semua soal sudah dijawab. Pemahaman geometri "
+                "pada arsitektur kesultanan sudah baik."
+            )
+
+        elif nilai >= 60:
+
+            st.info(
+                "👍 Semua soal sudah dijawab. Pelajari kembali "
+                "konsep yang masih belum dikuasai."
+            )
+
+        else:
+
+            st.warning(
+                "📚 Pelajari kembali materi geometri, simetri, "
+                "pengukuran, dan skala."
+            )
+
+    # ==========================================================
+    # ESSAY
+    # ==========================================================
+
+    st.divider()
+
+    st.header("✍️ Soal Essay")
+
+    st.markdown(
+        "Kerjakan terlebih dahulu. Klik **Tampilkan Jawaban** "
+        "untuk melihat pembahasan."
+    )
+
+    essay = [
+
+        (
+            "Essay 1",
+            "Sebuah gerbang berbentuk segi delapan beraturan memiliki "
+            "panjang setiap sisi 3 m. Hitung kelilingnya.",
+            "Keliling = 8 × 3 = 24 m."
+        ),
+
+        (
+            "Essay 2",
+            "Sebuah balairung berbentuk persegi panjang berukuran "
+            "24 m × 12 m. Hitung luas dan kelilingnya.",
+            "Luas = 24 × 12 = 288 m². "
+            "Keliling = 2(24 + 12) = 72 m."
+        ),
+
+        (
+            "Essay 3",
+            "Sebuah denah istana dibuat dengan skala 1 : 200. "
+            "Jika panjang sebenarnya 40 m, berapa panjang pada denah?",
+            "40 m = 4000 cm. "
+            "Panjang denah = 4000 ÷ 200 = 20 cm."
+        ),
+
+        (
+            "Essay 4",
+            "Jelaskan apa yang dimaksud dengan simetri refleksi "
+            "pada ornamen arsitektur.",
+            "Simetri refleksi adalah keadaan ketika suatu bentuk "
+            "memiliki bagian yang saling mencerminkan terhadap "
+            "suatu garis."
+        ),
+
+        (
+            "Essay 5",
+            "Sebutkan minimal empat bentuk geometri yang dapat "
+            "ditemukan atau dimodelkan pada arsitektur kesultanan.",
+            "Contohnya persegi, persegi panjang, segitiga, lingkaran, "
+            "segi delapan, balok, prisma, dan bentuk geometris lainnya."
+        ),
+
+        (
+            "Essay 6",
+            "Sebuah ruang berukuran 15 m × 8 m. Jika seluruh lantai "
+            "akan dipasang ubin berukuran 1 m², berapa ubin yang "
+            "dibutuhkan?",
+            "Luas ruangan = 15 × 8 = 120 m². "
+            "Jika setiap ubin luasnya 1 m², diperlukan 120 ubin."
+        ),
+
+        (
+            "Essay 7",
+            "Jelaskan bagaimana skala dapat digunakan dalam "
+            "pembuatan maket istana.",
+            "Skala digunakan untuk mengecilkan ukuran sebenarnya "
+            "secara proporsional sehingga bangunan dapat dibuat "
+            "dalam bentuk model atau maket."
+        ),
+
+        (
+            "Essay 8",
+            "Jelaskan hubungan antara arsitektur kesultanan "
+            "dan etnomatematika.",
+            "Arsitektur kesultanan merupakan objek budaya yang "
+            "mengandung bentuk, ukuran, pola, simetri, proporsi, "
+            "dan tata ruang. Unsur tersebut dapat dikaji menggunakan "
+            "konsep matematika sehingga menjadi objek pembelajaran "
+            "etnomatematika."
+        )
+    ]
+
+    for judul, pertanyaan, jawaban in essay:
+
+        st.markdown(f"### {judul}")
+
+        st.markdown(pertanyaan)
+
+        with st.expander("👁️ Tampilkan Jawaban"):
+
+            st.success(jawaban)
+
+    # ==========================================================
+    # REFLEKSI
+    # ==========================================================
+
+    st.divider()
+
+    st.header("💭 Refleksi")
+
+    st.markdown("""
+    Setelah mempelajari arsitektur kesultanan, coba pikirkan:
+
+    - Bentuk geometri apa yang paling menarik perhatianmu?
+    - Di mana kamu dapat menemukan simetri pada bangunan istana?
+    - Bagaimana skala digunakan dalam membuat denah atau maket?
+    - Bagaimana tata ruang istana dapat dipelajari menggunakan matematika?
+    - Mengapa arsitektur kesultanan penting sebagai sumber belajar
+      etnomatematika?
+    """)
+
+    st.success(
+        "🕌 Arsitektur kesultanan memperlihatkan bahwa matematika "
+        "dapat ditemukan dalam bentuk, ruang, pola, ukuran, dan tata "
+        "bangunan warisan budaya."
+    )
 
 def rumah_tradisional():
     st.markdown(
